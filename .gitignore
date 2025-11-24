@@ -1,0 +1,13 @@
+hosts/*/hardware.nix
+
+result
+result-*
+
+*.swp
+*.swo
+*~
+.#*
+
+#home/*/wallpaper.png
+#home/*/*.jpg
+#home/*/*.jpeg
