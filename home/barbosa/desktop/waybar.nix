@@ -3,7 +3,7 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
     
     # Configuração 100% declarativa em Nix
     settings = [{
