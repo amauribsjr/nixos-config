@@ -51,32 +51,27 @@
     
     # Spotify / Waybar
     ".config/waybar/scripts/spotify.sh" = {
+      executable = true; 
       text = ''
-        #!/usr/bin/env bash
-        
-        if ! pgrep -x spotify >/dev/null; then
-            echo ""
-            exit 0
-        fi
+      #!/usr/bin/env bash
+    
+      PLAYERCTL="${pkgs.playerctl}/bin/playerctl"
+    
+      STATUS=$($PLAYERCTL -p spotify status 2>/dev/null)
 
-        status=$(playerctl -p spotify status 2>/dev/null)
-        if [ "$status" = "Playing" ]; then
-            artist=$(playerctl -p spotify metadata artist 2>/dev/null)
-            title=$(playerctl -p spotify metadata title 2>/dev/null)
-            
-            if [ -n "$artist" ] && [ -n "$title" ]; then
-                text="♫ $artist - $title"
-                echo "{\"text\":\"$text\", \"class\":\"playing\"}"
-            else
-                echo ""
-            fi
-        elif [ "$status" = "Paused" ]; then
-            echo "{\"text\":\"♫ Paused\", \"class\":\"paused\"}"
+      if [ "$STATUS" = "Playing" ]; then
+        ARTIST=$($PLAYERCTL -p spotify metadata artist 2>/dev/null)
+        TITLE=$($PLAYERCTL -p spotify metadata title 2>/dev/null)
+
+        TEXT="♫ $ARTIST - $TITLE"
+        echo "{\"text\":\"$TEXT\", \"class\":\"playing\"}"
+        
+        elif [ "$STATUS" = "Paused" ]; then
+          echo "{\"text\":\"♫ Paused\", \"class\":\"paused\"}"
         else
-            echo ""
+          echo ""
         fi
       '';
-      executable = true;
     };
     
     # Power Menu
