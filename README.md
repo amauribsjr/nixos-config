@@ -30,7 +30,7 @@ Complete system with Home Manager.
 │       └── virtualisation.nix #Docker
 └── home/
 └── barbosa/
-├── home.nix            # Config principal do usuário
+├── home.nix            # Main config
 ├── wallpaper.png       # Wallpaper
 ├── programs/
 │   ├── zsh.nix
@@ -139,13 +139,13 @@ Edit Gruvbox colors:
 
 ## 🐛 Troubleshooting
 
-### Monitor trobeshoot
+### Monitor troubleshoot
 ```bash
 hyprctl monitors
 # Adjust: /home/barbosa/desktop/hyprland.nix
 ```
 
-### Waybar trobleshoot
+### Waybar troubleshoot
 ```bash
 systemctl --user status waybar
 journalctl --user -u waybar -f
@@ -156,7 +156,7 @@ journalctl --user -u waybar -f
 sudo nixos-rebuild switch --rollback
 ```
 
-### Nvidia trobeshoot
+### Nvidia troubleshoot
 ```bash
 nvidia-smi
 # Verify logs: journalctl -b | grep nvidia
@@ -170,5 +170,4 @@ nvidia-smi
 - [NixOS Wiki](https://nixos.wiki/)
 
 
-## 📄 Licença
-MIT
+## 📄 MIT License
