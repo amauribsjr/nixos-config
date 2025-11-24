@@ -48,7 +48,7 @@
         format = "{icon} {volume}%";
         format-muted = "󰝟 Muted";
         format-icons = {
-          default = [ "", "", "" ];
+          default = [ "" "" "" ];
         };
         on-click = "pavucontrol";
       };
