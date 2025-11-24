@@ -1,4 +1,4 @@
-hosts/*/hardware.nix
+#hosts/*/hardware.nix
 
 result
 result-*
