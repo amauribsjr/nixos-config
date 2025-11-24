@@ -34,7 +34,6 @@
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "swww-daemon"
         "sleep 1 && swww img ~/Pictures/wallpaper.png"
-        "waybar"
         "nm-applet --indicator"
       ];
 
