@@ -88,7 +88,7 @@
         option=$(echo -e "$shutdown\n$reboot\n$suspend\n$logout" | \
             rofi -dmenu \
                 -p "Power" \
-                -theme power-menu \
+                -theme gruvbox-dark \
                 -lines 4 \
                 -width 15 \
                 -location 0)
