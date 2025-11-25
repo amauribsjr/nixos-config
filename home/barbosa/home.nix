@@ -80,20 +80,18 @@
       text = ''
         #!/usr/bin/env bash
         
-        shutdown="⏻  Shutdown"
-        reboot="⟳  Reboot"
-        suspend="⏾  Suspend"
-        logout="  Logout"
+        shutdown="⏻ Shutdown"
+        reboot="⟳ Reboot"
+        suspend="⏾ Suspend"
+        logout=" Logout"
         
         option=$(echo -e "$shutdown\n$reboot\n$suspend\n$logout" | \
             rofi -dmenu \
-                -p "Power Menu" \
-                -theme gruvbox-dark \
+                -p "Power" \
+                -theme power-menu \
                 -lines 4 \
-                -width 20 \
-                -location 3 \
-                -xoffset -10 \
-                -yoffset 45)
+                -width 15 \
+                -location 0)
         
         case $option in
             "$shutdown")
