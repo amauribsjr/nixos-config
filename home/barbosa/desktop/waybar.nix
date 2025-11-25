@@ -47,25 +47,25 @@
         format = "{icon} {volume}%";
         format-muted = "󰝟 Muted";
         format-icons = {
-          default = [ "" "" "" ];
+          default = [ "" "" "" ];
         };
         on-click = "pavucontrol";
       };
 
       network = {
-        format-wifi = " {essid}";
-        format-ethernet = " Online";
-        format-disconnected = " Offline";
+        format-wifi = " {essid}";
+        format-ethernet = " Online";
+        format-disconnected = " Offline";
         tooltip-format = "{ifname}: {ipaddr}";
       };
 
       cpu = {
-        format = " {usage}%";
+        format = " {usage}%";
         tooltip = false;
       };
 
       memory = {
-        format = " {}%";
+        format = " {}%";
       };
 
       tray = {
@@ -87,7 +87,7 @@
       };
 
       "custom/power" = {
-        format = " ";
+        format = " ";
         tooltip = false;
         on-click = "~/.config/waybar/scripts/power.sh";
       };
