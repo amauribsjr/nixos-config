@@ -57,15 +57,15 @@
       general = {
         gaps_in = 5;
         gaps_out = 10;
-        border_size = 2;
-        "col.active_border" = "rgb(fabd2f) rgb(fe8019) 45deg";
+        border_size = 1;
+        "col.active_border" = "rgb(83a598)";
         "col.inactive_border" = "rgb(3c3836)";
         layout = "dwindle";
       };
 
       # --- Decoration ---
       decoration = {
-        rounding = 0;
+        rounding = 4;
         blur = {
           enabled = false;
         };
