@@ -12,6 +12,7 @@
     ./programs/zsh.nix
     ./programs/starship.nix
     ./programs/alacritty.nix
+    ./programs/rofi.nix
     ./desktop/hyprland.nix
     ./desktop/waybar.nix
   ];
@@ -79,22 +80,32 @@
       text = ''
         #!/usr/bin/env bash
         
-        option=$(echo -e "⏻ Shutdown\n⟳ Reboot\n⏾ Suspend\n Lock\n Logout" | rofi -dmenu -p "Power Menu" -i)
+        shutdown="⏻  Shutdown"
+        reboot="⟳  Reboot"
+        suspend="⏾  Suspend"
+        logout="  Logout"
+        
+        option=$(echo -e "$shutdown\n$reboot\n$suspend\n$logout" | \
+            rofi -dmenu \
+                -p "Power Menu" \
+                -theme gruvbox-dark \
+                -lines 4 \
+                -width 20 \
+                -location 3 \
+                -xoffset -10 \
+                -yoffset 45)
         
         case $option in
-            "⏻ Shutdown")
+            "$shutdown")
                 systemctl poweroff
                 ;;
-            "⟳ Reboot")
+            "$reboot")
                 systemctl reboot
                 ;;
-            "⏾ Suspend")
+            "$suspend")
                 systemctl suspend
                 ;;
-            " Lock")
-                swaylock -f -c 000000
-                ;;
-            " Logout")
+            "$logout")
                 hyprctl dispatch exit
                 ;;
         esac
