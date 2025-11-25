@@ -33,7 +33,7 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "swww-daemon"
-        "sleep 1 && swww img ~/Pictures/wallpaper.png"
+        "sleep 1 && swww img ~/Pictures/wallpaper.png --resize crop"
         "waybar"
         "nm-applet --indicator"
       ];
