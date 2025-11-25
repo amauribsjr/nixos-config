@@ -222,4 +222,66 @@
         text-color:           @red;
     }
   '';
+
+  home.file.".config/rofi/power-menu.rasi".text = ''
+    * {
+        bg:                   #282828;
+        bg-alt:               #3c3836;
+        fg:                   #ebdbb2;
+        yellow:               #fabd2f;
+        orange:               #fe8019;
+        
+        background-color:     @bg;
+        text-color:           @fg;
+    }
+
+    window {
+        transparency:         "real";
+        background-color:     @bg;
+        border:               2px;
+        border-color:         @orange;
+        width:                180px;
+        location:             center;
+    }
+
+    mainbox {
+        padding:              0;
+    }
+
+    inputbar {
+        children:             [ prompt ];
+        background-color:     @bg-alt;
+        padding:              8px 10px;
+        border:               0 0 2px 0;
+        border-color:         @orange;
+    }
+
+    prompt {
+        text-color:           @yellow;
+    }
+
+    listview {
+        spacing:              0;
+        padding:              3px 0;
+        lines:                4;
+    }
+
+    element {
+        padding:              8px 12px;
+        background-color:     transparent;
+        text-color:           @fg;
+    }
+
+    element selected.normal {
+        background-color:     @bg-alt;
+        text-color:           @yellow;
+        border:               0 0 0 3px;
+        border-color:         @yellow;
+    }
+
+    element-text {
+        background-color:     transparent;
+        text-color:           inherit;
+    }
+  '';
 }
