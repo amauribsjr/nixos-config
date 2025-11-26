@@ -5,18 +5,21 @@
     enable = true;
     settings = {
       command_timeout = 1000;
+      add_newline = true;
+      palette = "catppuccin_mocha";
 
       format = ''
-        [╭─](bold #cba6f7)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context$line_break[╰─](bold #cba6f7)$character'';
+        [╭─](bold lavender)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
+        [╰─](bold lavender)$character'';
 
       character = {
-        success_symbol = "[λ ](bold #a6e3a1)"; # Green
-        error_symbol = "[λ ](bold #f38ba8)";   # Red
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[λ](bold red)";
       };
 
       username = {
-        style_user = "bold #cdd6f4"; # Text
-        style_root = "bold #f38ba8"; # Red
+        style_user = "bold text";
+        style_root = "bold red";
         format = "[$user]($style) ";
         disabled = false;
         show_always = true;
@@ -24,12 +27,12 @@
 
       hostname = {
         ssh_only = false;
-        format = "[@](bold #9399b2)[$hostname](bold #fab387) "; # Overlay2 @ Peach
+        format = "[@](bold overlay0)[$hostname](bold sapphire) "; 
         disabled = false;
       };
 
       directory = {
-        style = "bold #89b4fa"; # Blue
+        style = "bold blue";
         read_only = " 󰌾";
         truncation_length = 3;
         truncate_to_repo = true;
@@ -37,13 +40,13 @@
       };
 
       git_branch = {
-        symbol = " ";
-        style = "bold #a6e3a1"; # Green
+        symbol = " ";
+        style = "bold green";
         format = "[$symbol$branch]($style) ";
       };
 
       git_status = {
-        style = "bold #f38ba8"; # Red
+        style = "bold red";
         conflicted = "🏳";
         ahead = "⇡\${count}";
         behind = "⇣\${count}";
@@ -60,44 +63,74 @@
 
       nix_shell = {
         disabled = false;
-        impure_msg = "[impure](bold #f38ba8)"; # Red
-        pure_msg = "[pure](bold #a6e3a1)";     # Green
-        unknown_msg = "[unknown](bold #f9e2af)"; # Yellow
-        format = "via [ $state( \\($name\\))](bold #89b4fa) "; # Blue
+        symbol = " ";
+        impure_msg = "[impure](bold red)";
+        pure_msg = "[pure](bold green)";
+        unknown_msg = "[unknown](bold yellow)";
+        format = "via [$symbol$state( \\($name\\))](bold sapphire) ";
       };
 
       python = {
-        symbol = " ";
-        style = "#f9e2af"; # Yellow
+        symbol = " ";
+        style = "bold yellow";
         format = "[$symbol$pyenv_prefix($version)]($style) ";
       };
 
       nodejs = {
-        symbol = " ";
-        style = "#a6e3a1"; # Green
+        symbol = " ";
+        style = "bold green";
         format = "[$symbol($version)]($style) ";
       };
 
       rust = {
-        symbol = " ";
-        style = "bold #fab387"; # Peach
+        symbol = " ";
+        style = "bold peach"; 
         format = "[$symbol($version)]($style) ";
       };
 
       java = {
-        symbol = " ";
-        style = "#f38ba8"; # Red
+        symbol = " ";
+        style = "bold red";
         format = "[$symbol($version)]($style) ";
       };
 
       docker_context = {
-        symbol = " ";
-        style = "bold #89b4fa"; # Blue
+        symbol = " ";
+        style = "bold blue";
         format = "[$symbol$context]($style) ";
       };
 
       package.disabled = true;
       cmd_duration.disabled = true;
+
+      palettes.catppuccin_mocha = {
+        rosewater = "#f5e0dc";
+        flamingo = "#f2cdcd";
+        pink = "#f5c2e7";
+        mauve = "#cba6f7";
+        red = "#f38ba8";
+        maroon = "#eba0ac";
+        peach = "#fab387";
+        yellow = "#f9e2af";
+        green = "#a6e3a1";
+        teal = "#94e2d5";
+        sky = "#89dceb";
+        sapphire = "#74c7ec";
+        blue = "#89b4fa";
+        lavender = "#b4befe";
+        text = "#cdd6f4";
+        subtext1 = "#bac2de";
+        subtext0 = "#a6adc8";
+        overlay2 = "#9399b2";
+        overlay1 = "#7f849c";
+        overlay0 = "#6c7086";
+        surface2 = "#585b70";
+        surface1 = "#45475a";
+        surface0 = "#313244";
+        base = "#1e1e2e";
+        mantle = "#181825";
+        crust = "#11111b";
+      };
     };
   };
 }
