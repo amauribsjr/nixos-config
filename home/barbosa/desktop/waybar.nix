@@ -74,7 +74,7 @@
       };
 
       "custom/spotify" = {
-        format = "{}";
+        format = " {}"; 
         max-length = 35;
         interval = 5;
         exec = "~/.config/waybar/scripts/spotify.sh";
@@ -125,11 +125,9 @@
       @define-color pink      #f5c2e7;
       @define-color flamingo  #f2cdcd;
       @define-color rosewater #f5e0dc;
-
-      @define-color bg-alpha  #1e1e2ecc;
       @define-color border   #45475a;
-      
-     * {
+
+      * {
           border: none;
           font-family: "JetBrainsMono Nerd Font";
           font-size: 14px;
@@ -143,7 +141,7 @@
 
       /* --- Left Island (Workspaces + Window) --- */
       #workspaces {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border-radius: 10px 0 0 10px;
           border: 1px solid @border;
           border-right: none;
@@ -177,7 +175,7 @@
       }
 
       #window {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border-radius: 0 10px 10px 0;
           border: 1px solid @border;
           border-left: none;
@@ -193,7 +191,7 @@
 
       /* --- Mid Island (Clock) --- */
       #clock {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border: 1px solid @border;
           border-radius: 10px;
           padding: 0 20px;
@@ -203,7 +201,7 @@
 
       /* --- Right Island A (Spotify) --- */
       #custom-spotify {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border: 1px solid @border;
           border-radius: 10px;
           color: @green;
@@ -218,7 +216,7 @@
 
       /* --- Right Island B (Status Group) --- */
       #pulseaudio {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border: 1px solid @border;
           border-right: none;
           border-radius: 10px 0 0 10px;
@@ -231,7 +229,7 @@
       #cpu,
       #memory,
       #tray {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border-top: 1px solid @border;
           border-bottom: 1px solid @border;
           padding: 0 12px;
@@ -260,7 +258,7 @@
       }
 
       #custom-power {
-          background-color: @bg-alpha;
+          background-color: rgba(30, 30, 46, 0.8);
           border: 1px solid @border;
           border-left: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 0 10px 10px 0;
