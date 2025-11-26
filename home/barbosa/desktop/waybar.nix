@@ -38,8 +38,8 @@
       };
 
       clock = {
-        format = "{:%H:%M}";
-        format-alt = "{:%Y-%m-%d}";
+        format = "{:%H:%M} | {:%d-%m-%Y}";
+        /* format-alt = "{:%Y-%m-%d}"; */
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
@@ -74,7 +74,7 @@
       };
 
       "custom/spotify" = {
-        format = " {}"; 
+        format = "{}"; 
         max-length = 35;
         interval = 5;
         exec = "~/.config/waybar/scripts/spotify.sh";
