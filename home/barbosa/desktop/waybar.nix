@@ -8,10 +8,10 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 34;
-      margin-top = 6;
-      margin-left = 10;
-      margin-right = 10;
+      height = 44;
+      margin-top = 8;
+      margin-left = 12;
+      margin-right = 12;
       spacing = 0;
 
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
@@ -69,8 +69,8 @@
       };
 
       tray = {
-        icon-size = 16;
-        spacing = 8;
+        icon-size = 20;
+        spacing = 10;
       };
 
       "custom/spotify" = {
@@ -130,15 +130,15 @@
       * {
           border: none;
           font-family: "JetBrainsMono Nerd Font";
-          font-size: 14px;
+          font-size: 18px;
           min-height: 0;
       }
 
       window#waybar {
-          background-color: rgba(30, 30, 46, 0.85); 
+          background-color: rgba(30, 30, 46, 0.85);
           color: @text;
           border: 2px solid @border;
-          border-radius: 12px; 
+          border-radius: 6px;
       }
 
       #workspaces,
@@ -152,7 +152,7 @@
       #tray,
       #custom-power {
           background-color: transparent;
-          padding: 0 10px;
+          padding: 0 12px;
           margin: 0;
           border-radius: 0;
           border: none;
@@ -160,15 +160,15 @@
 
       /* Workspaces */
       #workspaces {
-          padding: 0 5px;
+          padding: 0 6px;
       }
 
       #workspaces button {
-          padding: 0 5px;
-          margin: 0 2px;
+          padding: 0 6px;
+          margin: 0 3px;
           color: @subtext0;
           background-color: transparent;
-          border-radius: 6px;
+          border-radius: 4px;
           transition: all 0.3s ease;
       }
 
@@ -195,11 +195,11 @@
       #network { color: @sapphire; }
       #cpu { color: @yellow; }
       #memory { color: @peach; }
-      #custom-power { color: @red; margin-right: 10px; }
-      
+      #custom-power { color: @red; margin-right: 12px; }
+
       /* Tray adjustment */
       #tray {
-          padding: 0 10px;
+          padding: 0 12px;
       }
       #tray > .passive { -gtk-icon-effect: dim; }
       #tray > .needs-attention { -gtk-icon-effect: highlight; background-color: @red; }
@@ -213,7 +213,7 @@
       #custom-spotify:hover,
       #custom-power:hover {
           background-color: @surface0;
-          border-radius: 8px; 
+          border-radius: 4px;
       }
     '';
   };
