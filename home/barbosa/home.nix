@@ -68,7 +68,7 @@
         echo "{\"text\":\"$TEXT\", \"class\":\"playing\"}"
         
         elif [ "$STATUS" = "Paused" ]; then
-          echo "{\"text\":\"♫ Paused\", \"class\":\"paused\"}"
+          echo "{\"text\":\" Paused\", \"class\":\"paused\"}"
         else
           echo ""
         fi
