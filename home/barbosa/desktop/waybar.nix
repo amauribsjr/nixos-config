@@ -8,10 +8,10 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 44;
-      margin-top = 8;
-      margin-left = 12;
-      margin-right = 12;
+      height = 36;
+      margin-top = 6;
+      margin-left = 10;
+      margin-right = 10;
       spacing = 0;
 
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
@@ -69,8 +69,8 @@
       };
 
       tray = {
-        icon-size = 20;
-        spacing = 10;
+        icon-size = 18;
+        spacing = 8;
       };
 
       "custom/spotify" = {
@@ -130,7 +130,7 @@
       * {
           border: none;
           font-family: "JetBrainsMono Nerd Font";
-          font-size: 18px;
+          font-size: 15px;
           min-height: 0;
       }
 
@@ -152,7 +152,7 @@
       #tray,
       #custom-power {
           background-color: transparent;
-          padding: 0 12px;
+          padding: 0 10px;
           margin: 0;
           border-radius: 0;
           border: none;
@@ -190,16 +190,19 @@
       /* Text colors */
       #window { color: @lavender; }
       #clock { color: @text; font-weight: bold; }
+      
       #custom-spotify { color: @green; }
+      #custom-spotify.paused { color: @subtext0; }
+
       #pulseaudio { color: @blue; }
       #network { color: @sapphire; }
       #cpu { color: @yellow; }
       #memory { color: @peach; }
-      #custom-power { color: @red; margin-right: 12px; }
+      #custom-power { color: @red; margin-right: 10px; }
 
       /* Tray adjustment */
       #tray {
-          padding: 0 12px;
+          padding: 0 10px;
       }
       #tray > .passive { -gtk-icon-effect: dim; }
       #tray > .needs-attention { -gtk-icon-effect: highlight; background-color: @red; }

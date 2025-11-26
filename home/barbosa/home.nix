@@ -64,7 +64,7 @@
         ARTIST=$($PLAYERCTL -p spotify metadata artist 2>/dev/null)
         TITLE=$($PLAYERCTL -p spotify metadata title 2>/dev/null)
 
-        TEXT="♫ $ARTIST - $TITLE"
+        TEXT=" $ARTIST - $TITLE"
         echo "{\"text\":\"$TEXT\", \"class\":\"playing\"}"
         
         elif [ "$STATUS" = "Paused" ]; then
