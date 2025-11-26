@@ -12,13 +12,13 @@
           "right": 4
         },
         "color": {
-          "1": "#89b4fa",
-          "2": "#f9e2af"
+          "1": "blue",
+          "2": "magenta"
         }
       },
       "display": {
         "separator": "  ",
-        "color": "#89b4fa",
+        "color": "blue",
         "size": {
           "binaryPrefix": "si"
         }
@@ -26,7 +26,7 @@
       "modules": [
         {
           "type": "title",
-          "format": "{#cba6f7}{user-name}{#89b4fa}@{host-name}"
+          "format": "{#35}{user-name}{#34}@{host-name}"
         },
         {
           "type": "separator",
@@ -35,61 +35,61 @@
         {
           "type": "cpu",
           "key": "╭─",
-          "keyColor": "#a6e3a1",
+          "keyColor": "green",
           "showPeCoreCount": true
         },
         {
           "type": "gpu",
           "key": "├─󰢮",
-          "keyColor": "#a6e3a1"
+          "keyColor": "green"
         },
         {
           "type": "memory",
           "key": "├─",
-          "keyColor": "#a6e3a1"
+          "keyColor": "green"
         },
         {
           "type": "disk",
           "key": "╰─",
-          "keyColor": "#a6e3a1",
+          "keyColor": "green",
           "folders": "/"
         },
         "break",
         {
           "type": "os",
           "key": "╭─",
-          "keyColor": "#f9e2af"
+          "keyColor": "yellow"
         },
         {
           "type": "kernel",
           "key": "├─",
-          "keyColor": "#f9e2af"
+          "keyColor": "yellow"
         },
         {
           "type": "packages",
           "key": "├─󰏖",
-          "keyColor": "#f9e2af"
+          "keyColor": "yellow"
         },
         {
           "type": "uptime",
           "key": "╰─󰅐",
-          "keyColor": "#f9e2af"
+          "keyColor": "yellow"
         },
         "break",
         {
           "type": "wm",
           "key": " ",
-          "keyColor": "#cba6f7"
+          "keyColor": "magenta"
         },
         {
           "type": "shell",
           "key": " ",
-          "keyColor": "#cba6f7"
+          "keyColor": "magenta"
         },
         {
           "type": "terminal",
           "key": " ",
-          "keyColor": "#cba6f7"
+          "keyColor": "magenta"
         },
         "break",
         {
