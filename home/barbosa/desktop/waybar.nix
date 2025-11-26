@@ -8,10 +8,11 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 32;
+      height = 34;
       margin-top = 6;
       margin-left = 10;
       margin-right = 10;
+      spacing = 0;
 
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
       modules-center = [ "clock" ];
@@ -39,7 +40,6 @@
 
       clock = {
         format = "{:%H:%M | %d/%m/%Y}";
-        /* format-alt = "{:%Y-%m-%d}"; */
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
@@ -74,7 +74,7 @@
       };
 
       "custom/spotify" = {
-        format = "{}"; 
+        format = "{}";
         max-length = 35;
         interval = 5;
         exec = "~/.config/waybar/scripts/spotify.sh";
@@ -125,7 +125,7 @@
       @define-color pink      #f5c2e7;
       @define-color flamingo  #f2cdcd;
       @define-color rosewater #f5e0dc;
-      @define-color border   #45475a;
+      @define-color border    #45475a;
 
       * {
           border: none;
@@ -135,32 +135,46 @@
       }
 
       window#waybar {
-          background-color: transparent;
+          background-color: rgba(30, 30, 46, 0.85); 
           color: @text;
+          border: 2px solid @border;
+          border-radius: 12px; 
       }
 
-      /* --- Left Island (Workspaces + Window) --- */
+      #workspaces,
+      #window,
+      #clock,
+      #custom-spotify,
+      #pulseaudio,
+      #network,
+      #cpu,
+      #memory,
+      #tray,
+      #custom-power {
+          background-color: transparent;
+          padding: 0 10px;
+          margin: 0;
+          border-radius: 0;
+          border: none;
+      }
+
+      /* Workspaces */
       #workspaces {
-          background-color: rgba(30, 30, 46, 0.8);
-          border-radius: 10px 0 0 10px;
-          border: 1px solid @border;
-          border-right: none;
-          padding: 0 4px;
-          margin-right: 0;
+          padding: 0 5px;
       }
 
       #workspaces button {
-          padding: 2px 10px;
-          margin: 4px 2px;
-          background-color: transparent;
+          padding: 0 5px;
+          margin: 0 2px;
           color: @subtext0;
+          background-color: transparent;
           border-radius: 6px;
           transition: all 0.3s ease;
       }
 
       #workspaces button.active {
-          background-color: @surface1;
           color: @mauve;
+          background-color: @surface0;
           font-weight: bold;
       }
 
@@ -170,115 +184,36 @@
       }
 
       #workspaces button.urgent {
-          background-color: @red;
-          color: @base;
+          color: @red;
       }
 
-      #window {
-          background-color: rgba(30, 30, 46, 0.8);
-          border-radius: 0 10px 10px 0;
-          border: 1px solid @border;
-          border-left: none;
-          padding: 0 14px;
-          margin-left: 0;
-          color: @lavender;
-      }
-
-      #window.empty {
-          background-color: transparent;
-          border: none;
-      }
-
-      /* --- Mid Island (Clock) --- */
-      #clock {
-          background-color: rgba(30, 30, 46, 0.8);
-          border: 1px solid @border;
-          border-radius: 10px;
-          padding: 0 20px;
-          color: @text;
-          font-weight: bold;
-      }
-
-      /* --- Right Island A (Spotify) --- */
-      #custom-spotify {
-          background-color: rgba(30, 30, 46, 0.8);
-          border: 1px solid @border;
-          border-radius: 10px;
-          color: @green;
-          font-weight: bold;
-          padding: 0 14px;
-          margin-right: 8px;
-      }
-
-      #custom-spotify.paused {
-          color: @subtext0;
-      }
-
-      /* --- Right Island B (Status Group) --- */
-      #pulseaudio {
-          background-color: rgba(30, 30, 46, 0.8);
-          border: 1px solid @border;
-          border-right: none;
-          border-radius: 10px 0 0 10px;
-          padding: 0 10px 0 14px;
-          color: @blue;
-      }
-
-      /* Mid */
-      #network,
-      #cpu,
-      #memory,
-      #tray {
-          background-color: rgba(30, 30, 46, 0.8);
-          border-top: 1px solid @border;
-          border-bottom: 1px solid @border;
-          padding: 0 12px;
-      }
-
+      /* Text colors */
+      #window { color: @lavender; }
+      #clock { color: @text; font-weight: bold; }
+      #custom-spotify { color: @green; }
+      #pulseaudio { color: @blue; }
       #network { color: @sapphire; }
-      #cpu     { color: @yellow; }
-      #memory  { color: @peach; }
-
-      /* Divs */
-      #network, #cpu, #memory, #tray {
-         border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
+      #cpu { color: @yellow; }
+      #memory { color: @peach; }
+      #custom-power { color: @red; margin-right: 10px; }
+      
+      /* Tray adjustment */
       #tray {
           padding: 0 10px;
       }
+      #tray > .passive { -gtk-icon-effect: dim; }
+      #tray > .needs-attention { -gtk-icon-effect: highlight; background-color: @red; }
 
-      #tray > .passive {
-          -gtk-icon-effect: dim;
-      }
-
-      #tray > .needs-attention {
-          -gtk-icon-effect: highlight;
-          background-color: @red;
-      }
-
-      #custom-power {
-          background-color: rgba(30, 30, 46, 0.8);
-          border: 1px solid @border;
-          border-left: 1px solid rgba(255, 255, 255, 0.05);
-          border-radius: 0 10px 10px 0;
-          color: @red;
-          font-weight: bold;
-          padding: 0 14px 0 10px;
-          margin-left: 0;
-      }
-
-      #custom-power:hover {
-          background-color: @surface1;
-      }
-
-      /* HOVER EFFECTS */
+      /* Unified hover */
       #pulseaudio:hover,
       #network:hover,
       #cpu:hover,
       #memory:hover,
-      #clock:hover {
+      #clock:hover,
+      #custom-spotify:hover,
+      #custom-power:hover {
           background-color: @surface0;
+          border-radius: 8px; 
       }
     '';
   };
