@@ -27,7 +27,7 @@
 
       hostname = {
         ssh_only = false;
-        format = "[@](bold overlay0)[$hostname](bold sapphire) "; 
+        format = "[@](bold yellow)[$hostname](bold sapphire) "; 
         disabled = false;
       };
 

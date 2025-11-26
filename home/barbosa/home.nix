@@ -13,6 +13,7 @@
     ./programs/starship.nix
     ./programs/alacritty.nix
     ./programs/rofi.nix
+    ./programs/fastfetch.nix
     ./desktop/hyprland.nix
     ./desktop/waybar.nix
   ];
