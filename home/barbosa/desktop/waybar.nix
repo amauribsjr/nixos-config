@@ -127,9 +127,9 @@
       @define-color rosewater #f5e0dc;
 
       @define-color bg-alpha  #1e1e2ecc;
-      @define-color border
-
-      * {
+      @define-color border   #45475a;
+      
+     * {
           border: none;
           font-family: "JetBrainsMono Nerd Font";
           font-size: 14px;
