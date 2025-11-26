@@ -3,8 +3,8 @@
 {
   programs.rofi = {
     enable = true;
-    theme = "gruvbox-dark";
-    
+    theme = "catppuccin-mocha";
+
     extraConfig = {
       modi = "drun,run,window";
       show-icons = true;
@@ -15,44 +15,44 @@
       drun-display-format = "{name}";
       window-format = "{w} · {c} · {t}";
       font = "JetBrainsMono Nerd Font 12";
-      
+
       # Layout
       lines = 10;
       columns = 1;
       width = 35;
       location = 0;
       padding = 10;
-      
+
       disable-history = false;
       hide-scrollbar = true;
       sidebar-mode = false;
       terminal = "alacritty";
     };
   };
-  
-  home.file.".config/rofi/gruvbox-dark.rasi".text = ''
+
+  home.file.".config/rofi/catppuccin-mocha.rasi".text = ''
     * {
-        /* Gruvbox Dark colors */
-        bg:                   #282828;
-        bg-alt:               #3c3836;
-        fg:                   #ebdbb2;
-        fg-alt:               #d5c4a1;
-        
-        red:                  #fb4934;
-        green:                #b8bb26;
-        yellow:               #fabd2f;
-        blue:                 #83a598;
-        purple:               #d3869b;
-        aqua:                 #8ec07c;
-        orange:               #fe8019;
-        gray:                 #928374;
-        
+        /* Catppuccin Mocha colors */
+        bg:                   #1e1e2e;
+        bg-alt:               #313244; /* Surface0 */
+        fg:                   #cdd6f4;
+        fg-alt:               #a6adc8; /* Subtext0 */
+
+        red:                  #f38ba8;
+        green:                #a6e3a1;
+        yellow:               #f9e2af;
+        blue:                 #89b4fa;
+        purple:               #cba6f7; /* Mauve */
+        aqua:                 #94e2d5; /* Teal */
+        orange:               #fab387; /* Peach */
+        gray:                 #6c7086; /* Overlay0 */
+
         background-color:     @bg;
         text-color:           @fg;
-        
-        border-color:         @orange;
+
+        border-color:         @purple;
         selected-bg:          @bg-alt;
-        selected-fg:          @yellow;
+        selected-fg:          @purple;
         urgent-bg:            @red;
         urgent-fg:            @bg;
         active-bg:            @green;
@@ -63,7 +63,7 @@
         transparency:         "real";
         background-color:     @bg;
         border:               2px;
-        border-color:         @orange;
+        border-color:         @border-color;
         border-radius:        0px;
         padding:              0px;
         width:                600px;
@@ -94,12 +94,12 @@
         spacing:              0;
         padding:              15px;
         border:               0 0 2px 0;
-        border-color:         @orange;
+        border-color:         @border-color;
     }
 
     prompt {
         spacing:              0;
-        text-color:           @yellow;
+        text-color:           @purple;
         background-color:     transparent;
         padding:              0 10px 0 0;
     }
@@ -107,7 +107,7 @@
     textbox-prompt-colon {
         expand:               false;
         str:                  "›";
-        text-color:           @orange;
+        text-color:           @purple;
         background-color:     transparent;
         padding:              0 5px 0 0;
     }
@@ -163,7 +163,7 @@
         background-color:     @selected-bg;
         text-color:           @selected-fg;
         border:               0 0 0 3px;
-        border-color:         @yellow;
+        border-color:         @purple;
     }
 
     element selected.urgent {
@@ -225,12 +225,14 @@
 
   home.file.".config/rofi/power-menu.rasi".text = ''
     * {
-        bg:                   #282828;
-        bg-alt:               #3c3836;
-        fg:                   #ebdbb2;
-        yellow:               #fabd2f;
-        orange:               #fe8019;
-        
+        bg:                   #1e1e2e;
+        bg-alt:               #313244;
+        fg:                   #cdd6f4;
+        yellow:               #f9e2af;
+        orange:               #fab387;
+        red:                  #f38ba8;
+        purple:               #cba6f7;
+
         background-color:     @bg;
         text-color:           @fg;
     }
@@ -239,7 +241,7 @@
         transparency:         "real";
         background-color:     @bg;
         border:               2px;
-        border-color:         @orange;
+        border-color:         @red;
         width:                180px;
         location:             center;
     }
@@ -253,11 +255,11 @@
         background-color:     @bg-alt;
         padding:              8px 10px;
         border:               0 0 2px 0;
-        border-color:         @orange;
+        border-color:         @red;
     }
 
     prompt {
-        text-color:           @yellow;
+        text-color:           @red;
     }
 
     listview {
@@ -274,9 +276,9 @@
 
     element selected.normal {
         background-color:     @bg-alt;
-        text-color:           @yellow;
+        text-color:           @red;
         border:               0 0 0 3px;
-        border-color:         @yellow;
+        border-color:         @red;
     }
 
     element-text {

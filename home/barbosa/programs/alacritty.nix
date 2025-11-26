@@ -28,37 +28,38 @@
       };
 
       colors = {
+        # Catppuccin Mocha Palette
         primary = {
-          background = "#32302f";
-          foreground = "#ebdbb2";
+          background = "#1e1e2e";
+          foreground = "#cdd6f4";
         };
         cursor = {
-          text = "#32302f";
-          cursor = "#ebdbb2";
+          text = "#1e1e2e";
+          cursor = "#f5e0dc"; # Rosewater
         };
         selection = {
-          text = "#ebdbb2";
-          background = "#504945";
+          text = "#1e1e2e";
+          background = "#f5e0dc"; # Rosewater
         };
         normal = {
-          black = "#32302f";
-          red = "#cc241d";
-          green = "#98971a";
-          yellow = "#d79921";
-          blue = "#458588";
-          magenta = "#b16286";
-          cyan = "#689d6a";
-          white = "#a89984";
+          black = "#45475a";   # Surface1
+          red = "#f38ba8";
+          green = "#a6e3a1";
+          yellow = "#f9e2af";
+          blue = "#89b4fa";
+          magenta = "#f5c2e7";
+          cyan = "#94e2d5";
+          white = "#bac2de";   # Subtext1
         };
         bright = {
-          black = "#928374";
-          red = "#fb4934";
-          green = "#b8bb26";
-          yellow = "#fabd2f";
-          blue = "#83a598";
-          magenta = "#d3869b";
-          cyan = "#8ec07c";
-          white = "#ebdbb2";
+          black = "#585b70";   # Surface2
+          red = "#f38ba8";
+          green = "#a6e3a1";
+          yellow = "#f9e2af";
+          blue = "#89b4fa";
+          magenta = "#f5c2e7";
+          cyan = "#94e2d5";
+          white = "#a6adc8";   # Subtext0
         };
       };
 
