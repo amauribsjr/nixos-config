@@ -126,7 +126,7 @@
       @define-color flamingo  #f2cdcd;
       @define-color rosewater #f5e0dc;
 
-      @define-color bg-alpha rgba(30, 30, 46, 0.8);
+      @define-color bg-alpha  #1e1e2ecc;
       @define-color border
 
       * {
