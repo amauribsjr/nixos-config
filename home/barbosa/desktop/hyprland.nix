@@ -55,20 +55,24 @@
 
       # --- General ---
       general = {
-        gaps_in = 5;
-        gaps_out = 10;
-        border_size = 1;
-        "col.active_border" = "rgb(b4befe)"; 
-        "col.inactive_border" = "rgb(45475a)";
+        gaps_in = 6;
+        gaps_out = 12;
+        border_size = 2;
+        "col.active_border" = "rgb(8ec07c)";
+        "col.inactive_border" = "rgb(504945)";
         layout = "dwindle";
       };
 
       # --- Decoration ---
       decoration = {
-        rounding = 4;
+        rounding = 3;
         blur = {
           enabled = false;
         };
+        drop_shadow = true;
+        shadow_range = 4;
+        shadow_render_power = 3;
+        "col.shadow" = "rgba(1d2021ee)";
       };
 
       # --- Animations ---
@@ -93,38 +97,27 @@
 
       # --- Keybinds ---
       bind = [
-        # Applications
         "$mainMod, Return, exec, $term"
         "$mainMod, D, exec, $menu"
         "$mainMod, B, exec, google-chrome-stable"
         "$mainMod, V, exec, vesktop"
         "$mainMod, E, exec, zed"
-        
-        # Window Management
         "$mainMod, Q, killactive"
         "$mainMod, M, exit"
         "$mainMod, F, togglefloating"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
-        
-        # Screenshots
         "SHIFT, Print, exec, grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"
         "CTRL, Print, exec, grim -g \"$(slurp)\" ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"
         ", Print, exec, grim -g \"$(slurp)\" - | swappy -f -"
-        
-        # Focus
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        
-        # Move Windows
         "$mainMod SHIFT, left, movewindow, l"
         "$mainMod SHIFT, right, movewindow, r"
         "$mainMod SHIFT, up, movewindow, u"
         "$mainMod SHIFT, down, movewindow, d"
-        
-        # Workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -135,8 +128,6 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        
-        # Move to Workspace
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -149,7 +140,6 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
       ];
 
-      # --- Mouse binds ---
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"

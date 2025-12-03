@@ -8,7 +8,7 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 36;
+      height = 34;
       margin-top = 6;
       margin-left = 10;
       margin-right = 10;
@@ -34,18 +34,18 @@
       };
 
       "hyprland/window" = {
-        max-length = 40;
+        max-length = 50;
         separate-outputs = true;
       };
 
       clock = {
-        format = "{:%H:%M | %d/%m/%Y}";
+        format = "{:%H:%M | %d/%m}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
       pulseaudio = {
         format = "{icon} {volume}%";
-        format-muted = "󰝟 Muted";
+        format-muted = "󰝟 Mute";
         format-icons = {
           default = [ "" "" "" ];
         };
@@ -53,9 +53,9 @@
       };
 
       network = {
-        format-wifi = " {essid}";
-        format-ethernet = " Online";
-        format-disconnected = " Offline";
+        format-wifi = "  {essid}";
+        format-ethernet = "  Wired";
+        format-disconnected = "  Offline";
         tooltip-format = "{ifname}: {ipaddr}";
       };
 
@@ -69,12 +69,12 @@
       };
 
       tray = {
-        icon-size = 18;
+        icon-size = 16;
         spacing = 8;
       };
 
       "custom/spotify" = {
-        format = "{}";
+        format = " {}";
         max-length = 35;
         interval = 5;
         exec = "~/.config/waybar/scripts/spotify.sh";
@@ -94,51 +94,34 @@
     }];
 
     style = ''
-      /* --- Catppuccin Mocha Palette --- */
-      @define-color base   #1e1e2e;
-      @define-color mantle #181825;
-      @define-color crust  #11111b;
+      @define-color bg0      #32302f;
+      @define-color bg1      #3c3836;
+      @define-color fg0      #d5c4a1;
+      @define-color fg1      #ebdbb2;
 
-      @define-color text     #cdd6f4;
-      @define-color subtext0 #a6adc8;
-      @define-color subtext1 #bac2de;
-
-      @define-color surface0 #313244;
-      @define-color surface1 #45475a;
-      @define-color surface2 #585b70;
-
-      @define-color overlay0 #6c7086;
-      @define-color overlay1 #7f849c;
-      @define-color overlay2 #9399b2;
-
-      @define-color blue      #89b4fa;
-      @define-color lavender  #b4befe;
-      @define-color sapphire  #74c7ec;
-      @define-color sky       #89dceb;
-      @define-color teal      #94e2d5;
-      @define-color green     #a6e3a1;
-      @define-color yellow    #f9e2af;
-      @define-color peach     #fab387;
-      @define-color maroon    #eba0ac;
-      @define-color red       #f38ba8;
-      @define-color mauve     #cba6f7;
-      @define-color pink      #f5c2e7;
-      @define-color flamingo  #f2cdcd;
-      @define-color rosewater #f5e0dc;
-      @define-color border    #45475a;
+      @define-color red      #ea6962;
+      @define-color orange   #e78a4e;
+      @define-color yellow   #d8a657;
+      @define-color green    #a9b665;
+      @define-color aqua     #89b482;
+      @define-color blue     #7daea3;
+      @define-color purple   #d3869b;
+      @define-color grey     #928374;
 
       * {
           border: none;
           font-family: "JetBrainsMono Nerd Font";
           font-size: 15px;
+          font-weight: 600;
           min-height: 0;
       }
 
       window#waybar {
-          background-color: rgba(30, 30, 46, 0.85);
-          color: @text;
-          border: 2px solid @border;
-          border-radius: 6px;
+          background-color: @bg0; 
+          color: @fg0;
+          border-bottom: 2px solid @bg1;
+          border-radius: 4px;
+          opacity: 0.96;
       }
 
       #workspaces,
@@ -154,60 +137,54 @@
           background-color: transparent;
           padding: 0 10px;
           margin: 0;
-          border-radius: 0;
-          border: none;
       }
 
-      /* Workspaces */
       #workspaces {
-          padding: 0 6px;
+          padding: 0 4px;
       }
 
       #workspaces button {
           padding: 0 6px;
-          margin: 0 3px;
-          color: @subtext0;
+          margin: 0 2px;
+          color: @grey;
           background-color: transparent;
           border-radius: 4px;
           transition: all 0.3s ease;
       }
 
       #workspaces button.active {
-          color: @mauve;
-          background-color: @surface0;
+          color: @bg0;
+          background-color: @orange;
           font-weight: bold;
       }
 
       #workspaces button:hover {
-          background-color: @surface0;
-          color: @text;
+          background-color: @bg1;
+          color: @fg1;
       }
 
       #workspaces button.urgent {
           color: @red;
       }
 
-      /* Text colors */
-      #window { color: @lavender; }
-      #clock { color: @text; font-weight: bold; }
+      #window { color: @fg1; font-weight: bold; }
+      #clock { color: @blue; font-weight: bold; }
       
       #custom-spotify { color: @green; }
-      #custom-spotify.paused { color: @subtext0; }
+      #custom-spotify.paused { color: @grey; }
 
-      #pulseaudio { color: @blue; }
-      #network { color: @sapphire; }
-      #cpu { color: @yellow; }
-      #memory { color: @peach; }
+      #pulseaudio { color: @aqua; }
+      #network { color: @purple; }
+      #cpu { color: @red; }
+      #memory { color: @yellow; }
       #custom-power { color: @red; margin-right: 10px; }
 
-      /* Tray adjustment */
       #tray {
           padding: 0 10px;
       }
       #tray > .passive { -gtk-icon-effect: dim; }
       #tray > .needs-attention { -gtk-icon-effect: highlight; background-color: @red; }
 
-      /* Unified hover */
       #pulseaudio:hover,
       #network:hover,
       #cpu:hover,
@@ -215,8 +192,9 @@
       #clock:hover,
       #custom-spotify:hover,
       #custom-power:hover {
-          background-color: @surface0;
+          background-color: @bg1;
           border-radius: 4px;
+          color: @fg1;
       }
     '';
   };
