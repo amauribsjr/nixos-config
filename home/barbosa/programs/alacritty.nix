@@ -28,38 +28,41 @@
       };
 
       colors = {
-        # Catppuccin Mocha Palette
         primary = {
-          background = "#1e1e2e";
-          foreground = "#cdd6f4";
+          background = "#32302f";
+          foreground = "#d5c4a1";
         };
+
         cursor = {
-          text = "#1e1e2e";
-          cursor = "#f5e0dc"; # Rosewater
+          text = "#32302f";
+          cursor = "#d5c4a1";
         };
+
         selection = {
-          text = "#1e1e2e";
-          background = "#f5e0dc"; # Rosewater
+          text = "#d5c4a1";
+          background = "#504945";
         };
+
         normal = {
-          black = "#45475a";   # Surface1
-          red = "#f38ba8";
-          green = "#a6e3a1";
-          yellow = "#f9e2af";
-          blue = "#89b4fa";
-          magenta = "#f5c2e7";
-          cyan = "#94e2d5";
-          white = "#bac2de";   # Subtext1
+          black = "#32302f";
+          red = "#ea6962";
+          green = "#a9b665";
+          yellow = "#d8a657";
+          blue = "#7daea3";
+          magenta = "#d3869b";
+          cyan = "#89b482";
+          white = "#d5c4a1";
         };
+
         bright = {
-          black = "#585b70";   # Surface2
-          red = "#f38ba8";
-          green = "#a6e3a1";
-          yellow = "#f9e2af";
-          blue = "#89b4fa";
-          magenta = "#f5c2e7";
-          cyan = "#94e2d5";
-          white = "#a6adc8";   # Subtext0
+          black = "#928374";
+          red = "#ea6962";
+          green = "#a9b665";
+          yellow = "#d8a657";
+          blue = "#7daea3";
+          magenta = "#d3869b";
+          cyan = "#89b482";
+          white = "#ebdbb2";
         };
       };
 

@@ -3,7 +3,7 @@
 {
   programs.rofi = {
     enable = true;
-    theme = "catppuccin-mocha";
+    theme = "gruvbox-soft";
 
     extraConfig = {
       modi = "drun,run,window";
@@ -16,7 +16,6 @@
       window-format = "{w} · {c} · {t}";
       font = "JetBrainsMono Nerd Font 12";
 
-      # Layout
       lines = 10;
       columns = 1;
       width = 35;
@@ -30,29 +29,29 @@
     };
   };
 
-  home.file.".config/rofi/catppuccin-mocha.rasi".text = ''
+  home.file.".config/rofi/gruvbox-soft.rasi".text = ''
     * {
-        /* Catppuccin Mocha colors */
-        bg:                   #1e1e2e;
-        bg-alt:               #313244; /* Surface0 */
-        fg:                   #cdd6f4;
-        fg-alt:               #a6adc8; /* Subtext0 */
+        bg:                   #32302f;
+        bg-alt:               #3c3836;
+        fg:                   #d5c4a1;
+        fg-alt:               #a89984;
 
-        red:                  #f38ba8;
-        green:                #a6e3a1;
-        yellow:               #f9e2af;
-        blue:                 #89b4fa;
-        purple:               #cba6f7; /* Mauve */
-        aqua:                 #94e2d5; /* Teal */
-        orange:               #fab387; /* Peach */
-        gray:                 #6c7086; /* Overlay0 */
+        red:                  #ea6962;
+        green:                #a9b665;
+        yellow:               #d8a657;
+        blue:                 #7daea3;
+        purple:               #d3869b;
+        aqua:                 #89b482;
+        orange:               #e78a4e;
+        gray:                 #928374;
 
         background-color:     @bg;
         text-color:           @fg;
 
-        border-color:         @purple;
+        border-color:         @aqua;
         selected-bg:          @bg-alt;
-        selected-fg:          @purple;
+        selected-fg:          @aqua; 
+        
         urgent-bg:            @red;
         urgent-fg:            @bg;
         active-bg:            @green;
@@ -99,7 +98,7 @@
 
     prompt {
         spacing:              0;
-        text-color:           @purple;
+        text-color:           @aqua;
         background-color:     transparent;
         padding:              0 10px 0 0;
     }
@@ -107,7 +106,7 @@
     textbox-prompt-colon {
         expand:               false;
         str:                  "›";
-        text-color:           @purple;
+        text-color:           @aqua;
         background-color:     transparent;
         padding:              0 5px 0 0;
     }
@@ -163,7 +162,7 @@
         background-color:     @selected-bg;
         text-color:           @selected-fg;
         border:               0 0 0 3px;
-        border-color:         @purple;
+        border-color:         @aqua;
     }
 
     element selected.urgent {
@@ -225,13 +224,10 @@
 
   home.file.".config/rofi/power-menu.rasi".text = ''
     * {
-        bg:                   #1e1e2e;
-        bg-alt:               #313244;
-        fg:                   #cdd6f4;
-        yellow:               #f9e2af;
-        orange:               #fab387;
-        red:                  #f38ba8;
-        purple:               #cba6f7;
+        bg:                   #32302f;
+        bg-alt:               #3c3836;
+        fg:                   #d5c4a1;
+        red:                  #ea6962;
 
         background-color:     @bg;
         text-color:           @fg;

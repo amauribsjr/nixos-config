@@ -6,11 +6,11 @@
     settings = {
       command_timeout = 1000;
       add_newline = true;
-      palette = "catppuccin_mocha";
+      palette = "gruvbox_soft";
 
       format = ''
-        [╭─](bold lavender)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
-        [╰─](bold lavender)$character'';
+        [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
+        [╰─](bold fg)$character'';
 
       character = {
         success_symbol = "[λ](bold green)";
@@ -18,7 +18,7 @@
       };
 
       username = {
-        style_user = "bold text";
+        style_user = "bold fg";
         style_root = "bold red";
         format = "[$user]($style) ";
         disabled = false;
@@ -27,7 +27,7 @@
 
       hostname = {
         ssh_only = false;
-        format = "[@](bold yellow)[$hostname](bold sapphire) "; 
+        format = "[@](bold yellow)[$hostname](bold blue) "; 
         disabled = false;
       };
 
@@ -67,7 +67,7 @@
         impure_msg = "[impure](bold red)";
         pure_msg = "[pure](bold green)";
         unknown_msg = "[unknown](bold yellow)";
-        format = "via [$symbol$state( \\($name\\))](bold sapphire) ";
+        format = "via [$symbol$state( \\($name\\))](bold aqua) ";
       };
 
       python = {
@@ -84,7 +84,7 @@
 
       rust = {
         symbol = " ";
-        style = "bold peach"; 
+        style = "bold orange"; 
         format = "[$symbol($version)]($style) ";
       };
 
@@ -103,33 +103,18 @@
       package.disabled = true;
       cmd_duration.disabled = true;
 
-      palettes.catppuccin_mocha = {
-        rosewater = "#f5e0dc";
-        flamingo = "#f2cdcd";
-        pink = "#f5c2e7";
-        mauve = "#cba6f7";
-        red = "#f38ba8";
-        maroon = "#eba0ac";
-        peach = "#fab387";
-        yellow = "#f9e2af";
-        green = "#a6e3a1";
-        teal = "#94e2d5";
-        sky = "#89dceb";
-        sapphire = "#74c7ec";
-        blue = "#89b4fa";
-        lavender = "#b4befe";
-        text = "#cdd6f4";
-        subtext1 = "#bac2de";
-        subtext0 = "#a6adc8";
-        overlay2 = "#9399b2";
-        overlay1 = "#7f849c";
-        overlay0 = "#6c7086";
-        surface2 = "#585b70";
-        surface1 = "#45475a";
-        surface0 = "#313244";
-        base = "#1e1e2e";
-        mantle = "#181825";
-        crust = "#11111b";
+      palettes.gruvbox_soft = {
+        bg0 = "#32302f";
+        bg1 = "#3c3836";
+        fg = "#d5c4a1";
+        red = "#ea6962";
+        green = "#a9b665";
+        yellow = "#d8a657";
+        blue = "#7daea3";
+        purple = "#d3869b";
+        aqua = "#89b482";
+        orange = "#e78a4e";
+        gray = "#928374";
       };
     };
   };

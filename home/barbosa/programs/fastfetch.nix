@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  # Configuração do Fastfetch com Catppuccin Mocha
   home.file.".config/fastfetch/config.jsonc".text = ''
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
@@ -12,13 +11,13 @@
           "right": 4
         },
         "color": {
-          "1": "blue",
-          "2": "magenta"
+          "1": "yellow",
+          "2": "green"
         }
       },
       "display": {
         "separator": "  ",
-        "color": "blue",
+        "color": "green",
         "size": {
           "binaryPrefix": "si"
         }
@@ -26,7 +25,7 @@
       "modules": [
         {
           "type": "title",
-          "format": "{#35}{user-name}{#34}@{host-name}"
+          "format": "{#33}{user-name}{#37}@{host-name}"
         },
         {
           "type": "separator",
@@ -79,17 +78,17 @@
         {
           "type": "wm",
           "key": " ",
-          "keyColor": "magenta"
+          "keyColor": "blue"
         },
         {
           "type": "shell",
           "key": " ",
-          "keyColor": "magenta"
+          "keyColor": "blue"
         },
         {
           "type": "terminal",
           "key": " ",
-          "keyColor": "magenta"
+          "keyColor": "blue"
         },
         "break",
         {
