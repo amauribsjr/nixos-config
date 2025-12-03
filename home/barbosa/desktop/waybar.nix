@@ -119,7 +119,7 @@
       window#waybar {
           background-color: @bg0; 
           color: @fg0;
-          border-bottom: 2px solid @bg1;
+          border: 1px solid @aqua;
           border-radius: 4px;
           opacity: 0.96;
       }
