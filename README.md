@@ -21,12 +21,12 @@ for my **Dell Inspiron 3501**.
 - **Compositor**: **Niri** (scrollable-tiling Wayland) via [niri-flake](https://github.com/sodiboo/niri-flake)
 - **Shell**: Zsh + Starship
 - **Terminal**: Alacritty
-- **Theme**: Gruvbox Soft Dark
+- **Theme**: Midnight Blue custom theme
 - **Bar**: Waybar
 - **Launcher**: Fuzzel (niri default recommendation)
 - **Notifications**: Mako
 - **Wallpaper**: swaybg
-- **Greeter**: greetd + tuigreet *(temporary)*
+- **Greeter**: SDDM
 
 ## 📁 Structure
 
@@ -43,11 +43,11 @@ nixos-config/
 │   ├── audio.nix              # pipewire
 │   ├── graphics.nix           # iGPU Intel
 │   ├── power.nix              # TLP, thermald, fwupd, upower, fstrim, zram
-│   ├── desktop.nix            # niri systemwide, greetd, portals, fonts
+│   ├── desktop.nix            # niri systemwide, sddm, portals, fonts
 │   ├── flatpak.nix            # flatpak + flathub
 │   ├── virtualisation.nix     # docker
 │   ├── nix.nix                # settings, gc, optimise
-│   ├── packages.nix           # systemPackages + thunar/gvfs
+│   ├── packages.nix           # systemPackages + nautilus
 │   └── users.nix              # users, shell
 └── home/
     ├── default.nix            # entry point HM + swayidle
@@ -78,7 +78,7 @@ nixos-config/
 | `Super+B`        | Browser (Chrome)           |
 | `Super+V`        | Vesktop                    |
 | `Super+E`        | Editor (Zed)               |
-| `Super+T`        | File manager (Thunar)      |
+| `Super+T`        | File manager (Nautilus)    |
 
 ### Window management — **enhanced productivity**
 | Shortcut            | Action                     |
@@ -107,7 +107,7 @@ nixos-config/
 | Shortcut      | Action                  |
 |---------------|-------------------------|
 | `Print`       | Area                    |
-| `Shift+Print`  | Whole screen            |
+| `Shift+Print` | Whole screen            |
 
 ### System
 | Shortcut           | Action                 |
@@ -115,7 +115,7 @@ nixos-config/
 | `Super+Alt+L`      | Lock screen            |
 | `Super+Shift+E`    | Quit (back to greeter) |
 | `Super+Shift+P`    | Turn monitor off       |
-| `Fn+brilho`        | Brightness ±5%         |
+| `Fn+brightness`    | Brightness ±5%         |
 | `Fn+volume`        | Volume ±5%             |
 | `Fn+mute`          | Mute toggle            |
 
@@ -142,7 +142,7 @@ Check `INSTALL.md`
 
 ## 🎨 Theme
 
-**darkSEA** colors:
+**Midnight Blue** based colors:
 - `home/niri.nix` (focus-ring, background)
 - `home/waybar.nix` (CSS)
 - `home/terminal/alacritty.nix`
