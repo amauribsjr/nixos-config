@@ -25,11 +25,11 @@
       colors = {
         background       = "32302fee";
         text             = "e8f2fcff";
-        match            = "4e7862ff";
+        match            = "d65d0eff";
         selection        = "504945ff";
         selection-text   = "e8f2fcff";
-        selection-match  = "4e7862ff";
-        border           = "4e7862ff";
+        selection-match  = "d65d0eff";
+        border           = "d65d0eff";
       };
 
       border = {

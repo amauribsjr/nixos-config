@@ -93,8 +93,8 @@
       @define-color fg0      #ebdbb2;
       @define-color fg1      #d5c4a1;
       @define-color fg2      #a89984;
-      @define-color accent   #4e7862;
-      @define-color accdim   #3a5e4a;
+      @define-color accent   #d65d0e;
+      @define-color accdim   #af3a03;
       @define-color red      #fb4934;
       @define-color amber    #fabd2f;
       @define-color green    #8ec07c;
