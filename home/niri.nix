@@ -1,19 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # =========================================================================
-  # Niri — scrollable-tiling Wayland compositor
-  # =========================================================================
-  # Configurado via niri-flake's home module (programs.niri.settings).
-  # Vantagens vs editar config.kdl manualmente:
-  #   • Validação em build-time — config quebrada = falha no nixos-rebuild
-  #   • config.lib.niri.actions expõe todas as ações como funções Nix tipadas
-  #   • Schema sincronizado com a versão do niri instalada
 
   programs.niri.settings = {
-    # ─── Prefer-no-CSD ───────────────────────────────────────────────────
-    # Pede aos clients pra omitir client-side decorations. Niri desenha
-    # focus-ring AROUND windows que aceitarem (visual mais consistente).
     prefer-no-csd = true;
 
     # ─── Screenshots ─────────────────────────────────────────────────────
@@ -43,26 +32,15 @@
       };
 
       mouse = {
-        accel-profile = "flat";           # mouse externo: sem aceleração
+        accel-profile = "flat";
       };
 
-      # Foco segue o mouse — produtivo em scrollable-tiling.
       focus-follows-mouse = {
         enable = true;
-        max-scroll-amount = "0%";         # não rola pra trás se cruza borda
+        max-scroll-amount = "0%";
       };
     };
 
-    # ─── Outputs (monitor) ────────────────────────────────────────────────
-    # eDP-1 é o nome convencional do painel embarcado. Confirme depois com
-    # `niri msg outputs`.
-    #
-    # NOTA: mode propositalmente omitido. Em 1366x768 há um único mode
-    # disponível, e niri auto-seleciona o melhor. Definir manualmente exige
-    # que o refresh rate bata EXATO até 3 decimais com o que niri reporta
-    # (ex: 60.000 vs 59.987) — uma fonte clássica de tela preta. Se quiser
-    # forçar, descomente após confirmar com `niri msg outputs`:
-    #   mode = { width = 1366; height = 768; refresh = 60.000; };
     outputs."eDP-1" = {
       scale = 1.0;
       transform = {
@@ -74,23 +52,19 @@
 
     # ─── Layout ───────────────────────────────────────────────────────────
     layout = {
-      # Gaps reduzidos pra tela 1366x768 (espaço é precioso).
       gaps = 6;
 
-      # Centraliza janela única quando só tem 1 coluna na workspace.
       always-center-single-column = true;
 
-      # Larguras de coluna que `Mod+R` cicla: 1/3, 1/2, 2/3.
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
         { proportion = 1.0 / 2.0; }
         { proportion = 2.0 / 3.0; }
       ];
 
-      # Largura padrão de novas janelas: 50%.
+
       default-column-width = { proportion = 0.5; };
 
-      # Alturas de janela que `Mod+Shift+R` cicla.
       preset-window-heights = [
         { proportion = 1.0 / 3.0; }
         { proportion = 1.0 / 2.0; }
@@ -108,18 +82,12 @@
       background-color = "#151f2e";
     };
 
-    # ─── Spawn at startup ─────────────────────────────────────────────────
-    # IMPORTANTE: comandos passam pelo niri spawn (não pelo shell), então
-    # cada arg é literal. Usamos paths absolutos via Nix string interpolation
-    # pra garantir que o binário está no PATH (niri spawn não herda o PATH
-    # do shell do usuário).
     spawn-at-startup = [
-      { command = [ "${pkgs.swaybg}/bin/swaybg" "-i" "/home/barbosa/Pictures/wallpaper.png" "-m" "fill" ]; }
+      { command = [ "${pkgs.swww}/bin/swww-daemon" ]; }
+      { command = [ "${pkgs.swww}/bin/swww" "img" "/home/barbosa/Pictures/wallpaper.png" "--transition-type" "fade" ]; }       
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       { command = [ "${pkgs.mako}/bin/mako" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
-      # xwayland-satellite é integrado out-of-the-box desde niri 25.08
-      # — sobe sob demanda quando algum app X11 for spawned.
     ];
 
     # ─── Environment variables exportadas pra apps spawned pelo niri ──

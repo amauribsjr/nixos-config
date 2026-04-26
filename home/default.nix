@@ -20,7 +20,7 @@
   programs.home-manager.enable = true;
 
   # Wallpaper acessível via ~/Pictures/wallpaper.png (referenciado pelo niri).
-  home.file."Pictures/wallpaper.png".source = ./wallpaper.png;
+  #home.file."Pictures/wallpaper.png".source = ./wallpaper.png;
 
   # =========================================================================
   # Auto-lock e auto-suspend (essencial em laptop)
