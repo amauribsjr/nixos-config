@@ -183,9 +183,9 @@
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       # ─── Screenshots ───────────────────────────────────────────────────────
-      "Print".action            = screenshot;
-      "Ctrl+Print".action       = { screenshot-screen = {}; };
-      "Alt+Print".action        = { screenshot-window = {}; };
+      "Print".action      = { spawn-sh = "grim -g \"$(slurp)\" - | swappy -f -"; };
+      "Ctrl+Print".action = { spawn-sh = "grim - | swappy -f -"; };
+      "Alt+Print".action  = { spawn-sh = "grim -g \"$(slurp -o)\" - | swappy -f -"; };
 
       # ─── Áudio ─────────────────────────────────────────────────────────────
       "XF86AudioRaiseVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; allow-when-locked = true; };
