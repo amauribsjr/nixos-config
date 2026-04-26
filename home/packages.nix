@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # ─── Wayland / niri ecosystem ────────────────────────────────────────
-    swww                 # wallpaper
+    awww                 # wallpaper
     swaylock             # lock screen
     mako                 # notification daemon
     grim                 # screenshot
