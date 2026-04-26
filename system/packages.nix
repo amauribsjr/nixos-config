@@ -67,8 +67,7 @@
   # =========================================================================
 
   services.gvfs.enable = true;
-  programs.nautilus-open-settings.enable = false;
-  
+
   # Limita logs do journald (SSD apertado).
   services.journald.extraConfig = ''
     SystemMaxUse=100M
