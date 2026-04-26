@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  hardware.brightnessctl.enable = true;
   # =========================================================================
   # Niri (compositor scrollable-tiling Wayland)
   # =========================================================================
@@ -10,7 +11,7 @@
   programs.niri.enable = true;
 
   # =========================================================================
-  # Greeter (greetd + tuigreet)
+  # Greeter (SDDM)
   # =========================================================================
   services.displayManager.sddm = {
     enable = true;
@@ -48,6 +49,6 @@
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
   ];
 }

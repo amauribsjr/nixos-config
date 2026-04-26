@@ -6,65 +6,82 @@
     settings = {
       window = {
         opacity = 0.96;
-        padding = { x = 12; y = 12; };
+        padding = {
+          x = 12;
+          y = 12;
+        };
         decorations = "none";
         startup_mode = "Windowed";
       };
 
       font = {
-        normal  = { family = "JetBrainsMono Nerd Font"; };
-        bold    = { family = "JetBrainsMono Nerd Font"; };
-        italic  = { family = "JetBrainsMono Nerd Font"; };
+        normal = {
+          family = "JetBrainsMono Nerd Font";
+        };
+        bold = {
+          family = "JetBrainsMono Nerd Font";
+        };
+        italic = {
+          family = "JetBrainsMono Nerd Font";
+        };
         size = 12.0;
       };
 
-      # ─── darkSEA ────────────────────────────────────────────────────────
       colors = {
         primary = {
-          background = "#1b2430";
-          foreground = "#d6e9ff";
+          background = "#151f2e";
+          foreground = "#e8f2fc";
         };
 
         cursor = {
-          text   = "#1b2430";
-          cursor = "#34febb";
+          text = "#151f2e";
+          cursor = "#4a9eca";
         };
 
         selection = {
-          text       = "#d6e9ff";
-          background = "#2a3a4e";
+          text = "#e8f2fc";
+          background = "#253548";
         };
 
         normal = {
-          black   = "#1b2430";
-          red     = "#e06b74";
-          green   = "#34febb";
-          yellow  = "#e5c07b";
-          blue    = "#88b4e7";
-          magenta = "#a77bca";
-          cyan    = "#32ae85";
-          white   = "#d6e9ff";
+          black   = "#151f2e";
+          red     = "#c0737a";
+          green   = "#4a9eca";
+          yellow  = "#c4a86a";
+          blue    = "#c8daea";
+          magenta = "#8b7eb8";
+          cyan    = "#6a9e7f";
+          white   = "#e8f2fc";
         };
 
         bright = {
-          black   = "#444c55";
-          red     = "#e06b74";
-          green   = "#34febb";
-          yellow  = "#e5c07b";
-          blue    = "#5d8cc0";
-          magenta = "#a77bca";
-          cyan    = "#42675a";
-          white   = "#88b4e7";
+          black   = "#253548";
+          red     = "#c0737a";
+          green   = "#4a9eca";
+          yellow  = "#c4a86a";
+          blue    = "#2d7aaa";
+          magenta = "#8b7eb8";
+          cyan    = "#253548";
+          white   = "#c8daea";
         };
       };
 
       cursor = {
-        style = { shape = "Block"; blinking = "On"; };
+        style = {
+          shape = "Block";
+          blinking = "On";
+        };
         unfocused_hollow = true;
       };
 
-      selection  = { save_to_clipboard = true; };
-      scrolling  = { history = 10000; multiplier = 3; };
+      selection = {
+        save_to_clipboard = true;
+      };
+
+      scrolling = {
+        history = 10000;
+        multiplier = 3;
+      };
     };
   };
 }

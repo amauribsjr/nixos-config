@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # ─── Wayland / niri ecosystem ────────────────────────────────────────
-    swaybg               # wallpaper (niri-friendly, mais leve que swww)
+    swaybg               # wallpaper
     swaylock             # lock screen
     mako                 # notification daemon
     grim                 # screenshot
@@ -11,7 +11,7 @@
     swappy               # editor de screenshot
     wl-clipboard         # clipboard helpers
     networkmanagerapplet # nm-applet (tray do NM)
-    xwayland-satellite   # XWayland sob demanda (niri usa esse)
+    xwayland-satellite   # XWayland sob demanda
 
     # ─── TUI tools ───────────────────────────────────────────────────────
     yazi                 # file manager TUI
@@ -24,10 +24,6 @@
     ripgrep              # grep moderno
     fzf                  # fuzzy finder
     zoxide               # cd inteligente
-
-    # --- NIX LSP tools ──────────────────────────────────────────────────
-    nil
-    nixpkgs-fmt
 
     # Nota: Thunar está via system/packages.nix (pra ter gvfs/plugins).
   ];
