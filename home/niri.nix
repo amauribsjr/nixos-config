@@ -74,8 +74,8 @@
       focus-ring = {
         enable = true;
         width = 2;
-        active.color = "#4a9eca";
-        inactive.color = "#253548";
+        active.color = "#4e7862";
+        inactive.color = "#504945";
       };
 
       border.enable = false;
@@ -255,7 +255,7 @@
 
       # ─── Lock / Power ──────────────────────────────────────────────────
       "Mod+Alt+L" = {
-        action = spawn "swaylock" "-f" "-c" "151f2e";
+        action = spawn "swaylock" "-f" "-c" "32302f";
         allow-when-locked = true;
       };
       "Mod+Shift+E".action = quit;                       # sai (volta pro greeter)

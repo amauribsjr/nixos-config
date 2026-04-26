@@ -59,7 +59,7 @@
           red     = "#fb4934";
           green   = "#b8bb26";
           yellow  = "#fabd2f";
-          blue    = "#83a598";
+          blue    = "#4e7862";
           magenta = "#d3869b";
           cyan    = "#8ec07c";
           white   = "#ebdbb2";

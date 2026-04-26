@@ -106,8 +106,8 @@
       palettes.darksea = {
         bg0    = "#32302f";
         fg     = "#ebdbb2";
-        blue   = "#83a598";
-        slate  = "#458588";
+        blue   = "#4e7862";
+        slate  = "#3a5e4a";
         mint   = "#8ec07c";
         teal   = "#689d6a";
         red    = "#fb4934";
