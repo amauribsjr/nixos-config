@@ -66,17 +66,9 @@
   # Programas que precisam de integração system-level
   # =========================================================================
 
-  # File manager Thunar com gvfs (montar USB) e plugins.
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin    # extrair zip/tar pelo menu
-      thunar-volman            # automount de USB
-    ];
-  };
-  services.gvfs.enable = true;     # montar dispositivos no Thunar
-  services.tumbler.enable = true;  # gerar thumbnails
-
+  services.gvfs.enable = true;
+  programs.nautilus-open-settings.enable = false;
+  
   # Limita logs do journald (SSD apertado).
   services.journald.extraConfig = ''
     SystemMaxUse=100M

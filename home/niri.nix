@@ -166,8 +166,8 @@
       "Mod+D".action       = spawn "fuzzel";                  # launcher
       "Mod+B".action       = spawn "google-chrome-stable";   # browser
       "Mod+V".action       = spawn "vesktop";                 # discord
-      "Mod+E".action       = spawn "zed-editor";              # editor
-      "Mod+T".action       = spawn "thunar";                  # file manager
+      "Mod+E".action       = spawn "zeditor";              # editor
+      "Mod+T".action       = spawn "nautilus";                  # file manager
 
       # ─── Window management ──────────────────────────────────────────────
       "Mod+Q".action            = close-window;                # fechar
