@@ -109,7 +109,7 @@ nixos-config/
 | `Print`       | Area                    |
 | `Shift+Print`  | Whole screen            |
 
-### Sistema
+### System
 | Shortcut           | Action                 |
 |--------------------|------------------------|
 | `Super+Alt+L`      | Lock screen            |
@@ -121,7 +121,7 @@ nixos-config/
 
 ---
 
-## 👆 Touchpad gestures (niri built-in)
+## Touchpad gestures (niri built-in)
 
 | Gesture                     | Action                 |
 |-----------------------------|------------------------|
@@ -134,7 +134,7 @@ nixos-config/
 
 ---
 
-## 🚀 Installation
+## Installation
 
 Check `INSTALL.md`
 
@@ -151,7 +151,7 @@ Check `INSTALL.md`
 
 ---
 
-## 📚 References
+## References
 
 - [niri-flake docs](https://github.com/sodiboo/niri-flake/blob/main/docs.md)
 - [niri wiki](https://github.com/niri-wm/niri/wiki)
