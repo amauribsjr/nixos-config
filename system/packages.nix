@@ -26,6 +26,7 @@
     powertop                   # diagnóstico de consumo
     lm_sensors                 # temperatura da CPU
     intel-gpu-tools            # `intel_gpu_top` mostra uso da iGPU
+    nautilus
 
     # ─── Áudio control ───────────────────────────────────────────────────
     pavucontrol
