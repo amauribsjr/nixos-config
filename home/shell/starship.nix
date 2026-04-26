@@ -6,7 +6,7 @@
     settings = {
       command_timeout = 1000;
       add_newline = true;
-      palette = "gruvbox_soft";
+      palette = "darksea";
 
       format = ''
         [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
@@ -103,18 +103,20 @@
       package.disabled = true;
       cmd_duration.disabled = true;
 
-      palettes.gruvbox_soft = {
-        bg0 = "#32302f";
-        bg1 = "#3c3836";
-        fg = "#d5c4a1";
-        red = "#ea6962";
-        green = "#a9b665";
-        yellow = "#d8a657";
-        blue = "#7daea3";
-        purple = "#d3869b";
-        aqua = "#89b482";
-        orange = "#e78a4e";
-        gray = "#928374";
+      palettes.darksea = {
+        bg0    = "#151f2e";
+        fg     = "#e8f2fc";
+        blue   = "#c8daea";
+        slate  = "#2d7aaa";
+        mint   = "#4a9eca";
+        teal   = "#6a9e7f";
+        red    = "#c0737a";
+        yellow = "#c4a86a";
+        purple = "#8b7eb8";
+        gray   = "#8ba7c7";
+        orange = "#c4a86a";
+        green  = "#4a9eca";
+        aqua   = "#6a9e7f";
       };
     };
   };
