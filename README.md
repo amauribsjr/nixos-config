@@ -142,7 +142,7 @@ Check `INSTALL.md`
 
 ## 🎨 Theme
 
-**Gruvbox Soft Dark** colors:
+**darkSEA** colors:
 - `home/niri.nix` (focus-ring, background)
 - `home/waybar.nix` (CSS)
 - `home/terminal/alacritty.nix`

@@ -3,14 +3,10 @@
 {
   programs.waybar = {
     enable = true;
-
-    # Niri-flake recomenda systemd.enable=true (mas pode hit restart-limit
-    # default — solução é resetar via spawn-at-startup ou desabilitar).
-    # Como já estamos lançando waybar via niri spawn-at-startup, desligamos.
     systemd.enable = false;
 
     settings = [{
-      layer = "top";              # niri-flake recomenda explicitamente
+      layer = "top";
       position = "top";
       height = 30;
       margin-top = 4;
@@ -18,26 +14,12 @@
       margin-right = 8;
       spacing = 0;
 
-      modules-left = [ "niri/workspaces" "niri/window" ];
+      modules-left   = [ "niri/workspaces" "niri/window" ];
       modules-center = [ "clock" ];
-      modules-right = [
-        "pulseaudio"
-        "backlight"
-        "battery"
-        "network"
-        "cpu"
-        "memory"
-        "tray"
-      ];
+      modules-right  = [ "pulseaudio" "backlight" "battery" "network" "cpu" "memory" "tray" ];
 
-      "niri/workspaces" = {
-        format = "{value}";
-      };
-
-      "niri/window" = {
-        max-length = 40;
-        separate-outputs = true;
-      };
+      "niri/workspaces" = { format = "{value}"; };
+      "niri/window"     = { max-length = 40; separate-outputs = true; };
 
       clock = {
         format = "{:%H:%M | %d/%m}";
@@ -47,9 +29,7 @@
       pulseaudio = {
         format = "{icon} {volume}%";
         format-muted = "󰝟 Mute";
-        format-icons = {
-          default = [ "" "" "" ];
-        };
+        format-icons.default = [ "" "" "" ];
         on-click = "pavucontrol";
         scroll-step = 5;
       };
@@ -63,57 +43,43 @@
       };
 
       battery = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
+        states = { warning = 30; critical = 15; };
         format = "{icon} {capacity}%";
         format-charging = " {capacity}%";
-        format-plugged = " {capacity}%";
+        format-plugged  = " {capacity}%";
         format-icons = [ "" "" "" "" "" ];
         tooltip-format = "{timeTo}, {power}W";
       };
 
       network = {
-        format-wifi = "  {essid}";
-        format-ethernet = "  Wired";
+        format-wifi        = "  {essid}";
+        format-ethernet    = "  Wired";
         format-disconnected = "  Offline";
         tooltip-format = "{ifname}: {ipaddr}";
         on-click = "alacritty -e nmtui";
       };
 
-      cpu = {
-        format = " {usage}%";
-        tooltip = false;
-        interval = 5;
-      };
-
-      memory = {
-        format = " {}%";
-        interval = 5;
-      };
-
-      tray = {
-        icon-size = 14;
-        spacing = 6;
-      };
+      cpu    = { format = " {usage}%"; tooltip = false; interval = 5; };
+      memory = { format = " {}%"; interval = 5; };
+      tray   = { icon-size = 14; spacing = 6; };
     }];
 
-    # ─── Tema Gruvbox Soft Dark (mesmo da config anterior, consistência) ─
+    # ─── darkSEA ───────────────────────────────────────────────────────────
     style = ''
-      @define-color bg0      #32302f;
-      @define-color bg1      #3c3836;
-      @define-color fg0      #d5c4a1;
-      @define-color fg1      #ebdbb2;
-
-      @define-color red      #ea6962;
-      @define-color orange   #e78a4e;
-      @define-color yellow   #d8a657;
-      @define-color green    #a9b665;
-      @define-color aqua     #89b482;
-      @define-color blue     #7daea3;
-      @define-color purple   #d3869b;
-      @define-color grey     #928374;
+      @define-color bg0    #1b2430;
+      @define-color bg1    #222e3f;
+      @define-color bg2    #2a3a4e;
+      @define-color fg0    #d6e9ff;
+      @define-color fg1    #88b4e7;
+      @define-color fg2    #586f89;
+      @define-color mint   #34febb;
+      @define-color teal   #32ae85;
+      @define-color blue   #88b4e7;
+      @define-color slate  #5d8cc0;
+      @define-color red    #e06b74;
+      @define-color yellow #e5c07b;
+      @define-color purple #a77bca;
+      @define-color grey   #444c55;
 
       * {
           border: none;
@@ -126,29 +92,19 @@
       window#waybar {
           background-color: @bg0;
           color: @fg0;
-          border: 1px solid @aqua;
+          border: 1px solid @mint;
           border-radius: 4px;
           opacity: 0.96;
       }
 
-      #workspaces,
-      #window,
-      #clock,
-      #pulseaudio,
-      #backlight,
-      #battery,
-      #network,
-      #cpu,
-      #memory,
-      #tray {
+      #workspaces, #window, #clock, #pulseaudio, #backlight,
+      #battery, #network, #cpu, #memory, #tray {
           background-color: transparent;
           padding: 0 8px;
           margin: 0;
       }
 
-      #workspaces {
-          padding: 0 4px;
-      }
+      #workspaces { padding: 0 4px; }
 
       #workspaces button {
           padding: 0 5px;
@@ -161,29 +117,26 @@
       #workspaces button.focused,
       #workspaces button.active {
           color: @bg0;
-          background-color: @orange;
+          background-color: @mint;
           font-weight: bold;
       }
 
-      #workspaces button:hover {
-          background-color: @bg1;
-          color: @fg1;
-      }
+      #workspaces button:hover { background-color: @bg2; color: @fg0; }
 
-      #window      { color: @fg1; font-weight: bold; }
-      #clock       { color: @blue; font-weight: bold; }
-      #pulseaudio  { color: @aqua; }
-      #backlight   { color: @yellow; }
-      #battery     { color: @green; }
-      #battery.charging               { color: @aqua; }
-      #battery.warning:not(.charging) { color: @orange; }
+      #window   { color: @fg0; font-weight: bold; }
+      #clock    { color: @blue; font-weight: bold; }
+      #pulseaudio { color: @mint; }
+      #backlight  { color: @yellow; }
+      #battery    { color: @teal; }
+      #battery.charging               { color: @mint; }
+      #battery.warning:not(.charging) { color: @yellow; }
       #battery.critical:not(.charging) {
           color: @red;
           animation: blink 1s steps(2) infinite;
       }
-      #network     { color: @purple; }
-      #cpu         { color: @red; }
-      #memory      { color: @yellow; }
+      #network { color: @blue; }
+      #cpu     { color: @slate; }
+      #memory  { color: @purple; }
 
       #tray { padding: 0 8px; }
       #tray > .passive { -gtk-icon-effect: dim; }
@@ -191,14 +144,12 @@
 
       #pulseaudio:hover, #backlight:hover, #battery:hover,
       #network:hover, #cpu:hover, #memory:hover, #clock:hover {
-          background-color: @bg1;
+          background-color: @bg2;
           border-radius: 4px;
-          color: @fg1;
+          color: @fg0;
       }
 
-      @keyframes blink {
-          to { background-color: @red; color: @bg0; }
-      }
+      @keyframes blink { to { background-color: @red; color: @bg0; } }
     '';
   };
 }

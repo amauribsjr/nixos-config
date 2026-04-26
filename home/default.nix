@@ -19,28 +19,17 @@
 
   programs.home-manager.enable = true;
 
-  # Wallpaper acessível via ~/Pictures/wallpaper.png (referenciado pelo niri).
   home.file."Pictures/wallpaper.png".source = ./wallpaper.png;
 
-  # =========================================================================
-  # Auto-lock e auto-suspend (essencial em laptop)
-  # =========================================================================
-  # Trava em 5min ocioso, suspende em 10min, lock antes de qualquer suspend.
   services.swayidle = {
     enable = true;
     timeouts = [
-      {
-        timeout = 300;   # 5min → lock
-        command = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
-      }
-      {
-        timeout = 600;   # 10min → suspend
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
+      { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f -c 1b2430"; }
+      { timeout = 600; command = "${pkgs.systemd}/bin/systemctl suspend"; }
     ];
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f -c 282828"; }
-      { event = "lock";         command = "${pkgs.swaylock}/bin/swaylock -f -c 282828"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f -c 1b2430"; }
+      { event = "lock";         command = "${pkgs.swaylock}/bin/swaylock -f -c 1b2430"; }
     ];
   };
 }
