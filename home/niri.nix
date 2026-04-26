@@ -183,9 +183,9 @@
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       # ─── Screenshots ───────────────────────────────────────────────────────
-      "Print".action       = screenshot;
-      "Ctrl+Print".action  = screenshot-screen;
-      "Alt+Print".action   = screenshot-window;
+      "Print".action            = screenshot;
+      "Ctrl+Print".action       = { screenshot-screen = {}; };
+      "Alt+Print".action        = { screenshot-window = {}; };
 
       # ─── Áudio ─────────────────────────────────────────────────────────────
       "XF86AudioRaiseVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; allow-when-locked = true; };
