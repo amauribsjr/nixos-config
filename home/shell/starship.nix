@@ -104,19 +104,19 @@
       cmd_duration.disabled = true;
 
       palettes.darksea = {
-        bg0    = "#151f2e";
-        fg     = "#e8f2fc";
-        blue   = "#c8daea";
-        slate  = "#2d7aaa";
-        mint   = "#4a9eca";
-        teal   = "#6a9e7f";
-        red    = "#c0737a";
-        yellow = "#c4a86a";
-        purple = "#8b7eb8";
-        gray   = "#8ba7c7";
-        orange = "#c4a86a";
-        green  = "#4a9eca";
-        aqua   = "#6a9e7f";
+        bg0    = "#32302f";
+        fg     = "#ebdbb2";
+        blue   = "#83a598";
+        slate  = "#458588";
+        mint   = "#8ec07c";
+        teal   = "#689d6a";
+        red    = "#fb4934";
+        yellow = "#fabd2f";
+        purple = "#d3869b";
+        gray   = "#a89984";
+        orange = "#fe8019";
+        green  = "#b8bb26";
+        aqua   = "#8ec07c";
       };
     };
   };

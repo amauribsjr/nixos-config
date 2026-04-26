@@ -87,19 +87,19 @@
 
     # ─── darkSEA ──────────────────────────────────────────────────────────
     style = ''
-      @define-color bg0      #151f2e;
-      @define-color bg1      #1c2a3a;
-      @define-color bg2      #253548;
-      @define-color fg0      #e8f2fc;
-      @define-color fg1      #c8daea;
-      @define-color fg2      #8ba7c7;
-      @define-color accent   #4a9eca;
-      @define-color accdim   #2d7aaa;
-      @define-color red      #c0737a;
-      @define-color amber    #c4a86a;
-      @define-color green    #6a9e7f;
-      @define-color purple   #8b7eb8;
-      @define-color grey     #253548;
+      @define-color bg0      #32302f;
+      @define-color bg1      #3c3836;
+      @define-color bg2      #504945;
+      @define-color fg0      #ebdbb2;
+      @define-color fg1      #d5c4a1;
+      @define-color fg2      #a89984;
+      @define-color accent   #83a598;
+      @define-color accdim   #458588;
+      @define-color red      #fb4934;
+      @define-color amber    #fabd2f;
+      @define-color green    #8ec07c;
+      @define-color purple   #d3869b;
+      @define-color grey     #504945;
 
       * {
           border: none;

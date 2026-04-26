@@ -11,13 +11,13 @@
           "right": 4
         },
         "color": {
-          "1": "blue",
-          "2": "cyan"
+          "1": "yellow",
+          "2": "green"
         }
       },
       "display": {
         "separator": "  ",
-        "color": "cyan",
+        "color": "green",
         "size": {
           "binaryPrefix": "si"
         }
@@ -25,7 +25,7 @@
       "modules": [
         {
           "type": "title",
-          "format": "{#36}{user-name}{#37}@{host-name}"
+          "format": "{#33}{user-name}{#37}@{host-name}"
         },
         {
           "type": "separator",
@@ -34,61 +34,61 @@
         {
           "type": "cpu",
           "key": "╭─",
-          "keyColor": "cyan",
+          "keyColor": "green",
           "showPeCoreCount": true
         },
         {
           "type": "gpu",
           "key": "├─󰢮",
-          "keyColor": "cyan"
+          "keyColor": "green"
         },
         {
           "type": "memory",
           "key": "├─",
-          "keyColor": "cyan"
+          "keyColor": "green"
         },
         {
           "type": "disk",
           "key": "╰─",
-          "keyColor": "cyan",
+          "keyColor": "green",
           "folders": "/"
         },
         "break",
         {
           "type": "os",
           "key": "╭─",
-          "keyColor": "blue"
+          "keyColor": "yellow"
         },
         {
           "type": "kernel",
           "key": "├─",
-          "keyColor": "blue"
+          "keyColor": "yellow"
         },
         {
           "type": "packages",
           "key": "├─󰏖",
-          "keyColor": "blue"
+          "keyColor": "yellow"
         },
         {
           "type": "uptime",
           "key": "╰─󰅐",
-          "keyColor": "blue"
+          "keyColor": "yellow"
         },
         "break",
         {
           "type": "wm",
           "key": " ",
-          "keyColor": "white"
+          "keyColor": "blue"
         },
         {
           "type": "shell",
           "key": " ",
-          "keyColor": "white"
+          "keyColor": "blue"
         },
         {
           "type": "terminal",
           "key": " ",
-          "keyColor": "white"
+          "keyColor": "blue"
         },
         "break",
         {
