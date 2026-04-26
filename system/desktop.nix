@@ -12,16 +12,9 @@
   # =========================================================================
   # Greeter (greetd + tuigreet)
   # =========================================================================
-  services.greetd = {
+  services.sddm = {
     enable = true;
-    settings = {
-      default_session = {
-        # `niri-session` é o entry point oficial; configura env vars systemd
-        # e inicia o niri com tudo registrado corretamente.
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "greeter";
-      };
-    };
+    wayland.enable = true;
   };
 
   # =========================================================================
