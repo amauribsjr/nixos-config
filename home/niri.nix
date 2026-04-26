@@ -48,7 +48,7 @@
       focus-ring = {
         enable = true;
         width = 2;
-        active.color = "#bdae93";    # laranja Gruvbox — accent principal
+        active.color = "#7c6f64";    # laranja Gruvbox — accent principal
         inactive.color = "#504945"; # bg3
       };
 
