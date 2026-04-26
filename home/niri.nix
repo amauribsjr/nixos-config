@@ -83,8 +83,8 @@
     };
 
     spawn-at-startup = [
-      { command = [ "${pkgs.awww}/bin/swww-daemon" ]; }
-      { command = [ "${pkgs.awww}/bin/swww" "img" "/home/barbosa/Pictures/wallpaper.png" "--transition-type" "fade" ]; }
+      { command = [ "${pkgs.awww}/bin/awww-daemon" ]; }
+      { command = [ "${pkgs.awww}/bin/awww" "img" "/home/barbosa/Pictures/wallpaper.png" "--transition-type" "fade" ]; }
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       { command = [ "${pkgs.mako}/bin/mako" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
