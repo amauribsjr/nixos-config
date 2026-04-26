@@ -30,17 +30,17 @@
     enable = true;
     timeouts = [
       {
-        timeout = 300;
+        timeout = 600;
         command = "${pkgs.swaylock}/bin/swaylock -f -c 151f2e";
       }
       {
-        timeout = 600;
+        timeout = 1800;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
-    events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f -c 151f2e"; }
-      { event = "lock";         command = "${pkgs.swaylock}/bin/swaylock -f -c 151f2e"; }
-    ];
+    events = {
+      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 151f2e";
+      lock         = "${pkgs.swaylock}/bin/swaylock -f -c 151f2e";
+    };
   };
 }
