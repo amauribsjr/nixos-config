@@ -23,13 +23,13 @@
       # Tema Gruvbox Soft Dark (mesma paleta do waybar/niri/alacritty).
       # Cores em hex+alpha (RRGGBBAA), formato exigido pelo fuzzel.
       colors = {
-        background = "32302fee";       # bg0_s + 93% alpha
-        text = "d5c4a1ff";             # fg0
-        match = "8ec07cff";             # aqua (highlight do match na lista)
-        selection = "504945ff";         # bg2 (background do item selecionado)
-        selection-text = "fbf1c7ff";   # fg
-        selection-match = "8ec07cff";  # aqua (match dentro do item selecionado)
-        border = "8ec07cff";            # aqua
+        background       = "151f2eee";
+        text             = "e8f2fcff";
+        match            = "4a9ecaff";
+        selection        = "253548ff";
+        selection-text   = "e8f2fcff";
+        selection-match  = "4a9ecaff";
+        border           = "4a9ecaff";
       };
 
       border = {
