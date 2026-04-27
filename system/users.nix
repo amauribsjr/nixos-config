@@ -9,9 +9,9 @@
     description = "barbosa";
     extraGroups = [
       "networkmanager"
-      "wheel"            # sudo
+      "wheel"
       "docker"
-      "video"            # brightnessctl
+      "video"
       "audio"
     ];
   };

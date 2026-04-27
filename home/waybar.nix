@@ -4,13 +4,10 @@
   programs.waybar = {
     enable = true;
 
-    # Niri-flake recomenda systemd.enable=true (mas pode hit restart-limit
-    # default — solução é resetar via spawn-at-startup ou desabilitar).
-    # Como já estamos lançando waybar via niri spawn-at-startup, desligamos.
     systemd.enable = false;
 
     settings = [{
-      layer = "top";              # niri-flake recomenda explicitamente
+      layer = "top";
       position = "top";
       height = 30;
       margin-top = 4;
@@ -85,7 +82,6 @@
       };
     }];
 
-    # ─── darkSEA ──────────────────────────────────────────────────────────
     style = ''
       @define-color bg0      #32302f;
       @define-color bg1      #3c3836;
@@ -113,7 +109,7 @@
           background-color: @bg0;
           color: @fg1;
           border: 1px solid @accdim;
-          border-radius: 4px;
+          border-radius: 0px;
           opacity: 0.96;
       }
 
@@ -139,7 +135,7 @@
           margin: 0 2px;
           color: @grey;
           background-color: transparent;
-          border-radius: 4px;
+          border-radius: 0px;
       }
 
       #workspaces button.focused,
@@ -176,7 +172,7 @@
       #pulseaudio:hover, #backlight:hover, #battery:hover,
       #network:hover, #cpu:hover, #memory:hover, #clock:hover {
           background-color: @bg2;
-          border-radius: 4px;
+          border-radius: 0px;
           color: @fg1;
       }
 

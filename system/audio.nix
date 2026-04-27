@@ -1,13 +1,12 @@
 { ... }:
 
 {
-  # rtkit permite ao pipewire elevar prioridade real-time.
   security.rtkit.enable = true;
 
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = false;  # sem jogos 32-bit, economiza ~espaço
+    alsa.support32Bit = false;
     pulse.enable = true;
     jack.enable = true;
   };

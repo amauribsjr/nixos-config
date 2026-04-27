@@ -29,5 +29,9 @@
       before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 32302f";
       lock         = "${pkgs.swaylock}/bin/swaylock -f -c 32302f";
     };
+    xdg.userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
   };
 }

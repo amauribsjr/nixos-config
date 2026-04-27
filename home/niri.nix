@@ -31,7 +31,7 @@
     };
 
     layout = {
-      gaps = 6;
+      gaps = 2;
       always-center-single-column = true;
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
@@ -48,12 +48,12 @@
       focus-ring = {
         enable = true;
         width = 2;
-        active.color = "#7c6f64";    # laranja Gruvbox — accent principal
-        inactive.color = "#504945"; # bg3
+        active.color = "#7c6f64";
+        inactive.color = "#504945";
       };
 
       border.enable = false;
-      background-color = "#32302f"; # bg0 soft
+      background-color = "#32302f";
     };
 
     spawn-at-startup = [
@@ -77,13 +77,6 @@
           { app-id = "^blueman-manager$"; }
         ];
         open-floating = true;
-      }
-      {
-        geometry-corner-radius = {
-          top-left = 8.0; top-right = 8.0;
-          bottom-left = 8.0; bottom-right = 8.0;
-        };
-        clip-to-geometry = true;
       }
     ];
 

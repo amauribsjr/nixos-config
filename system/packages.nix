@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # ─── CLI core ────────────────────────────────────────────────────────
     vim
     wget
     curl
@@ -10,71 +9,54 @@
     btop
     htop
     wl-clipboard
+    zip
     unzip
     file
     tree
 
-    # ─── System tools ───────────────────────────────────────────────────
     bibata-cursors
     playerctl
     psmisc
     fastfetch
     pciutils
     usbutils
-    brightnessctl              # controle de brilho da tela
-    pamixer                    # controle de volume CLI
-    powertop                   # diagnóstico de consumo
-    lm_sensors                 # temperatura da CPU
-    intel-gpu-tools            # `intel_gpu_top` mostra uso da iGPU
+    brightnessctl
+    pamixer
+    powertop
+    lm_sensors
+    intel-gpu-tools
     nautilus
-
-    # ─── Áudio control ───────────────────────────────────────────────────
     pavucontrol
-
-    # ─── Greeter ─────────────────────────────────────────────────────────
-    #tuigreet
-
-    # ─── Apps ────────────────────────────────────────────────────────────
     google-chrome
     vesktop
-    obs-studio                 # gravação/streaming
-    vlc                        # player de mídia
+    obs-studio
+    vlc
     spotify
-    gnome-software             # frontend Flatpak (loja)
+    gnome-software
 
-    # ─── Editores ────────────────────────────────────────────────────────
     zed-editor
     vscode
 
-    # ─── Linguagens / Build ──────────────────────────────────────────────
     jdk21
-    maven                      # padrão do curso do Nelio
+    maven
     rustup
-    #rust-analyzer              # LSP usado pelo Zed/VSCode
-    #clippy                     # linter Rust
-    #rustfmt                    # formatter Rust
+    #rust-analyzer
+    #clippy
+    #rustfmt
     gcc
     gnumake
     pkg-config
 
-    # ─── DB ──────────────────────────────────────────────────────────────
-    dbeaver-bin                # cliente GUI
-    sqlite                     # CLI + driver leve
+    dbeaver-bin
+    sqlite
   ];
-
-  # =========================================================================
-  # Programas que precisam de integração system-level
-  # =========================================================================
 
   services.gvfs.enable = true;
 
-  # Limita logs do journald (SSD apertado).
   services.journald.extraConfig = ''
     SystemMaxUse=100M
     SystemMaxFileSize=20M
     MaxRetentionSec=2week
   '';
 
-  # ssh-agent automático.
-  #programs.ssh.startAgent = true;
 }
