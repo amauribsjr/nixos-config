@@ -14,7 +14,7 @@
         lines = 8;
         horizontal-pad = 16;
         vertical-pad = 12;
-        inner-pad = 8;radius
+        inner-pad = 8;
         line-height = 22;
       };
 
