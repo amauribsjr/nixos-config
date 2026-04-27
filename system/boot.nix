@@ -32,8 +32,7 @@
   };
 
   systemd.settings.Manager = {
-      DefaultTimeoutStopSec = "10s";
-      DefaultTimeoutAbortSec = "10s";
-    };
-  }
+    DefaultTimeoutStopSec = "10s";
+    DefaultTimeoutAbortSec = "10s";
+  };
 }
