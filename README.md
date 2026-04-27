@@ -1,6 +1,6 @@
 # 🐧 — Amauri (koppi) nixOS flake (Niri)
 
-NixOS + Home Manager + **Niri** (scrollable-tiling Wayland compositor)
+NixOS + Flake with Home Manager + **Niri** (scrollable-tiling Wayland compositor)
 for my **Dell Inspiron 3501**.
 
 ## 🖥️ Hardware information
@@ -21,11 +21,11 @@ for my **Dell Inspiron 3501**.
 - **Compositor**: **Niri** (scrollable-tiling Wayland) via [niri-flake](https://github.com/sodiboo/niri-flake)
 - **Shell**: Zsh + Starship
 - **Terminal**: Alacritty
-- **Theme**: Midnight Blue custom theme
+- **Theme**: Gruvbox Dark Soft
 - **Bar**: Waybar
 - **Launcher**: Fuzzel (niri default recommendation)
 - **Notifications**: Mako
-- **Wallpaper**: swaybg
+- **Wallpaper**: awww
 - **Greeter**: SDDM
 
 ## 📁 Structure
@@ -101,19 +101,18 @@ nixos-config/
 | `Super+1..9`            | Change workspace      |
 | `Super+Shift+1..9`      | Change workspace column   |
 | `Super+O`               | **Overview**          |
-| `Super+Shift+/`         | Hotkey overlay (cheat sheet) |
 
 ### Screenshots
 | Shortcut      | Action                  |
 |---------------|-------------------------|
 | `Print`       | Area                    |
-| `Shift+Print` | Whole screen            |
+| `Ctrl+Print`  | Screen                  |
 
 ### System
 | Shortcut           | Action                 |
 |--------------------|------------------------|
 | `Super+Alt+L`      | Lock screen            |
-| `Super+Shift+E`    | Quit (back to greeter) |
+| `Super+Shift+E`    | Quit (back to SDDM)    |
 | `Super+Shift+P`    | Turn monitor off       |
 | `Fn+brightness`    | Brightness ±5%         |
 | `Fn+volume`        | Volume ±5%             |
@@ -142,7 +141,7 @@ Check `INSTALL.md`
 
 ## 🎨 Theme
 
-**Midnight Blue** based colors:
+**Gruvbox Dark Soft**
 - `home/niri.nix` (focus-ring, background)
 - `home/waybar.nix` (CSS)
 - `home/terminal/alacritty.nix`
