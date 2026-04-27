@@ -178,6 +178,7 @@ Then niri show up as well, as so waybar, but probably **without wallpaper** as t
 ```sh
 mkdir -p ~/Pictures/Wallpapers
 ```
+(!) Name the image to `wallpaper.png`
 
 Wallpaper will load at next login (awww-daemon tries at booting then give up if there's nothing)
 
@@ -209,7 +210,7 @@ nixos rebuild
 ### Change wallpaper without logout
 
 ```sh
-awww img ~/Pictures/Wallpapers/image-you-want.png
+awww img ~/path/to/you/wallpaper.png
 ```
 
 ### Clean older gens
@@ -223,9 +224,9 @@ sudo nixos-rebuild switch --flake ~/nixos-config#nixos  # clean rebuild
 
 ## Fast daily commands
 
-`nixos rebuild`
-`nix flake update` (update all inputs)
-`awww img ~/arquivo.jpg`
-`sudo bluetoothctl power on`
-`niri msg action quit` (reset niri session)
-`sudo nix-collect-garbage -d`
+`nixos rebuild`  
+`nix flake update` (update all inputs)  
+`awww img ~/path/to/you/wallpaper.png`  
+`sudo bluetoothctl power on`  
+`niri msg action quit` (reset niri session)  
+`sudo nix-collect-garbage -d`  
