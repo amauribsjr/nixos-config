@@ -18,7 +18,7 @@
         { "type": "host",   "key": "host  " },
         { "type": "os",     "key": "os    " },
         { "type": "kernel", "key": "kernel" },
-        { "type": "cpu", "key": "cpu   ", "format": "{name}" }
+        { "type": "cpu", "key": "cpu   ", "format": "{name}" },
         { "type": "memory", "key": "mem   " },
         { "type": "disk",   "key": "disk  ", "folders": "/" }
       ]
