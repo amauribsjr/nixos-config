@@ -5,7 +5,7 @@
 
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = false;
+    wayland.enable = true;
   };
 
   services.displayManager.defaultSession = "niri";
