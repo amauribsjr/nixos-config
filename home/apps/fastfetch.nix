@@ -18,9 +18,7 @@
         { "type": "host",   "key": "host  " },
         { "type": "os",     "key": "os    " },
         { "type": "kernel", "key": "kernel" },
-        { "type": "uptime", "key": "uptime" },
-        "break",
-        { "type": "cpu",    "key": "cpu   " },
+        { "type": "cpu", "key": "cpu   ", "format": "{name}" }
         { "type": "memory", "key": "mem   " },
         { "type": "disk",   "key": "disk  ", "folders": "/" }
       ]
