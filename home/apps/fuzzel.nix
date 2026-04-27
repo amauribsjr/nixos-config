@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  # Fuzzel — launcher Wayland-nativo recomendado oficialmente pelo niri.
-  # Mais leve que rofi, com integração layer-shell perfeita.
   programs.fuzzel = {
     enable = true;
 
@@ -16,12 +14,10 @@
         lines = 8;
         horizontal-pad = 16;
         vertical-pad = 12;
-        inner-pad = 8;
+        inner-pad = 8;radius
         line-height = 22;
       };
 
-      # Tema Gruvbox Soft Dark (mesma paleta do waybar/niri/alacritty).
-      # Cores em hex+alpha (RRGGBBAA), formato exigido pelo fuzzel.
       colors = {
         background       = "32302fee";
         text             = "e8f2fcff";
@@ -34,7 +30,7 @@
 
       border = {
         width = 1;
-        radius = 6;
+        radius = 0;
       };
     };
   };
