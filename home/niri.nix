@@ -31,7 +31,7 @@
     };
 
     layout = {
-      gaps = 4;
+      gaps = 6;
       always-center-single-column = true;
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
@@ -47,7 +47,7 @@
 
       focus-ring = {
         enable = true;
-        width = 2;
+        width = 1;
         active.color = "#7c6f64";
         inactive.color = "#504945";
       };
@@ -81,10 +81,10 @@
 
       {
         geometry-corner-radius = {
-          top-left = 2.0;
-          top-right = 2.0;
-          bottom-left = 2.0;
-          bottom-right = 2.0;
+          top-left = 4.0;
+          top-right = 4.0;
+          bottom-left = 4.0;
+          bottom-right = 4.0;
         };
         clip-to-geometry = true;
       }
