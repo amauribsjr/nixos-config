@@ -19,4 +19,13 @@
   ];
 
   system.stateVersion = "24.05";
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+    ];
+  };
+
 }
