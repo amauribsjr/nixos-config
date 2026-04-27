@@ -52,16 +52,6 @@
         inactive.color = "#504945";
       };
 
-      {
-        geometry-corner-radius = {
-          top-left = 2.0;
-          top-right = 2.0;
-          bottom-left = 2.0;
-          bottom-right = 2.0;
-        };
-        clip-to-geometry = true;
-      }
-
       border.enable = false;
       background-color = "#32302f";
     };
@@ -88,6 +78,15 @@
         ];
         open-floating = true;
       }
+
+      geometry-corner-radius = {
+        top-left = 2.0;
+        top-right = 2.0;
+        bottom-left = 2.0;
+        bottom-right = 2.0;
+      };
+      clip-to-geometry = true;
+
     ];
 
     animations.enable = true;
