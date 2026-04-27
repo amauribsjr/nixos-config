@@ -15,4 +15,16 @@
       "audio"
     ];
   };
+  
+  users.users.koppi = {
+    isNormalUser = true;
+    description = "koppi";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "video"
+      "audio"
+    ];
+  };
 }

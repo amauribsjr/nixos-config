@@ -13,8 +13,8 @@
     ./apps/fuzzel.nix
   ];
 
-  home.username = "barbosa";
-  home.homeDirectory = "/home/barbosa";
+  home.username = "koppi";
+  home.homeDirectory = "/home/koppi";
   home.stateVersion = "24.05";
 
   programs.home-manager.enable = true;

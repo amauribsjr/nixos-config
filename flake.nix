@@ -1,5 +1,5 @@
 {
-  description = "barbosa nixOS — Dell Inspiron 3501 (Niri)";
+  description = "koppi nixOS — Dell Inspiron 3501 (Niri)";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -31,7 +31,7 @@
             useUserPackages = true;
             backupFileExtension = "backup";
             extraSpecialArgs = { inherit inputs; };
-            users.barbosa = import ./home;
+            users.koppi = import ./home;
           };
         }
       ];
