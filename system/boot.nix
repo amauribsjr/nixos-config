@@ -13,7 +13,7 @@
 
     kernelPackages = pkgs.linuxPackages;
 
-    kernelParams = [ ];
+    kernelParams = [ "acpi=force" ];
 
     tmp.cleanOnBoot = true;
 
