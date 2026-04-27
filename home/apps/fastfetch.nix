@@ -5,96 +5,24 @@
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
-        "source": "nixos",
-        "padding": {
-          "top": 1,
-          "right": 4
-        },
-        "color": {
-          "1": "yellow",
-          "2": "green"
-        }
+        "source": "nixos_small",
+        "padding": { "top": 1, "right": 3 }
       },
       "display": {
         "separator": "  ",
-        "color": "green",
-        "size": {
-          "binaryPrefix": "si"
-        }
+        "color": { "keys": "yellow", "title": "green" }
       },
       "modules": [
-        {
-          "type": "title",
-          "format": "{#33}{user-name}{#37}@{host-name}"
-        },
-        {
-          "type": "separator",
-          "string": "───────"
-        },
-        {
-          "type": "cpu",
-          "key": "╭─",
-          "keyColor": "green",
-          "showPeCoreCount": true
-        },
-        {
-          "type": "gpu",
-          "key": "├─󰢮",
-          "keyColor": "green"
-        },
-        {
-          "type": "memory",
-          "key": "├─",
-          "keyColor": "green"
-        },
-        {
-          "type": "disk",
-          "key": "╰─",
-          "keyColor": "green",
-          "folders": "/"
-        },
+        { "type": "title",  "format": "{user-name}@{host-name}" },
+        { "type": "separator", "string": "──────" },
+        { "type": "host",   "key": "host  " },
+        { "type": "os",     "key": "os    " },
+        { "type": "kernel", "key": "kernel" },
+        { "type": "uptime", "key": "uptime" },
         "break",
-        {
-          "type": "os",
-          "key": "╭─",
-          "keyColor": "yellow"
-        },
-        {
-          "type": "kernel",
-          "key": "├─",
-          "keyColor": "yellow"
-        },
-        {
-          "type": "packages",
-          "key": "├─󰏖",
-          "keyColor": "yellow"
-        },
-        {
-          "type": "uptime",
-          "key": "╰─󰅐",
-          "keyColor": "yellow"
-        },
-        "break",
-        {
-          "type": "wm",
-          "key": " ",
-          "keyColor": "blue"
-        },
-        {
-          "type": "shell",
-          "key": " ",
-          "keyColor": "blue"
-        },
-        {
-          "type": "terminal",
-          "key": " ",
-          "keyColor": "blue"
-        },
-        "break",
-        {
-          "type": "colors",
-          "symbol": "circle"
-        }
+        { "type": "cpu",    "key": "cpu   " },
+        { "type": "memory", "key": "mem   " },
+        { "type": "disk",   "key": "disk  ", "folders": "/" }
       ]
     }
   '';
