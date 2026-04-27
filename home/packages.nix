@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # ─── Wayland / niri ecosystem ────────────────────────────────────────
     awww
     swaylock
     mako
@@ -12,9 +11,8 @@
     wl-clipboard
     networkmanagerapplet
     xwayland-satellite
-    xdg-user-dirs-update
+    xdg-user-dirs
 
-    # ─── TUI tools ───────────────────────────────────────────────────────
     yazi
     ffmpegthumbnailer
     unar
