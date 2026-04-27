@@ -11,6 +11,7 @@
     ./power.nix
     ./desktop.nix
     ./flatpak.nix
+    ./databases.nix
     ./virtualisation.nix
     ./nix.nix
     ./packages.nix
