@@ -31,7 +31,7 @@
     };
 
     layout = {
-      gaps = 2;
+      gaps = 4;
       always-center-single-column = true;
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
@@ -51,6 +51,16 @@
         active.color = "#7c6f64";
         inactive.color = "#504945";
       };
+
+      {
+        geometry-corner-radius = {
+          top-left = 2.0;
+          top-right = 2.0;
+          bottom-left = 2.0;
+          bottom-right = 2.0;
+        };
+        clip-to-geometry = true;
+      }
 
       border.enable = false;
       background-color = "#32302f";
