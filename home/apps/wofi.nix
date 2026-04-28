@@ -15,18 +15,17 @@
     window {
       background-color: #${colors.bg};
       font-family: "${fonts.mono}";
+      border: 1px solid #${colors.fg1};
     }
 
     #input {
       background-color: #${colors.bg};
-      color: #${colors.fg2};
+      color: #${colors.bg};
       border: none;
-      border-radius: 0;
-      padding: 16px 24px;
+      padding: 0;
       margin: 0;
-      outline: none;
-      box-shadow: none;
-      font-size: 14px;
+      min-height: 0;
+      font-size: 0;
     }
 
     #scroll { margin: 0; padding: 0; }
