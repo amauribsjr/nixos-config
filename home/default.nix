@@ -12,6 +12,7 @@
     ./apps/fastfetch.nix
     ./apps/fuzzel.nix
     ./apps/awww.nix
+    ./apps/wofi.nix
   ];
 
   home.username = "koppi";
