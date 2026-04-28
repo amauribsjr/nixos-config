@@ -178,18 +178,18 @@ in
           background-color: @bg2;
       }
 
-      #window      { color: @fg0; font-weight: bold; }
+      #window      { color: @green; font-weight: bold; }
       #clock       { color: @accent; font-weight: bold; }
       #pulseaudio  { color: @fg1; }
       #backlight   { color: @amber; }
       #battery     { color: @green; }
-      #battery.charging               { color: @accent; }
+      #battery.charging               { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
       #battery.critical:not(.charging) {
           color: @red;
           animation: blink 2s steps(1) infinite;
       }
-      #network     { color: @green; }
+      #network     { color: @purple; }
       #cpu         { color: @fg2; }
       #memory      { color: @purple; }
 
