@@ -2,17 +2,22 @@
 
 let
   power-menu = pkgs.writeShellScript "power-menu" ''
-    chosen=$(printf "󰐥  Shutdown\n󰜉  Reboot\n󰒲  Suspend\n󰍃  Logout" | fuzzel --dmenu --lines=4 --width=20)
-    case "$chosen" in
-      *"Shutdown")  systemctl shutdown ;;
-      *"Reboot")    systemctl reboot ;;
-      *"Suspend")   systemctl suspend ;;
-      *"Logout")    niri msg action quit ;;
-    esac
+  chosen=$(printf "Shutdown\nReboot\nSuspend\nLogout" | wofi --dmenu \
+    --prompt=Power --width=200 --location=center \
+    --style=/home/koppi/.config/wofi/center.css)
+  case "$chosen" in
+    "Shutdown") systemctl shutdown ;;
+    "Reboot")   systemctl reboot ;;
+    "Suspend")  systemctl suspend ;;
+    "Logout")   niri msg action quit ;;
+  esac
   '';
 
   app-menu = pkgs.writeShellScript "app-menu" ''
-    wofi
+    printf "Zed\nNautilus\nChrome\nVesktop\nOBS Studio" | wofi --dmenu \
+      --width=180 --height=100% --location=left \
+      --xoffset=0 --yoffset=0 \
+      --style=/home/koppi/.config/wofi/style.css
   '';
 in
 
@@ -145,7 +150,7 @@ in
       window#waybar.top {
           background-color: @bg0;
           color: @fg1;
-          border-bottom: 1px solid @accdim;
+          /* border-bottom: 1px solid @accdim; */
           opacity: 0.96;
       }
 
@@ -190,7 +195,7 @@ in
       #window        { color: @green; font-weight: bold; }
       #clock         { color: @accent; font-weight: bold; }
       #pulseaudio    { color: @fg1; }
-      #backlight     { color: @amber; }
+      #backlight     { color: @fg1; }
       #battery       { color: @green; }
       #battery.charging               { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
@@ -198,7 +203,7 @@ in
           color: @red;
           animation: blink 2s steps(1) infinite;
       }
-      #network    { color: @purple; }
+      #network    { color: @fg1; }
       #tray       { padding: 0 8px; }
       #tray > .passive          { -gtk-icon-effect: dim; }
       #tray > .needs-attention  { -gtk-icon-effect: highlight; background-color: @red; }

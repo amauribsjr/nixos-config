@@ -10,7 +10,6 @@
     ./shell/starship.nix
     ./terminal/alacritty.nix
     ./apps/fastfetch.nix
-    ./apps/fuzzel.nix
     ./apps/awww.nix
     ./apps/wofi.nix
   ];

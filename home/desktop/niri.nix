@@ -94,9 +94,7 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action  = spawn "alacritty";
-      "Mod+D".action       = spawn "fuzzel";
-      "Mod+B".action       = spawn "google-chrome-stable";
-      "Mod+V".action       = spawn "vesktop";
+      "Mod+D".action       = spawn "wofi" "--show=drun" "--width=500" "--location=center" "--style=/home/koppi/.config/wofi/center.css";      "Mod+V".action       = spawn "vesktop";
       "Mod+E".action       = spawn "zeditor";
       "Mod+T".action       = spawn "nautilus";
 
