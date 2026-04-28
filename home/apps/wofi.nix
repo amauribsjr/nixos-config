@@ -20,16 +20,20 @@
 
     #input {
       background-color: #${colors.bg};
-      color: #${colors.bg};
+      color: #${colors.fg2};
       border: none;
-      padding: 0;
+      border-bottom: 1px solid #${colors.bg2};
+      border-radius: 0;
+      padding: 12px 20px;
       margin: 0;
-      min-height: 0;
-      font-size: 0;
+      outline: none;
+      box-shadow: none;
+      font-size: 14px;
     }
 
     #input:focus {
       color: #${colors.fg};
+      border-bottom: 1px solid #${colors.fg1};
     }
 
     #scroll { margin: 0; padding: 0; }
