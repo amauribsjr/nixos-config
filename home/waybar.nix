@@ -1,5 +1,17 @@
 { pkgs, ... }:
 
+let
+  power-menu = pkgs.writeShellScript "power-menu" ''
+    chosen=$(printf "󰐥  Shutdown\n󰜉  Reboot\n󰒲  Suspend\n󰍃  Logout" | fuzzel --dmenu --lines=4 --width=20)
+    case "$chosen" in
+      *"Shutdown")  systemctl poweroff ;;
+      *"Reboot") systemctl reboot ;;
+      *"Suspend") systemctl suspend ;;
+      *"Logout")    niri msg action quit ;;
+    esac
+  '';
+in
+
 {
   programs.waybar = {
     enable = true;
@@ -25,6 +37,7 @@
         /* "cpu" */
         /* "memory" */
         "tray"
+        "custom/power"
       ];
 
       "niri/workspaces" = {
@@ -63,6 +76,12 @@
         format-plugged = "󰚥 {capacity}%";
         format-icons = [ "󰁺" "󰁼" "󰁾" "󰂀" "󰁹" ];
         tooltip-format = "{timeTo}, {power}W";
+      };
+
+      "custom/power" = {
+        format = "⏻";
+        on-click = "${power-menu}";
+        tooltip = false;
       };
 
       network = {
@@ -148,6 +167,15 @@
       #workspaces button:hover {
           background-color: @bg2;
           color: @fg1;
+      }
+
+      #custom-power {
+          color: @red;
+          padding: 0 10px;
+      }
+
+      #custom-power:hover {
+          background-color: @bg2;
       }
 
       #window      { color: @fg0; font-weight: bold; }
