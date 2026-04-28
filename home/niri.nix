@@ -52,7 +52,7 @@ in
       focus-ring = {
         enable = true;
         width = 1;
-        active.color = "#7c6f64";
+        active.color = "#d9bb6a";
         inactive.color = "#504945";
       };
 
@@ -61,7 +61,7 @@ in
     };
 
     spawn-at-startup = [
-      { command = [ "sh" "-c" "${pkgs.awww}/bin/awww-daemon & sleep 1 && [ -f '${wallpaper}' ] && ${pkgs.awww}/bin/awww img '${wallpaper}' --transition-type fade || true" ]; }      { command = [ "${pkgs.waybar}/bin/waybar" ]; }
+      { command = [ "sh" "d9bb6a-c" "${pkgs.awww}/bin/awww-daemon & sleep 1 && [ -f '${wallpaper}' ] && ${pkgs.awww}/bin/awww img '${wallpaper}' --transition-type fade || true" ]; }      { command = [ "${pkgs.waybar}/bin/waybar" ]; }
      #{ command = [ "${pkgs.mako}/bin/mako" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
     ];
