@@ -2,56 +2,84 @@
 
 {
   environment.systemPackages = with pkgs; [
+
+    # CLI
     vim
     wget
     curl
     git
-    btop
-    htop
-    wl-clipboard
-    zip
-    unzip
     file
     tree
+    zip
+    unzip
+    p7zip             # .7z support
+    lazygit           # git TUI
 
-    bibata-cursors
-    playerctl
-    psmisc
+    # System & hardware
+    btop
+    htop
     fastfetch
-    pciutils
-    usbutils
-    brightnessctl
-    pamixer
-    powertop
-    lm_sensors
+    powertop          # power consumption analyzer
+    lm_sensors        # temperature sensors
+    pciutils          # lspci
+    usbutils          # lsusb
     intel-gpu-tools
+    psmisc            # pstree, killall, etc
+
+    # Desktop
+    wl-clipboard
+    brightnessctl
+    pamixer           # volume CLI
+    playerctl         # media keys CLI
+    bibata-cursors
+    gnome-disk-utility
+
+    # Apps
     nautilus
-    eog
+    eog               # image viewer
     pavucontrol
     google-chrome
     vesktop
     obs-studio
     vlc
+    mpv
     spotify
     gnome-software
+    pandoc            # document converter
 
+    # Editors
     zed-editor
     vscode
 
+    # Java
     jdk21
     maven
+
+    # Rust
     rustup
-    #rust-analyzer
-    #clippy
-    #rustfmt
     gcc
     gnumake
     pkg-config
 
-    nil
+    # C
+    gdb
 
+    # Haskell
+    ghc
+    cabal-install
+    haskell-language-server
+
+    # Ruby
+    ruby
+    rubyPackages.solargraph   # LSP
+
+    # Nix
+    nil               # Nix LSP
+
+    # Databases
     dbeaver-bin
     sqlite
+
   ];
 
   services.gvfs.enable = true;
@@ -61,5 +89,4 @@
     SystemMaxFileSize=20M
     MaxRetentionSec=2week
   '';
-
 }
