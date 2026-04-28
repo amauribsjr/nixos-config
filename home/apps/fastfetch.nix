@@ -17,8 +17,6 @@
         { "type": "host",   "key": "host  ", "keyColor": "magenta" },
         { "type": "os",     "key": "os    ", "keyColor": "cyan" },
         { "type": "kernel", "key": "kernel", "keyColor": "yellow" },
-        { "type": "uptime", "key": "uptime", "keyColor": "blue" },
-        "break",
         { "type": "cpu",    "key": "cpu   ", "keyColor": "red",   "format": "{name}" },
         { "type": "memory", "key": "mem   ", "keyColor": "green" },
         { "type": "disk",   "key": "disk  ", "keyColor": "214",   "folders": "/" }
