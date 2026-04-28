@@ -74,7 +74,7 @@
     rubyPackages.solargraph   # LSP
 
     # Nix
-    nil               # Nix LSP
+    nixd                      # Nix LSP
 
     # Databases
     dbeaver-bin
