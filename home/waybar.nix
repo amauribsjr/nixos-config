@@ -128,7 +128,7 @@ in
       window#waybar {
           background-color: @bg0;
           color: @fg1;
-          border: 1px solid @windows;
+          border-bottom: 1px solid @accent;
           border-radius: 0px;
           opacity: 0.96;
       }
