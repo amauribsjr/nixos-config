@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colors, ... }:
 
 {
   imports = [
@@ -6,8 +6,6 @@
     ./desktop/waybar.nix
     ./packages.nix
     ./theme.nix
-    ./niri.nix
-    ./waybar.nix
     ./shell/zsh.nix
     ./shell/starship.nix
     ./terminal/alacritty.nix
@@ -24,14 +22,15 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 600;  command = "${pkgs.swaylock}/bin/swaylock -f -c 282828"; }
+      { timeout = 600;  command = "${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}"; }
       { timeout = 1800; command = "${pkgs.systemd}/bin/systemctl suspend"; }
     ];
     events = {
-      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
-      lock         = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
+      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}";
+      lock         = "${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}";
     };
   };
+
   services.mako = {
     enable = true;
     settings = {
@@ -39,9 +38,10 @@
       ignore-timeout = false;
     };
   };
+
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
-    setSessionVariables = false; #warning silence *temporary*
+    setSessionVariables = false;
   };
 }
