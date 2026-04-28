@@ -58,7 +58,6 @@ in
       background-color = "#${colors.bg}";
 
       border.enable = false;
-      background-color = "#282828";
     };
 
     spawn-at-startup = [
