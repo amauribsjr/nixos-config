@@ -32,7 +32,7 @@
 
     layout = {
       gaps = 4;
-      always-center-single-column = true;
+      always-center-single-column = false;
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
         { proportion = 1.0 / 2.0; }
