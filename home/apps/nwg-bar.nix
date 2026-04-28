@@ -45,9 +45,31 @@
       },
       {
         "label": "shutdown",
-        "exec": "systemctl poweroff",
+        "exec": "systemctl shutdown",
         "icon": "system-shutdown"
       }
     ]
+    window {
+      background-color: rgba(40, 40, 40, 0.92);
+      border-right: 1px solid #504945;
+    }
+  
+    button {
+      background-color: transparent;
+      color: #d5c4a1;
+      border: none;
+      border-radius: 0;
+      padding: 12px 20px;
+      font-size: 12px;
+    }
+  
+    button:hover {
+      background-color: #504945;
+      color: #ebdbb2;
+    }
+  
+    button image {
+      padding-bottom: 6px;
+    }
   '';
 }

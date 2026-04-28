@@ -122,7 +122,7 @@ in
 
         "custom/launcher" = {
           format   = "󰀻";
-          on-click = "nwg-bar";
+          on-click = "nwg-bar -v -s /home/koppi/.config/nwg-bar/style.css";
           tooltip  = false;
         };
 
