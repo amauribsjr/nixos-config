@@ -23,7 +23,7 @@ for my **Dell Inspiron 3501**.
 - **Terminal**: Alacritty
 - **Theme**: Gruvbox Dark Soft
 - **Bar**: Waybar
-- **Launcher**: Fuzzel (niri default recommendation)
+- **Launcher**: wofi
 - **Notifications**: Mako
 - **Wallpaper**: awww
 - **Greeter**: SDDM
@@ -98,7 +98,7 @@ nixos-config/
 | `Super+Q`           | Close Windows              |
 | `Super+F`           | **Fullscreen toggle**      |
 | `Super+M`           | **Maximize column**        |
-| `Super+Ctrl+F`      | **Expand column to free space** (killer) |
+| `Super+Ctrl+F`      | **Expand column to free space** |
 | `Super+Shift+F`     | Floating toggle            |
 | `Super+Shift+C`     | Center column              |
 | `Super+R`           | **Cycle preset width** (1/3, 1/2, 2/3) |
@@ -111,7 +111,7 @@ nixos-config/
 | Shortcut                | Action                |
 |-------------------------|-----------------------|
 | `Super+1..9`            | Change workspace      |
-| `Super+Shift+1..9`      | Change workspace column   |
+| `Super+Shift+1..9`      | Change workspace column |
 | `Super+O`               | **Overview**          |
 
 ### Screenshots
