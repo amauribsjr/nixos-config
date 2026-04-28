@@ -128,7 +128,7 @@ in
       window#waybar {
           background-color: @bg0;
           color: @fg1;
-          border-bottom: 1px solid @bg2;
+          border-bottom: 1px solid @bg;
           border-radius: 0px;
           opacity: 0.96;
       }
@@ -161,7 +161,7 @@ in
       #workspaces button.focused,
       #workspaces button.active {
           color: @fg0;
-          background-color: #b85050;
+          background-color: @accdim;
           font-weight: bold;
       }
 
