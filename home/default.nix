@@ -11,6 +11,7 @@
     ./terminal/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/fuzzel.nix
+    ./apps/awww.nix
   ];
 
   home.username = "koppi";
