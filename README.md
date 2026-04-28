@@ -32,38 +32,48 @@ for my **Dell Inspiron 3501**.
 
 ```
 nixos-config/
-├── flake.nix                  # entry point
-├── README.md
-├── system/                    
-│   ├── default.nix            # import all submodules
-│   ├── hardware.nix           # disk, kernel modules, microcode
-│   ├── boot.nix               # bootloader + kernel + sysctl
-│   ├── locale.nix             # tz, locales, keymap, console
-│   ├── networking.nix         # NetworkManager, hostname, firewall
-│   ├── audio.nix              # pipewire
-│   ├── graphics.nix           # iGPU Intel
-│   ├── power.nix              # TLP, thermald, fwupd, upower, fstrim, zram
-│   ├── desktop.nix            # niri systemwide, sddm, portals, fonts
-│   ├── flatpak.nix            # flatpak + flathub
-│   ├── virtualisation.nix     # docker
-│   ├── nix.nix                # settings, gc, optimise
-│   ├── packages.nix           # systemPackages + nautilus
-│   └── users.nix              # users, shell
-└── home/
-    ├── default.nix            # entry point HM + swayidle
-    ├── packages.nix           # user-level tools
-    ├── theme.nix              # cursor, GTK
-    ├── niri.nix               # Niri (binds, layout, gestures, etc.)
-    ├── waybar.nix             # bar
-    ├── wallpaper.png
-    ├── shell/
-    │   ├── zsh.nix
-    │   └── starship.nix
-    ├── terminal/
-    │   └── alacritty.nix
-    └── apps/
-        ├── fastfetch.nix
-        └── fuzzel.nix         # launcher
+├── flake.nix
+├── flake.lock
+├── lib/
+│   └── colors.nix          # Gruvbox Dark palette — single source of truth
+├── home/
+│   ├── default.nix
+│   ├── packages.nix
+│   ├── theme.nix
+│   ├── apps/
+│   │   ├── fastfetch.nix
+│   │   └── fuzzel.nix
+│   ├── desktop/
+│   │   ├── niri.nix
+│   │   └── waybar.nix
+│   ├── shell/
+│   │   ├── starship.nix
+│   │   └── zsh.nix
+│   └── terminal/
+│       └── alacritty.nix
+└── system/
+    ├── default.nix
+    ├── core/
+    │   ├── default.nix
+    │   ├── databases.nix
+    │   ├── locale.nix
+    │   ├── networking.nix
+    │   ├── nix-ld.nix
+    │   ├── nix.nix
+    │   ├── packages.nix
+    │   ├── users.nix
+    │   └── virtualisation.nix
+    ├── desktop/
+    │   ├── default.nix
+    │   ├── audio.nix
+    │   ├── desktop.nix
+    │   └── flatpak.nix
+    └── hardware/
+        ├── default.nix
+        ├── boot.nix
+        ├── graphics.nix
+        ├── hardware.nix
+        └── power.nix
 ```
 
 ---
