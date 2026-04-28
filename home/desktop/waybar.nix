@@ -1,4 +1,4 @@
-{ pkgs, colors, ... }:
+{ pkgs, colors, fonts, ... }:
 
 let
   power-menu = pkgs.writeShellScript "power-menu" ''
@@ -119,8 +119,8 @@ in
 
       * {
           border: none;
-          font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono";
-          font-size: 13px;
+          font-family: "${fonts.mono}", "${fonts.symbols}";
+          font-size: ${toString fonts.waybarSize}px;
           font-weight: 600;
           min-height: 0;
       }

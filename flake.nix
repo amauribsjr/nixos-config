@@ -18,10 +18,11 @@
   outputs = { self, nixpkgs, home-manager, niri, ... }@inputs:
   let
     colors = import ./lib/colors.nix;
+    fonts  = import ./lib/fonts.nix;
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs colors; };
+      specialArgs = { inherit inputs colors fonts; };
       modules = [
         ./system
         niri.nixosModules.niri
@@ -31,7 +32,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "backup";
-            extraSpecialArgs = { inherit inputs colors; };
+            extraSpecialArgs = { inherit inputs colors fonts; };
             users.koppi = import ./home;
           };
         }

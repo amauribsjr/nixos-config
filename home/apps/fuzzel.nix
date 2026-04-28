@@ -1,11 +1,11 @@
-{ colors, ... }:
+{ colors, fonts, ... }:
 
 {
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=11";
+        font = "${fonts.mono}:size=${toString fonts.sizeSm}";
         terminal = "alacritty";
         layer = "overlay";
         prompt = "❯ ";

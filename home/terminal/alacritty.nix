@@ -1,4 +1,4 @@
-{ colors, ... }:
+{ colors, fonts, ... }:
 
 {
   programs.alacritty = {
@@ -12,10 +12,10 @@
       };
 
       font = {
-        normal  = { family = "JetBrainsMono Nerd Font"; };
-        bold    = { family = "JetBrainsMono Nerd Font"; };
-        italic  = { family = "JetBrainsMono Nerd Font"; };
-        size = 12.0;
+        normal = { family = fonts.mono; };
+        bold   = { family = fonts.mono; };
+        italic = { family = fonts.mono; };
+        size = fonts.size;
       };
 
       colors = {
