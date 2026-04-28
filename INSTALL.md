@@ -7,7 +7,7 @@
 ```sh
 loadkeys br-abnt2
 ```
-*(if ABNT2 laptop keyboard)*
+(if ABNT2 laptop keyboard)
 ---
 
 ## 3. Network

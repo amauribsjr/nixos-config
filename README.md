@@ -145,7 +145,7 @@ nixos-config/
 
 ## Installation
 
-Check `INSTALL.md`
+Check [INSTALL.md](./INSTALL.md)
 
 ---
 
