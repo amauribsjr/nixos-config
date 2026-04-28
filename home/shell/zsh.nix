@@ -11,8 +11,8 @@
       y = "yazi";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
       update = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
-      clean = "sudo nix-collect-garbage -d";
-      cleanall = "sudo nix-collect-garbage --delete-older-than 1d";
+      cleanweek = "sudo nix-collect-garbage -d";
+      clean = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3 && sudo nix-collect-garbage";
       testbuild = "cd ~/nixos-config && git add . && sudo nixos-rebuild test --flake ~/nixos-config#nixos";
       rollback = "sudo nixos-rebuild switch --rollback";
     };
@@ -40,14 +40,15 @@
         elif [ "$1" = "rollback" ]; then
           echo "⏪ Rolling back..."
           sudo nixos-rebuild switch --rollback
-        elif [ "$1" = "clean" ]; then
+        elif [ "$1" = "cleanweek" ]; then
           echo "🧹 Cleaning system 7 days old gens..."
           sudo nix-collect-garbage -d
-        elif [ "$1" = "cleanall" ]; then
-          echo "🧹 Cleaning 1 day old gens..."
-          sudo nix-collect-garbage --delete-older-than 1d
+        elif [ "$1" = "clean" ]; then
+          echo "🧹 Keeping last 3 generations..."
+          sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
+          sudo nix-collect-garbage
         else
-          echo "⚠️ Unknown command. Try 'rebuild', 'update', 'clean', or 'cleanall'."
+          echo "⚠️ Unknown command. Try 'rebuild', 'update', 'rollback', 'clean', or 'cleanweek'."
         fi
       }
     '';
