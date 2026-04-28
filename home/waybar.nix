@@ -10,7 +10,7 @@
       layer = "top";
       position = "top";
       height = 30;
-      margin-top = 4;
+      margin-top = 0;
       margin-left = 0;
       margin-right = 0;
       spacing = 0;
@@ -161,7 +161,7 @@
           color: @red;
           animation: blink 2s steps(1) infinite;
       }
-      #network     { color: @fg1; }
+      #network     { color: @green; }
       #cpu         { color: @fg2; }
       #memory      { color: @purple; }
 
