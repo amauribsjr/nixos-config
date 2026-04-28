@@ -26,7 +26,7 @@
     lm_sensors
     intel-gpu-tools
     nautilus
-    gnome-image-viewer
+    eog
     pavucontrol
     google-chrome
     vesktop
