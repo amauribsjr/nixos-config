@@ -12,7 +12,7 @@ let
   '';
 
   app-menu = pkgs.writeShellScript "app-menu" ''
-    nwg-drawer -s 64 -c 1 -nocats -st /home/koppi/.config/nwg-drawer/style.css
+    wofi
   '';
 in
 
