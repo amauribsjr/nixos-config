@@ -1,4 +1,6 @@
-# My NixOS Installation — (atm focused for my own Dell Inspiron 3501 hardware)
+# My NixOS Installation
+
+> Focused for my own **Dell Inspiron 3501** hardware.
 
 ---
 
@@ -7,24 +9,28 @@
 ```sh
 loadkeys br-abnt2
 ```
-(if ABNT2 laptop keyboard)
+
+> Only needed if using an ABNT2 laptop keyboard.
+
 ---
 
-## 3. Network
+## 2. Network
 
-First, run and connect to your WiFi network:
+First, connect to your WiFi network:
+
 ```sh
 nmtui
 ```
 
 Then test your connection:
+
 ```sh
 ping -c 3 1.1.1.1
 ```
 
 ---
 
-## 4. Disk Partitioning
+## 3. Disk Partitioning
 
 Identify your disk first:
 
@@ -32,22 +38,22 @@ Identify your disk first:
 lsblk
 ```
 
-If it's an NVME SSD, usually it'll be `nvme0n1`. But check it first!
+If it's an NVMe SSD, it'll usually be `nvme0n1` — but check first.
 
-### 4.1 Delete the partitioned tabel
+### 3.1 Delete the partition table
 
 ```sh
 parted /dev/nvme0n1 -- mklabel gpt
 ```
 
-### 4.2 Create new partitions
+### 3.2 Create new partitions
 
 ```sh
 # ESP (boot EFI) — 512 MiB
 parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 parted /dev/nvme0n1 -- set 1 esp on
 
-# Root — rest of the whole disk
+# Root — rest of the disk
 parted /dev/nvme0n1 -- mkpart primary ext4 512MiB 100%
 ```
 
@@ -57,14 +63,15 @@ Check it:
 lsblk /dev/nvme0n1
 ```
 
-Should be something like this:
+Expected output:
+
 ```
 nvme0n1
 ├─nvme0n1p1   512M
-└─nvme0n1p2   The rest amount of your disk size
+└─nvme0n1p2   <remaining disk size>
 ```
 
-### 4.3 Format
+### 3.3 Format
 
 ```sh
 # ESP
@@ -76,7 +83,7 @@ mkfs.ext4 -L NIXOS_ROOT /dev/nvme0n1p2
 
 ---
 
-## 5. Mount
+## 4. Mount
 
 ```sh
 mount /dev/disk/by-label/NIXOS_ROOT /mnt
@@ -90,11 +97,11 @@ Check:
 lsblk -f /dev/nvme0n1
 ```
 
-Should be shown mounted in `/mnt` and `/mnt/boot`.
+Both partitions should be shown mounted at `/mnt` and `/mnt/boot`.
 
 ---
 
-## 6. Install git and clone the repository config
+## 5. Install git and clone the config
 
 ```sh
 nix-env -iA nixos.git
@@ -106,7 +113,7 @@ Clone directly into `/mnt/etc/nixos`:
 git clone https://github.com/amauribsjr/nixos-config /mnt/etc/nixos
 ```
 
-> **Attention:** No needed, but it's better to configure SSH already.
+> **Note:** Not required, but it's recommended to configure SSH beforehand.
 
 Check structure:
 
@@ -114,43 +121,43 @@ Check structure:
 ls /mnt/etc/nixos
 ```
 
-Should be `flake.nix`, `system/`, `home/`, etc.
+Should show `flake.nix`, `system/`, `home/`, `lib/`, etc.
 
 ---
 
-## 7. Generate and integrate hardware config
+## 6. Generate and integrate hardware config
 
 ```sh
 nixos-generate-config --root /mnt --show-hardware-config
 ```
 
-This command will only show the hardware config, nothing else will be done.
+This command only prints the hardware config — nothing is written.
 
-Compare `boot.initrd.availableKernelModules` generated with the one withing `system/hardware.nix`. Usually they're the same on laptops like my Inspiron 3501, but if there's any difference, update `system/hardware.nix` with the correct modules:
+Compare the `boot.initrd.availableKernelModules` output with the ones in `system/hardware/hardware.nix`. Usually they match on laptops like the Inspiron 3501, but update if needed:
 
 ```sh
-nano /mnt/etc/nixos/system/hardware.nix
+nano /mnt/etc/nixos/system/hardware/hardware.nix
 ```
 
-`fileSystems` **doesn't need to be** in `hardware.nix` cause it's already declared `by-label` within `system/hardware.nix`, which is more portable.
+> `fileSystems` doesn't need to be in `hardware.nix` — it's already declared by label in the config, which is more portable.
 
 ---
 
-## 8. Install
+## 7. Install
 
 ```sh
 nixos-install --flake /mnt/etc/nixos#nixos --no-root-passwd
 ```
 
-`--no-root-passwd` only if there's no need for root password, but we'll set one for user (koppi).
+> `--no-root-passwd` skips setting a root password — we'll set the user password instead.
 
-This step may take a little long. At first, niri-flake will compile localy. Expected something between 10 and 20 minutes.
+This step may take a while. The `niri-flake` compiles locally on first install — expect **10 to 20 minutes**.
 
 ---
 
-## 9. Set user password
+## 8. Set user password
 
-Before reboot, set a password for `koppi`:
+Before rebooting, set a password for `koppi`:
 
 ```sh
 nixos-enter --root /mnt -c 'passwd koppi'
@@ -158,75 +165,90 @@ nixos-enter --root /mnt -c 'passwd koppi'
 
 ---
 
-## 10. Reboot
+## 9. Reboot
 
 ```sh
 umount -R /mnt
 reboot
 ```
 
-Remove your flashdrive when the screen turns off.
+Remove your flash drive when the screen turns off.
 
 ---
 
-## 11. First boot
+## 10. First boot
 
-GDM will show up. Login with `koppi`.
+**GDM** will show up. Log in with `koppi`.
 
-Then niri show up as well, as so waybar, but probably **without wallpaper** as the folder still doesn't exists. Create and put an image inside to set a brand new wallpaper:
+Niri and Waybar will start automatically. The wallpaper will likely be missing since the folder doesn't exist yet. Create it and place an image inside:
 
 ```sh
 mkdir -p ~/Pictures/Wallpapers
 ```
-(!) Name the image to `wallpaper.png`
 
-Wallpaper will load at next login (awww-daemon tries at booting then give up if there's nothing)
+> Name the image `wallpaper.png`. The wallpaper will load on next login — the `awww` daemon tries on boot and gives up gracefully if nothing is found.
 
 ---
 
-## 12. Post installation tips
+## 11. Post-installation tips
 
-### Bluetooth (manually turn on)
+### Bluetooth (off by default)
 
 ```sh
 sudo bluetoothctl power on
 bluetoothctl scan on
 ```
 
-If you want it to turn on during boot, change within `system/power.nix`:
+To enable on boot, change in `system/hardware/power.nix`:
 
 ```nix
 hardware.bluetooth.powerOnBoot = true;
 ```
 
-### Update your system
+### Update the system
 
 ```sh
 cd ~/nixos-config
 nix flake update
-nixos rebuild
+sudo nixos-rebuild switch --flake .#nixos
 ```
 
-### Change wallpaper without logout
+Or using the shell alias:
 
 ```sh
-awww img ~/path/to/you/wallpaper.png
+nixos update
 ```
 
-### Clean older gens
+### Change wallpaper without logging out
 
 ```sh
-sudo nix-collect-garbage -d
-sudo nixos-rebuild switch --flake ~/nixos-config#nixos  # clean rebuild
+awww img ~/Pictures/Wallpapers/wallpaper.png
+```
+
+### Clean old generations (keep last 3)
+
+```sh
+nixos clean
+```
+
+Or manually:
+
+```sh
+sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
+sudo nix-collect-garbage
 ```
 
 ---
 
 ## Fast daily commands
 
-`nixos rebuild`  
-`nix flake update` (update all inputs)  
-`awww img ~/path/to/you/wallpaper.png`  
-`sudo bluetoothctl power on`  
-`niri msg action quit` (reset niri session)  
-`sudo nix-collect-garbage -d`
+| Command | Description |
+|---|---|
+| `nixos rebuild` | Rebuild and switch to new config |
+| `nixos update` | Update flake inputs and rebuild |
+| `nixos clean` | Delete old generations, keep last 3 |
+| `nixos cleanweek` | Delete generations older than 7 days |
+| `nixos rollback` | Roll back to previous generation |
+| `awww img ~/path/to/wallpaper.png` | Change wallpaper live |
+| `sudo bluetoothctl power on` | Enable Bluetooth |
+| `niri msg action quit` | Quit Niri session |
