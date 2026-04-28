@@ -30,6 +30,13 @@
       lock         = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
     };
   };
+  services.mako = {
+    enable = true;
+    settings = {
+      default-timeout = 3000;
+      ignore-timeout = false;
+    };
+  };
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
