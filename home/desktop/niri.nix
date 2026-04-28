@@ -56,6 +56,11 @@
       border.enable = false;
     };
 
+    {
+      matches = [{ app-id = "^Alacritty$"; }];
+      opacity = 0.94;
+    }
+
     spawn-at-startup = [
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       #{ command = [ "${pkgs.mako}/bin/mako" ]; }

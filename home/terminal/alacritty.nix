@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.96;
+        opacity = 0.94;
         padding = { x = 12; y = 12; };
         decorations = "none";
         startup_mode = "Windowed";
