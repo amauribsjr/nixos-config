@@ -21,9 +21,9 @@
       CPU_SCALING_GOVERNOR_ON_AC = "powersave";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+      CPU_BOOST_ON_BAT = 1;
+      CPU_MAX_PERF_ON_BAT = 85;
       CPU_HWP_DYN_BOOST_ON_AC = 1;
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
       CPU_MIN_PERF_ON_AC = 0;
