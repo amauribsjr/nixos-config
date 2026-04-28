@@ -43,6 +43,8 @@ nixos-config/
 │   ├── theme.nix
 │   ├── apps/
 │   │   ├── fastfetch.nix
+│   │   ├── awww.nix
+│   │   ├── wofi.nix
 │   │   └── fuzzel.nix
 │   ├── desktop/
 │   │   ├── niri.nix

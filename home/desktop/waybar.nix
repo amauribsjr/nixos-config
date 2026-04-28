@@ -13,8 +13,8 @@ let
 
   app-menu = pkgs.writeShellScript "app-menu" ''
     wofi --show drun \
-         --width 300 \
-         --height 500 \
+         --width 280 \
+         --height 100% \
          --location left \
          --no-actions \
          --insensitive \
