@@ -79,11 +79,6 @@
       }
 
       {
-        matches = [{ app-id = "^Alacritty$"; }];
-        opacity = 0.94;
-      }
-
-      {
         geometry-corner-radius = {
           top-left = 0.0;
           top-right = 0.0;

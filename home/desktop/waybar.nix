@@ -3,7 +3,7 @@
 let
   power-menu = pkgs.writeShellScript "power-menu" ''
   chosen=$(printf "Shutdown\nReboot\nSuspend\nLogout" | wofi --dmenu \
-    --prompt=Power --width=200 --height=200 --location=center \
+    --prompt=Power --width=200 --height=250 --location=center \
     --style=/home/koppi/.config/wofi/center.css)
   case "$chosen" in
     "Shutdown") systemctl shutdown ;;
