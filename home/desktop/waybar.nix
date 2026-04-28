@@ -59,7 +59,7 @@ in
         };
 
         "niri/window" = {
-          max-length      = 30;
+          max-length      = 40;
           separate-outputs = true;
         };
 
