@@ -44,8 +44,7 @@ nixos-config/
 │   ├── apps/
 │   │   ├── fastfetch.nix
 │   │   ├── awww.nix
-│   │   ├── wofi.nix
-│   │   └── fuzzel.nix
+│   │   └── wofi.nix
 │   ├── desktop/
 │   │   ├── niri.nix
 │   │   └── waybar.nix
