@@ -23,7 +23,6 @@
     ripgrep
     fzf
     zoxide
-
-    nwg-bar    
+    wofi 
   ];
 }

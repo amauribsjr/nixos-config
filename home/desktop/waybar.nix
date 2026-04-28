@@ -12,6 +12,18 @@ let
   '';
 in
 
+let
+  app-menu = pkgs.writeShellScript "app-menu" ''
+    wofi --show drun \
+         --width 300 \
+         --height 500 \
+         --location left \
+         --no-actions \
+         --insensitive \
+         --prompt "Apps"
+  '';
+in
+
 {
   programs.waybar = {
     enable = true;
@@ -99,39 +111,17 @@ in
           icon-size = 14;
           spacing   = 6;
         };
-
+        
+        "custom/apps" = {
+          format   = "󰀻";
+          on-click = "${app-menu}";
+          tooltip  = false;
+        };
+        
         "custom/power" = {
           format   = "⏻";
           on-click = "${power-menu}";
           tooltip  = false;
-        };
-      }
-
-      {
-        layer    = "bottom";
-        position = "bottom";
-        height   = 28;
-        margin-bottom = 0;
-        margin-left   = 0;
-        margin-right  = 0;
-        spacing  = 0;
-
-        modules-left   = [ "custom/launcher" ];
-        modules-center = [ "wlr/taskbar" ];
-        modules-right  = [];
-
-        "custom/launcher" = {
-          format   = "󰀻";
-          on-click = "nwg-bar -p left -s style.css";
-          tooltip  = false;
-        };
-
-        "wlr/taskbar" = {
-          format          = "{icon}";
-          icon-size       = 16;
-          tooltip-format  = "{title}";
-          on-click        = "activate";
-          on-click-middle = "close";
         };
       }
     ];
@@ -167,12 +157,6 @@ in
           opacity: 0.96;
       }
 
-      window#waybar.bottom {
-          background-color: alpha(@bg0, 0.55);
-          color: @fg1;
-          border-top: 1px solid alpha(@accdim, 0.4);
-      }
-
       #workspaces,
       #window,
       #clock,
@@ -182,7 +166,6 @@ in
       #network,
       #tray,
       #custom-power,
-      #custom-launcher,
       #taskbar {
           background-color: transparent;
           padding: 0 8px;
@@ -233,30 +216,6 @@ in
           padding: 0 10px;
       }
       #custom-power:hover { background-color: @bg2; }
-
-      #custom-launcher {
-          color: @fg2;
-          padding: 0 12px;
-          font-size: 15px;
-      }
-      #custom-launcher:hover {
-          color: @fg0;
-          background-color: alpha(@bg2, 0.6);
-      }
-
-      button.taskbar {
-          padding: 0 6px;
-          margin: 0 2px;
-          background-color: transparent;
-          border-radius: 0;
-          border-bottom: 2px solid transparent;
-      }
-      button.taskbar:hover {
-          background-color: alpha(@bg2, 0.5);
-      }
-      button.taskbar.active {
-          border-bottom: 2px solid @accdim;
-      }
 
       #pulseaudio:hover, #backlight:hover, #battery:hover,
       #network:hover, #clock:hover {

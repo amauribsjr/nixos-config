@@ -12,7 +12,6 @@
     ./apps/fastfetch.nix
     ./apps/fuzzel.nix
     ./apps/awww.nix
-    ./apps/nwg-bar.nix
   ];
 
   home.username = "koppi";
