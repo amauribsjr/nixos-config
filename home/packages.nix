@@ -23,6 +23,7 @@
     ripgrep
     fzf
     zoxide
-    wofi 
+
+    nwg-drawer
   ];
 }

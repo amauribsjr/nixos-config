@@ -12,14 +12,7 @@ let
   '';
 
   app-menu = pkgs.writeShellScript "app-menu" ''
-    wofi --show drun \
-         --width 280 \
-         --height 100% \
-         --location left \
-         --no-actions \
-         --insensitive \
-         --prompt "Apps" \
-         --style /home/koppi/.config/wofi/style.css
+    nwg-drawer -s 64 -c 1 -nocats -st /home/koppi/.config/nwg-drawer/style.css
   '';
 in
 
