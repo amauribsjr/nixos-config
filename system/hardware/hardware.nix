@@ -16,7 +16,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
+/*  fileSystems."/" = {
     device = "/dev/disk/by-label/NIXOS_ROOT";
     fsType = "ext4";
     options = [ "noatime" ];
@@ -28,7 +28,7 @@
     options = [ "umask=0077" ];
   };
 
-  swapDevices = [ ];
+  swapDevices = [ ]; */
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
