@@ -52,7 +52,7 @@ in
       focus-ring = {
         enable = true;
         width = 1;
-        active.color = "#7c6f64";
+        active.color = "#d5c4a1";
         inactive.color = "#504945";
       };
 
