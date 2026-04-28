@@ -3,9 +3,9 @@
 {
   programs.niri.enable = true;
 
-  services.displayManager.sddm = {
+  services.displayManager.gdm = {
     enable = true;
-    wayland.enable = true;
+    wayland = true;
   };
 
   services.displayManager.defaultSession = "niri";
