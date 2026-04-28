@@ -24,5 +24,6 @@
     fzf
     zoxide
 
+    nwg-bar    
   ];
 }
