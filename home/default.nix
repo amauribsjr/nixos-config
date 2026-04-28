@@ -22,12 +22,12 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 600;  command = "${pkgs.swaylock}/bin/swaylock -f -c 32302f"; }
+      { timeout = 600;  command = "${pkgs.swaylock}/bin/swaylock -f -c 282828"; }
       { timeout = 1800; command = "${pkgs.systemd}/bin/systemctl suspend"; }
     ];
     events = {
-      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 32302f";
-      lock         = "${pkgs.swaylock}/bin/swaylock -f -c 32302f";
+      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
+      lock         = "${pkgs.swaylock}/bin/swaylock -f -c 282828";
     };
   };
   xdg.userDirs = {

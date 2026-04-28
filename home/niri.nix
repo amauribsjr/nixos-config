@@ -57,7 +57,7 @@ in
       };
 
       border.enable = false;
-      background-color = "#32302f";
+      background-color = "#282828";
     };
 
     spawn-at-startup = [
@@ -178,7 +178,7 @@ in
       "XF86MonBrightnessUp"   = { action = spawn "brightnessctl" "set" "5%+"; allow-when-locked = true; };
       "XF86MonBrightnessDown" = { action = spawn "brightnessctl" "set" "5%-"; allow-when-locked = true; };
 
-      "Mod+Alt+L" = { action = spawn "swaylock" "-f" "-c" "32302f"; allow-when-locked = true; };
+      "Mod+Alt+L" = { action = spawn "swaylock" "-f" "-c" "282828"; allow-when-locked = true; };
       "Mod+Shift+E".action = quit;
       "Mod+Shift+P".action = power-off-monitors;
 

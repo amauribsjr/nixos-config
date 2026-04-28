@@ -11,8 +11,8 @@
       position = "top";
       height = 30;
       margin-top = 4;
-      margin-left = 8;
-      margin-right = 8;
+      margin-left = 0;
+      margin-right = 0;
       spacing = 0;
 
       modules-left = [ "niri/workspaces" "niri/window" ];
@@ -22,8 +22,8 @@
         "backlight"
         "battery"
         "network"
-        "cpu"
-        "memory"
+        /* "cpu" */
+        /* "memory" */
         "tray"
       ];
 
@@ -32,12 +32,12 @@
       };
 
       "niri/window" = {
-        max-length = 40;
+        max-length = 30;
         separate-outputs = true;
       };
 
       clock = {
-        format = "{:%H:%M | %d/%m}";
+        format = "{:%I:%M %p | %d/%m}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
@@ -57,7 +57,7 @@
       };
 
       battery = {
-        states = { warning = 30; critical = 15; };
+        states = { warning = 25; critical = 10; };
         format = "{icon} {capacity}%";
         format-charging = "󰂄 {capacity}%";
         format-plugged = "󰚥 {capacity}%";
@@ -83,7 +83,7 @@
     }];
 
     style = ''
-      @define-color bg0      #32302f;
+      @define-color bg0      #282828;
       @define-color bg1      #3c3836;
       @define-color bg2      #504945;
       @define-color fg0      #ebdbb2;
@@ -120,8 +120,8 @@
       #backlight,
       #battery,
       #network,
-      #cpu,
-      #memory,
+      /* #cpu, */
+      /* #memory, */
       #tray {
           background-color: transparent;
           padding: 0 8px;
@@ -159,7 +159,7 @@
       #battery.warning:not(.charging) { color: @amber; }
       #battery.critical:not(.charging) {
           color: @red;
-          animation: blink 1s steps(2) infinite;
+          animation: blink 2s steps(1) infinite;
       }
       #network     { color: @fg1; }
       #cpu         { color: @fg2; }

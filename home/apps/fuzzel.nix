@@ -19,7 +19,7 @@
       };
 
       colors = {
-        background       = "32302fee";
+        background       = "282828ee";
         text             = "e8f2fcff";
         match            = "d5c4a1ff";
         selection        = "504945ff";

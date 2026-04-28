@@ -9,18 +9,19 @@
         "padding": { "top": 1, "right": 3 }
       },
       "display": {
-        "separator": "  ",
-        "color": { "keys": "yellow", "title": "green" }
+        "separator": "  "
       },
       "modules": [
-        { "type": "title",  "format": "{user-name}@{host-name}" },
+        { "type": "title", "format": "{user-name}@{host-name}" },
         { "type": "separator", "string": "──────" },
-        { "type": "host",   "key": "host  " },
-        { "type": "os",     "key": "os    " },
-        { "type": "kernel", "key": "kernel" },
-        { "type": "cpu", "key": "cpu   ", "format": "{name}" },
-        { "type": "memory", "key": "mem   " },
-        { "type": "disk",   "key": "disk  ", "folders": "/" }
+        { "type": "host",   "key": "host  ", "keyColor": "magenta" },
+        { "type": "os",     "key": "os    ", "keyColor": "cyan" },
+        { "type": "kernel", "key": "kernel", "keyColor": "yellow" },
+        { "type": "uptime", "key": "uptime", "keyColor": "blue" },
+        "break",
+        { "type": "cpu",    "key": "cpu   ", "keyColor": "red",   "format": "{name}" },
+        { "type": "memory", "key": "mem   ", "keyColor": "green" },
+        { "type": "disk",   "key": "disk  ", "keyColor": "214",   "folders": "/" }
       ]
     }
   '';

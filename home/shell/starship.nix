@@ -27,7 +27,7 @@
 
       hostname = {
         ssh_only = false;
-        format = "[@](bold yellow)[$hostname](bold blue) "; 
+        format = "[@](bold yellow)[$hostname](bold blue) ";
         disabled = false;
       };
 
@@ -84,7 +84,7 @@
 
       rust = {
         symbol = " ";
-        style = "bold orange"; 
+        style = "bold orange";
         format = "[$symbol($version)]($style) ";
       };
 
@@ -104,7 +104,7 @@
       cmd_duration.disabled = true;
 
       palettes.darksea = {
-        bg0    = "#32302f";
+        bg0    = "#282828";
         fg     = "#ebdbb2";
         blue   = "#d65d0e";
         slate  = "#af3a03";
