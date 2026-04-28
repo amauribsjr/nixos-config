@@ -1,17 +1,20 @@
 { pkgs, colors, fonts, ... }:
 
 let
-  power-menu = pkgs.writeShellScript "power-menu" ''
-  chosen=$(printf "Shutdown\nReboot\nSuspend\nLogout" | wofi --dmenu \
-    --prompt=Power --width=200 --height=250 --location=center \
+power-menu = pkgs.writeShellScript "power-menu" ''
+  chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu \
+    --width=180 --height=180 --location=center \
     --style=/home/koppi/.config/wofi/center.css)
-  case "$chosen" in
-    "Shutdown") systemctl shutdown ;;
-    "Reboot")   systemctl reboot ;;
-    "Suspend")  systemctl suspend ;;
-    "Logout")   niri msg action quit ;;
-  esac
-  '';
+  if echo "$chosen" | grep -q "Power off"; then
+    systemctl poweroff
+  elif echo "$chosen" | grep -q "Reboot"; then
+    systemctl reboot
+  elif echo "$chosen" | grep -q "Suspend"; then
+    systemctl suspend
+  elif echo "$chosen" | grep -q "Logout"; then
+    niri msg action quit
+  fi
+'';
 in
 
 {
