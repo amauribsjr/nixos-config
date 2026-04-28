@@ -47,6 +47,8 @@
     gnumake
     pkg-config
 
+    nil
+
     dbeaver-bin
     sqlite
   ];

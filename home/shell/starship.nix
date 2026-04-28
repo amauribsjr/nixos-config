@@ -1,4 +1,4 @@
-{ ... }:
+{ colors, ... }:
 
 {
   programs.starship = {
@@ -14,109 +14,85 @@
 
       character = {
         success_symbol = "[λ](bold green)";
-        error_symbol = "[λ](bold red)";
+        error_symbol   = "[λ](bold red)";
       };
 
       username = {
         style_user = "bold fg";
         style_root = "bold red";
-        format = "[$user]($style) ";
-        disabled = false;
+        format     = "[$user]($style) ";
+        disabled   = false;
         show_always = true;
       };
 
       hostname = {
         ssh_only = false;
-        format = "[@](bold yellow)[$hostname](bold blue) ";
+        format   = "[@](bold yellow)[$hostname](bold blue) ";
         disabled = false;
       };
 
       directory = {
-        style = "bold blue";
-        read_only = " 󰌾";
+        style            = "bold blue";
+        read_only        = " 󰌾";
         truncation_length = 3;
         truncate_to_repo = true;
-        format = "[$path]($style)[$read_only]($read_only_style) ";
+        format           = "[$path]($style)[$read_only]($read_only_style) ";
       };
 
       git_branch = {
-        symbol = " ";
-        style = "bold red";
+        symbol = " ";
+        style  = "bold red";
         format = "[$symbol$branch]($style) ";
       };
 
       git_status = {
-        style = "bold red";
+        style      = "bold red";
         conflicted = "🏳";
-        ahead = "⇡\${count}";
-        behind = "⇣\${count}";
-        diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+        ahead      = "⇡\${count}";
+        behind     = "⇣\${count}";
+        diverged   = "⇕⇡\${ahead_count}⇣\${behind_count}";
         up_to_date = "";
-        untracked = "?\${count}";
-        stashed = "📦";
-        modified = "!\${count}";
-        staged = "+\${count}";
-        renamed = "»\${count}";
-        deleted = "✘\${count}";
-        format = ''([\[$all_status$ahead_behind\]]($style) )'';
+        untracked  = "?\${count}";
+        stashed    = "📦";
+        modified   = "!\${count}";
+        staged     = "+\${count}";
+        renamed    = "»\${count}";
+        deleted    = "✘\${count}";
+        format     = ''([\[$all_status$ahead_behind\]]($style) )'';
       };
 
       nix_shell = {
-        disabled = false;
-        symbol = " ";
-        impure_msg = "[impure](bold red)";
-        pure_msg = "[pure](bold green)";
+        disabled    = false;
+        symbol      = " ";
+        impure_msg  = "[impure](bold red)";
+        pure_msg    = "[pure](bold green)";
         unknown_msg = "[unknown](bold yellow)";
-        format = "via [$symbol$state( \\($name\\))](bold aqua) ";
+        format      = "via [$symbol$state( \\($name\\))](bold aqua) ";
       };
 
-      python = {
-        symbol = " ";
-        style = "bold yellow";
-        format = "[$symbol$pyenv_prefix($version)]($style) ";
-      };
+      rust   = { symbol = " "; style = "bold orange"; format = "[$symbol($version)]($style) "; };
+      python = { symbol = " "; style = "bold yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
+      nodejs = { symbol = " "; style = "bold green";  format = "[$symbol($version)]($style) "; };
+      java   = { symbol = " "; style = "bold red";    format = "[$symbol($version)]($style) "; };
+      docker_context = { symbol = " "; style = "bold blue"; format = "[$symbol$context]($style) "; };
 
-      nodejs = {
-        symbol = " ";
-        style = "bold green";
-        format = "[$symbol($version)]($style) ";
-      };
-
-      rust = {
-        symbol = " ";
-        style = "bold orange";
-        format = "[$symbol($version)]($style) ";
-      };
-
-      java = {
-        symbol = " ";
-        style = "bold red";
-        format = "[$symbol($version)]($style) ";
-      };
-
-      docker_context = {
-        symbol = " ";
-        style = "bold blue";
-        format = "[$symbol$context]($style) ";
-      };
-
-      package.disabled = true;
+      package.disabled      = true;
       cmd_duration.disabled = true;
 
       palettes.darksea = {
-        bg0    = "#282828";
-        fg     = "#ebdbb2";
+        bg0    = "#${colors.bg}";
+        fg     = "#${colors.fg}";
         blue   = "#d65d0e";
-        slate  = "#af3a03";
-        mint   = "#8ec07c";
-        teal   = "#689d6a";
-        red    = "#fb4934";
-        yellow = "#fabd2f";
-        purple = "#d3869b";
-        gray   = "#a89984";
-        orange = "#fe8019";
-        green  = "#b8bb26";
-        aqua   = "#8ec07c";
+        slate  = "#${colors.slate}";
+        mint   = "#${colors.bcyan}";
+        teal   = "#${colors.teal}";
+        red    = "#${colors.bred}";
+        yellow = "#${colors.byellow}";
+        purple = "#${colors.bmagenta}";
+        gray   = "#${colors.fg2}";
+        orange = "#${colors.orange}";
+        green  = "#${colors.bgreen}";
+        aqua   = "#${colors.bcyan}";
       };
     };
   };

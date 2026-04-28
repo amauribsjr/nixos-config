@@ -1,9 +1,8 @@
-{ ... }:
+{ colors, ... }:
 
 {
   programs.fuzzel = {
     enable = true;
-
     settings = {
       main = {
         font = "JetBrainsMono Nerd Font:size=11";
@@ -17,21 +16,16 @@
         inner-pad = 8;
         line-height = 22;
       };
-
       colors = {
-        background       = "282828ee";
-        text             = "e8f2fcff";
-        match            = "d5c4a1ff";
-        selection        = "504945ff";
-        selection-text   = "e8f2fcff";
-        selection-match  = "d5c4a1ff";
-        border           = "b85050ff";
+        background     = "${colors.bg}ee";
+        text           = "e8f2fcff";
+        match          = "${colors.fg1}ff";
+        selection      = "${colors.bg2}ff";
+        selection-text = "e8f2fcff";
+        selection-match = "${colors.fg1}ff";
+        border         = "${colors.redsoft}ff";
       };
-
-      border = {
-        width = 1;
-        radius = 0;
-      };
+      border = { width = 1; radius = 0; };
     };
   };
 }

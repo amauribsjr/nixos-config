@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, colors, ... }:
 
 let
   wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
@@ -52,16 +52,18 @@ in
       focus-ring = {
         enable = true;
         width = 1;
-        active.color = "#d5c4a1";
-        inactive.color = "#504945";
+        active.color   = "#${colors.fg1}";
+        inactive.color = "#${colors.bg2}";
       };
+      background-color = "#${colors.bg}";
 
       border.enable = false;
       background-color = "#282828";
     };
 
     spawn-at-startup = [
-      { command = [ "sh" "-c" "${pkgs.awww}/bin/awww-daemon & sleep 1 && [ -f '${wallpaper}' ] && ${pkgs.awww}/bin/awww img '${wallpaper}' --transition-type fade || true" ]; }      { command = [ "${pkgs.waybar}/bin/waybar" ]; }
+      { command = [ "sh" "-c" "${pkgs.awww}/bin/awww-daemon & sleep 1 && [ -f '${wallpaper}' ] && ${pkgs.awww}/bin/awww img '${wallpaper}' --transition-type fade || true" ]; }
+      { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       #{ command = [ "${pkgs.mako}/bin/mako" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
     ];
@@ -178,7 +180,7 @@ in
       "XF86MonBrightnessUp"   = { action = spawn "brightnessctl" "set" "5%+"; allow-when-locked = true; };
       "XF86MonBrightnessDown" = { action = spawn "brightnessctl" "set" "5%-"; allow-when-locked = true; };
 
-      "Mod+Alt+L" = { action = spawn "swaylock" "-f" "-c" "282828"; allow-when-locked = true; };
+      "Mod+Alt+L" = { action = spawn "swaylock" "-f" "-c" "${colors.bg}"; allow-when-locked = true; };
       "Mod+Shift+E".action = quit;
       "Mod+Shift+P".action = power-off-monitors;
 

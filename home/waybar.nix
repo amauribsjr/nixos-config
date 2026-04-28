@@ -102,20 +102,20 @@ in
     }];
 
     style = ''
-      @define-color bg0      #282828;
-      @define-color bg1      #3c3836;
-      @define-color bg2      #504945;
-      @define-color fg0      #ebdbb2;
-      @define-color fg1      #d5c4a1;
-      @define-color fg2      #a89984;
-      @define-color accent   #d5c4a1;
-      @define-color accdim   #7c6f64;
-      @define-color red      #fb4934;
-      @define-color amber    #fabd2f;
-      @define-color green    #8ec07c;
-      @define-color purple   #d3869b;
-      @define-color grey     #504945;
-      @define-color windows  #d9bb6a;
+      @define-color bg0     #${colors.bg};
+      @define-color bg1     #${colors.bg1};
+      @define-color bg2     #${colors.bg2};
+      @define-color fg0     #${colors.fg};
+      @define-color fg1     #${colors.fg1};
+      @define-color fg2     #${colors.fg2};
+      @define-color accent  #${colors.fg1};
+      @define-color accdim  #${colors.bg4};
+      @define-color red     #${colors.bred};
+      @define-color amber   #${colors.byellow};
+      @define-color green   #${colors.bcyan};
+      @define-color purple  #${colors.bmagenta};
+      @define-color grey    #${colors.bg2};
+      @define-color windows #${colors.accent};
 
       * {
           border: none;

@@ -1,4 +1,4 @@
-{ ... }:
+{ colors, ... }:
 
 {
   programs.alacritty = {
@@ -6,82 +6,59 @@
     settings = {
       window = {
         opacity = 0.96;
-        padding = {
-          x = 12;
-          y = 12;
-        };
+        padding = { x = 12; y = 12; };
         decorations = "none";
         startup_mode = "Windowed";
       };
 
       font = {
-        normal = {
-          family = "JetBrainsMono Nerd Font";
-        };
-        bold = {
-          family = "JetBrainsMono Nerd Font";
-        };
-        italic = {
-          family = "JetBrainsMono Nerd Font";
-        };
+        normal  = { family = "JetBrainsMono Nerd Font"; };
+        bold    = { family = "JetBrainsMono Nerd Font"; };
+        italic  = { family = "JetBrainsMono Nerd Font"; };
         size = 12.0;
       };
 
       colors = {
         primary = {
-          background = "#282828";
-          foreground = "#ebdbb2";
+          background = "#${colors.bg}";
+          foreground = "#${colors.fg}";
         };
-
         cursor = {
-          text = "#32302f";
-          cursor = "#ebdbb2";
+          text   = "#${colors.bg}";
+          cursor = "#${colors.fg}";
         };
-
         selection = {
-          text = "#ebdbb2";
-          background = "#504945";
+          text       = "#${colors.fg}";
+          background = "#${colors.bg2}";
         };
-
         normal = {
-          black   = "#282828";
-          red     = "#cc241d";
-          green   = "#98971a";
-          yellow  = "#d79921";
-          blue    = "#458588";
-          magenta = "#b16286";
-          cyan    = "#689d6a";
-          white   = "#a89984";
+          black   = "#${colors.black}";
+          red     = "#${colors.red}";
+          green   = "#${colors.green}";
+          yellow  = "#${colors.yellow}";
+          blue    = "#${colors.blue}";
+          magenta = "#${colors.magenta}";
+          cyan    = "#${colors.cyan}";
+          white   = "#${colors.white}";
         };
-
         bright = {
-          black   = "#928374";
-          red     = "#fb4934";
-          green   = "#b8bb26";
-          yellow  = "#fabd2f";
-          blue    = "#4e7862";
-          magenta = "#d3869b";
-          cyan    = "#8ec07c";
-          white   = "#ebdbb2";
+          black   = "#${colors.bblack}";
+          red     = "#${colors.bred}";
+          green   = "#${colors.bgreen}";
+          yellow  = "#${colors.byellow}";
+          blue    = "#${colors.bblue}";
+          magenta = "#${colors.bmagenta}";
+          cyan    = "#${colors.bcyan}";
+          white   = "#${colors.bwhite}";
         };
       };
 
       cursor = {
-        style = {
-          shape = "Block";
-          blinking = "On";
-        };
+        style = { shape = "Block"; blinking = "On"; };
         unfocused_hollow = true;
       };
-
-      selection = {
-        save_to_clipboard = true;
-      };
-
-      scrolling = {
-        history = 10000;
-        multiplier = 3;
-      };
+      selection.save_to_clipboard = true;
+      scrolling = { history = 10000; multiplier = 3; };
     };
   };
 }
