@@ -4,7 +4,7 @@ let
   power-menu = pkgs.writeShellScript "power-menu" ''
     chosen=$(printf "󰐥  Shutdown\n󰜉  Reboot\n󰒲  Suspend\n󰍃  Logout" | fuzzel --dmenu --lines=4 --width=20)
     case "$chosen" in
-      *"Shutdown")  systemctl poweroff ;;
+      *"Shutdown")  systemctl shutdown ;;
       *"Reboot") systemctl reboot ;;
       *"Suspend") systemctl suspend ;;
       *"Logout")    niri msg action quit ;;
