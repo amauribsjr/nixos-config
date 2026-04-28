@@ -9,7 +9,7 @@ for my **Dell Inspiron 3501**.
 |--------------|---------------------------------------------|
 | Model        | Dell Inspiron 3501                          |
 | CPU          | Intel Pentium Gold 7505 (Tiger Lake-U, 2c/4t) |
-| iGPU         | Intel UHD Graphics G4 (48 EUs, Xe-LP / Gen 12) |
+| iGPU         | Intel UHD Graphics for 11th Gen Intel Processors |
 | RAM          | 8 GB DDR4 (2x4GB)                           |
 | Storage      | SSD NVMe 128 GB (Gen 3)                     |
 | Display      | Integrated, 1366x768                        |
@@ -35,7 +35,8 @@ nixos-config/
 ├── flake.nix
 ├── flake.lock
 ├── lib/
-│   └── colors.nix          # Gruvbox Dark palette — single source of truth
+│   ├── colors.nix
+│   └── fonts.nix
 ├── home/
 │   ├── default.nix
 │   ├── packages.nix
