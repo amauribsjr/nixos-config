@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colors, ... }:
 
 let
   power-menu = pkgs.writeShellScript "power-menu" ''
