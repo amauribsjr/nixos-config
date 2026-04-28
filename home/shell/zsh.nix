@@ -14,6 +14,7 @@
       clean = "sudo nix-collect-garbage -d";
       cleanall = "sudo nix-collect-garbage --delete-older-than 1d";
       testbuild = "cd ~/nixos-config && git add . && sudo nixos-rebuild test --flake ~/nixos-config#nixos";
+      rollback = "sudo nixos-rebuild switch --rollback";
     };
 
     initContent = ''
@@ -36,6 +37,9 @@
           cd ~/nixos-config && nix flake update
           echo "🔄 Rebuilding..."
           sudo nixos-rebuild switch --flake ~/nixos-config#nixos
+        elif [ "$1" = "rollback" ]; then
+          echo "⏪ Rolling back..."
+          sudo nixos-rebuild switch --rollback
         elif [ "$1" = "clean" ]; then
           echo "🧹 Cleaning system 7 days old gens..."
           sudo nix-collect-garbage -d
