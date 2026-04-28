@@ -13,15 +13,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, disko, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, niri, ... }@inputs:
   let
     colors = import ./lib/colors.nix;
     fonts  = import ./lib/fonts.nix;
@@ -31,8 +26,6 @@
       specialArgs = { inherit inputs colors fonts; };
       modules = [
         ./system
-        ./disko.nix
-        disko.nixosModules.disko
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
