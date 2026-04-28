@@ -43,7 +43,7 @@
           echo "🧹 Cleaning 1 day old gens..."
           sudo nix-collect-garbage --delete-older-than 1d
         else
-          echo "⚠️ Unknown command."
+          echo "⚠️ Unknown command. Try 'rebuild', 'update', 'clean', or 'cleanall'."
         fi
       }
     '';
