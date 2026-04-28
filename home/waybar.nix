@@ -115,6 +115,7 @@ in
       @define-color green    #8ec07c;
       @define-color purple   #d3869b;
       @define-color grey     #504945;
+      @define-color windows  #d9bb6a;
 
       * {
           border: none;
@@ -127,7 +128,7 @@ in
       window#waybar {
           background-color: @bg0;
           color: @fg1;
-          border: 1px solid @accdim;
+          border: 1px solid @windows;
           border-radius: 0px;
           opacity: 0.96;
       }
