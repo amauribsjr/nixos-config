@@ -25,7 +25,7 @@
         selection        = "504945ff";
         selection-text   = "e8f2fcff";
         selection-match  = "d5c4a1ff";
-        border           = "d65d0eff";
+        border           = "b85050ff";
       };
 
       border = {

@@ -41,7 +41,7 @@
 
       git_branch = {
         symbol = " ";
-        style = "bold green";
+        style = "bold red";
         format = "[$symbol$branch]($style) ";
       };
 

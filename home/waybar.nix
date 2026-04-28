@@ -161,7 +161,7 @@ in
       #workspaces button.focused,
       #workspaces button.active {
           color: @fg0;
-          background-color: @accdim;
+          background-color: #b85050;
           font-weight: bold;
       }
 
