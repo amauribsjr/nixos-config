@@ -27,9 +27,7 @@
     intel-gpu-tools
     nautilus
     pavucontrol
-    (google-chrome.override {
-      commandLineArgs = "--disable-features=ChromeRefresh2023";
-    })
+    google-chrome
     vesktop
     obs-studio
     vlc
