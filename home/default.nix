@@ -45,4 +45,25 @@
     createDirectories = true;
     setSessionVariables = false;
   };
+  
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "video/mp4"       = "vlc.desktop";
+      "video/mkv"       = "vlc.desktop";
+      "video/webm"      = "vlc.desktop";
+      "video/x-matroska" = "vlc.desktop";
+      "audio/mpeg"      = "vlc.desktop";
+      "audio/ogg"       = "vlc.desktop";
+      "audio/flac"      = "vlc.desktop";
+      "audio/wav"       = "vlc.desktop";
+      "image/png"       = "org.gnome.eog.desktop";
+      "image/jpeg"      = "org.gnome.eog.desktop";
+      "image/gif"       = "org.gnome.eog.desktop";
+      "image/webp"      = "org.gnome.eog.desktop";
+      "image/svg+xml"   = "org.gnome.eog.desktop";
+    };
+  };
 }
+
+
