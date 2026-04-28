@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./desktop/niri.nix
+    ./desktop/waybar.nix
     ./packages.nix
     ./theme.nix
     ./niri.nix
