@@ -26,7 +26,7 @@ for my **Dell Inspiron 3501**.
 - **Launcher**: wofi
 - **Notifications**: Mako
 - **Wallpaper**: awww
-- **Greeter**: SDDM
+- **Greeter**: GDM
 
 ## 📁 Structure
 
@@ -154,11 +154,7 @@ Check [INSTALL.md](./INSTALL.md)
 ## 🎨 Theme
 
 **Gruvbox Dark Soft**
-- `home/niri.nix` (focus-ring, background)
-- `home/waybar.nix` (CSS)
-- `home/terminal/alacritty.nix`
-- `home/apps/fuzzel.nix`
-- `home/shell/starship.nix`
+- `lib/colors.nix`
 
 ---
 

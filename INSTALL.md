@@ -171,7 +171,7 @@ Remove your flashdrive when the screen turns off.
 
 ## 11. First boot
 
-SDDM will show up. Login with `koppi`.
+GDM will show up. Login with `koppi`.
 
 Then niri show up as well, as so waybar, but probably **without wallpaper** as the folder still doesn't exists. Create and put an image inside to set a brand new wallpaper:
 
@@ -229,4 +229,4 @@ sudo nixos-rebuild switch --flake ~/nixos-config#nixos  # clean rebuild
 `awww img ~/path/to/you/wallpaper.png`  
 `sudo bluetoothctl power on`  
 `niri msg action quit` (reset niri session)  
-`sudo nix-collect-garbage -d`  
+`sudo nix-collect-garbage -d`
