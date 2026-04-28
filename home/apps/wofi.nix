@@ -11,47 +11,6 @@
     layer=top
   '';
 
-  home.file.".config/wofi/style.css".text = ''
-    window {
-      background-color: #${colors.bg};
-      font-family: "${fonts.mono}";
-      border: 1px solid #${colors.fg1};
-    }
-
-    #input {
-      background-color: #${colors.bg};
-      color: #${colors.bg};
-      border: none;
-      padding: 0;
-      margin: 0;
-      min-height: 0;
-      font-size: 0;
-    }
-
-    #scroll { margin: 0; padding: 0; }
-    #inner-box { background-color: transparent; }
-    #outer-box { background-color: transparent; padding: 0; margin: 0; }
-
-    #entry {
-      padding: 14px 24px;
-      border-radius: 0;
-      background-color: transparent;
-    }
-
-    #entry:selected {
-      background-color: transparent;
-    }
-
-    #text {
-      color: #${colors.fg2};
-      font-size: 18px;
-    }
-
-    #entry:selected #text {
-      color: #${colors.fg2};
-    }
-  '';
-
   home.file.".config/wofi/center.css".text = ''
     window {
       background-color: #${colors.bg};

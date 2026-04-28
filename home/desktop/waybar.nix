@@ -12,13 +12,6 @@ let
     "Logout")   niri msg action quit ;;
   esac
   '';
-
-  app-menu = pkgs.writeShellScript "app-menu" ''
-    printf "Zed\nNautilus\nChrome\nVesktop\nOBS Studio" | wofi --dmenu \
-      --width=180 --height=100% --location=left \
-      --xoffset=0 --yoffset=0 \
-      --style=/home/koppi/.config/wofi/style.css
-  '';
 in
 
 {
@@ -36,7 +29,7 @@ in
         margin-right = 0;
         spacing  = 0;
 
-        modules-left   = [ "custom/apps" "niri/workspaces" "niri/window" ];
+        modules-left   = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right  = [
           "pulseaudio"
@@ -107,12 +100,6 @@ in
         tray = {
           icon-size = 14;
           spacing   = 6;
-        };
-
-        "custom/apps" = {
-          format   = "󰀻";
-          on-click = "${app-menu}";
-          tooltip  = false;
         };
 
         "custom/power" = {
@@ -213,16 +200,6 @@ in
           padding: 0 10px;
       }
       #custom-power:hover { background-color: @bg2; }
-
-      #custom-apps {
-          color: @fg2;
-          padding: 0 12px;
-          font-size: 15px;
-      }
-      #custom-apps:hover {
-          color: @fg0;
-          background-color: @bg2;
-      }
 
       #pulseaudio:hover, #backlight:hover, #battery:hover,
       #network:hover, #clock:hover {
