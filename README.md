@@ -172,7 +172,7 @@ nixos-config/
 
 ## Theme
 
-**Atelier Lakeside** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
+**Rosé Pine Moon** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
 
 ---
 

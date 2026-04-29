@@ -17,8 +17,8 @@
     userSettings = {
       theme = {
         mode  = "dark";
-        light = "Gruvbox Light Soft";
-        dark  = "Gruvbox Dark Soft";
+        light = "Rosé Pine Dawn";
+        dark  = "Rosé Pine Moon";
       };
 
       ui_font_family     = fonts.mono;

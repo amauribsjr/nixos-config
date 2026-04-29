@@ -1,43 +1,43 @@
 {
-  # Base backgrounds
-  bg       = "161b1d";   # base00
-  bg1      = "1f292e";   # base01
-  bg2      = "516d7b";   # base02
-  bg3      = "5a7b8c";   # base03
-  bg4      = "7195a8";   # base04
+  # Base backgrounds (Rosé Pine Moon)
+  bg       = "232136";   # Base
+  bg1      = "2a273f";   # Surface
+  bg2      = "393552";   # Overlay
+  bg3      = "6e6a86";   # Muted
+  bg4      = "908caa";   # Subtle
 
   # Foregrounds
-  fg       = "c1e4f6";   # base06
-  fg1      = "7ea2b4";   # base05
-  fg2      = "7195a8";   # base04
+  fg       = "e0def4";   # Text
+  fg1      = "e0def4";   # Text
+  fg2      = "908caa";   # Subtle
 
   # Accent
-  accent   = "257fad";   # base0d
-  accdim   = "516d7b";   # base02
+  accent   = "ea9a97";   # Rose
+  accdim   = "6e6a86";   # Muted
 
   # ANSI normal
-  black    = "161b1d";
-  red      = "d22d72";   # base08
-  green    = "568c3b";   # base0b
-  yellow   = "8a8a0f";   # base0a
-  blue     = "257fad";   # base0d
-  magenta  = "6b6bb8";   # base0e
-  cyan     = "2d8f6f";   # base0c
-  white    = "7ea2b4";   # base05
+  black    = "232136";
+  red      = "eb6f92";   # Love
+  green    = "3e8fb0";   # Pine
+  yellow   = "f6c177";   # Gold
+  blue     = "9ccfd8";   # Foam
+  magenta  = "c4a7e7";   # Iris
+  cyan     = "9ccfd8";   # Foam
+  white    = "e0def4";   # Text
 
   # ANSI bright
-  bblack   = "516d7b";
-  bred     = "e5357f";
-  bgreen   = "6aad48";
-  byellow  = "c4c41a";
-  bblue    = "3d9fd4";
-  bmagenta = "8080cc";
-  bcyan    = "3daf8a";
-  bwhite   = "ebf8ff";   # base07
+  bblack   = "393552";   # Overlay
+  bred     = "eb6f92";   # Love
+  bgreen   = "3e8fb0";   # Pine
+  byellow  = "f6c177";   # Gold
+  bblue    = "9ccfd8";   # Foam
+  bmagenta = "c4a7e7";   # Iris
+  bcyan    = "9ccfd8";   # Foam
+  bwhite   = "e0def4";   # Text
 
   # Custom
-  redsoft  = "a83060";
-  orange   = "935c25";   # base09
-  teal     = "2d8f6f";   # base0c
-  slate    = "1f292e";   # base01
+  redsoft  = "b4637a";   # Love escuro
+  orange   = "ea9a97";   # Rose
+  teal     = "3e8fb0";   # Pine
+  slate    = "2a273f";   # Surface
 }
