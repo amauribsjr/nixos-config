@@ -20,8 +20,9 @@
   '';
 
   xdg.portal = {
-    enable       = true;
+    enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = [ "gtk" ];
   };
 
   programs.dconf.enable = true;
