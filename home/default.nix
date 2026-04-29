@@ -6,18 +6,13 @@
     ./desktop/waybar.nix
     ./packages.nix
     ./theme.nix
-    ./shell/zsh.nix
-    ./shell/starship.nix
-    ./terminal/alacritty.nix
-    ./apps/fastfetch.nix
-    ./apps/awww.nix
-    ./apps/wofi.nix
-    ./apps/zed.nix
+    ./shell.nix
+    ./apps.nix
   ];
 
-  home.username = "koppi";
+  home.username    = "koppi";
   home.homeDirectory = "/home/koppi";
-  home.stateVersion = "24.05";
+  home.stateVersion  = "24.05";
 
   programs.home-manager.enable = true;
 
@@ -37,13 +32,13 @@
     enable = true;
     settings = {
       default-timeout = 3000;
-      ignore-timeout = false;
+      ignore-timeout  = false;
     };
   };
 
   xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
+    enable              = true;
+    createDirectories   = true;
     setSessionVariables = false;
   };
 
