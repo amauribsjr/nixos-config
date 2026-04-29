@@ -12,7 +12,8 @@
     };
 
     kernelPackages = pkgs.linuxPackages;
-
+    kernelParams = [ "acpi=force" ];
+      
     tmp.cleanOnBoot = true;
 
     kernel.sysctl = {
