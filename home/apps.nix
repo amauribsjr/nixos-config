@@ -157,7 +157,6 @@ in
       "toml"
       "dockerfile"
       "make"
-      "rose-pine"
       "java"
       "haskell"
       "ruby"
