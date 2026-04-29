@@ -158,7 +158,7 @@ nixos-config/
 
 ---
 
-## 🛠️ Daily commands
+## Daily commands
 
 | Command           | Description                          |
 |-------------------|--------------------------------------|
