@@ -154,16 +154,36 @@ mkdir -p ~/Pictures/Screenshots
 
 ## 11. SSH key for GitHub
 
+Generate the key (leave passphrase empty if you don't want one):
+
 ```sh
-ssh-keygen -t ed25519 -C "amauribsjunior@proton.me" -f ~/.ssh/id_ed25519_github
+ssh-keygen -t ed25519 -C "you-email" -f ~/.ssh/id_ed25519_github
+```
+
+Create the SSH config so the client knows which key to use:
+
+```sh
+cat > ~/.ssh/config << 'EOF'
+Host github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github
+    IdentitiesOnly yes
+EOF
+```
+
+Copy the public key:
+
+```sh
 cat ~/.ssh/id_ed25519_github.pub | wl-copy
 ```
 
-Add the public key at **https://github.com/settings/keys**, then test:
+Add it at **https://github.com/settings/keys** → New SSH key → paste → save.
+
+Test:
 
 ```sh
 ssh -T git@github.com
-# Hi amauribsjr! You've successfully authenticated...
+# Hi user! You've successfully authenticated...
 ```
 
 ---

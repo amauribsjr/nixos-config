@@ -51,8 +51,6 @@ nixos-config/
 │   │   ├── niri.nix
 │   │   └── waybar.nix
 │   ├── shell/
-│   │   ├── git.nix         # Git + delta + lazygit (declarative)
-│   │   ├── ssh.nix         # SSH client + agent (declarative)
 │   │   ├── starship.nix
 │   │   └── zsh.nix         # Zsh + direnv + nix-direnv
 │   └── terminal/
@@ -61,7 +59,7 @@ nixos-config/
     ├── default.nix
     ├── core/
     │   ├── default.nix
-    │   ├── databases.nix   # MySQL (dev)
+    │   ├── databases.nix   # MySQL + PostgreSQL
     │   ├── locale.nix      # pt_BR + en_US + ko_KR
     │   ├── networking.nix
     │   ├── nix-ld.nix
@@ -160,7 +158,7 @@ nixos-config/
 
 ---
 
-## Daily commands
+## 🛠️ Daily commands
 
 | Command           | Description                          |
 |-------------------|--------------------------------------|
