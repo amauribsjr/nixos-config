@@ -1,13 +1,9 @@
-{ ... }:
+{ lib, ... }:
 
 {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
-    controlMaster  = "auto";
-    controlPath    = "~/.ssh/master-%r@%h:%p";
-    controlPersist = "10m";
-    compression = true;
+    enableDefaultConfig = false;
 
     extraConfig = ''
       KexAlgorithms      curve25519-sha256@libssh.org,curve25519-sha256
@@ -22,6 +18,14 @@
         user           = "git";
         identityFile   = "~/.ssh/id_ed25519_github";
         identitiesOnly = true;
+      };
+
+      "*" = lib.hm.dag.entryAfter [ "github.com" ] {
+        addKeysToAgent = "yes";
+        compression    = true;
+        controlMaster  = "auto";
+        controlPath    = "~/.ssh/master-%r@%h:%p";
+        controlPersist = "10m";
       };
     };
   };

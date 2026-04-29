@@ -22,9 +22,9 @@
       };
 
       ui_font_family     = fonts.mono;
-      ui_font_size       = 14;
+      ui_font_size       = 18;
       buffer_font_family = fonts.mono;
-      buffer_font_size   = 13;
+      buffer_font_size   = 17;
       buffer_line_height = "comfortable";
 
       tab_size              = 4;
@@ -52,7 +52,7 @@
 
       terminal = {
         font_family    = fonts.mono;
-        font_size      = 13;
+        font_size      = 16;
         shell          = { program = "zsh"; };
         copy_on_select = true;
       };

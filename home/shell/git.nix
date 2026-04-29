@@ -3,10 +3,12 @@
 {
   programs.git = {
     enable = true;
-    userName  = "amauribsjr";
-    userEmail = "213704728+amauribsjr@users.noreply.github.com";
+    signing.format = null;
 
-    extraConfig = {
+    settings = {
+      user.name  = "amauribsjr";
+      user.email = "amauribsjunior@proton.me";
+
       init.defaultBranch   = "main";
       pull.rebase          = true;
       push.autoSetupRemote = true;
@@ -15,22 +17,23 @@
       rerere.enabled       = true;
       diff.colorMoved      = "default";
       merge.conflictStyle  = "zdiff3";
-      core.editor = "zeditor --wait";
-      feature.manyFiles = true;
-      "url \"git@github.com:amauribsjr/\"".insteadOf = "https://github.com/amauribsjr/";
-    };
+      core.editor          = "zeditor --wait";
+      feature.manyFiles    = true;
 
-    aliases = {
-      st       = "status -sb";
-      co       = "checkout";
-      br       = "branch";
-      ci       = "commit";
-      lg       = "log --graph --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)(%cr)%C(reset) %C(blue)<%an>%C(reset)%C(green)%d%C(reset)' --abbrev-commit";
-      undo     = "reset --soft HEAD~1";
-      amend    = "commit --amend --no-edit";
-      uncommit = "reset HEAD~";
-      diffc    = "diff --cached";
-      wip      = "commit -am 'wip'";
+      "url \"git@github.com:amauribsjr/\"".insteadOf = "https://github.com/amauribsjr/";
+
+      alias = {
+        st       = "status -sb";
+        co       = "checkout";
+        br       = "branch";
+        ci       = "commit";
+        lg       = "log --graph --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)(%cr)%C(reset) %C(blue)<%an>%C(reset)%C(green)%d%C(reset)' --abbrev-commit";
+        undo     = "reset --soft HEAD~1";
+        amend    = "commit --amend --no-edit";
+        uncommit = "reset HEAD~";
+        diffc    = "diff --cached";
+        wip      = "commit -am 'wip'";
+      };
     };
 
     ignores = [
@@ -43,15 +46,16 @@
       "target/"
       "node_modules/"
     ];
+  };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate     = true;
-        line-numbers = true;
-        side-by-side = false;
-        syntax-theme = "gruvbox-dark";
-      };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate     = true;
+      line-numbers = true;
+      side-by-side = false;
+      syntax-theme = "gruvbox-dark";
     };
   };
 
