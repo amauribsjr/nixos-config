@@ -3,6 +3,8 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+  kernelParams = [ "acpi=force" ];
+
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"
