@@ -8,8 +8,6 @@
     ./theme.nix
     ./shell/zsh.nix
     ./shell/starship.nix
-    ./shell/git.nix
-    ./shell/ssh.nix
     ./terminal/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/awww.nix

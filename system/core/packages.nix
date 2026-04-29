@@ -8,6 +8,7 @@
     wget
     curl
     git
+    lazygit
     file
     tree
     zip
