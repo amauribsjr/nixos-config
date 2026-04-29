@@ -12,31 +12,30 @@
     tree
     zip
     unzip
-    p7zip             # .7z support
-    lazygit           # git TUI
+    p7zip
 
     # System & hardware
     btop
     htop
     fastfetch
-    powertop          # power consumption analyzer
-    lm_sensors        # temperature sensors
-    pciutils          # lspci
-    usbutils          # lsusb
+    powertop
+    lm_sensors
+    pciutils
+    usbutils
     intel-gpu-tools
-    psmisc            # pstree, killall, etc
+    psmisc
 
     # Desktop
     wl-clipboard
     brightnessctl
-    pamixer           # volume CLI
-    playerctl         # media keys CLI
+    pamixer
+    playerctl
     bibata-cursors
     gnome-disk-utility
 
     # Apps
     nautilus
-    eog               # image viewer
+    eog
     pavucontrol
     google-chrome
     vesktop
@@ -45,10 +44,9 @@
     mpv
     spotify
     gnome-software
-    pandoc            # document converter
+    pandoc
 
     # Editors
-    zed-editor
     vscode
 
     # Java
@@ -56,7 +54,8 @@
     maven
 
     # Rust
-    rustup
+    rustc
+    cargo
     gcc
     gnumake
     pkg-config
@@ -71,18 +70,16 @@
 
     # Ruby
     ruby
-    rubyPackages.solargraph   # LSP
+    rubyPackages.solargraph
 
     # Nix
-    nixd                      # Nix LSP
+    nixd
 
     # Databases
     dbeaver-bin
     sqlite
 
   ];
-
-  services.gvfs.enable = true;
 
   services.journald.extraConfig = ''
     SystemMaxUse=100M

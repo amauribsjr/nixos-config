@@ -4,31 +4,26 @@
   home.packages = with pkgs; [
 
     # Wayland & desktop
-    awww                 # wallpaper daemon
+    awww
     swaylock
-    mako                 # notification daemon
     networkmanagerapplet
-    xwayland-satellite   # X11 compatibility layer
-    xdg-user-dirs
     wl-clipboard
 
     # Screenshots
     grim
-    slurp                # region selector
-    swappy               # screenshot editor
+    slurp
+    swappy
 
     # Terminal utilities
-    yazi                 # file manager TUI
-    jq                   # JSON processor
-    fd                   # fast find alternative
+    yazi
+    jq
+    fd
     ripgrep
-    fzf                  # fuzzy finder
-    zoxide               # smart cd
 
     # File & media
-    ffmpegthumbnailer    # video thumbnails in yazi
-    unar                 # universal extractor
-    poppler-utils        # PDF utilities
+    ffmpegthumbnailer
+    unar
+    poppler-utils
     imagemagick
 
     # Launchers

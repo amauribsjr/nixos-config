@@ -9,6 +9,7 @@
   };
 
   services.displayManager.defaultSession = "niri";
+  services.gvfs.enable = true;
 
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
@@ -23,7 +24,7 @@
   };
 
   programs.dconf.enable = true;
-
+  
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans

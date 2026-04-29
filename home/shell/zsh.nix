@@ -8,11 +8,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      y = "yazi";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
-      update = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
+      y        = "yazi";
+      rebuild  = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
+      update   = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
       cleanweek = "sudo nix-collect-garbage -d";
-      clean = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3 && sudo nix-collect-garbage";
+      clean    = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3 && sudo nix-collect-garbage";
       testbuild = "cd ~/nixos-config && git add . && sudo nixos-rebuild test --flake ~/nixos-config#nixos";
       rollback = "sudo nixos-rebuild switch --rollback";
     };
@@ -27,7 +27,6 @@
         rm -f -- "$tmp"
       }
 
-      # NixOS helper function
       function nixos() {
         if [ "$1" = "rebuild" ]; then
           echo "🔄 Rebuilding NixOS..."
@@ -52,5 +51,20 @@
         fi
       }
     '';
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

@@ -52,20 +52,19 @@
         inactive.color = "#${colors.bg2}";
       };
       background-color = "#${colors.bg}";
-
       border.enable = false;
     };
 
     spawn-at-startup = [
+      { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ":0" ]; }
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
-      #{ command = [ "${pkgs.mako}/bin/mako" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
     ];
 
     environment = {
-      DISPLAY = ":0";
+      DISPLAY       = ":0";
       XCURSOR_THEME = "Bibata-Modern-Classic";
-      XCURSOR_SIZE = "24";
+      XCURSOR_SIZE  = "24";
     };
 
     window-rules = [
@@ -77,17 +76,6 @@
         ];
         open-floating = true;
       }
-
-      {
-        geometry-corner-radius = {
-          top-left = 0.0;
-          top-right = 0.0;
-          bottom-left = 0.0;
-          bottom-right = 0.0;
-        };
-        clip-to-geometry = true;
-      }
-
     ];
 
     animations.enable = true;

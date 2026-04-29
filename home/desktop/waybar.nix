@@ -4,7 +4,7 @@ let
 power-menu = pkgs.writeShellScript "power-menu" ''
   chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu \
     --width=180 --height=220 --location=center \
-    --style=/home/koppi/.config/wofi/center.css)
+    --style="$HOME/.config/wofi/center.css")
   if echo "$chosen" | grep -q "Power off"; then
     systemctl poweroff
   elif echo "$chosen" | grep -q "Reboot"; then
@@ -97,7 +97,6 @@ in
           format-ethernet   = "󰈀 ETH";
           format-disconnected = "󰤭 OFF";
           tooltip-format    = "{ifname}: {ipaddr}";
-          on-click          = "alacritty -e nmtui";
         };
 
         tray = {
