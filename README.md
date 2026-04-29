@@ -172,7 +172,7 @@ nixos-config/
 
 ## Theme
 
-**Gruvbox Dark Soft** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
+**Atelier Lakeside** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
 
 ---
 
