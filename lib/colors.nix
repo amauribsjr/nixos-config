@@ -1,43 +1,43 @@
 {
-  # Base backgrounds (Rosé Pine Moon)
-  bg       = "232136";   # Base
-  bg1      = "2a273f";   # Surface
-  bg2      = "393552";   # Overlay
-  bg3      = "6e6a86";   # Muted
-  bg4      = "908caa";   # Subtle
+  # Base backgrounds (Gruvbox Dark Hard)
+  bg       = "1d2021";   # bg0_hard
+  bg1      = "282828";   # bg0
+  bg2      = "3c3836";   # bg1
+  bg3      = "504945";   # bg2
+  bg4      = "665c54";   # bg3
 
   # Foregrounds
-  fg       = "e0def4";   # Text
-  fg1      = "e0def4";   # Text
-  fg2      = "908caa";   # Subtle
+  fg       = "ebdbb2";   # fg
+  fg1      = "ebdbb2";   # fg
+  fg2      = "a89984";   # gray / muted fg
 
   # Accent
-  accent   = "ea9a97";   # Rose
-  accdim   = "6e6a86";   # Muted
+  accent   = "fe8019";   # bright orange
+  accdim   = "928374";   # gray
 
   # ANSI normal
-  black    = "232136";
-  red      = "eb6f92";   # Love
-  green    = "3e8fb0";   # Pine
-  yellow   = "f6c177";   # Gold
-  blue     = "9ccfd8";   # Foam
-  magenta  = "c4a7e7";   # Iris
-  cyan     = "9ccfd8";   # Foam
-  white    = "e0def4";   # Text
+  black    = "1d2021";   # bg0_hard
+  red      = "cc241d";   # red
+  green    = "98971a";   # green
+  yellow   = "d79921";   # yellow
+  blue     = "458588";   # blue
+  magenta  = "b16286";   # purple
+  cyan     = "689d6a";   # aqua
+  white    = "a89984";   # fg4 / gray
 
   # ANSI bright
-  bblack   = "393552";   # Overlay
-  bred     = "eb6f92";   # Love
-  bgreen   = "3e8fb0";   # Pine
-  byellow  = "f6c177";   # Gold
-  bblue    = "9ccfd8";   # Foam
-  bmagenta = "c4a7e7";   # Iris
-  bcyan    = "9ccfd8";   # Foam
-  bwhite   = "e0def4";   # Text
+  bblack   = "928374";   # gray
+  bred     = "fb4934";   # bright red
+  bgreen   = "b8bb26";   # bright green
+  byellow  = "fabd2f";   # bright yellow
+  bblue    = "83a598";   # bright blue
+  bmagenta = "d3869b";   # bright purple
+  bcyan    = "8ec07c";   # bright aqua
+  bwhite   = "ebdbb2";   # fg
 
   # Custom
-  redsoft  = "b4637a";   # Love escuro
-  orange   = "ea9a97";   # Rose
-  teal     = "3e8fb0";   # Pine
-  slate    = "2a273f";   # Surface
+  redsoft  = "9d0006";   # dark red
+  orange   = "fe8019";   # bright orange
+  teal     = "689d6a";   # aqua
+  slate    = "282828";   # bg0
 }
