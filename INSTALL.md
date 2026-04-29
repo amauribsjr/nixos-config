@@ -1,83 +1,68 @@
-# My NixOS Installation
+# NixOS Installation — Dell Inspiron 3501
 
-> Focused for my own **Dell Inspiron 3501** hardware.
+> Hardware-specific guide for this flake. Adapt if running on different hardware.
 
 ---
 
-## 1. After booting in
+## 1. Boot and keyboard
 
 ```sh
 loadkeys br-abnt2
 ```
 
-> Only needed if using an ABNT2 laptop keyboard.
-
 ---
 
 ## 2. Network
 
-First, connect to your WiFi network:
-
 ```sh
 nmtui
-```
-
-Then test your connection:
-
-```sh
 ping -c 3 1.1.1.1
 ```
 
 ---
 
-## 3. Disk Partitioning
+## 3. Disk partitioning
 
-Identify your disk first:
+Identify the disk:
 
 ```sh
 lsblk
 ```
 
-If it's an NVMe SSD, it'll usually be `nvme0n1` — but check first.
+NVMe SSDs are usually `nvme0n1` — confirm before proceeding.
 
-### 3.1 Delete the partition table
+### 3.1 Create GPT partition table
 
 ```sh
 parted /dev/nvme0n1 -- mklabel gpt
 ```
 
-### 3.2 Create new partitions
+### 3.2 Partitions
 
 ```sh
-# ESP (boot EFI) — 512 MiB
 parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 parted /dev/nvme0n1 -- set 1 esp on
-
-# Root — rest of the disk
 parted /dev/nvme0n1 -- mkpart primary ext4 512MiB 100%
 ```
 
-Check it:
+Verify:
 
 ```sh
 lsblk /dev/nvme0n1
 ```
 
-Expected output:
+Expected:
 
 ```
 nvme0n1
 ├─nvme0n1p1   512M
-└─nvme0n1p2   <remaining disk size>
+└─nvme0n1p2   <remaining>
 ```
 
 ### 3.3 Format
 
 ```sh
-# ESP
 mkfs.fat -F 32 -n NIXOS_BOOT /dev/nvme0n1p1
-
-# Root
 mkfs.ext4 -L NIXOS_ROOT /dev/nvme0n1p2
 ```
 
@@ -91,55 +76,30 @@ mkdir -p /mnt/boot
 mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot
 ```
 
-Check:
-
-```sh
-lsblk -f /dev/nvme0n1
-```
-
-Both partitions should be shown mounted at `/mnt` and `/mnt/boot`.
-
 ---
 
-## 5. Install git and clone the config
+## 5. Clone the config
 
 ```sh
 nix-env -iA nixos.git
-```
-
-Clone directly into `/mnt/etc/nixos`:
-
-```sh
 git clone https://github.com/amauribsjr/nixos-config /mnt/etc/nixos
 ```
 
-> **Note:** Not required, but it's recommended to configure SSH beforehand.
-
-Check structure:
-
-```sh
-ls /mnt/etc/nixos
-```
-
-Should show `flake.nix`, `system/`, `home/`, `lib/`, etc.
-
 ---
 
-## 6. Generate and integrate hardware config
+## 6. Verify hardware modules
 
 ```sh
 nixos-generate-config --root /mnt --show-hardware-config
 ```
 
-This command only prints the hardware config — nothing is written.
-
-Compare the `boot.initrd.availableKernelModules` output with the ones in `system/hardware/hardware.nix`. Usually they match on laptops like the Inspiron 3501, but update if needed:
+Compare `boot.initrd.availableKernelModules` with `system/hardware/hardware.nix`. Edit if needed:
 
 ```sh
 nano /mnt/etc/nixos/system/hardware/hardware.nix
 ```
 
-> `fileSystems` doesn't need to be in `hardware.nix` — it's already declared by label in the config, which is more portable.
+The `fileSystems` block is already declared by label — no changes needed there.
 
 ---
 
@@ -149,15 +109,11 @@ nano /mnt/etc/nixos/system/hardware/hardware.nix
 nixos-install --flake /mnt/etc/nixos#nixos --no-root-passwd
 ```
 
-> `--no-root-passwd` skips setting a root password — we'll set the user password instead.
-
-This step may take a while. The `niri-flake` compiles locally on first install — expect **10 to 20 minutes**.
+First install compiles niri-flake locally — expect **10–20 minutes**.
 
 ---
 
 ## 8. Set user password
-
-Before rebooting, set a password for `koppi`:
 
 ```sh
 nixos-enter --root /mnt -c 'passwd koppi'
@@ -172,25 +128,47 @@ umount -R /mnt
 reboot
 ```
 
-Remove your flash drive when the screen turns off.
+Remove the flash drive when the screen turns off.
 
 ---
 
 ## 10. First boot
 
-**GDM** will show up. Log in with `koppi`.
+GDM will appear. Log in as `koppi`. Niri and Waybar start automatically.
 
-Niri and Waybar will start automatically. The wallpaper will likely be missing since the folder doesn't exist yet. Create it and place an image inside:
+Create the wallpaper folder:
 
 ```sh
 mkdir -p ~/Pictures/Wallpapers
 ```
 
-> Name the image `wallpaper.png`. The wallpaper will load on next login — the `awww` daemon tries on boot and gives up gracefully if nothing is found.
+Place a `wallpaper.png` inside. It loads on next login.
+
+Create the screenshots folder (used by Niri):
+
+```sh
+mkdir -p ~/Pictures/Screenshots
+```
 
 ---
 
-## 11. Post-installation tips
+## 11. SSH key for GitHub
+
+```sh
+ssh-keygen -t ed25519 -C "amauribsjunior@proton.me" -f ~/.ssh/id_ed25519_github
+cat ~/.ssh/id_ed25519_github.pub | wl-copy
+```
+
+Add the public key at **https://github.com/settings/keys**, then test:
+
+```sh
+ssh -T git@github.com
+# Hi amauribsjr! You've successfully authenticated...
+```
+
+---
+
+## 12. Post-install
 
 ### Bluetooth (off by default)
 
@@ -199,56 +177,19 @@ sudo bluetoothctl power on
 bluetoothctl scan on
 ```
 
-To enable on boot, change in `system/hardware/power.nix`:
+To enable on boot, set in `system/hardware/power.nix`:
 
 ```nix
 hardware.bluetooth.powerOnBoot = true;
 ```
 
-### Update the system
+### direnv (project shells)
+
+In any project with a `flake.nix` or `shell.nix`:
 
 ```sh
-cd ~/nixos-config
-nix flake update
-sudo nixos-rebuild switch --flake .#nixos
+echo "use flake" > .envrc
+direnv allow
 ```
 
-Or using the shell alias:
-
-```sh
-nixos update
-```
-
-### Change wallpaper without logging out
-
-```sh
-awww img ~/Pictures/Wallpapers/wallpaper.png
-```
-
-### Clean old generations (keep last 3)
-
-```sh
-nixos clean
-```
-
-Or manually:
-
-```sh
-sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
-sudo nix-collect-garbage
-```
-
----
-
-## Fast daily commands
-
-| Command | Description |
-|---|---|
-| `nixos rebuild` | Rebuild and switch to new config |
-| `nixos update` | Update flake inputs and rebuild |
-| `nixos clean` | Delete old generations, keep last 3 |
-| `nixos cleanweek` | Delete generations older than 7 days |
-| `nixos rollback` | Roll back to previous generation |
-| `awww img ~/path/to/wallpaper.png` | Change wallpaper live |
-| `sudo bluetoothctl power on` | Enable Bluetooth |
-| `niri msg action quit` | Quit Niri session |
+The shell activates automatically when you `cd` into the directory.
