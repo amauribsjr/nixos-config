@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware
-    ./desktop
+    ./desktop.nix
     ./core
   ];
 

@@ -1,10 +1,11 @@
 { pkgs, ... }:
 
 {
+  # Desktop (Compositor + Display Manager)
   programs.niri.enable = true;
 
   services.displayManager.gdm = {
-    enable = true;
+    enable  = true;
     wayland = true;
   };
 
@@ -19,12 +20,12 @@
   '';
 
   xdg.portal = {
-    enable = true;
+    enable       = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   programs.dconf.enable = true;
-  
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -33,4 +34,25 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
   ];
+
+  # Audio
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable           = true;
+    alsa.enable      = true;
+    alsa.support32Bit = false;
+    pulse.enable     = true;
+    jack.enable      = true;
+  };
+
+  # Flatpak
+  services.flatpak.enable = true;
+
+  system.activationScripts.flatpakFlathub = ''
+    if [ -x ${pkgs.flatpak}/bin/flatpak ]; then
+      ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists \
+        flathub https://flathub.org/repo/flathub.flatpakrepo || true
+    fi
+  '';
 }
