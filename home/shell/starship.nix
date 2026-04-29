@@ -82,7 +82,7 @@
       palettes.darksea = {
         bg0    = "#${colors.bg}";
         fg     = "#${colors.fg}";
-        blue   = "#d65d0e";
+        blue   = "#${colors.blue}";
         slate  = "#${colors.slate}";
         mint   = "#${colors.bcyan}";
         teal   = "#${colors.teal}";
