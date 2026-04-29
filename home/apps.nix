@@ -164,7 +164,11 @@ in
     ];
 
     userSettings = {
-      theme = { mode = "dark"; light = "Rosé Pine Dawn"; dark = "Rosé Pine Moon"; };
+      theme = {
+        mode = "dark";
+        light = "Gruvbox Dark Hard";
+        dark  = "Gruvbox Dark Hard";
+      };
 
       ui_font_family     = fonts.mono;
       ui_font_size       = 14;
