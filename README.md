@@ -172,7 +172,7 @@ nixos-config/
 
 ## Theme
 
-**Rosé Pine Moon** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
+**Gruvbox Dark Hard** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
 
 ---
 
