@@ -7,7 +7,6 @@
     awww
     swaylock
     networkmanagerapplet
-    wl-clipboard
 
     # Screenshots
     grim

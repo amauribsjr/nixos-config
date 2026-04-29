@@ -8,7 +8,6 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      y        = "yazi";
       rebuild  = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
       update   = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
       cleanweek = "sudo nix-collect-garbage -d";

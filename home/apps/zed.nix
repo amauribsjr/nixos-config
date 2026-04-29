@@ -30,7 +30,7 @@
       tab_size              = 4;
       hard_tabs             = false;
       preferred_line_length = 100;
-      soft_wrap             = "preferred_line_length";
+      soft_wrap             = "none";
       relative_line_numbers = false;
       cursor_blink          = true;
       show_whitespaces      = "selection";
