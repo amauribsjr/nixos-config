@@ -36,30 +36,23 @@ nixos-config/
 ├── flake.nix
 ├── flake.lock
 ├── lib/
-│   ├── colors.nix          # Gruvbox Dark Soft palette
+│   ├── colors.nix          # Gruvbox Dark Hard palette
 │   └── fonts.nix           # JetBrainsMono Nerd Font
 ├── home/
 │   ├── default.nix
 │   ├── packages.nix
 │   ├── theme.nix
-│   ├── apps/
-│   │   ├── awww.nix        # wallpaper daemon (systemd user service)
-│   │   ├── fastfetch.nix
-│   │   ├── wofi.nix
-│   │   └── zed.nix         # Zed editor (declarative)
-│   ├── desktop/
-│   │   ├── niri.nix
-│   │   └── waybar.nix
-│   ├── shell/
-│   │   ├── starship.nix
-│   │   └── zsh.nix         # Zsh + direnv + nix-direnv
-│   └── terminal/
-│       └── alacritty.nix
+│   ├── apps.nix            # Alacritty + Zed + wofi + awww + fastfetch
+│   ├── shell.nix           # Zsh + Starship + direnv
+│   └── desktop/
+│       ├── niri.nix
+│       └── waybar.nix
 └── system/
     ├── default.nix
+    ├── desktop.nix         # Niri + GDM + PipeWire + Flatpak + fonts
     ├── core/
     │   ├── default.nix
-    │   ├── databases.nix   # MySQL + PostgreSQL
+    │   ├── databases.nix   # MySQL (dev)
     │   ├── locale.nix      # pt_BR + en_US + ko_KR
     │   ├── networking.nix
     │   ├── nix-ld.nix
@@ -67,11 +60,6 @@ nixos-config/
     │   ├── packages.nix
     │   ├── users.nix
     │   └── virtualisation.nix  # Docker
-    ├── desktop/
-    │   ├── default.nix
-    │   ├── audio.nix       # PipeWire
-    │   ├── desktop.nix     # Niri + GDM + fonts + portals
-    │   └── flatpak.nix
     └── hardware/
         ├── default.nix
         ├── boot.nix        # systemd-boot + zram sysctl tuning
