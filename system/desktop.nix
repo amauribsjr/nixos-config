@@ -15,8 +15,7 @@
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
     ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
-
-    ACTION=="add", SUBSYSTEM=="sound", ATTRS{idVendor}=="0a67", ATTRS{idProduct}=="d061", ENV{SYSTEMD_WANTS}=""
+    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10ec", ATTR{class}=="0x020000", ATTR{power/control}="on"
   '';
 
   xdg.portal = {

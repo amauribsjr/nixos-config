@@ -12,8 +12,7 @@
     };
 
     kernelPackages = pkgs.linuxPackages;
-    kernelParams = [ "acpi=force" ];
-      
+
     tmp.cleanOnBoot = true;
 
     kernel.sysctl = {
@@ -27,7 +26,6 @@
   };
 
   systemd.settings.Manager = {
-    DefaultTimeoutStopSec  = "10s";
     DefaultTimeoutAbortSec = "10s";
   };
 }

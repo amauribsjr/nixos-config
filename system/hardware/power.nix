@@ -37,7 +37,7 @@
       RUNTIME_PM_ON_BAT = "auto";
 
       PCIE_ASPM_ON_AC = "default";
-      PCIE_ASPM_ON_BAT = "powersupersave";
+      PCIE_ASPM_ON_BAT = "default";
 
       WIFI_PWR_ON_AC = "off";
       WIFI_PWR_ON_BAT = "on";
