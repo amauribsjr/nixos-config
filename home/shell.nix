@@ -8,7 +8,18 @@
     autosuggestion.enable     = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = {};
+    shellAliases = {
+
+      # DevShells
+      rshell = "nix develop ~/nixos-config#rust";
+      jshell = "nix develop ~/nixos-config#java";
+      cshell = "nix develop ~/nixos-config#c";
+
+      # Open editors inside DevShells
+      rzed = "nix develop ~/nixos-config#rust -c zed .";
+      jzed = "nix develop ~/nixos-config#java -c zed .";
+      czed = "nix develop ~/nixos-config#c -c zed .";
+    };
 
     initContent = ''
       function y() {
@@ -55,23 +66,21 @@
 
       function testbuild() {
         echo "🧪 Testing NixOS build..."
-        (
-          cd ~/nixos-config || exit 1
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "⚠️ There are uncommitted changes:"
-            git status --short
-            echo
-            echo "If you've created new files, add them manually with git add <file>."
-            echo
-          fi
-          sudo nixos-rebuild test --flake .#nixos
-        )
+        cd ~/nixos-config || exit 1
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "⚠️ There are uncommitted changes:"
+          git status --short
+          echo
+          echo "If you've created new files, add them manually with git add <file>."
+          echo
+        fi
+        sudo nixos-rebuild test --flake .#nixos
       }
     '';
 
   };
 
-  programs.direnv     = { enable = true; nix-direnv.enable = true; };
+  programs.direnv     = { enable = true; nix-direnv.enable    = true; };
   programs.nix-index  = { enable = true; enableZshIntegration = true; };
   programs.zoxide     = { enable = true; enableZshIntegration = true; };
   programs.fzf        = { enable = true; enableZshIntegration = true; };

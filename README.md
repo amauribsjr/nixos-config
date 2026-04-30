@@ -35,6 +35,7 @@ for my **Dell Inspiron 3501**.
 nixos-config/
 ├── flake.nix
 ├── flake.lock
+├── devshells.nix               # Rust, Java, C dev shells
 ├── lib/
 │   ├── colors.nix              # Gruvbox Dark Hard palette
 │   └── fonts.nix               # JetBrainsMono Nerd Font
