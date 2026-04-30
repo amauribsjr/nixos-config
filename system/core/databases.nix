@@ -4,7 +4,7 @@
   services.postgresql.enable = false;
 
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mysql84;
     ensureDatabases = [ "dev" ];
     ensureUsers = [{

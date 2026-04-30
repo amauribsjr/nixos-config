@@ -11,7 +11,7 @@
       timeout = 3;
     };
 
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     tmp.cleanOnBoot = true;
 
@@ -21,6 +21,9 @@
       "vm.dirty_writeback_centisecs" = 1500;
       "vm.watermark_boost_factor"    = 0;
       "vm.watermark_scale_factor"    = 125;
+      "vm.dirty_expire_centisecs"    = 6000;
+      "vm.dirty_background_ratio"    = 5;
+      "vm.dirty_ratio"               = 25;
       "vm.page-cluster"              = 0;
     };
   };

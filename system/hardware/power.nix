@@ -2,10 +2,10 @@
 
 {
   zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 50;
-    priority = 100;
+    enable        = true;
+    algorithm     = "zstd";
+    memoryPercent = 100;
+    priority      = 100;
   };
 
   services.fstrim = {
@@ -20,18 +20,18 @@
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "powersave";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-      CPU_BOOST_ON_BAT = 0;
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_BOOST_ON_BAT = 1;
       CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 0;
+      CPU_HWP_DYN_BOOST_ON_BAT = 1;
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 90;
+      CPU_MAX_PERF_ON_BAT = 100;
 
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "low-power";
+      PLATFORM_PROFILE_ON_AC = "balanced";
+      PLATFORM_PROFILE_ON_BAT = "default";
 
       RUNTIME_PM_ON_AC = "auto";
       RUNTIME_PM_ON_BAT = "auto";
@@ -46,7 +46,7 @@
 
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_ON_BAT = 1;
-      SOUND_POWER_SAVE_CONTROLLER = "Y";
+      SOUND_POWER_SAVE_CONTROLLER = "N";
 
       USB_AUTOSUSPEND = 1;
     };
@@ -55,6 +55,7 @@
   services.thermald.enable = true;
 
   services.fwupd.enable = true;
+  systemd.timers.fwupd-refresh.enable = false;
 
   services.upower = {
     enable = true;

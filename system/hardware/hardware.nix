@@ -28,7 +28,11 @@
     options = [ "umask=0077" ];
   };
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device   = "/var/lib/swapfile";
+    size     = 4096;
+    priority = 10;
+  }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
