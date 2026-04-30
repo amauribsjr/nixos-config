@@ -31,7 +31,7 @@
       CPU_MAX_PERF_ON_BAT = 100;
 
       PLATFORM_PROFILE_ON_AC = "balanced";
-      PLATFORM_PROFILE_ON_BAT = "default";
+      PLATFORM_PROFILE_ON_BAT = "quiet";
 
       RUNTIME_PM_ON_AC = "auto";
       RUNTIME_PM_ON_BAT = "auto";
