@@ -36,24 +36,31 @@ nixos-config/
 ├── flake.nix
 ├── flake.lock
 ├── lib/
-│   ├── colors.nix          # Gruvbox Dark Hard palette
-│   └── fonts.nix           # JetBrainsMono Nerd Font
+│   ├── colors.nix              # Gruvbox Dark Hard palette
+│   └── fonts.nix               # JetBrainsMono Nerd Font
 ├── home/
+│   ├── apps/
+│   │   ├── alacritty.nix
+│   │   ├── wofi.nix
+│   │   └── zed.nix
+│   ├── cli/
+│   │   └── fastfetch.nix
+│   ├── desktop/
+│   │   ├── niri.nix
+│   │   └── waybar.nix
+│   ├── services/
+│   │   └── awww.nix
 │   ├── default.nix
 │   ├── packages.nix
-│   ├── theme.nix
-│   ├── apps.nix            # Alacritty + Zed + wofi + awww + fastfetch
-│   ├── shell.nix           # Zsh + Starship + direnv
-│   └── desktop/
-│       ├── niri.nix
-│       └── waybar.nix
+│   ├── shell.nix               # Zsh + Starship + direnv
+│   └── theme.nix
 └── system/
     ├── default.nix
-    ├── desktop.nix         # Niri + GDM + PipeWire + Flatpak + fonts
+    ├── desktop.nix             # Niri + GDM + PipeWire + Flatpak + fonts
     ├── core/
     │   ├── default.nix
-    │   ├── databases.nix   # MySQL (dev)
-    │   ├── locale.nix      # pt_BR + en_US + ko_KR
+    │   ├── databases.nix       # MySQL (dev)
+    │   ├── locale.nix          # pt_BR + en_US + ko_KR
     │   ├── networking.nix
     │   ├── nix-ld.nix
     │   ├── nix.nix
@@ -62,10 +69,10 @@ nixos-config/
     │   └── virtualisation.nix  # Docker
     └── hardware/
         ├── default.nix
-        ├── boot.nix        # systemd-boot + zram sysctl tuning
-        ├── graphics.nix    # Intel iHD + Wayland env vars
-        ├── hardware.nix    # kernel modules + filesystems
-        └── power.nix       # TLP + thermald + upower + Bluetooth
+        ├── boot.nix            # systemd-boot + zram sysctl tuning
+        ├── graphics.nix        # Intel iHD + Wayland env vars
+        ├── hardware.nix        # kernel modules + filesystems
+        └── power.nix           # TLP + thermald + upower + Bluetooth
 ```
 
 ---
