@@ -16,11 +16,11 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 3d";
     };
   };
 
   nixpkgs.config.allowUnfree = true;
-  
+
   programs.command-not-found.enable = false;
 }
