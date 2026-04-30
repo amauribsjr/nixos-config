@@ -31,7 +31,6 @@
     brightnessctl
     pamixer
     playerctl
-    bibata-cursors
     gnome-disk-utility
 
     # Apps

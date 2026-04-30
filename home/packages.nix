@@ -7,6 +7,7 @@
     awww
     swaylock
     networkmanagerapplet
+    polkit_gnome
 
     # Screenshots
     grim

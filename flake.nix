@@ -13,18 +13,21 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  
+
   };
 
   outputs = { self, nixpkgs, home-manager, niri, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs   = nixpkgs.legacyPackages.${system};
-    
+    pkgs   = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     colors = import ./lib/colors.nix;
     fonts  = import ./lib/fonts.nix;
   in {
-    devShells.${system} = import ./devshells.nix { inherit pkgs; };   
+    devShells.${system} = import ./devshells.nix { inherit pkgs; };
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs colors fonts; };

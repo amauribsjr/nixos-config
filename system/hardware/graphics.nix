@@ -16,7 +16,6 @@
     NIXOS_OZONE_WL = "1";
     LIBVA_DRIVER_NAME = "iHD";
     XDG_SESSION_TYPE = "wayland";
-    XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
   };
 

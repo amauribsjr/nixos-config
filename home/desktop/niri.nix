@@ -59,13 +59,8 @@
       { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ":0" ]; }
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
+      { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }
     ];
-
-    environment = {
-      DISPLAY       = ":0";
-      XCURSOR_THEME = "Bibata-Modern-Classic";
-      XCURSOR_SIZE  = "24";
-    };
 
     window-rules = [
       {
@@ -82,7 +77,7 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action  = spawn "alacritty";
-      "Mod+D".action = spawn "wofi" "--show=drun" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
+      "Mod+D".action       = spawn "wofi" "--show=drun" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
       "Mod+V".action       = spawn "vesktop";
       "Mod+B".action       = spawn "google-chrome";
       "Mod+E".action       = spawn "zeditor";
