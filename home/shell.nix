@@ -40,12 +40,14 @@
         echo "🔄 Updating flakes..."
         cd ~/nixos-config && nix flake update
         echo "🔄 Rebuilding..."
+        cd ~/nixos-config && git add . && git commit -m "Update flakes"
         sudo nixos-rebuild switch --flake ~/nixos-config#nixos
       }
 
       function flakeup() {
         echo "🔄 Updating flake.lock..."
         cd ~/nixos-config && nix flake update
+        cd ~/nixos-config && git add . && git commit -m "Update flake.lock"
       }
 
       function rollback() {
