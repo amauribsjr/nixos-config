@@ -154,19 +154,6 @@ mkdir -p ~/Pictures/Screenshots
 
 ## 11. Post-install
 
-### Bluetooth (off by default)
-
-```sh
-sudo bluetoothctl power on
-bluetoothctl scan on
-```
-
-To enable on boot, set in `system/hardware/power.nix`:
-
-```nix
-hardware.bluetooth.powerOnBoot = true;
-```
-
 ### direnv (project shells)
 
 In any project with a `flake.nix` or `shell.nix`:
