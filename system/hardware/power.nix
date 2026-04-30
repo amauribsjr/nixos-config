@@ -35,6 +35,7 @@
 
       RUNTIME_PM_ON_AC = "auto";
       RUNTIME_PM_ON_BAT = "auto";
+      RUNTIME_PM_DRIVER_DENYLIST = "r8169";
 
       PCIE_ASPM_ON_AC = "default";
       PCIE_ASPM_ON_BAT = "default";
