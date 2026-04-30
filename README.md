@@ -21,12 +21,12 @@ for my **Dell Inspiron 3501**.
 - **Compositor**: **Niri** (scrollable-tiling Wayland) via [niri-flake](https://github.com/sodiboo/niri-flake)
 - **Shell**: Zsh + Starship + direnv
 - **Terminal**: Alacritty
-- **Theme**: Gruvbox Dark Soft
+- **Theme**: Gruvbox Dark Hard
 - **Bar**: Waybar
 - **Launcher**: Wofi
 - **Notifications**: Mako
 - **Wallpaper**: awww
-- **Greeter**: GDM
+- **Greeter**: ReGreet
 - **Editor**: Zed
 
 ## 📁 Structure
@@ -66,6 +66,7 @@ nixos-config/
     │   ├── nix.nix
     │   ├── packages.nix
     │   ├── users.nix
+    │   ├── greeter.nix         # ReGreet (Gruvbox Dark Hard)
     │   └── virtualisation.nix  # Docker
     └── hardware/
         ├── default.nix
