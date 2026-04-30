@@ -13,9 +13,9 @@
 
   home.file.".config/wofi/center.css".text = ''
     window {
-      background-color: #${colors.bg};
+      background-color: #${colors.bg1};
       font-family: "${fonts.mono}";
-      border: 1px solid #${colors.fg1};
+      border: 1px solid #${colors.yellow};
     }
 
     #input {
@@ -33,7 +33,7 @@
 
     #input:focus {
       color: #${colors.fg};
-      border-bottom: 1px solid #${colors.fg1};
+      border-bottom: 1px solid #${colors.yellow};
     }
 
     #scroll { margin: 0; padding: 0; }
@@ -46,7 +46,7 @@
       background-color: transparent;
     }
 
-    #entry:selected { background-color: #${colors.bg1}; }
+    #entry:selected { background-color: #${colors.bg2}; }
 
     #text {
       color: #${colors.fg2};

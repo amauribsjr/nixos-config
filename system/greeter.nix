@@ -64,7 +64,7 @@
       }
 
       label#clock {
-        color:         #${colors.byellow};
+        color:         #${colors.yellow};
         font-size:     16px;
         font-weight:   600;
         margin-bottom: 24px;
@@ -91,9 +91,8 @@
 
       entry:focus,
       entry:focus-within {
-        border-color:     #${colors.accent};
-        box-shadow:       0 0 0 1px #${colors.accent};
-        outline:          none;
+        border-color:     #${colors.yellow};
+        box-shadow:       0 0 0 1px #${colors.yellow};
       }
 
       entry selection {

@@ -10,11 +10,16 @@
 
   gtk = {
     enable = true;
+  
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
-    gtk4.theme = null;
+  
+    gtk4.theme = {
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
+    };
   };
 
   dconf.settings = {

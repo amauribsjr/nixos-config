@@ -116,17 +116,19 @@ in
       @define-color bg0     #${colors.bg};
       @define-color bg1     #${colors.bg1};
       @define-color bg2     #${colors.bg2};
+      @define-color bg3     #${colors.bg3};
       @define-color bg4     #${colors.bg4};
       @define-color fg0     #${colors.fg};
       @define-color fg1     #${colors.fg1};
       @define-color fg2     #${colors.fg2};
-      @define-color accent  #${colors.fg1};
-      @define-color accdim  #${colors.bg4};
-      @define-color red     #${colors.bred};
+      @define-color accent  #${colors.yellow};
+      @define-color accdim  #${colors.bg3};
+      @define-color red     #${colors.red};
       @define-color amber   #${colors.byellow};
-      @define-color green   #${colors.bcyan};
-      @define-color purple  #${colors.bmagenta};
-      @define-color grey    #${colors.bg2};
+      @define-color green   #${colors.green};
+      @define-color purple  #${colors.magenta};
+      @define-color blue    #${colors.blue};
+      @define-color grey    #${colors.bg4};
 
       * {
           border: none;
@@ -171,8 +173,8 @@ in
 
       #workspaces button.focused,
       #workspaces button.active {
-          color: @fg0;
-          background-color: @accdim;
+          color: @bg0;
+          background-color: @accent;
           font-weight: bold;
       }
 
@@ -181,7 +183,7 @@ in
           color: @fg1;
       }
 
-      #window        { color: @green; font-weight: bold; }
+      #window        { color: @fg2; font-weight: bold; }
       #clock         { color: @accent; font-weight: bold; }
       #pulseaudio    { color: @fg1; }
       #backlight     { color: @fg1; }

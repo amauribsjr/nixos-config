@@ -47,10 +47,11 @@
 
       focus-ring = {
         enable = true;
-        width = 1;
-        active.color   = "#${colors.fg1}";
-        inactive.color = "#${colors.bg2}";
+        width = 2;
+        active.color   = "#${colors.yellow}";
+        inactive.color = "#${colors.bg3}";
       };
+      
       background-color = "#${colors.bg}";
       border.enable = false;
     };

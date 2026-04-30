@@ -8,6 +8,9 @@
     swaylock
     networkmanagerapplet
     polkit_gnome
+    
+    # Theme
+    gruvbox-gtk-theme
 
     # Screenshots
     grim
