@@ -4,15 +4,23 @@
   programs.regreet = {
     enable = true;
 
-    settings = {
-      GTK = {
-        application_prefer_dark_theme = true;
-        font_name                     = "${fonts.mono} 13";
-        cursor_theme_name             = "Bibata-Modern-Classic";
-      };
+    font = {
+      name    = fonts.mono;
+      size    = 13;
+      package = pkgs.nerd-fonts.jetbrains-mono;
     };
 
-    css = ''
+    theme = {
+      name    = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+
+    cursorTheme = {
+      name    = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+    };
+
+    extraCss = ''
       window {
         background-color: #${colors.bg};
       }
