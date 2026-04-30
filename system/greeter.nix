@@ -21,18 +21,17 @@
     };
 
     extraCss = ''
-
       window {
         background-color: #${colors.bg};
       }
 
       box#login-box {
         background-color: #${colors.bg1};
-        border:           2px solid #${colors.accent};
+        border:           2px solid #${colors.bg3};
         border-radius:    4px;
         padding:          40px 56px;
         min-width:        320px;
-        box-shadow:       0 8px 24px rgba(0, 0, 0, 0.5);
+        box-shadow:       0 8px 24px rgba(0, 0, 0, 0.65);
       }
 
       label {
@@ -49,7 +48,7 @@
 
       label.user-label,
       label.session-label {
-        color:      #${colors.bgreen};
+        color:      #${colors.fg2};
         font-size:  12px;
         margin-top: 8px;
       }
@@ -60,33 +59,72 @@
         border:           1px solid #${colors.bg3};
         border-radius:    4px;
         box-shadow:       none;
+        outline:          none;
         padding:          10px 14px;
         caret-color:      #${colors.accent};
-        font-family:      monospace;
-      }
-    
-      entry:focus {
-        border-color: #${colors.accent};
-        box-shadow:   0 0 0 1px #${colors.accent};
+        font-family:      "${fonts.mono}";
       }
 
-      button.login-button {
+      entry:focus,
+      entry:focus-within {
+        border-color:     #${colors.accent};
+        box-shadow:       0 0 0 1px #${colors.accent};
+        outline:          none;
+      }
+
+      entry selection {
         background-color: #${colors.accent};
         color:            #${colors.bg};
-        border:           none;
+      }
+
+      button {
+        background-color: #${colors.bg2};
+        color:            #${colors.fg};
+        border:           1px solid #${colors.bg3};
         border-radius:    4px;
         padding:          10px 24px;
         font-weight:      700;
-        margin-top:       12px;
-        transition:       background-color 150ms ease;
+        box-shadow:       none;
+        text-shadow:      none;
       }
-    
-      button.login-button:hover {
-        background-color: #${colors.byellow};
+
+      button:hover {
+        background-color: #${colors.bg3};
+        border-color:     #${colors.accent};
       }
-    
-      button.login-button:active {
+
+      button:active {
+        background-color: #${colors.bg4};
+      }
+
+      button.login-button,
+      button.suggested-action {
+        background-color: #${colors.green};
+        color:            #${colors.bg};
+        border:           1px solid #${colors.green};
+      }
+
+      button.login-button:hover,
+      button.suggested-action:hover {
+        background-color: #${colors.bgreen};
+        border-color:     #${colors.bgreen};
+      }
+
+      button.login-button:active,
+      button.suggested-action:active {
+        background-color: #${colors.yellow};
+        border-color:     #${colors.yellow};
+      }
+
+      button.destructive-action {
+        background-color: #${colors.red};
+        color:            #${colors.fg};
+        border:           1px solid #${colors.red};
+      }
+
+      button.destructive-action:hover {
         background-color: #${colors.bred};
+        border-color:     #${colors.bred};
       }
 
       combobox button,
@@ -98,10 +136,10 @@
         box-shadow:       none;
         padding:          6px 12px;
       }
-    
+
       combobox button:hover,
       dropdown > button:hover {
-        border-color: #${colors.accent};
+        border-color:     #${colors.accent};
       }
 
       combobox window,
