@@ -1,4 +1,4 @@
-# 🐧 — Amauri (koppi) nixOS flake (Niri)
+# ❄️ Amauri/koppi nixOS system
 
 NixOS + Flake with Home Manager + **Niri** (scrollable-tiling Wayland compositor)
 for my **Dell Inspiron 3501**.
