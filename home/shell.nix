@@ -50,7 +50,20 @@
     
       function testbuild() {
         echo "🧪 Testing NixOS build..."
-        cd ~/nixos-config && git add . && sudo nixos-rebuild test --flake ~/nixos-config#nixos
+      
+        (
+          cd ~/nixos-config || exit 1
+      
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "⚠️ There are uncommitted changes:"
+            git status --short
+            echo
+            echo "If you've created new files, add them manually with git add <file>."
+            echo
+          fi
+      
+          sudo nixos-rebuild test --flake .#nixos
+        )
       }
     '';
     

@@ -40,11 +40,7 @@
     pavucontrol
     vlc
     mpv
-    gnome-software
     pandoc
-
-    # Editors
-    vscode
 
     # Java
     jdk21
@@ -53,6 +49,9 @@
     # Rust
     rustc
     cargo
+    rust-analyzer
+    rustfmt
+    clippy
     gcc
     gnumake
     pkg-config
@@ -60,22 +59,16 @@
     # C
     gdb
 
-    # Haskell
-    ghc
-    cabal-install
-    haskell-language-server
-
-    # Ruby
-    ruby
-    rubyPackages.solargraph
-
     # Nix
     nixd
+    nixfmt-rfc-style
+    statix
+    deadnix
+    nh
+    nvd
 
     # Databases
-    dbeaver-bin
     sqlite
-
   ];
 
   services.journald.extraConfig = ''

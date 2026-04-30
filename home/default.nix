@@ -1,4 +1,4 @@
-{ pkgs, colors, ... }:
+{ pkgs, colors, config, lib, ... }:
 
 {
   imports = [
@@ -7,13 +7,10 @@
     ./packages.nix
     ./theme.nix
     ./shell.nix
-  
     ./apps/alacritty.nix
     ./apps/wofi.nix
     ./apps/zed.nix
-  
     ./cli/fastfetch.nix
-  
     ./services/awww.nix
   ];
 
@@ -112,6 +109,13 @@
     setSessionVariables = false;
   };
 
+  home.activation.createExtraUserDirs =
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ${pkgs.coreutils}/bin/mkdir -p \
+        "${config.home.homeDirectory}/Pictures/Screenshots" \
+        "${config.home.homeDirectory}/Pictures/Wallpapers"
+    '';
+  
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
