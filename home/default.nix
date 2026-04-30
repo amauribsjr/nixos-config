@@ -9,7 +9,6 @@
     ./shell.nix
     ./apps/alacritty.nix
     ./apps/wofi.nix
-    ./apps/zed.nix
     ./cli/fastfetch.nix
     ./services/awww.nix
   ];

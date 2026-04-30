@@ -40,6 +40,7 @@
     vlc
     mpv
     pandoc
+    zed-editor
 
     # Java
     jdk21
@@ -60,7 +61,7 @@
 
     # Nix
     nixd
-    nixfmt-rfc-style
+    nixfmt
     statix
     deadnix
     nh
