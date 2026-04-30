@@ -21,61 +21,99 @@
     };
 
     extraCss = ''
+
       window {
         background-color: #${colors.bg};
       }
 
       box#login-box {
         background-color: #${colors.bg1};
-        border:           1px solid #${colors.bg2};
-        padding:          36px 48px;
-        min-width:        300px;
+        border:           2px solid #${colors.accent};
+        border-radius:    4px;
+        padding:          40px 56px;
+        min-width:        320px;
+        box-shadow:       0 8px 24px rgba(0, 0, 0, 0.5);
       }
 
       label {
-        color: #${colors.fg};
+        color:       #${colors.fg};
+        font-weight: 500;
       }
 
       label#clock {
-        color:         #${colors.fg2};
-        font-size:     13px;
-        margin-bottom: 20px;
+        color:         #${colors.byellow};
+        font-size:     16px;
+        font-weight:   600;
+        margin-bottom: 24px;
+      }
+
+      label.user-label,
+      label.session-label {
+        color:      #${colors.bgreen};
+        font-size:  12px;
+        margin-top: 8px;
       }
 
       entry {
         background-color: #${colors.bg};
         color:            #${colors.fg};
-        border:           1px solid #${colors.bg2};
-        border-radius:    0;
+        border:           1px solid #${colors.bg3};
+        border-radius:    4px;
         box-shadow:       none;
-        padding:          8px 12px;
-        caret-color:      #${colors.fg};
+        padding:          10px 14px;
+        caret-color:      #${colors.accent};
+        font-family:      monospace;
       }
-
+    
       entry:focus {
-        border-color: #${colors.fg1};
-        box-shadow:   none;
+        border-color: #${colors.accent};
+        box-shadow:   0 0 0 1px #${colors.accent};
       }
 
       button.login-button {
-        background-color: #${colors.bg2};
-        color:            #${colors.fg};
+        background-color: #${colors.accent};
+        color:            #${colors.bg};
         border:           none;
-        border-radius:    0;
-        padding:          8px 20px;
+        border-radius:    4px;
+        padding:          10px 24px;
+        font-weight:      700;
+        margin-top:       12px;
+        transition:       background-color 150ms ease;
       }
-
+    
       button.login-button:hover {
-        background-color: #${colors.bg3};
+        background-color: #${colors.byellow};
+      }
+    
+      button.login-button:active {
+        background-color: #${colors.bred};
       }
 
       combobox button,
       dropdown > button {
         background-color: #${colors.bg};
         color:            #${colors.fg};
-        border:           1px solid #${colors.bg2};
-        border-radius:    0;
+        border:           1px solid #${colors.bg3};
+        border-radius:    4px;
         box-shadow:       none;
+        padding:          6px 12px;
+      }
+    
+      combobox button:hover,
+      dropdown > button:hover {
+        border-color: #${colors.accent};
+      }
+
+      combobox window,
+      dropdown popover {
+        background-color: #${colors.bg1};
+        border:           1px solid #${colors.bg3};
+      }
+
+      label.error,
+      label#error {
+        color:       #${colors.bred};
+        font-weight: 600;
       }
     '';
   };

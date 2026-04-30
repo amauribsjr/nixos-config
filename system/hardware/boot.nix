@@ -11,6 +11,21 @@
       timeout = 3;
     };
 
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+      logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
+    };
+    
+    kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=3"
+      "rd.systemd.show_status=auto"
+      "rd.udev.log_level=3"
+      "vt.global_cursor_default=0"
+    ];
+    
     kernelPackages = pkgs.linuxPackages_latest;
 
     tmp.cleanOnBoot = true;
