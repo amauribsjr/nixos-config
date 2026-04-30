@@ -9,7 +9,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {};
-    
+
     initContent = ''
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -19,41 +19,44 @@
         fi
         rm -f -- "$tmp"
       }
-    
+
       function rebuild() {
         echo "🔄 Rebuilding NixOS..."
         sudo nixos-rebuild switch --flake ~/nixos-config#nixos
       }
-    
+
       function update() {
         echo "🔄 Updating flakes..."
         cd ~/nixos-config && nix flake update
         echo "🔄 Rebuilding..."
         sudo nixos-rebuild switch --flake ~/nixos-config#nixos
       }
-    
+
+      function flakeup() {
+        echo "🔄 Updating flake.lock..."
+        cd ~/nixos-config && nix flake update
+      }
+
       function rollback() {
         echo "⏪ Rolling back..."
         sudo nixos-rebuild switch --rollback
       }
-    
+
       function clean() {
         echo "🧹 Cleaning system generations older than 3 days..."
         sudo nix-collect-garbage --delete-older-than 3d
       }
-    
+
       function fastclean() {
         echo "🧹 Keeping last 3 generations..."
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
         sudo nix-collect-garbage
       }
-    
+
       function testbuild() {
         echo "🧪 Testing NixOS build..."
-      
         (
           cd ~/nixos-config || exit 1
-      
           if [ -n "$(git status --porcelain)" ]; then
             echo "⚠️ There are uncommitted changes:"
             git status --short
@@ -61,12 +64,11 @@
             echo "If you've created new files, add them manually with git add <file>."
             echo
           fi
-      
           sudo nixos-rebuild test --flake .#nixos
         )
       }
     '';
-    
+
   };
 
   programs.direnv     = { enable = true; nix-direnv.enable = true; };
