@@ -59,7 +59,7 @@ nixos-config/
     ├── desktop.nix             # Niri + GDM + PipeWire + Flatpak + fonts
     ├── core/
     │   ├── default.nix
-    │   ├── databases.nix       # MySQL (dev)
+    │   ├── databases.nix       # MySQL
     │   ├── locale.nix          # pt_BR + en_US + ko_KR
     │   ├── networking.nix
     │   ├── nix-ld.nix
@@ -155,13 +155,13 @@ nixos-config/
 
 ## Daily commands
 
-| Command           | Description                          |
-|-------------------|--------------------------------------|
-| `nixos rebuild`   | Rebuild and switch to new config     |
-| `nixos update`    | Update flake inputs and rebuild      |
-| `nixos clean`     | Delete old generations, keep last 3  |
-| `nixos cleanweek` | Delete generations older than 7 days |
-| `nixos rollback`  | Roll back to previous generation     |
+| Command     | Description                          |
+|-------------|--------------------------------------|
+| `rebuild`   | Rebuild and switch to new config     |
+| `update`    | Update flake inputs and rebuild      |
+| `fastclean` | Delete old generations, keep last 3  |
+| `clean`     | Delete generations older than 3 days |
+| `rollback`  | Roll back to previous generation     |
 
 ---
 
