@@ -1,14 +1,8 @@
 { pkgs, ... }:
 
 {
-  # Desktop (Compositor + Display Manager)
+
   programs.niri.enable = true;
-
-  services.displayManager.gdm = {
-    enable  = true;
-    wayland = true;
-  };
-
   services.displayManager.defaultSession = "niri";
   services.gvfs.enable = true;
 

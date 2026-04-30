@@ -4,6 +4,7 @@
   imports = [
     ./hardware
     ./desktop.nix
+    ./greeter.nix
     ./core
   ];
 
