@@ -7,7 +7,14 @@
     ./packages.nix
     ./theme.nix
     ./shell.nix
-    ./apps.nix
+  
+    ./apps/alacritty.nix
+    ./apps/wofi.nix
+    ./apps/zed.nix
+  
+    ./cli/fastfetch.nix
+  
+    ./services/awww.nix
   ];
 
   home.username    = "koppi";

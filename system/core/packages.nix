@@ -38,12 +38,8 @@
     nautilus
     eog
     pavucontrol
-    google-chrome
-    vesktop
-    obs-studio
     vlc
     mpv
-    spotify
     gnome-software
     pandoc
 

@@ -53,9 +53,10 @@
     '';
   };
 
-  programs.direnv  = { enable = true; nix-direnv.enable = true; };
-  programs.zoxide  = { enable = true; enableZshIntegration = true; };
-  programs.fzf     = { enable = true; enableZshIntegration = true; };
+  programs.direnv     = { enable = true; nix-direnv.enable = true; };
+  programs.nix-index  = { enable = true; enableZshIntegration = true; };
+  programs.zoxide     = { enable = true; enableZshIntegration = true; };
+  programs.fzf        = { enable = true; enableZshIntegration = true; };
 
   # Starship
   programs.starship = {

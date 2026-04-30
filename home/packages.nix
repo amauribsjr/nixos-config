@@ -30,6 +30,10 @@
 
     # Apps
     obsidian
+    google-chrome
+    vesktop
+    obs-studio
+    spotify
 
   ];
 }

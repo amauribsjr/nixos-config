@@ -4,7 +4,7 @@
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      max-jobs = 1;
+      max-jobs = "auto";
       cores = 4;
     };
 
@@ -21,4 +21,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  
+  programs.command-not-found.enable = false;
 }
