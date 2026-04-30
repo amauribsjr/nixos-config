@@ -42,8 +42,7 @@ nixos-config/
 ├── home/
 │   ├── apps/
 │   │   ├── alacritty.nix
-│   │   ├── wofi.nix
-│   │   └── zed.nix
+│   │   └── wofi.nix
 │   ├── cli/
 │   │   └── fastfetch.nix
 │   ├── desktop/
