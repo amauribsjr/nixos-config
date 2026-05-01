@@ -6,8 +6,12 @@
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
       "logo": {
-        "source": "nixos_small",
-        "padding": { "top": 1, "right": 3 }
+        "source": "NixOS",
+        "padding": { "top": 1, "right": 3 },
+        "colors": {
+          "1": "214",
+          "2": "10"
+        }
       },
 
       "modules": [
@@ -25,15 +29,13 @@
 
         { "type": "separator", "string": "─────────────" },
 
-        { "type": "cpu",    "key": "cpu",     "keyColor": "red",          "format": "{name}"  },
-        { "type": "gpu",    "key": "gpu",     "keyColor": "214",          "format": "{name}"  },
-        { "type": "memory", "key": "mem",     "keyColor": "green"                             },
-        { "type": "disk",   "key": "disk",    "keyColor": "214",          "folders": "/"      },
-        { "type": "battery","key": "battery", "keyColor": "bright_yellow"                     },
+        { "type": "cpu",    "key": "cpu",     "keyColor": "10",           "format": "{name}"  },
+        { "type": "memory", "key": "mem",     "keyColor": "green"                              },
+        { "type": "disk",   "key": "disk",    "keyColor": "bright_yellow", "folders": "/"      },
 
         { "type": "separator", "string": "─────────────" },
 
-        { "type": "shell",    "key": "shell",    "keyColor": "blue",       "format": "{name}" },
+        { "type": "shell",    "key": "shell",    "keyColor": "blue",                          },
         { "type": "terminal", "key": "terminal", "keyColor": "bright_cyan"                    },
         { "type": "wm",       "key": "wm",       "keyColor": "bright_blue"                    }
       ]
