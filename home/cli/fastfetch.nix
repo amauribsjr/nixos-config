@@ -10,11 +10,6 @@
         "padding": { "top": 1, "right": 3 }
       },
 
-      "display": {
-        "separator": "  ",
-        "keyWidth": 9
-      },
-
       "modules": [
         {
           "type": "title",
@@ -26,7 +21,6 @@
         { "type": "host",     "key": "host",    "keyColor": "magenta"      },
         { "type": "os",       "key": "os",      "keyColor": "cyan"         },
         { "type": "kernel",   "key": "kernel",  "keyColor": "yellow"       },
-        { "type": "uptime",   "key": "uptime",  "keyColor": "green"        },
         { "type": "packages", "key": "pkgs",    "keyColor": "bright_green" },
 
         { "type": "separator", "string": "─────────────" },
