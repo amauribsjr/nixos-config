@@ -42,9 +42,11 @@ nixos-config/
 ├── home/
 │   ├── apps/
 │   │   ├── alacritty.nix
-│   │   └── wofi.nix
+│   │   ├── wofi.nix
+│   │   └── helix.nix
 │   ├── cli/
-│   │   └── fastfetch.nix
+│   │   ├── fastfetch.nix
+│   │   └── git.nix
 │   ├── desktop/
 │   │   ├── niri.nix
 │   │   └── waybar.nix

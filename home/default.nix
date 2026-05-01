@@ -11,8 +11,8 @@
     ./apps/wofi.nix
     ./cli/fastfetch.nix
     ./services/awww.nix
-    ./git.nix
-    ./helix.nix
+    ./cli/git.nix
+    ./apps/helix.nix
   ];
 
   home.username    = "koppi";
@@ -38,7 +38,7 @@
       Restart = "on-failure";
     };
   };
-  
+
   systemd.user.services."swayidle-bat" = {
     Unit = {
       Description = "swayidle (BAT profile)";
@@ -56,7 +56,7 @@
       Restart = "on-failure";
     };
   };
-  
+
   systemd.user.services."swayidle-dispatcher" = {
     Unit = {
       Description = "Changes between AC/BAT profiles";
@@ -66,7 +66,7 @@
     Service = {
       ExecStart = "${pkgs.writeShellScript "swayidle-dispatcher" ''
         set -u
-  
+
         is_on_ac() {
           for d in /sys/class/power_supply/*/; do
             [ -r "$d/type" ] || continue
@@ -75,7 +75,7 @@
           done
           return 1
         }
-  
+
         apply() {
           if is_on_ac; then
             ${pkgs.systemd}/bin/systemctl --user stop  swayidle-bat.service 2>/dev/null || true
@@ -85,7 +85,7 @@
             ${pkgs.systemd}/bin/systemctl --user start swayidle-bat.service
           fi
         }
-  
+
         apply
         ${pkgs.upower}/bin/upower --monitor | while read -r _; do apply; done
       ''}";
@@ -116,7 +116,7 @@
         "${config.home.homeDirectory}/Pictures/Screenshots" \
         "${config.home.homeDirectory}/Pictures/Wallpapers"
     '';
-  
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
