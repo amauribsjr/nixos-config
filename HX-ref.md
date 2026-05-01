@@ -6,6 +6,14 @@
 
 ---
 
+## Getting directly into a projet
+
+```
+cd ~/project/path
+hx .
+```
+or `hx ~/project/path`
+
 ## Modes
 
 | Key | Mode | Where |
