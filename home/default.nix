@@ -12,6 +12,7 @@
     ./cli/fastfetch.nix
     ./services/awww.nix
     ./git.nix
+    ./helix.nix
   ];
 
   home.username    = "koppi";
