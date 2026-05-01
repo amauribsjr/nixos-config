@@ -3,10 +3,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "amauribsjr";
-    userEmail = "amauribsjunior@proton.me";
-
-    extraConfig = {
+    signing.format = null;
+    settings = {
+      user.name = "amauribsjr";
+      user.email = "amauribsjunior@proton.me";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       core.editor = "vim";
@@ -15,6 +15,7 @@
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks."github.com" = {
       hostname = "github.com";
       user = "git";

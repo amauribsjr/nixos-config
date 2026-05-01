@@ -32,7 +32,6 @@
     pamixer
     playerctl
     gnome-disk-utility
-    xkb-switch
 
     # Apps
     nautilus

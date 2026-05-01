@@ -26,8 +26,8 @@
   };
 
   services.xserver.xkb = {
-    layout = "br,us,kr";
-    variant = "abnt2,intl,";
+    layout = "br,us";
+    variant = "abnt2,intl";
     options = "grp:alt_shift_toggle";
   };
 }
