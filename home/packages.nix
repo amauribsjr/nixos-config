@@ -37,7 +37,6 @@
     google-chrome
     vesktop
     obs-studio
-    spotify
 
   ];
 }
