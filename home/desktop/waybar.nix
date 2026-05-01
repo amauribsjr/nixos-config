@@ -35,7 +35,7 @@ in
         modules-left   = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right  = [
-          "niri/language"
+          "custom/kb"
           "pulseaudio"
           "backlight"
           "battery"
@@ -111,12 +111,17 @@ in
           tooltip  = false;
         };
 
-        "niri/language" = {
-          format = "⌨ {}";
-          format-map = {
-            "Portuguese (Brazil)" = "BR";
-            "English (US)" = "US";
-          };
+        "custom/kb" = {
+          exec = pkgs.writeShellScript "kb-layout" ''
+            ${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
+              | ${pkgs.gnused}/bin/sed -n 's/.*"\(.*\)" \*.*/\1/p' \
+              | ${pkgs.gnused}/bin/sed \
+                  -e 's/Portuguese (Brazil)/BR/' \
+                  -e 's/English (US, intl., with dead keys)/US/'
+          '';
+          interval = 1;
+          on-click = "${pkgs.niri}/bin/niri msg action switch-layout next";
+          tooltip = false;
         };
       }
     ];
@@ -220,8 +225,8 @@ in
           color: @fg1;
       }
 
-      #language { color: @fg1; }
-      #language:hover { background-color: @bg2; color: @fg1; }
+      #custom-kb { color: @fg1; }
+      #custom-kb:hover { background-color: @bg2; color: @fg1; }
 
       @keyframes blink {
           to { background-color: @red; color: @bg0; }
