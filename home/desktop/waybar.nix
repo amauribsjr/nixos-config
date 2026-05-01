@@ -114,7 +114,7 @@ in
         "custom/kb" = {
           exec = pkgs.writeShellScript "kb-layout" ''
             ${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
-              | ${pkgs.gnused}/bin/sed -n 's/.*"\(.*\)" \*.*/\1/p' \
+              | ${pkgs.gnused}/bin/sed -n 's/^ \* [0-9]* //p' \
               | ${pkgs.gnused}/bin/sed \
                   -e 's/Portuguese (Brazil)/BR/' \
                   -e 's/English (US, intl., with dead keys)/US/'
