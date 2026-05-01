@@ -11,6 +11,7 @@
     ./apps/wofi.nix
     ./cli/fastfetch.nix
     ./services/awww.nix
+    ./git.nix
   ];
 
   home.username    = "koppi";

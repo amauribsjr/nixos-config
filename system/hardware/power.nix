@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   zramSwap = {
@@ -69,6 +69,43 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    settings = {
+      General = {
+        FastConnectable = true;
+        ReconnectAttempts = 7;
+        ReconnectIntervals = "1,2,4,8,16,32,64";
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
   };
+
+  systemd.services.bt-autoconnect = {
+    description = "Auto-connect Bluetooth Pebble K380s";
+    after = [ "bluetooth.service" ];
+    wants = [ "bluetooth.service" ];
+    wantedBy = [ "multi-user.target" ];
+  
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStartPre = "/run/current-system/sw/bin/sleep 3";
+      ExecStart = let
+        script = pkgs.writeShellScript "bt-autoconnect" ''
+          DEVICE="DF:04:7A:06:C4:C8"
+
+          for i in $(seq 1 10); do
+            ${pkgs.bluez}/bin/bluetoothctl show 2>/dev/null | grep -q "Powered: yes" && break
+            sleep 1
+          done
+
+          ${pkgs.bluez}/bin/bluetoothctl trust "$DEVICE" 2>/dev/null
+          ${pkgs.bluez}/bin/bluetoothctl connect "$DEVICE" 2>/dev/null || true
+        '';
+      in "${script}";
+    };
+  };
+  
   services.blueman.enable = true;
 }

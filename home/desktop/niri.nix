@@ -8,7 +8,11 @@
 
     input = {
       keyboard = {
-        xkb = { layout = "br"; variant = "abnt2"; };
+        xkb = {
+          layout = "br,us,kr";
+          variant = "abnt2,intl,";
+          options = "grp:alt_shift_toggle";
+        };
         repeat-delay = 300;
         repeat-rate = 35;
       };

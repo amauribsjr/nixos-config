@@ -35,6 +35,7 @@ in
         modules-left   = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right  = [
+          "custom/kb"
           "pulseaudio"
           "backlight"
           "battery"
@@ -108,6 +109,25 @@ in
           format   = "⏻";
           on-click = "${power-menu}";
           tooltip  = false;
+        };
+
+        "custom/kb" = {
+          exec = pkgs.writeShellScript "kb-layout" ''
+            while true; do
+              LAYOUT=$(${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
+                | ${pkgs.gnugrep}/bin/grep -oP '"\K[^"]+(?=" \*)' 2>/dev/null)
+              case "$LAYOUT" in
+                *"Portuguese"*|*"Brazilian"*|*"br"*) echo "⌨ BR" ;;
+                *"English"*|*"US"*|*"us"*)           echo "⌨ US" ;;
+                *"Korean"*|*"kr"*)                   echo "⌨ KR" ;;
+                *)                                   echo "⌨ ??"  ;;
+              esac
+              sleep 1
+            done
+          '';
+          on-click = "${pkgs.niri}/bin/niri msg action switch-layout next";
+          interval = 0;
+          tooltip = false;
         };
       }
     ];
@@ -210,6 +230,9 @@ in
           background-color: @bg2;
           color: @fg1;
       }
+      
+      #custom-kb { color: @purple; }
+      #custom-kb:hover { background-color: @bg2; color: @fg1; }
 
       @keyframes blink {
           to { background-color: @red; color: @bg0; }
