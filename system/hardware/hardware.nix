@@ -1,7 +1,18 @@
 { config, lib, modulesPath, ... }:
 
+let
+  btrfsOpts = [
+    "noatime"
+    "compress=zstd:3"
+    "ssd"
+    "space_cache=v2"
+    "discard=async"
+  ];
+in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+
+  boot.supportedFilesystems = [ "btrfs" ];
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -17,22 +28,45 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType = "ext4";
-    options = [ "noatime" ];
+    device  = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType  = "btrfs";
+    options = btrfsOpts ++ [ "subvol=@" ];
+  };
+
+  fileSystems."/home" = {
+    device  = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType  = "btrfs";
+    options = btrfsOpts ++ [ "subvol=@home" ];
+  };
+
+  fileSystems."/nix" = {
+    device  = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType  = "btrfs";
+    options = btrfsOpts ++ [ "subvol=@nix" ];
+  };
+
+  fileSystems."/var/log" = {
+    device       = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType       = "btrfs";
+    options      = btrfsOpts ++ [ "subvol=@log" ];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/NIXOS_BOOT";
-    fsType = "vfat";
+    device  = "/dev/disk/by-label/NIXOS_BOOT";
+    fsType  = "vfat";
     options = [ "umask=0077" ];
   };
 
-  swapDevices = [{
-    device   = "/var/lib/swapfile";
-    size     = 4096;
-    priority = 10;
-  }];
+  swapDevices = [
+    { device = "/dev/disk/by-label/NIXOS_SWAP"; }
+  ];
+
+  services.btrfs.autoScrub = {
+    enable   = true;
+    interval = "monthly";
+    fileSystems = [ "/" ];
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
