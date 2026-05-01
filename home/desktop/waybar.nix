@@ -113,6 +113,10 @@ in
 
         "niri/language" = {
           format = "⌨ {}";
+          format-map = {
+            "Portuguese (Brazil)" = "BR";
+            "English (US)" = "US";
+          };
         };
       }
     ];
@@ -215,8 +219,8 @@ in
           background-color: @bg2;
           color: @fg1;
       }
-      
-      #language { color: @purple; }
+
+      #language { color: @fg1; }
       #language:hover { background-color: @bg2; color: @fg1; }
 
       @keyframes blink {
