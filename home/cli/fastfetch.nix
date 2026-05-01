@@ -6,7 +6,8 @@
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
       "logo": {
-        "source": "nixos",
+        "type": "builtin",
+        "name": "NixOS",
         "padding": { "top": 1, "right": 3 },
         "colors": {
           "1": "214",
@@ -29,13 +30,13 @@
 
         { "type": "separator", "string": "─────────────" },
 
-        { "type": "cpu",    "key": "cpu",     "keyColor": "10",           "format": "{name}"  },
+        { "type": "cpu",    "key": "cpu",     "keyColor": "10",           "format": "{name}"   },
         { "type": "memory", "key": "mem",     "keyColor": "green"                              },
         { "type": "disk",   "key": "disk",    "keyColor": "bright_yellow", "folders": "/"      },
 
         { "type": "separator", "string": "─────────────" },
 
-        { "type": "shell",    "key": "shell",    "keyColor": "blue",                          },
+        { "type": "shell",    "key": "shell",    "keyColor": "blue"                           },
         { "type": "terminal", "key": "terminal", "keyColor": "bright_cyan"                    },
         { "type": "wm",       "key": "wm",       "keyColor": "bright_blue"                    }
       ]
