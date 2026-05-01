@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.git = {
@@ -24,9 +24,6 @@
   };
 
   home.activation.generateGitHubSSHKey =
-    let
-      inherit (pkgs) lib;
-    in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       KEY="$HOME/.ssh/id_ed25519_github"
       if [ ! -f "$KEY" ]; then
