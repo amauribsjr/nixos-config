@@ -74,7 +74,7 @@
           "C-right" = ":buffer-next";
           "C-left"  = ":buffer-previous";
           "C-p"     = "file_picker";
-          "C-slash" = "toggle_comments";
+          "C-/"     = "toggle_comments";
           g = {
             "d" = "goto_definition";
             "r" = "goto_reference";
