@@ -99,7 +99,7 @@
     };
 
     themes.gruvbox-dark-hard = {
-      inherits = "gruvbox_dark";
+      inherits = "gruvbox";
       "ui.background"           = { bg = "#1d2021"; };
       "ui.background.separator" = { fg = "#504945"; };
       "ui.statusline"           = { fg = "#ebdbb2"; bg = "#282828"; };
