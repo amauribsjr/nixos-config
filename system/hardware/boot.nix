@@ -16,7 +16,7 @@
       theme = "breeze";
       logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
     };
-    
+
     kernelParams = [
       "quiet"
       "splash"
@@ -25,7 +25,7 @@
       "rd.udev.log_level=3"
       "vt.global_cursor_default=0"
     ];
-    
+
     kernelPackages = pkgs.linuxPackages_latest;
 
     tmp.cleanOnBoot = true;

@@ -4,14 +4,11 @@
   zramSwap = {
     enable        = true;
     algorithm     = "zstd";
-    memoryPercent = 100;
+    memoryPercent = 50;
     priority      = 100;
   };
 
-  services.fstrim = {
-    enable = true;
-    interval = "weekly";
-  };
+  services.fstrim.enable = false;
 
   services.power-profiles-daemon.enable = false;
 
@@ -86,7 +83,7 @@
     after = [ "bluetooth.service" ];
     wants = [ "bluetooth.service" ];
     wantedBy = [ "multi-user.target" ];
-  
+
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -106,6 +103,6 @@
       in "${script}";
     };
   };
-  
+
   services.blueman.enable = true;
 }
