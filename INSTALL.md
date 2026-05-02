@@ -106,7 +106,7 @@ All five mounts should be listed.
 
 ```sh
 nix-env -iA nixos.git
-git clone https://github.com/amauribsjr/nixos-config /mnt/home/koppi
+git clone https://github.com/amauribsjr/nixos-config /mnt/home/koppi/nixos-config
 ```
 
 ---
