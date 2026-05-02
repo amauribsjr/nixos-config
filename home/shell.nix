@@ -98,7 +98,20 @@
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "gruvbox-rainbow";
+      palette         = "gruvbox_dark";
+
+      palettes.gruvbox_dark = {
+        color_fg0    = "#${colors.fg}";
+        color_bg1    = "#${colors.bg2}";
+        color_bg3    = "#${colors.bg4}";
+        color_blue   = "#${colors.blue}";
+        color_aqua   = "#${colors.cyan}";
+        color_green  = "#${colors.green}";
+        color_orange = "#${colors.orange}";
+        color_purple = "#${colors.magenta}";
+        color_red    = "#${colors.red}";
+        color_yellow = "#${colors.yellow}";
+      };
 
       format = ''
         [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
