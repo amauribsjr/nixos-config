@@ -106,7 +106,7 @@ All five mounts should be listed.
 
 ```sh
 nix-env -iA nixos.git
-git clone -b btrfs-zram https://github.com/amauribsjr/nixos-config /mnt/etc/nixos
+git clone https://github.com/amauribsjr/nixos-config /mnt/home/koppi
 ```
 
 ---
@@ -123,7 +123,7 @@ The `fileSystems` block in this repo is already declared by label — do **not**
 If kernel modules differ:
 
 ```sh
-nano /mnt/etc/nixos/system/hardware/hardware.nix
+nano /mnt/home/koppi/nixos-config/system/hardware/hardware.nix
 ```
 
 ---
@@ -131,7 +131,7 @@ nano /mnt/etc/nixos/system/hardware/hardware.nix
 ## 9. Install
 
 ```sh
-nixos-install --flake /mnt/etc/nixos#nixos --no-root-passwd
+nixos-install --flake /mnt/home/koppi/nixos-config#nixos --no-root-passwd
 ```
 
 First install compiles flake inputs locally. With niri-flake's Cachix cache (auto-enabled by `nixosModules.niri`), most heavy builds are skipped — expect **~15–25 minutes** total instead of the previous 40+.
