@@ -56,12 +56,12 @@
       }
 
       function clean() {
-        echo "🧹 Cleaning system generations older than 3 days..."
-        sudo nix-collect-garbage --delete-older-than 3d
+        echo "🧹 Cleaning system generations older than 7 days..."
+        sudo nix-collect-garbage --delete-older-than 7d
       }
 
-      function fastclean() {
-        echo "🧹 Keeping last 3 generations..."
+      function deepclean() {
+        echo "🧹 Keeping only last 3 generations..."
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
         sudo nix-collect-garbage
       }
