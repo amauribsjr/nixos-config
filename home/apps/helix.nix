@@ -47,8 +47,8 @@
         };
 
         inline-diagnostics = {
-          cursor-line = "warning";
-          other-lines = "error";
+          cursor-line      = "warning";
+          other-lines      = "error";
         };
 
         lsp = {
