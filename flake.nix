@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,7 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, niri, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs   = import nixpkgs {
@@ -32,6 +34,9 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs colors fonts; };
       modules = [
+        nixos-hardware.nixosModules.common-pc-laptop
+        nixos-hardware.nixosModules.common-pc-laptop-ssd
+        nixos-hardware.nixosModules.common-cpu-intel
         ./system
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager

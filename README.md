@@ -58,7 +58,7 @@ nixos-config/
 │   └── theme.nix
 └── system/
     ├── default.nix
-    ├── desktop.nix             # Niri + GDM + PipeWire + Flatpak + fonts
+    ├── desktop.nix             # Niri + GDM + PipeWire + fonts
     ├── core/
     │   ├── default.nix
     │   ├── databases.nix       # MySQL

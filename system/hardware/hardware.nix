@@ -56,7 +56,10 @@ in
     options = [ "umask=0077" ];
   };
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 4 * 1024;
+  }];
 
   services.btrfs.autoScrub = {
     enable      = true;

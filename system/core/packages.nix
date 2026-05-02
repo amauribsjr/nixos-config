@@ -17,7 +17,6 @@
 
     # System & hardware
     btop
-    htop
     fastfetch
     powertop
     lm_sensors
@@ -39,7 +38,6 @@
     pavucontrol
     vlc
     mpv
-    pandoc
     zed-editor
 
     # Java
