@@ -8,7 +8,7 @@
     swaylock
     networkmanagerapplet
     polkit_gnome
-    
+
     # Theme
     gruvbox-gtk-theme
 
@@ -37,6 +37,9 @@
     google-chrome
     vesktop
     obs-studio
+    dbeaver
+    bruno
+    redis
 
   ];
 }
