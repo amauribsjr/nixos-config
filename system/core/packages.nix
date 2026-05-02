@@ -61,6 +61,7 @@
 
     # Nix
     nixd
+    nil
     nixfmt
     statix
     deadnix
