@@ -81,7 +81,7 @@
     animations.enable = true;
 
     binds = with config.lib.niri.actions; {
-      "Mod+Return".action  = spawn "alacritty";
+      "Mod+Return".action  = spawn "kitty";
       "Mod+D".action       = spawn "wofi" "--show=drun" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
       "Mod+V".action       = spawn "vesktop";
       "Mod+B".action       = spawn "google-chrome";

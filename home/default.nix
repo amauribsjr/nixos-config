@@ -7,7 +7,7 @@
     ./packages.nix
     ./theme.nix
     ./shell.nix
-    ./apps/alacritty.nix
+    ./apps/kitty.nix
     ./apps/wofi.nix
     ./cli/fastfetch.nix
     ./services/awww.nix

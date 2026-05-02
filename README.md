@@ -20,7 +20,7 @@ for my **Dell Inspiron 3501**.
 - **OS**: NixOS unstable
 - **Compositor**: **Niri** (scrollable-tiling Wayland) via [niri-flake](https://github.com/sodiboo/niri-flake)
 - **Shell**: Zsh + Starship + direnv
-- **Terminal**: Alacritty
+- **Terminal**: Kitty
 - **Theme**: Gruvbox Dark Hard
 - **Bar**: Waybar
 - **Launcher**: Wofi
@@ -41,7 +41,7 @@ nixos-config/
 │   └── fonts.nix               # JetBrainsMono Nerd Font
 ├── home/
 │   ├── apps/
-│   │   ├── alacritty.nix
+│   │   ├── kitty.nix
 │   │   ├── wofi.nix
 │   │   └── helix.nix
 │   ├── cli/
@@ -85,7 +85,7 @@ nixos-config/
 ### Apps
 | Shortcut         | Action                  |
 |------------------|-------------------------|
-| `Super+Enter`    | Terminal (Alacritty)    |
+| `Super+Enter`    | Terminal (Kitty)        |
 | `Super+D`        | Launcher (Wofi)         |
 | `Super+B`        | Browser (Chrome)        |
 | `Super+V`        | Vesktop                 |

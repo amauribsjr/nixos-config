@@ -83,7 +83,9 @@
         local chosen
         chosen=$(ls ~/Pictures/Wallpapers/ \
           | grep -iE '\.(png|jpg|jpeg|webp)$' \
-          | fzf --prompt="wallpaper > ")
+          | fzf --prompt="wallpaper > " \
+              --preview 'chafa ~/Pictures/Wallpapers/{}' \
+              --preview-window=right:60%)
         if [ -n "$chosen" ]; then
           awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
           echo "$chosen" > ~/.local/share/current-wallpaper

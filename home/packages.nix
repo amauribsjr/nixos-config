@@ -22,6 +22,7 @@
     jq
     fd
     ripgrep
+    chafa
 
     # File & media
     ffmpegthumbnailer
