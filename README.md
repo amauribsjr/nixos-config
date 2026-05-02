@@ -36,6 +36,7 @@ nixos-config/
 ├── flake.nix
 ├── flake.lock
 ├── devshells.nix               # Rust, Java, C dev shells
+├── wallpapers/
 ├── lib/
 │   ├── colors.nix              # Gruvbox Dark Hard palette
 │   └── fonts.nix               # JetBrainsMono Nerd Font
@@ -68,7 +69,7 @@ nixos-config/
     │   ├── nix.nix
     │   ├── packages.nix
     │   ├── users.nix
-    │   ├── greeter.nix         # ReGreet (Gruvbox Dark Hard)
+    │   ├── greeter.nix         # ReGreet (Gruvbox Dark Hard custom)
     │   └── virtualisation.nix  # Docker
     └── hardware/
         ├── default.nix
