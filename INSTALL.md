@@ -4,8 +4,11 @@
 
 ---
 
-## 1. Boot and keyboard
+## 1. Boot, root and keyboard
 
+```sh
+sudo -i
+```
 ```sh
 loadkeys br-abnt2
 ```
@@ -95,7 +98,7 @@ mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot
 Verify:
 
 ```sh
-findmnt /mnt /mnt/home /mnt/nix /mnt/var/log /mnt/boot
+findmnt | grep /mnt
 ```
 
 All five mounts should be listed.
@@ -106,6 +109,7 @@ All five mounts should be listed.
 
 ```sh
 nix-env -iA nixos.git
+mkdir -p /mnt/home/koppi
 git clone https://github.com/amauribsjr/nixos-config /mnt/home/koppi/nixos-config
 ```
 
@@ -168,16 +172,10 @@ Validate the install:
 ```sh
 findmnt -t btrfs                       # @, @home, @nix, @log
 swapon --show                          # /dev/zram0 only
-sudo btrfs property get / compression  # zstd:1
+mount | grep "on / type btrfs"         # zstd:1
 ```
 
-Create folders used by Niri:
-
-```sh
-mkdir -p ~/Pictures/{Wallpapers,Screenshots}
-```
-
-Place a `wallpaper.png` inside `~/Pictures/Wallpapers/`. Loads on next login.
+Wallpapers are managed by home-manager — available after first rebuild.
 
 ---
 
@@ -201,15 +199,4 @@ In any project with a `flake.nix` or `shell.nix`:
 ```sh
 echo "use flake" > .envrc
 direnv allow
-```
-
-### Merge to main
-
-After a few days of stable use:
-
-```sh
-cd ~/nixos-config
-git checkout main
-git merge btrfs-zram
-git push
 ```
