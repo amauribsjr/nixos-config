@@ -3,9 +3,7 @@
 let
   btrfsOpts = [
     "noatime"
-    "compress=zstd:3"
-    "ssd"
-    "space_cache=v2"
+    "compress=zstd:1"
     "discard=async"
   ];
 in
@@ -46,9 +44,9 @@ in
   };
 
   fileSystems."/var/log" = {
-    device       = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType       = "btrfs";
-    options      = btrfsOpts ++ [ "subvol=@log" ];
+    device        = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType        = "btrfs";
+    options       = btrfsOpts ++ [ "subvol=@log" ];
     neededForBoot = true;
   };
 
@@ -58,13 +56,11 @@ in
     options = [ "umask=0077" ];
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-label/NIXOS_SWAP"; }
-  ];
+  swapDevices = [ ];
 
   services.btrfs.autoScrub = {
-    enable   = true;
-    interval = "monthly";
+    enable      = true;
+    interval    = "monthly";
     fileSystems = [ "/" ];
   };
 

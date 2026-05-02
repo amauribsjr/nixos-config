@@ -1,73 +1,77 @@
-# Migration to btrfs + zswap
+# Migration to btrfs + zram
 
-> Complete plan. No unnecessary rewrites. Isolated branch. Current system stays functional.
+> Plan: btrfs root with subvolumes, zram-only swap (no disk swap), zstd:1 compression.
+> Optimized for the Inspiron 3501's DRAM-less SSD (KIOXIA BG4) and 7.5 GB RAM.
+
+---
+
+## What changed from previous plan
+
+| Before | After | Why |
+|---|---|---|
+| 3 partitions (ESP/swap/btrfs) | 2 partitions (ESP/btrfs) | DRAM-less SSD, 8% wear — minimize disk writes |
+| Dedicated 8 GB swap partition | No disk swap | zram only — never touches disk |
+| zswap kernel params | Removed | Without disk swap, zswap is irrelevant |
+| `compress=zstd:3` | `compress=zstd:1` | Pentium Gold 7505 is the bottleneck, not the NVMe |
+| `space_cache=v2`, `ssd` | Removed | Both are auto-default on kernel 6.x |
+| `services.fstrim.enable = true` | `false` | `discard=async` handles TRIM continuously |
+| `zramSwap.memoryPercent = 100` | `50` | Leaves more RAM for active working set during compiles |
+
+## What stayed
+
+- 4 subvolumes: `@`, `@home`, `@nix`, `@log` (with `neededForBoot = true` on `/var/log`)
+- systemd-boot
+- `linuxPackages_latest`
+- `vm.swappiness = 180`, `vm.page-cluster = 0` (correct for zram)
+- All non-storage config: TLP, Bluetooth auto-connect, niri, etc.
 
 ---
 
 ## 1. Branch strategy
 
-You already have an old `btrfs` branch in the repo. Recommend discarding it and starting clean:
+Discard old `btrfs` branch, start fresh:
 
 ```sh
 cd ~/nixos-config
-git branch -D btrfs              # if it still exists locally
-git push origin --delete btrfs   # if it still exists remotely (optional)
-git checkout -b btrfs-zswap
+git branch -D btrfs              # if exists locally
+git push origin --delete btrfs   # if exists remotely
+git checkout -b btrfs-zram
 ```
 
-Keeps `main` untouched. The migration only gets merged **after** install is validated.
+`main` stays untouched. Merge only after install validates.
 
 ---
 
-## 2. Files changed
+## 2. Files to change
 
-Only **3 files** change, plus INSTALL.md. None rewritten from scratch — only the relevant blocks.
+Only **3 files** in `system/hardware/`:
 
-### 2.1 `system/hardware/hardware.nix` (replace entirely)
+- `hardware.nix` — replace entirely (btrfs subvolumes, no swapDevices)
+- `boot.nix` — replace entirely (no zswap params, sysctl preserved)
+- `power.nix` — replace entirely (zramSwap 50%, fstrim disabled, rest identical)
 
-See `hardware.nix` in this directory.
+Plus `INSTALL.md` at the repo root.
 
-### 2.2 `system/hardware/boot.nix` (replace entirely)
-
-See `boot.nix`.
-
-### 2.3 `system/hardware/power.nix` (only remove the zramSwap block)
-
-At the top of the file, **delete** this block:
-
-```nix
-zramSwap = {
-  enable        = true;
-  algorithm     = "zstd";
-  memoryPercent = 100;
-  priority      = 100;
-};
-```
-
-The rest of the file stays **identical**. Don't touch anything else.
-
-### 2.4 `INSTALL.md` (replace entirely)
-
-See `INSTALL.md`.
+The other 27 `.nix` files in the repo are **untouched**.
 
 ---
 
 ## 3. Pre-install
 
-Before booting the USB:
-
-1. **Back up `/home/koppi`** to an external drive:
+1. **Backup `/home/koppi`** to external drive:
    ```sh
-   rsync -avh --progress /home/koppi/ /run/media/koppi/<EXTERNAL_DRIVE>/koppi-backup/
+   rsync -avh --progress /home/koppi/ /run/media/koppi/<EXTERNAL>/koppi-backup/
    ```
-   Especially `~/.ssh/`, `~/Pictures/Wallpapers/`, in-progress projects, Helix configs if you've edited them post-install.
+   Especially: `~/.ssh/`, `~/Pictures/Wallpapers/wallpaper.png`, in-progress projects, local Helix configs.
 
-2. **Push the `btrfs-zswap` branch** to GitHub:
+2. **Push branch** to GitHub:
    ```sh
-   git push -u origin btrfs-zswap
+   git add system/hardware/ INSTALL.md MIGRATION.md
+   git commit -m "btrfs subvolumes + zram-only swap"
+   git push -u origin btrfs-zram
    ```
 
-3. **Note the HTTPS repo URL** (the installer ISO won't have your SSH key yet):
+3. **Note repo URL** (no SSH key on installer ISO):
    ```
    https://github.com/amauribsjr/nixos-config
    ```
@@ -76,55 +80,51 @@ Before booting the USB:
 
 ## 4. Post-install validation
 
-After first boot, run:
-
 ```sh
-# Confirm subvolumes are mounted correctly
+# Subvolumes mounted
 findmnt -t btrfs
+# Expected: 4 lines, all on /dev/nvme0n1p2, subvol=@/@home/@nix/@log
 
-# Confirm zswap active
-cat /sys/module/zswap/parameters/enabled    # expected: Y
-cat /sys/module/zswap/parameters/compressor # expected: zstd
-
-# Confirm swap active
+# Swap is zram only — no disk swap
 swapon --show
+# Expected: only /dev/zram0
 
-# Confirm btrfs compression
-sudo btrfs property get / compression       # expected: zstd:3 (or inherited)
-sudo compsize -x /                          # optional, requires pkgs.compsize
+# Compression is zstd:1
+sudo btrfs property get / compression
+# Expected: compression=zstd:1 (or unset, inheriting mount option)
+
+# discard=async active
+mount | grep btrfs | head -1
+# Expected output contains "discard=async"
+
+# zram active and sized correctly
+zramctl
+# Expected: ~3.7G size for 7.5G RAM
 ```
 
-If something is wrong:
-
-```sh
-sudo nixos-rebuild switch --rollback
-```
-
-And go back to the previous boot via the systemd-boot menu.
+If any check fails, rollback via systemd-boot menu and reinstall.
 
 ---
 
-## 5. Post-validation cleanup
-
-After confirming everything works for **a few days** of normal use:
-
-```sh
-git checkout main
-git merge btrfs-zswap
-git push
-git branch -D btrfs-zswap
-git push origin --delete btrfs-zswap
-```
-
----
-
-## 6. Risks and mitigations
+## 5. Risks
 
 | Risk | Mitigation |
 |---|---|
-| Wrong disk in `parted` | INSTALL.md forces verification with `lsblk` before each destructive operation |
-| Subvolume name mismatch between INSTALL and hardware.nix | Both files written together — `@`, `@home`, `@nix`, `@log` — match literally |
-| zswap not loading | Declarative `boot.kernelParams`. Validation in step 4 detects failure |
-| Boot fails (btrfs not in initrd) | `boot.supportedFilesystems = [ "btrfs" ]` in hardware.nix forces inclusion |
-| Data loss | Explicit backup in step 3.1, double-check before `mkfs` |
-| niri-flake breaks | No change in `flake.lock` — same current version |
+| Wrong disk in `parted` | INSTALL.md forces `lsblk` verification |
+| Subvolume name mismatch between INSTALL and hardware.nix | Both written together, names match literally |
+| Boot fails (btrfs not in initrd) | `boot.supportedFilesystems = [ "btrfs" ]` forces it |
+| OOM during heavy compile | zram 50% + ~10GB effective; if hit, add `services.earlyoom.enable = true` later |
+| Data loss | Explicit backup step 3.1, double-check before `mkfs` |
+| niri-flake compiles from source | Cache `niri.cachix.org` is auto-enabled by `nixosModules.niri` |
+
+---
+
+## 6. Cleanup after stable use
+
+```sh
+git checkout main
+git merge btrfs-zram
+git push
+git branch -D btrfs-zram
+git push origin --delete btrfs-zram
+```

@@ -24,10 +24,6 @@
       "rd.systemd.show_status=auto"
       "rd.udev.log_level=3"
       "vt.global_cursor_default=0"
-      "zswap.enabled=1"
-      "zswap.compressor=zstd"
-      "zswap.zpool=zsmalloc"
-      "zswap.max_pool_percent=20"
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
@@ -35,7 +31,7 @@
     tmp.cleanOnBoot = true;
 
     kernel.sysctl = {
-      "vm.swappiness"                = 60;
+      "vm.swappiness"                = 180;
       "vm.vfs_cache_pressure"        = 50;
       "vm.dirty_writeback_centisecs" = 1500;
       "vm.watermark_boost_factor"    = 0;
@@ -43,6 +39,7 @@
       "vm.dirty_expire_centisecs"    = 6000;
       "vm.dirty_background_ratio"    = 5;
       "vm.dirty_ratio"               = 25;
+      "vm.page-cluster"              = 0;
     };
   };
 
