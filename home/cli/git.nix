@@ -10,9 +10,15 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       core.editor = "vim";
+      core.excludesFile = "~/.config/git/ignore";
     };
   };
 
+  home.file.".config/git/ignore".text = ''
+    .envrc
+    .direnv/
+  '';
+  
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;

@@ -82,10 +82,15 @@
 
   };
 
-  programs.direnv     = { enable = true; nix-direnv.enable    = true; };
   programs.nix-index  = { enable = true; enableZshIntegration = true; };
   programs.zoxide     = { enable = true; enableZshIntegration = true; };
   programs.fzf        = { enable = true; enableZshIntegration = true; };
+  programs.direnv = { 
+    enable = true; 
+    nix-direnv.enable = true;
+    config.global.hide_env_diff = true;
+    silent = true;
+  };
 
   # Starship
   programs.starship = {
