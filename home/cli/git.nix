@@ -18,7 +18,7 @@
     .envrc
     .direnv/
   '';
-  
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -40,8 +40,7 @@
           -f "$KEY" -N ""
         cat "$KEY.pub" > "$HOME/github-ssh-key.txt"
         echo ""
-        echo "  New SSH key generated:"
-        echo "  Public key saved to ~/github-ssh-key.txt"
+        echo "  New SSH key generated!"
         echo "  Copy it to: https://github.com/settings/ssh/new"
         cat "$KEY.pub"
       fi
