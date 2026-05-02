@@ -38,16 +38,12 @@
         ${pkgs.openssh}/bin/ssh-keygen -t ed25519 \
           -C "amauribsjunior@proton.me" \
           -f "$KEY" -N ""
+        cat "$KEY.pub" > "$HOME/github-ssh-key.txt"
         echo ""
-        echo "═══════════════════════════════════════════════════"
-        echo "  NEW SSH KEY GENERATED!"
-        echo "  Copy the public key below to GitHub:"
-        echo "  https://github.com/settings/ssh/new"
-        echo "═══════════════════════════════════════════════════"
-        echo ""
+        echo "  New SSH key generated:"
+        echo "  Public key saved to ~/github-ssh-key.txt"
+        echo "  Copy it to: https://github.com/settings/ssh/new"
         cat "$KEY.pub"
-        echo ""
-        echo "═══════════════════════════════════════════════════"
       fi
     '';
 }

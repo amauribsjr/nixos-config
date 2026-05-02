@@ -165,7 +165,7 @@ Remove the flash drive when the screen turns off.
 
 ## 12. First boot
 
-GDM/regreet appears. Log in as `koppi`.
+ReGreet appears. Log in as `koppi`.
 
 Validate the install:
 
@@ -182,13 +182,19 @@ Wallpapers are managed by home-manager — available after first rebuild.
 ## 13. Post-install
 
 ### Restore SSH key (if backed up)
+### and switch remote https nixos-config into ssh
 
 ```sh
 cp /run/media/koppi/<DRIVE>/koppi-backup/.ssh/id_ed25519_github* ~/.ssh/
 chmod 600 ~/.ssh/id_ed25519_github
 chmod 644 ~/.ssh/id_ed25519_github.pub
 ssh -T git@github.com
+
+cd ~/nixos-config
+git remote set-url origin git@github.com:amauribsjr/nixos-config.git
+git remote -v
 ```
+(if your ssh key weren't back up, then: `cat ~/.ssh/id_ed25519_github.pub` after rebuild)
 
 If no backup, the home-manager activation script generates a fresh key on first rebuild — copy the printed public key to GitHub.
 
