@@ -18,7 +18,7 @@
       };
       touchpad = {
         tap = true;
-        natural-scroll = false;
+        natural-scroll = true;
         dwt = true;
         click-method = "clickfinger";
         accel-profile = "adaptive";
