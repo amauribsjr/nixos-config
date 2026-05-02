@@ -110,6 +110,13 @@
     setSessionVariables = false;
   };
 
+  home.file = builtins.listToAttrs (
+    map (f: {
+      name = "Pictures/Wallpapers/${f}";
+      value.source = ../wallpapers/${f};
+    }) (builtins.attrNames (builtins.readDir ../wallpapers))
+  );
+  
   home.activation.createExtraUserDirs =
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.coreutils}/bin/mkdir -p \

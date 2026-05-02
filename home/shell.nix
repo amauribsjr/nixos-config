@@ -78,6 +78,14 @@
         fi
         sudo nixos-rebuild test --flake .#nixos
       }
+      
+      function wall() {
+        local chosen
+        chosen=$(ls ~/Pictures/Wallpapers/*.{png,jpg,jpeg,webp} 2>/dev/null \
+          | xargs -I{} basename {} \
+          | fzf --prompt="wallpaper > " --preview "echo {}")
+        [ -n "$chosen" ] && awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
+      }
     '';
 
   };
