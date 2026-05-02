@@ -1,11 +1,20 @@
 { pkgs, config, ... }:
 
 let
-  wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
+  wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
+  wallpaperState   = "${config.home.homeDirectory}/.local/share/current-wallpaper";
+
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
-    if [ -f "${wallpaper}" ]; then
-      ${pkgs.awww}/bin/awww img "${wallpaper}" --transition-type fade
+    if [ -f "${wallpaperState}" ]; then
+      name=$(cat "${wallpaperState}")
+      target="${config.home.homeDirectory}/Pictures/Wallpapers/$name"
+      if [ -f "$target" ]; then
+        ${pkgs.awww}/bin/awww img "$target" --transition-type fade
+        exit 0
+      fi
     fi
+    [ -f "${wallpaperDefault}" ] && \
+      ${pkgs.awww}/bin/awww img "${wallpaperDefault}" --transition-type fade
   '';
 in
 {

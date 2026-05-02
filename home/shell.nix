@@ -83,8 +83,11 @@
         local chosen
         chosen=$(ls ~/Pictures/Wallpapers/*.{png,jpg,jpeg,webp} 2>/dev/null \
           | xargs -I{} basename {} \
-          | fzf --prompt="wallpaper > " --preview "echo {}")
-        [ -n "$chosen" ] && awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
+          | fzf --prompt="wallpaper > ")
+        if [ -n "$chosen" ]; then
+          awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
+          echo "$chosen" > ~/.local/share/current-wallpaper
+        fi
       }
     '';
 
