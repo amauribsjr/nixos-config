@@ -78,11 +78,11 @@
         fi
         sudo nixos-rebuild test --flake .#nixos
       }
-      
+
       function wall() {
         local chosen
-        chosen=$(ls ~/Pictures/Wallpapers/*.{png,jpg,jpeg,webp} 2>/dev/null \
-          | xargs -I{} basename {} \
+        chosen=$(ls ~/Pictures/Wallpapers/ \
+          | grep -iE '\.(png|jpg|jpeg|webp)$' \
           | fzf --prompt="wallpaper > ")
         if [ -n "$chosen" ]; then
           awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
