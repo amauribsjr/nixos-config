@@ -85,8 +85,8 @@
   programs.nix-index  = { enable = true; enableZshIntegration = true; };
   programs.zoxide     = { enable = true; enableZshIntegration = true; };
   programs.fzf        = { enable = true; enableZshIntegration = true; };
-  programs.direnv = { 
-    enable = true; 
+  programs.direnv = {
+    enable = true;
     nix-direnv.enable = true;
     config.global.hide_env_diff = true;
     silent = true;
@@ -98,7 +98,7 @@
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "darksea";
+      palette         = "gruvbox-rainbow";
 
       format = ''
         [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
