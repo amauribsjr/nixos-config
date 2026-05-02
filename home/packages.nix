@@ -37,7 +37,7 @@
     google-chrome
     vesktop
     obs-studio
-    dbeaver
+    dbeaver-bin
     bruno
     redis
 
