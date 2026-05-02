@@ -46,6 +46,11 @@
           };
         };
 
+        inline-diagnostics = {
+          cursor-line = "warning";
+          other-lines = "error";
+        };
+
         lsp = {
           display-messages    = true;
           display-inlay-hints = true;
