@@ -135,17 +135,9 @@
         rust-analyzer = {
           command = "rust-analyzer";
           config = {
-            check.command     = "clippy";
-            cargo.allFeatures = true;
-            inlayHints = {
-              bindingModeHints.enable          = true;
-              closureCaptureHints.enable       = true;
-              closureReturnTypeHints.enable    = "always";
-              discriminantHints.enable         = "always";
-              expressionAdjustmentHints.enable = "always";
-              lifetimeElisionHints.enable      = "always";
-              typeHints.enable                 = true;
-            };
+            check.command = "check";
+            cargo.allFeatures = false;
+            inlayHints.typeHints.enable = true;
           };
         };
         clangd = {

@@ -119,7 +119,7 @@ in
                   -e 's/Portuguese (Brazil)/br/' \
                   -e 's/English (US, intl., with dead keys)/us/'
           '';
-          interval = 1;
+          interval = 3;
           on-click = "${pkgs.niri}/bin/niri msg action switch-layout next";
           tooltip = false;
         };

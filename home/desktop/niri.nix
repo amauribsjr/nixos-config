@@ -78,7 +78,7 @@
       }
     ];
 
-    animations.enable = true;
+    animations.enable = false;
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action  = spawn "kitty";
