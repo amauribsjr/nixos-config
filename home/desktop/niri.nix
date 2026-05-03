@@ -78,7 +78,78 @@
       }
     ];
 
-    animations.enable = true;
+    animations = {
+      enable = true;
+
+      workspace-switch = {
+        enable = true;
+        kind.spring = {
+          damping-ratio = 1.0;
+          stiffness = 1000;
+          epsilon = 0.0001;
+        };
+      };
+
+      horizontal-view-movement = {
+        enable = true;
+        kind.spring = {
+          damping-ratio = 1.0;
+          stiffness = 900;
+          epsilon = 0.0001;
+        };
+      };
+
+      window-movement = {
+        enable = true;
+        kind.spring = {
+          damping-ratio = 1.0;
+          stiffness = 900;
+          epsilon = 0.0001;
+        };
+      };
+
+      window-resize = {
+        enable = true;
+        kind.spring = {
+          damping-ratio = 1.0;
+          stiffness = 900;
+          epsilon = 0.0001;
+        };
+      };
+
+      window-open = {
+        enable = true;
+        kind.easing = {
+          duration-ms = 90;
+          curve = "ease-out-quad";
+        };
+      };
+
+      window-close = {
+        enable = true;
+        kind.easing = {
+          duration-ms = 80;
+          curve = "ease-out-quad";
+        };
+      };
+
+      screenshot-ui-open = {
+        enable = true;
+        kind.easing = {
+          duration-ms = 120;
+          curve = "ease-out-quad";
+        };
+      };
+
+      overview-open-close = {
+        enable = true;
+        kind.spring = {
+          damping-ratio = 1.0;
+          stiffness = 1000;
+          epsilon = 0.0001;
+        };
+      };
+    };
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action  = spawn "kitty";
