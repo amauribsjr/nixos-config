@@ -120,7 +120,7 @@
       window-open = {
         enable = true;
         kind.easing = {
-          duration-ms = 90;
+          duration-ms = 80;
           curve = "ease-out-quad";
         };
       };
@@ -128,7 +128,7 @@
       window-close = {
         enable = true;
         kind.easing = {
-          duration-ms = 80;
+          duration-ms = 60;
           curve = "ease-out-quad";
         };
       };
