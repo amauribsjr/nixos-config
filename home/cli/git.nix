@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -29,20 +29,4 @@
       identitiesOnly = true;
     };
   };
-
-  home.activation.generateGitHubSSHKey =
-    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      KEY="$HOME/.ssh/id_ed25519_github"
-      if [ ! -f "$KEY" ]; then
-        mkdir -p "$HOME/.ssh"
-        ${pkgs.openssh}/bin/ssh-keygen -t ed25519 \
-          -C "amauribsjunior@proton.me" \
-          -f "$KEY" -N ""
-        cat "$KEY.pub" > "$HOME/github-ssh-key.txt"
-        echo ""
-        echo "  New SSH key generated!"
-        echo "  Copy it to: https://github.com/settings/ssh/new"
-        cat "$KEY.pub"
-      fi
-    '';
 }

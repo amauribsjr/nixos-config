@@ -40,7 +40,7 @@
       RUNTIME_PM_DRIVER_DENYLIST = "r8169";
 
       PCIE_ASPM_ON_AC  = "default";
-      PCIE_ASPM_ON_BAT = "powersupersave";
+      PCIE_ASPM_ON_BAT = "powersave";
 
       # Wi-Fi
       WIFI_PWR_ON_AC  = "off";
@@ -66,9 +66,9 @@
   services.upower = {
     enable              = true;
     criticalPowerAction = "PowerOff";
-    percentageLow       = 15;
-    percentageCritical  = 5;
-    percentageAction    = 3;
+    percentageLow       = 20;
+    percentageCritical  = 8;
+    percentageAction    = 5;
   };
 
   hardware.bluetooth = {

@@ -4,7 +4,6 @@ let
   btrfsOpts = [
     "noatime"
     "compress=zstd:1"
-    "discard=async"
   ];
 in
 {
