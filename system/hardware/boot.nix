@@ -32,7 +32,7 @@
 
     tmp.cleanOnBoot = true;
 
-    boot.kernel.sysctl = {
+    kernel.sysctl = {
       "vm.swappiness" = 180;
       "vm.vfs_cache_pressure" = 50;
       "vm.dirty_writeback_centisecs" = 1500;
