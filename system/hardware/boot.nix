@@ -43,7 +43,6 @@
     };
   };
 
-  systemd.services."systemd-vconsole-setup".enable = false;
   systemd.settings.Manager = {
     DefaultTimeoutAbortSec = "10s";
   };

@@ -24,11 +24,11 @@
 
       # CPU - BAT balanced
       CPU_SCALING_GOVERNOR_ON_BAT    = "powersave";
-      CPU_ENERGY_PERF_POLICY_ON_BAT  = "balance_performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT  = "balance_power";
       CPU_MIN_PERF_ON_BAT            = 0;
-      CPU_MAX_PERF_ON_BAT            = 90;
+      CPU_MAX_PERF_ON_BAT            = 80;
       CPU_BOOST_ON_BAT               = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT       = 1;
+      CPU_HWP_DYN_BOOST_ON_BAT       = 0;
 
       # Thermal profile
       PLATFORM_PROFILE_ON_AC  = "balanced";
@@ -52,8 +52,8 @@
       SOUND_POWER_SAVE_ON_BAT     = 1;
       SOUND_POWER_SAVE_CONTROLLER = "N";
 
-      # USB
-      USB_AUTOSUSPEND = 0;
+      USB_AUTOSUSPEND = 1;
+      USB_EXCLUDE_BTUSB = 1;
     };
   };
 
