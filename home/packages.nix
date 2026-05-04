@@ -5,7 +5,6 @@
 
     # Wayland & desktop
     awww
-    swaylock
     networkmanagerapplet
     polkit_gnome
 

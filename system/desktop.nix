@@ -4,6 +4,7 @@
 
   programs.niri.enable = true;
   services.displayManager.defaultSession = "niri";
+  security.pam.services.gtklock = {};
   services.gvfs.enable = true;
 
   services.udev.extraRules = ''

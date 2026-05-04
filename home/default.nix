@@ -1,18 +1,19 @@
-{ pkgs, colors, config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   imports = [
-    ./desktop/niri.nix
-    ./desktop/waybar.nix
     ./packages.nix
     ./theme.nix
     ./shell.nix
+    ./apps/helix.nix
     ./apps/kitty.nix
     ./apps/wofi.nix
     ./cli/fastfetch.nix
-    ./services/awww.nix
     ./cli/git.nix
-    ./apps/helix.nix
+    ./desktop/niri.nix
+    ./desktop/waybar.nix
+    ./services/awww.nix
+    ./services/gtklock.nix
   ];
 
   home.username    = "koppi";
@@ -32,8 +33,8 @@
           timeout 600  '${pkgs.niri}/bin/niri msg action power-off-monitors' \
           resume       '${pkgs.niri}/bin/niri msg action power-on-monitors' \
           timeout 1800 '${pkgs.systemd}/bin/systemctl suspend' \
-          before-sleep '${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}' \
-          lock         '${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}'
+          before-sleep '${pkgs.gtklock}/bin/gtklock --daemonize' \
+          lock         '${pkgs.gtklock}/bin/gtklock --daemonize'
       '';
       Restart = "on-failure";
     };
@@ -50,8 +51,8 @@
           timeout 300 '${pkgs.niri}/bin/niri msg action power-off-monitors' \
           resume      '${pkgs.niri}/bin/niri msg action power-on-monitors' \
           timeout 600 '${pkgs.systemd}/bin/systemctl suspend' \
-          before-sleep '${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}' \
-          lock         '${pkgs.swaylock}/bin/swaylock -f -c ${colors.bg}'
+          before-sleep '${pkgs.gtklock}/bin/gtklock --daemonize' \
+          lock         '${pkgs.gtklock}/bin/gtklock --daemonize'
       '';
       Restart = "on-failure";
     };

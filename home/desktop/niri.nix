@@ -237,7 +237,7 @@
       "XF86MonBrightnessUp"   = { action = spawn "brightnessctl" "set" "5%+"; allow-when-locked = true; };
       "XF86MonBrightnessDown" = { action = spawn "brightnessctl" "set" "5%-"; allow-when-locked = true; };
 
-      "Mod+Alt+L" = { action = spawn "swaylock" "-f" "-c" "${colors.bg}"; allow-when-locked = true; };
+      "Mod+Alt+L" = { action = spawn "gtklock" "--daemonize"; allow-when-locked = true; };
       "Mod+Shift+E".action = quit;
       "Mod+Shift+P".action = power-off-monitors;
 
