@@ -9,8 +9,8 @@
     input = {
       keyboard = {
         xkb = {
-          layout = "us,br";
-          variant = "intl,abnt2";
+          layout = "br,us";
+          variant = "abnt2,intl";
           options = "grp:alt_shift_toggle";
         };
         repeat-delay = 300;
