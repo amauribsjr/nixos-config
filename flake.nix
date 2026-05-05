@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    claude-code.url = "github:sadjow/claude-code-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";

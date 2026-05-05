@@ -23,6 +23,9 @@
     ripgrep
     chafa
 
+    # Cláudio
+    claude-code.packages.${system}.claude-code
+
     # File & media
     ffmpegthumbnailer
     unar
