@@ -24,7 +24,7 @@
     chafa
 
     # Cláudio
-    claude-code.packages.${system}.claude-code
+    claude-code
 
     # File & media
     ffmpegthumbnailer
