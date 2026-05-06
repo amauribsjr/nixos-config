@@ -11,7 +11,7 @@
     enable = true;
 
     settings = {
-      theme = "kanagawa";
+      theme = "gruvbox-dark-hard";
 
       editor = {
         line-number  = "relative";

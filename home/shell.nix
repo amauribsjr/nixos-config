@@ -124,18 +124,19 @@ in
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "kanagawa";
+      palette         = "gruvbox";
 
-      palettes.kanagawa = {
-        fg     = "#${colors.fg}";      # dcd7ba
-        blue   = "#${colors.blue}";    # crystalBlue
-        aqua   = "#${colors.cyan}";    # waveAqua1
-        green  = "#${colors.green}";   # autumnGreen
-        orange = "#${colors.orange}";  # surimiOrange
-        purple = "#${colors.magenta}"; # oniViolet
-        red    = "#${colors.red}";     # autumnRed
-        yellow = "#${colors.yellow}";  # boatYellow2
+      palettes.gruvbox = {
+        fg     = "#${colors.fg}";
+        blue   = "#${colors.blue}";
+        aqua   = "#${colors.cyan}";
+        green  = "#${colors.green}";
+        orange = "#${colors.orange}";
+        purple = "#${colors.magenta}";
+        red    = "#${colors.red}";
+        yellow = "#${colors.yellow}";
       };
+
 
       format = ''
         [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
