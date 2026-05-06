@@ -7,6 +7,26 @@
     marksman
   ];
 
+  xdg.desktopEntries.helix = {
+    name = "Helix";
+    genericName = "Text Editor";
+    comment = "Edit text files with Helix";
+
+    exec = "kitty -e ${pkgs.helix}/bin/hx %F";
+    terminal = false;
+
+    categories = [ "Utility" "TextEditor" "Development" ];
+    mimeType = [
+      "text/plain"
+      "text/markdown"
+      "text/x-nix"
+      "application/x-shellscript"
+      "application/json"
+      "application/toml"
+      "application/xml"
+    ];
+  };
+
   programs.helix = {
     enable = true;
 
