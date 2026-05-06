@@ -99,7 +99,7 @@ in
             \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
             -printf '%f\n' |
           fzf --prompt="wallpaper > " \
-              --preview 'chafa --size=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} ~/Pictures/Wallpapers/{}' \
+              --preview 'chafa --size=''${FZF_PREVIEW_COLUMNS}x''${FZF_PREVIEW_LINES} ~/Pictures/Wallpapers/{}' \
               --preview-window=right:60%:border)
         if [ -n "$chosen" ]; then
           awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
