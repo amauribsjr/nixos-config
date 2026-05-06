@@ -1,38 +1,38 @@
 {
-  bg       = "1a1a1a";   # neutral dark gray
-  bg1      = "252525";
-  bg2      = "303030";
-  bg3      = "404040";
-  bg4      = "525252";
+  bg       = "2e2e2e";
+  bg1      = "383838";
+  bg2      = "434343";
+  bg3      = "535353";
+  bg4      = "646464";
 
-  fg       = "e8e8e8";   # brighter
+  fg       = "e8e8e8";
   fg1      = "e8e8e8";
-  fg2      = "6b6b6b";   # muted
+  fg2      = "787878";
 
   accent   = "d4b048";
   accdim   = "8a7020";
   accbrt   = "e8c858";
 
-  black    = "1a1a1a";
+  black    = "2e2e2e";
   red      = "b54a4a";
   green    = "5a8f6a";
   yellow   = "d4b048";
-  blue     = "6b6b6b";
-  magenta  = "4a4a4a";
-  cyan     = "8a8a8a";
+  blue     = "646464";
+  magenta  = "535353";
+  cyan     = "909090";
   white    = "e8e8e8";
 
-  bblack   = "404040";
+  bblack   = "535353";
   bred     = "c45a5a";
   bgreen   = "6aa07a";
   byellow  = "e8c858";
   bblue    = "909090";
-  bmagenta = "707070";
+  bmagenta = "787878";
   bcyan    = "a8a8a8";
   bwhite   = "f5f5f5";
 
   redsoft  = "8a7020";
   orange   = "d4b048";
-  teal     = "8a8a8a";
-  slate    = "252525";
+  teal     = "909090";
+  slate    = "383838";
 }
