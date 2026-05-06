@@ -9,9 +9,9 @@
   fg1      = "d0d0d0";
   fg2      = "6b6b6b";
 
-  accent   = "c8922a";   # honey
-  accdim   = "8a6010";   # dark honey
-  accbrt   = "e0a830";   # bright honey
+  accent   = "d4b048";
+  accdim   = "8a7020";
+  accbrt   = "e8c858";
 
   black    = "111111";
   red      = "b54a4a";
