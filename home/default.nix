@@ -9,6 +9,7 @@
     ./apps/helix-theme.nix
     ./apps/kitty.nix
     ./apps/wofi.nix
+    ./apps/zed-theme.nix
     ./cli/fastfetch.nix
     ./cli/git.nix
     ./desktop/niri.nix
@@ -118,7 +119,7 @@
       value.source = ../wallpapers/${f};
     }) (builtins.attrNames (builtins.readDir ../wallpapers))
   );
-  
+
   home.activation.createExtraUserDirs =
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.coreutils}/bin/mkdir -p \
