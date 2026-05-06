@@ -11,7 +11,7 @@
     enable = true;
 
     settings = {
-      theme = "gruvbox-dark-hard";
+      theme = "gruvbox_dark_hard";
 
       editor = {
         line-number  = "relative";
@@ -132,5 +132,26 @@
         { name = "toml";     auto-format = false; }
       ];
     };
+  };
+
+  xdg.desktopEntries.helix = {
+    name        = "Helix";
+    genericName = "Helix TUI Code Editor";
+    exec        = "kitty -e hx %F";
+    terminal    = false;
+    categories  = [ "Utility" "TextEditor" ];
+    mimeType    = [
+      "text/plain"
+      "text/x-readme"
+      "text/markdown"
+      "text/x-rust"
+      "text/x-c"
+      "text/x-chdr"
+      "text/x-csrc"
+      "text/x-java"
+      "application/toml"
+      "application/json"
+      "application/x-nix"
+    ];
   };
 }

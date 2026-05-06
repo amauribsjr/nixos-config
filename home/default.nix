@@ -141,6 +141,14 @@
       "image/gif"        = "org.gnome.eog.desktop";
       "image/webp"       = "org.gnome.eog.desktop";
       "image/svg+xml"    = "org.gnome.eog.desktop";
+      "text/plain"       = "helix.desktop";
+      "text/markdown"    = "helix.desktop";
+      "text/x-rust"      = "helix.desktop";
+      "text/x-c"         = "helix.desktop";
+      "text/x-java"      = "helix.desktop";
+      "application/toml" = "helix.desktop";
+      "application/json" = "helix.desktop";
+      "application/pdf"  = "google-chrome.desktop";
     };
   };
 }
