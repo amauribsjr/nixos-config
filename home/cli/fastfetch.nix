@@ -21,16 +21,16 @@
         { "type": "separator", "string": "─────────────" },
         { "type": "host",     "key": "host",    "keyColor": "bright_yellow" },
         { "type": "os",       "key": "os",      "keyColor": "bright_white"  },
-        { "type": "kernel",   "key": "kernel",  "keyColor": "yellow"        },
-        { "type": "packages", "key": "pkgs",    "keyColor": "white"  },
+        { "type": "kernel",   "key": "kernel",  "keyColor": "bright_yellow"        },
+        { "type": "packages", "key": "pkgs",    "keyColor": "bright_white"  },
         { "type": "separator", "string": "─────────────" },
         { "type": "cpu",    "key": "cpu",  "keyColor": "bright_yellow", "format": "{name}" },
-        { "type": "memory", "key": "mem",  "keyColor": "yellow"                            },
-        { "type": "disk",   "key": "disk", "keyColor": "white",  "folders": "/"     },
+        { "type": "memory", "key": "mem",  "keyColor": "bright_white"                            },
+        { "type": "disk",   "key": "disk", "keyColor": "bright_yellow",  "folders": "/"     },
         { "type": "separator", "string": "─────────────" },
         { "type": "shell",    "key": "shell",    "keyColor": "bright_white" },
-        { "type": "terminal", "key": "terminal", "keyColor": "white"        },
-        { "type": "wm",       "key": "wm",       "keyColor": "white" }
+        { "type": "terminal", "key": "terminal", "keyColor": "bright_yellow"        },
+        { "type": "wm",       "key": "wm",       "keyColor": "bright_white" }
       ]
     }
   '';
