@@ -125,9 +125,9 @@ in
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "gruvbox";
+      palette         = "koppi";
 
-      palettes.gruvbox = {
+      palettes.koppi = {
         fg     = "#${colors.fg}";
         blue   = "#${colors.blue}";
         aqua   = "#${colors.cyan}";
@@ -136,6 +136,8 @@ in
         purple = "#${colors.magenta}";
         red    = "#${colors.red}";
         yellow = "#${colors.yellow}";
+        accent = "#${colors.accent}";
+        accdim = "#${colors.accdim}";
       };
 
 

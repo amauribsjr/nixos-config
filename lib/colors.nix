@@ -1,45 +1,38 @@
 {
-  # Gruvbox Dark Hard
+  bg       = "111111";
+  bg1      = "1c1c1c";
+  bg2      = "272727";
+  bg3      = "383838";
+  bg4      = "4a4a4a";
 
-  # Backgrounds
-  bg       = "1d2021";   # bg0_hard
-  bg1      = "282828";   # bg0
-  bg2      = "3c3836";   # bg1
-  bg3      = "504945";   # bg2
-  bg4      = "665c54";   # bg3
+  fg       = "d0d0d0";
+  fg1      = "d0d0d0";
+  fg2      = "6b6b6b";
 
-  # Foregrounds
-  fg       = "ebdbb2";   # fg1
-  fg1      = "ebdbb2";
-  fg2      = "a89984";   # fg4/gray
+  accent   = "b85530";
+  accdim   = "7a3820";
+  accbrt   = "d4673a";
 
-  # Accent
-  accent   = "fe8019";   # bright orange
-  accdim   = "928374";   # gray dim
+  black    = "111111";
+  red      = "b85530";
+  green    = "6b6b6b";
+  yellow   = "c8a882";
+  blue     = "6b6b6b";
+  magenta  = "4a4a4a";
+  cyan     = "8a8a8a";
+  white    = "d0d0d0";
 
-  # ANSI normal
-  black    = "1d2021";
-  red      = "cc241d";
-  green    = "98971a";
-  yellow   = "d79921";
-  blue     = "458588";
-  magenta  = "b16286";
-  cyan     = "689d6a";
-  white    = "a89984";
+  bblack   = "383838";
+  bred     = "d4673a";
+  bgreen   = "8a8a8a";
+  byellow  = "e0c4a0";
+  bblue    = "909090";
+  bmagenta = "6b6b6b";
+  bcyan    = "a8a8a8";
+  bwhite   = "f0f0f0";
 
-  # ANSI bright
-  bblack   = "928374";
-  bred     = "fb4934";
-  bgreen   = "b8bb26";
-  byellow  = "fabd2f";
-  bblue    = "83a598";
-  bmagenta = "d3869b";
-  bcyan    = "8ec07c";
-  bwhite   = "ebdbb2";
-
-  # Custom
-  redsoft  = "9d0006";
-  orange   = "fe8019";
-  teal     = "689d6a";
-  slate    = "282828";
+  redsoft  = "7a3820";
+  orange   = "d4673a";
+  teal     = "8a8a8a";
+  slate    = "1c1c1c";
 }

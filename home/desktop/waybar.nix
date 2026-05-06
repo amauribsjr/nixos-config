@@ -35,11 +35,9 @@ in
         modules-left   = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right  = [
-          "custom/kb"
           "pulseaudio"
-          "backlight"
           "battery"
-          "network"
+          "custom/kb"
           "tray"
           "custom/power"
         ];
@@ -77,13 +75,6 @@ in
           scroll-step  = 5;
         };
 
-        backlight = {
-          format          = "󰃞 {percent}%";
-          on-scroll-up    = "brightnessctl set 5%+";
-          on-scroll-down  = "brightnessctl set 5%-";
-          tooltip         = false;
-        };
-
         battery = {
           states          = { warning = 25; critical = 10; };
           format          = "{icon} {capacity}%";
@@ -91,13 +82,6 @@ in
           format-plugged  = "󰚥 {capacity}%";
           format-icons    = [ "󰁺" "󰁼" "󰁾" "󰂀" "󰁹" ];
           tooltip-format  = "{timeTo}, {power}W";
-        };
-
-        network = {
-          format-wifi       = "󰤨 {essid}";
-          format-ethernet   = "󰈀 ETH";
-          format-disconnected = "󰤭 OFF";
-          tooltip-format    = "{ifname}: {ipaddr}";
         };
 
         tray = {
@@ -113,13 +97,14 @@ in
 
         "custom/kb" = {
           exec = pkgs.writeShellScript "kb-layout" ''
-            ${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
+            layout=$(${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
               | ${pkgs.gnused}/bin/sed -n 's/^ \* [0-9]* //p' \
               | ${pkgs.gnused}/bin/sed \
                   -e 's/Portuguese (Brazil)/br/' \
-                  -e 's/English (US, intl., with dead keys)/us/'
+                  -e 's/English (US, intl., with dead keys)/us/')
+          [ "$layout" = "us" ] && echo "$layout"
           '';
-          interval = 3;
+          interval = 5;
           on-click = "${pkgs.niri}/bin/niri msg action switch-layout next";
           tooltip = false;
         };
@@ -135,8 +120,8 @@ in
       @define-color fg0     #${colors.fg};
       @define-color fg1     #${colors.fg1};
       @define-color fg2     #${colors.fg2};
-      @define-color accent  #${colors.yellow};
-      @define-color accdim  #${colors.bg3};
+      @define-color accent  #${colors.accent};
+      @define-color accdim  #${colors.accdim};
       @define-color red     #${colors.red};
       @define-color amber   #${colors.byellow};
       @define-color green   #${colors.green};

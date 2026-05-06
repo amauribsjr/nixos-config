@@ -15,14 +15,14 @@
     window {
       background-color: #${colors.bg1};
       font-family: "${fonts.mono}";
-      border: 1px solid #${colors.yellow};
+      border: 1px solid #${colors.accent};
     }
 
     #input {
       background-color: #${colors.bg};
       color: #${colors.fg2};
       border: none;
-      border-bottom: 1px solid #${colors.bg2};
+      border-bottom: 1px solid #${colors.accent};;
       border-radius: 0;
       padding: 12px 20px;
       margin: 0;
@@ -33,7 +33,7 @@
 
     #input:focus {
       color: #${colors.fg};
-      border-bottom: 1px solid #${colors.yellow};
+      border-bottom: 1px solid #${colors.accent};
     }
 
     #scroll { margin: 0; padding: 0; }
