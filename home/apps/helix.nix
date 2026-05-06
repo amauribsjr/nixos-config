@@ -11,17 +11,17 @@
     enable = true;
 
     settings = {
-      theme = "gruvbox-dark-hard";
+      theme = "zenbones";
 
       editor = {
-        line-number          = "relative";
-        cursorline           = true;
-        color-modes          = true;
-        scroll-lines         = 3;
-        shell                = [ "bash" "-c" ];
-        rulers               = [ 100 ];
-        bufferline           = "multiple";
-        auto-format          = false;
+        line-number  = "relative";
+        cursorline   = true;
+        color-modes  = true;
+        scroll-lines = 3;
+        shell        = [ "bash" "-c" ];
+        rulers       = [ 100 ];
+        bufferline   = "multiple";
+        auto-format  = false;
 
         auto-save = {
           focus-lost          = true;
@@ -47,8 +47,8 @@
         };
 
         inline-diagnostics = {
-          cursor-line      = "warning";
-          other-lines      = "error";
+          cursor-line = "warning";
+          other-lines = "error";
         };
 
         lsp = {
@@ -103,7 +103,7 @@
       };
     };
 
-    themes.gruvbox-dark-hard = {
+    /* themes.gruvbox-dark-hard = {
       inherits = "gruvbox";
       "ui.background"           = { bg = "#1d2021"; };
       "ui.background.separator" = { fg = "#504945"; };
@@ -128,7 +128,7 @@
       "ui.virtual.indent-guide" = { fg = "#3c3836"; };
       "ui.virtual.inlay-hint"   = { fg = "#928374"; };
       "ui.virtual.ruler"        = { bg = "#282828"; };
-    };
+      }; */
 
     languages = {
       language-server = {

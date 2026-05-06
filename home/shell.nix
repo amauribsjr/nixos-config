@@ -1,5 +1,18 @@
 { colors, ... }:
 
+let
+  icon = cp: builtins.fromJSON "\"\\u${cp}\"";
+  i = {
+    git    = icon "E0A0";  #
+    nix    = icon "F313";  #
+    rust   = icon "E7A8";  #
+    python = icon "E73C";  #
+    nodejs = icon "E718";  #
+    java   = icon "E738";  #
+    docker = icon "F308";  #
+  };
+in
+
 {
   # Zsh
   programs.zsh = {
@@ -111,19 +124,17 @@
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "gruvbox_dark";
+      palette         = "zenbones";
 
-      palettes.gruvbox_dark = {
-        color_fg0    = "#${colors.fg}";
-        color_bg1    = "#${colors.bg2}";
-        color_bg3    = "#${colors.bg4}";
-        color_blue   = "#${colors.blue}";
-        color_aqua   = "#${colors.cyan}";
-        color_green  = "#${colors.green}";
-        color_orange = "#${colors.orange}";
-        color_purple = "#${colors.magenta}";
-        color_red    = "#${colors.red}";
-        color_yellow = "#${colors.yellow}";
+      palettes.zenbones = {
+        fg     = "#${colors.fg}";
+        blue   = "#${colors.blue}";
+        aqua   = "#${colors.cyan}";
+        green  = "#${colors.green}";
+        orange = "#${colors.orange}";
+        purple = "#${colors.magenta}";
+        red    = "#${colors.red}";
+        yellow = "#${colors.yellow}";
       };
 
       format = ''
@@ -135,83 +146,22 @@
         error_symbol   = "[λ](bold red)";
       };
 
-      username = {
-        style_user  = "bold fg";
-        style_root  = "bold red";
-        format      = "[$user]($style) ";
-        disabled    = false;
-        show_always = true;
-      };
+      username = { style_user = "bold fg"; style_root = "bold red"; format = "[$user]($style) "; disabled = false; show_always = true; };
+      hostname = { ssh_only = false; format = "[@](bold yellow)[$hostname](bold blue) "; disabled = false; };
+      directory = { style = "bold blue"; read_only = " 󰌾"; truncation_length = 3; truncate_to_repo = true; format = "[$path]($style)[$read_only]($read_only_style) "; };
 
-      hostname = {
-        ssh_only = false;
-        format   = "[@](bold yellow)[$hostname](bold blue) ";
-        disabled = false;
-      };
-
-      directory = {
-        style             = "bold blue";
-        read_only         = " 󰌾";
-        truncation_length = 3;
-        truncate_to_repo  = true;
-        format            = "[$path]($style)[$read_only]($read_only_style) ";
-      };
-
-      git_branch = {
-        symbol = " ";
-        style  = "bold red";
-        format = "[$symbol$branch]($style) ";
-      };
-
-      git_status = {
-        style      = "bold red";
-        conflicted = "🏳";
-        ahead      = "⇡\${count}";
-        behind     = "⇣\${count}";
-        diverged   = "⇕⇡\${ahead_count}⇣\${behind_count}";
-        up_to_date = "";
-        untracked  = "?\${count}";
-        stashed    = "📦";
-        modified   = "!\${count}";
-        staged     = "+\${count}";
-        renamed    = "»\${count}";
-        deleted    = "✘\${count}";
-        format     = ''([\[$all_status$ahead_behind\]]($style) )'';
-      };
-
-      nix_shell = {
-        disabled    = false;
-        symbol      = " ";
-        impure_msg  = "[impure](bold red)";
-        pure_msg    = "[pure](bold green)";
-        unknown_msg = "[unknown](bold yellow)";
-        format      = "via [$symbol$state( \\($name\\))](bold aqua) ";
-      };
-
-      rust           = { symbol = " "; style = "bold orange"; format = "[$symbol($version)]($style) "; };
-      python         = { symbol = " "; style = "bold yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
-      nodejs         = { symbol = " "; style = "bold green";  format = "[$symbol($version)]($style) "; };
-      java           = { symbol = " "; style = "bold red";    format = "[$symbol($version)]($style) "; };
-      docker_context = { symbol = " "; style = "bold blue";   format = "[$symbol$context]($style) "; };
+      git_branch     = { symbol = "${i.git} "; style = "bold red";    format = "[$symbol$branch]($style) "; };
+      git_status     = { style = "bold red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
+      nix_shell      = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](bold red)"; pure_msg = "[pure](bold green)"; unknown_msg = "[unknown](bold yellow)"; format = "via [$symbol$state( \\($name\\))](bold aqua) "; };
+      rust           = { symbol = "${i.rust} ";   style = "bold orange"; format = "[$symbol($version)]($style) "; };
+      python         = { symbol = "${i.python} "; style = "bold yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
+      nodejs         = { symbol = "${i.nodejs} "; style = "bold green";  format = "[$symbol($version)]($style) "; };
+      java           = { symbol = "${i.java} ";   style = "bold red";    format = "[$symbol($version)]($style) "; };
+      docker_context = { symbol = "${i.docker} "; style = "bold blue";   format = "[$symbol$context]($style) "; };
 
       package.disabled      = true;
       cmd_duration.disabled = true;
 
-      palettes.darksea = {
-        bg0    = "#${colors.bg}";
-        fg     = "#${colors.fg}";
-        blue   = "#${colors.blue}";
-        slate  = "#${colors.slate}";
-        mint   = "#${colors.bcyan}";
-        teal   = "#${colors.teal}";
-        red    = "#${colors.bred}";
-        yellow = "#${colors.byellow}";
-        purple = "#${colors.bmagenta}";
-        gray   = "#${colors.fg2}";
-        orange = "#${colors.orange}";
-        green  = "#${colors.bgreen}";
-        aqua   = "#${colors.bcyan}";
-      };
     };
   };
 }

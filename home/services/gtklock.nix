@@ -36,7 +36,7 @@ in
     }
 
     #window-box {
-      background-color: rgba(40, 40, 40, 0.92);
+      background-color: #${colors.bg1};
       border: 2px solid #${colors.accent};
       border-radius: 4px;
       padding: 36px 48px;

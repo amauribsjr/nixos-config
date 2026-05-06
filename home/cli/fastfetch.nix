@@ -7,7 +7,7 @@
 
       "logo": {
         "type": "builtin",
-        "name": "NixOS",
+        "name": "nixos",
         "padding": { "top": 1, "right": 3 },
         "colors": {
           "1": "214",

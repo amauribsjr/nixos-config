@@ -1,43 +1,43 @@
 {
-  # Base backgrounds (Gruvbox Dark Hard)
-  bg       = "1d2021";   # bg0_hard
-  bg1      = "282828";   # bg0
-  bg2      = "3c3836";   # bg1
-  bg3      = "504945";   # bg2
-  bg4      = "665c54";   # bg3
+  # Zenbones Dark — base backgrounds
+  bg       = "191919";   # main bg
+  bg1      = "252525";   # elevated surfaces
+  bg2      = "2c2c2c";   # hover / selection
+  bg3      = "3c3c3c";   # borders / div
+  bg4      = "484848";   # dim
 
   # Foregrounds
-  fg       = "ebdbb2";   # fg
-  fg1      = "ebdbb2";   # fg
-  fg2      = "a89984";   # gray / muted fg
+  fg       = "c6c6c6";   # main text
+  fg1      = "c6c6c6";
+  fg2      = "7f7f7f";   # muted
 
   # Accent
-  accent   = "fe8019";   # bright orange
-  accdim   = "928374";   # gray
+  accent   = "c9b576";
+  accdim   = "484848";
 
   # ANSI normal
-  black    = "1d2021";   # bg0_hard
-  red      = "cc241d";   # red
-  green    = "98971a";   # green
-  yellow   = "d79921";   # yellow
-  blue     = "458588";   # blue
-  magenta  = "b16286";   # purple
-  cyan     = "689d6a";   # aqua
-  white    = "a89984";   # fg4 / gray
+  black    = "191919";
+  red      = "de6e7c";
+  green    = "85b695";
+  yellow   = "c9b576";
+  blue     = "7f9eba";
+  magenta  = "b18fb8";
+  cyan     = "89bdd3";
+  white    = "c6c6c6";
 
   # ANSI bright
-  bblack   = "928374";   # gray
-  bred     = "fb4934";   # bright red
-  bgreen   = "b8bb26";   # bright green
-  byellow  = "fabd2f";   # bright yellow
-  bblue    = "83a598";   # bright blue
-  bmagenta = "d3869b";   # bright purple
-  bcyan    = "8ec07c";   # bright aqua
-  bwhite   = "ebdbb2";   # fg
+  bblack   = "484848";
+  bred     = "de6e7c";
+  bgreen   = "85b695";
+  byellow  = "c9b576";
+  bblue    = "7f9eba";
+  bmagenta = "cf9bc2";
+  bcyan    = "89bdd3";
+  bwhite   = "e8e8e8";
 
   # Custom
-  redsoft  = "9d0006";   # dark red
-  orange   = "fe8019";   # bright orange
-  teal     = "689d6a";   # aqua
-  slate    = "282828";   # bg0
+  redsoft  = "b05565";
+  orange   = "e69553";
+  teal     = "89bdd3";
+  slate    = "252525";
 }
