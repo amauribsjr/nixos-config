@@ -124,17 +124,17 @@ in
     settings = {
       command_timeout = 1000;
       add_newline     = true;
-      palette         = "zenbones";
+      palette         = "kanagawa";
 
-      palettes.zenbones = {
-        fg     = "#${colors.fg}";
-        blue   = "#${colors.blue}";
-        aqua   = "#${colors.cyan}";
-        green  = "#${colors.green}";
-        orange = "#${colors.orange}";
-        purple = "#${colors.magenta}";
-        red    = "#${colors.red}";
-        yellow = "#${colors.yellow}";
+      palettes.kanagawa = {
+        fg     = "#${colors.fg}";      # dcd7ba
+        blue   = "#${colors.blue}";    # crystalBlue
+        aqua   = "#${colors.cyan}";    # waveAqua1
+        green  = "#${colors.green}";   # autumnGreen
+        orange = "#${colors.orange}";  # surimiOrange
+        purple = "#${colors.magenta}"; # oniViolet
+        red    = "#${colors.red}";     # autumnRed
+        yellow = "#${colors.yellow}";  # boatYellow2
       };
 
       format = ''

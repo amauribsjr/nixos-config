@@ -1,43 +1,43 @@
 {
-  # Zenbones Dark — base backgrounds
-  bg       = "191919";   # main bg
-  bg1      = "252525";   # elevated surfaces
-  bg2      = "2c2c2c";   # hover / selection
-  bg3      = "3c3c3c";   # borders / div
-  bg4      = "484848";   # dim
+  # Kanagawa Wave — base backgrounds
+  bg       = "1f1f28";   # sumiInk0
+  bg1      = "2a2a37";   # sumiInk1
+  bg2      = "363646";   # sumiInk3
+  bg3      = "54546d";   # sumiInk4
+  bg4      = "727169";   # fujiGray
 
   # Foregrounds
-  fg       = "c6c6c6";   # main text
-  fg1      = "c6c6c6";
-  fg2      = "7f7f7f";   # muted
+  fg       = "dcd7ba";   # fujiWhite
+  fg1      = "dcd7ba";
+  fg2      = "727169";   # fujiGray
 
   # Accent
-  accent   = "c9b576";
-  accdim   = "484848";
+  accent   = "c0a36e";   # boatYellow2
+  accdim   = "54546d";
 
   # ANSI normal
-  black    = "191919";
-  red      = "de6e7c";
-  green    = "85b695";
-  yellow   = "c9b576";
-  blue     = "7f9eba";
-  magenta  = "b18fb8";
-  cyan     = "89bdd3";
-  white    = "c6c6c6";
+  black    = "1f1f28";
+  red      = "c34043";   # autumnRed
+  green    = "76946a";   # autumnGreen
+  yellow   = "c0a36e";   # boatYellow2
+  blue     = "7e9cd8";   # crystalBlue
+  magenta  = "957fb8";   # oniViolet
+  cyan     = "6a9589";   # waveAqua1
+  white    = "dcd7ba";
 
   # ANSI bright
-  bblack   = "484848";
-  bred     = "de6e7c";
-  bgreen   = "85b695";
-  byellow  = "c9b576";
-  bblue    = "7f9eba";
-  bmagenta = "cf9bc2";
-  bcyan    = "89bdd3";
-  bwhite   = "e8e8e8";
+  bblack   = "54546d";
+  bred     = "e82424";   # samuraiRed
+  bgreen   = "98bb6c";   # springGreen
+  byellow  = "c0a36e";   # boatYellow2
+  bblue    = "7fb4ca";   # springBlue
+  bmagenta = "938aa9";   # springViolet1
+  bcyan    = "7aa89f";   # waveAqua2
+  bwhite   = "c8c093";   # oldWhite
 
   # Custom
-  redsoft  = "b05565";
-  orange   = "e69553";
-  teal     = "89bdd3";
-  slate    = "252525";
+  redsoft  = "c34043";
+  orange   = "ffa066";   # surimiOrange
+  teal     = "7aa89f";   # waveAqua2
+  slate    = "2a2a37";
 }

@@ -11,7 +11,7 @@
     enable = true;
 
     settings = {
-      theme = "zenbones";
+      theme = "kanagawa";
 
       editor = {
         line-number  = "relative";
@@ -102,33 +102,6 @@
         };
       };
     };
-
-    /* themes.gruvbox-dark-hard = {
-      inherits = "gruvbox";
-      "ui.background"           = { bg = "#1d2021"; };
-      "ui.background.separator" = { fg = "#504945"; };
-      "ui.statusline"           = { fg = "#ebdbb2"; bg = "#282828"; };
-      "ui.statusline.inactive"  = { fg = "#a89984"; bg = "#1d2021"; };
-      "ui.statusline.normal"    = { fg = "#1d2021"; bg = "#a89984"; modifiers = ["bold"]; };
-      "ui.statusline.insert"    = { fg = "#1d2021"; bg = "#b8bb26"; modifiers = ["bold"]; };
-      "ui.statusline.select"    = { fg = "#1d2021"; bg = "#fabd2f"; modifiers = ["bold"]; };
-      "ui.cursor.normal"        = { fg = "#1d2021"; bg = "#ebdbb2"; };
-      "ui.cursor.insert"        = { fg = "#1d2021"; bg = "#b8bb26"; };
-      "ui.cursor.select"        = { fg = "#1d2021"; bg = "#fabd2f"; };
-      "ui.cursor.match"         = { fg = "#1d2021"; bg = "#fabd2f"; };
-      "ui.cursorline.primary"   = { bg = "#282828"; };
-      "ui.selection"            = { bg = "#504945"; };
-      "ui.linenr"               = { fg = "#665c54"; };
-      "ui.linenr.selected"      = { fg = "#fabd2f"; modifiers = ["bold"]; };
-      "ui.popup"                = { bg = "#282828"; };
-      "ui.window"               = { fg = "#504945"; };
-      "ui.help"                 = { bg = "#282828"; fg = "#ebdbb2"; };
-      "ui.menu"                 = { bg = "#282828"; fg = "#ebdbb2"; };
-      "ui.menu.selected"        = { bg = "#504945"; fg = "#fabd2f"; modifiers = ["bold"]; };
-      "ui.virtual.indent-guide" = { fg = "#3c3836"; };
-      "ui.virtual.inlay-hint"   = { fg = "#928374"; };
-      "ui.virtual.ruler"        = { bg = "#282828"; };
-      }; */
 
     languages = {
       language-server = {
