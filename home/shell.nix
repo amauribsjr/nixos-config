@@ -94,18 +94,19 @@ in
 
       function wall() {
         local chosen
-        chosen=$(ls ~/Pictures/Wallpapers/ \
-          | grep -iE '\.(png|jpg|jpeg|webp)$' \
-          | fzf --prompt="wallpaper > " \
-              --preview 'chafa ~/Pictures/Wallpapers/{}' \
-              --preview-window=right:60%)
+        chosen=$(find ~/Pictures/Wallpapers -maxdepth 1 \
+            \( -type f -o -type l \) \
+            \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+            -printf '%f\n' |
+          fzf --prompt="wallpaper > " \
+              --preview 'chafa --size=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} ~/Pictures/Wallpapers/{}' \
+              --preview-window=right:60%:border)
         if [ -n "$chosen" ]; then
           awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
           echo "$chosen" > ~/.local/share/current-wallpaper
         fi
       }
     '';
-
   };
 
   programs.nix-index = { enable = false; enableZshIntegration = false; };
