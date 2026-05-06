@@ -7,9 +7,8 @@
 
       "logo": {
         "type": "builtin",
-        "name": "nixos",
         "padding": { "top": 1, "right": 3 },
-        "colors": {
+        "color": {
           "1": "214",
           "2": "10"
         }
@@ -36,9 +35,9 @@
 
         { "type": "separator", "string": "─────────────" },
 
-        { "type": "shell",    "key": "shell",    "keyColor": "blue"                           },
-        { "type": "terminal", "key": "terminal", "keyColor": "bright_cyan"                    },
-        { "type": "wm",       "key": "wm",       "keyColor": "bright_blue"                    }
+        { "type": "shell",    "key": "shell",    "keyColor": "blue"        },
+        { "type": "terminal", "key": "terminal", "keyColor": "bright_cyan" },
+        { "type": "wm",       "key": "wm",       "keyColor": "bright_blue" }
       ]
     }
   '';
