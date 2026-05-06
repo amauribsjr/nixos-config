@@ -152,22 +152,22 @@
     };
 
     binds = with config.lib.niri.actions; {
-      "Mod+Return".action  = spawn "kitty";
-      "Mod+D".action       = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
-      "Mod+V".action       = spawn "vesktop";
-      "Mod+B".action       = spawn "google-chrome";
-      "Mod+E".action       = spawn "zeditor";
-      "Mod+T".action       = spawn "nautilus";
+      "Mod+Return".action = spawn "kitty";
+      "Mod+D".action      = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
+      "Mod+V".action      = spawn "vesktop";
+      "Mod+B".action      = spawn "google-chrome";
+      "Mod+E".action      = spawn "zeditor";
+      "Mod+T".action      = spawn "nautilus";
 
-      "Mod+Q".action            = close-window;
-      "Mod+F".action            = fullscreen-window;
-      "Mod+M".action            = maximize-column;
-      "Mod+Ctrl+F".action       = expand-column-to-available-width;
-      "Mod+Shift+F".action      = toggle-window-floating;
-      "Mod+Shift+C".action      = center-column;
-      "Mod+R".action            = switch-preset-column-width;
-      "Mod+Shift+R".action      = switch-preset-window-height;
-      "Mod+W".action            = toggle-column-tabbed-display;
+      "Mod+Q".action       = close-window;
+      "Mod+F".action       = fullscreen-window;
+      "Mod+M".action       = maximize-column;
+      "Mod+Ctrl+F".action  = expand-column-to-available-width;
+      "Mod+Shift+F".action = toggle-window-floating;
+      "Mod+Shift+C".action = center-column;
+      "Mod+R".action       = switch-preset-column-width;
+      "Mod+Shift+R".action = switch-preset-window-height;
+      "Mod+W".action       = toggle-column-tabbed-display;
 
       "Mod+Left".action  = focus-column-left;
       "Mod+Right".action = focus-column-right;
