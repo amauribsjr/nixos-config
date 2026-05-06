@@ -22,15 +22,15 @@
         { "type": "host",     "key": "host",    "keyColor": "bright_yellow" },
         { "type": "os",       "key": "os",      "keyColor": "bright_white"  },
         { "type": "kernel",   "key": "kernel",  "keyColor": "yellow"        },
-        { "type": "packages", "key": "pkgs",    "keyColor": "bright_black"  },
+        { "type": "packages", "key": "pkgs",    "keyColor": "white"  },
         { "type": "separator", "string": "─────────────" },
         { "type": "cpu",    "key": "cpu",  "keyColor": "bright_yellow", "format": "{name}" },
         { "type": "memory", "key": "mem",  "keyColor": "yellow"                            },
-        { "type": "disk",   "key": "disk", "keyColor": "bright_black",  "folders": "/"     },
+        { "type": "disk",   "key": "disk", "keyColor": "white",  "folders": "/"     },
         { "type": "separator", "string": "─────────────" },
         { "type": "shell",    "key": "shell",    "keyColor": "bright_white" },
         { "type": "terminal", "key": "terminal", "keyColor": "white"        },
-        { "type": "wm",       "key": "wm",       "keyColor": "bright_black" }
+        { "type": "wm",       "key": "wm",       "keyColor": "white" }
       ]
     }
   '';
