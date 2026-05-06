@@ -154,4 +154,9 @@
       "application/x-nix"
     ];
   };
+  home.file.".local/share/applications/Helix.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    NoDisplay=true
+  '';
 }
