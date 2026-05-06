@@ -6,6 +6,7 @@
     ./theme.nix
     ./shell.nix
     ./apps/helix.nix
+    ./apps/helix-theme.nix
     ./apps/kitty.nix
     ./apps/wofi.nix
     ./cli/fastfetch.nix

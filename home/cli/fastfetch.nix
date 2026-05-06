@@ -7,6 +7,7 @@
 
       "logo": {
         "type": "builtin",
+        "source": "nixos",
         "padding": { "top": 1, "right": 3 },
         "color": {
           "1": "214",
