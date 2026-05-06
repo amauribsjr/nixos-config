@@ -9,30 +9,30 @@
   fg1      = "d0d0d0";
   fg2      = "6b6b6b";
 
-  accent   = "d97756";
-  accdim   = "a05a38";
-  accbrt   = "e8935a";
+  accent   = "c8922a";   # honey
+  accdim   = "8a6010";   # dark honey
+  accbrt   = "e0a830";   # bright honey
 
   black    = "111111";
-  red      = "b54a4a";   # muted red - error
-  green    = "5a8f6a";   # green - ok
-  yellow   = "c4924a";   # amber - warning
+  red      = "b54a4a";
+  green    = "5a8f6a";
+  yellow   = "c8922a";
   blue     = "6b6b6b";
   magenta  = "4a4a4a";
   cyan     = "8a8a8a";
   white    = "d0d0d0";
 
   bblack   = "383838";
-  bred     = "c45a5a";   # muted bright red
-  bgreen   = "6aa07a";   # bright green
-  byellow  = "d4a45a";   # bright amber
+  bred     = "c45a5a";
+  bgreen   = "6aa07a";
+  byellow  = "e0a830";
   bblue    = "909090";
   bmagenta = "6b6b6b";
   bcyan    = "a8a8a8";
   bwhite   = "f0f0f0";
 
-  redsoft  = "a05a38";
-  orange   = "d97756";
+  redsoft  = "8a6010";
+  orange   = "c8922a";
   teal     = "8a8a8a";
   slate    = "1c1c1c";
 }
