@@ -153,7 +153,7 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action  = spawn "kitty";
-      "Mod+D".action       = spawn "wofi" "--show=drun" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
+      "Mod+D".action       = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
       "Mod+V".action       = spawn "vesktop";
       "Mod+B".action       = spawn "google-chrome";
       "Mod+E".action       = spawn "zeditor";
