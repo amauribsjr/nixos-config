@@ -11,7 +11,7 @@
 
     settings = {
       # Window
-      background_opacity      = "0.94";
+      background_opacity      = "1.0";
       window_padding_width    = 12;
       hide_window_decorations = true;
 
