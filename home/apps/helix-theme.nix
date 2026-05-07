@@ -61,10 +61,10 @@
     "diff.delta"       = { fg = "#c4924a" }
     "diff.delta.moved" = { fg = "#909090" }
 
-    "comment"                     = { fg = "#787878", modifiers = ["italic"] }
-    "comment.line"                = { fg = "#787878", modifiers = ["italic"] }
-    "comment.block"               = { fg = "#787878", modifiers = ["italic"] }
-    "comment.block.documentation" = { fg = "#909090", modifiers = ["italic"] }
+    "comment"                     = { fg = "#787878" }
+    "comment.line"                = { fg = "#787878" }
+    "comment.block"               = { fg = "#787878" }
+    "comment.block.documentation" = { fg = "#909090" }
 
     "keyword"                   = { fg = "#f5f5f5", modifiers = ["bold"] }
     "keyword.control"           = { fg = "#f5f5f5", modifiers = ["bold"] }
@@ -86,7 +86,7 @@
 
     "variable"              = { fg = "#e8e8e8" }
     "variable.builtin"      = { fg = "#d4b048" }
-    "variable.parameter"    = { fg = "#e8e8e8", modifiers = ["italic"] }
+    "variable.parameter"    = { fg = "#e8e8e8" }
     "variable.other"        = { fg = "#e8e8e8" }
     "variable.other.member" = { fg = "#e8e8e8" }
 
@@ -94,7 +94,7 @@
     "type.builtin"      = { fg = "#d4b048" }
     "type.enum"         = { fg = "#d4b048" }
     "type.enum.variant" = { fg = "#e8c858" }
-    "type.parameter"    = { fg = "#d4b048", modifiers = ["italic"] }
+    "type.parameter"    = { fg = "#d4b048" }
 
     "constructor" = { fg = "#e8c858" }
 

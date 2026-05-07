@@ -149,8 +149,8 @@
       "diff.minus"         = { fg = "#b54a4a"; };
       "diff.delta"         = { fg = "#c4924a"; };
 
-      "comment"                     = { fg = "#6b6b6b"; modifiers = ["italic"]; };
-      "comment.block.documentation" = { fg = "#8a8a8a"; modifiers = ["italic"]; };
+      "comment"                     = { fg = "#6b6b6b"; };
+      "comment.block.documentation" = { fg = "#8a8a8a"; };
 
       "keyword"                  = { fg = "#f0f0f0"; modifiers = ["bold"]; };
       "keyword.operator"         = { fg = "#d0d0d0"; };
@@ -165,12 +165,12 @@
 
       "variable"           = { fg = "#d0d0d0"; };
       "variable.builtin"   = { fg = "#c4a07a"; };
-      "variable.parameter" = { fg = "#d0d0d0"; modifiers = ["italic"]; };
+      "variable.parameter" = { fg = "#d0d0d0"; };
 
       "type"               = { fg = "#c4a07a"; };
       "type.builtin"       = { fg = "#c4a07a"; };
       "type.enum.variant"  = { fg = "#d97756"; };
-      "type.parameter"     = { fg = "#c4a07a"; modifiers = ["italic"]; };
+      "type.parameter"     = { fg = "#c4a07a"; };
       "constructor"        = { fg = "#d97756"; };
 
       "function"           = { fg = "#f0f0f0"; };
