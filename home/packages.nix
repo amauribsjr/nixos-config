@@ -39,7 +39,6 @@
     obs-studio
     dbeaver-bin
     bruno
-    redis
     zed-editor
 
   ];

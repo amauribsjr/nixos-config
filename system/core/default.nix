@@ -8,6 +8,7 @@
     ./packages.nix
     ./virtualisation.nix
     ./databases.nix
+    ./redis.nix
     ./nix-ld.nix
   ];
 
