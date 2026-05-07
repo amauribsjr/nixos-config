@@ -27,11 +27,12 @@
 
     colors = import ./lib/colors.nix;
     fonts  = import ./lib/fonts.nix;
+    theme  = import ./lib/theme.nix { inherit pkgs; };
   in {
     devShells.${system} = import ./devshells.nix { inherit pkgs; };
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs colors fonts; };
+      specialArgs = { inherit inputs colors fonts theme; };
       modules = [
         nixos-hardware.nixosModules.common-pc-laptop
         nixos-hardware.nixosModules.common-pc-laptop-ssd
@@ -44,7 +45,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "backup";
-            extraSpecialArgs = { inherit inputs colors fonts; };
+            extraSpecialArgs = { inherit inputs colors fonts theme; };
             users.koppi = import ./home;
           };
         }

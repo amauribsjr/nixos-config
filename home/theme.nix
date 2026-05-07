@@ -1,30 +1,26 @@
-{ pkgs, ... }:
+{ fonts, theme, ... }:
 
 {
   home.pointerCursor = {
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-    size = 20;
+    name       = theme.cursor.name;
+    package    = theme.cursor.package;
+    size       = theme.cursor.size;
     gtk.enable = true;
   };
 
   gtk = {
     enable = true;
-
-    theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
-
-    gtk4.theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
+    font   = { name = fonts.ui; size = fonts.uiSize; };
+    theme  = { inherit (theme.gtk) name package; };
+    gtk4.theme = { inherit (theme.gtk) name package; };
   };
-  
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+      color-scheme        = "prefer-dark";
+      font-name           = "${fonts.ui} ${toString fonts.uiSize}";
+      document-font-name  = "${fonts.ui} ${toString fonts.uiSize}";
+      monospace-font-name = "${fonts.globalMono} ${toString fonts.uiSize}";
     };
   };
 }

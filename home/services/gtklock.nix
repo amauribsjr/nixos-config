@@ -1,4 +1,4 @@
-{ pkgs, colors, fonts, config, ... }:
+{ pkgs, config, colors, fonts, theme, ... }:
 
 let
   wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
@@ -10,7 +10,7 @@ in
 
   xdg.configFile."gtklock/config.ini".text = ''
     [main]
-    gtk-theme=Gruvbox-Dark
+    gtk-theme=${theme.gtk.name}
     style=${config.xdg.configHome}/gtklock/style.css
     background=${wallpaper}
     time-format=%H:%M

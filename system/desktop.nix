@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, fonts, theme, ... }:
 
 {
 
@@ -29,15 +29,23 @@
 
   programs.dconf.enable = true;
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-    font-awesome
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.victor-mono
-    nerd-fonts.symbols-only
-  ];
+  fonts = {
+    packages = [
+      pkgs.noto-fonts
+      pkgs.noto-fonts-cjk-sans
+      pkgs.noto-fonts-color-emoji
+      pkgs.font-awesome
+      theme.fontPackages.ui
+      theme.fontPackages.mono
+      theme.fontPackages.syms
+    ];
+
+    fontconfig.defaultFonts = {
+      monospace = [ fonts.globalMono fonts.symbols ];
+      sansSerif = [ "Noto Sans" ];
+      serif     = [ "Noto Serif" ];
+    };
+  };
 
   # Audio
   security.rtkit.enable = true;
