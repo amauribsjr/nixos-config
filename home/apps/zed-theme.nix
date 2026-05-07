@@ -131,12 +131,12 @@
             "syntax": {
               "attribute":              { "color": "#707070" },
               "boolean":                { "color": "#e8c858", "font_weight": 700 },
-              "comment":                { "color": "#787878", "font_style": "italic" },
-              "comment.doc":            { "color": "#909090", "font_style": "italic" },
+              "comment":                { "color": "#787878" },
+              "comment.doc":            { "color": "#909090" },
               "constant":               { "color": "#e8c858" },
               "constructor":            { "color": "#e8c858" },
               "embedded":               { "color": "#d4b048" },
-              "emphasis":               { "color": "#e8e8e8", "font_style": "italic" },
+              "emphasis":               { "color": "#e8e8e8" },
               "emphasis.strong":        { "color": "#f5f5f5", "font_weight": 700 },
               "enum":                   { "color": "#d4b048" },
               "function":               { "color": "#f5f5f5" },
@@ -149,7 +149,7 @@
               "link_uri":               { "color": "#909090" },
               "number":                 { "color": "#f0d060" },
               "operator":               { "color": "#e8e8e8" },
-              "predictive":             { "color": "#646464", "font_style": "italic" },
+              "predictive":             { "color": "#646464" },
               "preproc":                { "color": "#d4b048" },
               "primary":                { "color": "#e8e8e8" },
               "property":               { "color": "#e8e8e8" },
@@ -172,7 +172,7 @@
               "variable":               { "color": "#e8e8e8" },
               "variable.builtin":       { "color": "#d4b048" },
               "variable.member":        { "color": "#e8e8e8" },
-              "variable.parameter":     { "color": "#e8e8e8", "font_style": "italic" },
+              "variable.parameter":     { "color": "#e8e8e8" },
               "variant":                { "color": "#e8c858" }
             }
           }
