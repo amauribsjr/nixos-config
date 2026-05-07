@@ -13,7 +13,7 @@ for my **Dell Inspiron 3501**.
 | RAM          | 8 GB DDR4 (2x4GB)                                |
 | Storage      | SSD NVMe 128 GB (Gen 3)                          |
 | Display      | Integrated, 1366x768                             |
-| Keyboard     | ABNT2                                            |
+| Keyboard     | ABNT2, US-Intl                                   |
 
 ## Stack
 
@@ -21,62 +21,78 @@ for my **Dell Inspiron 3501**.
 - **Compositor**: **Niri** (scrollable-tiling Wayland) via [niri-flake](https://github.com/sodiboo/niri-flake)
 - **Shell**: Zsh + Starship + direnv
 - **Terminal**: Kitty
-- **Theme**: Gruvbox Dark Hard
+- **Theme**: Koppi
 - **Bar**: Waybar
 - **Launcher**: Wofi
 - **Notifications**: Mako
 - **Wallpaper**: awww
 - **Greeter**: ReGreet
-- **Editor**: Zed
+- **Editor**: Zed, Helix
 
 ## 📁 Structure
 
 ```
 nixos-config/
-├── flake.nix
+├── flake.nix                    # Flake entrypoint: nixpkgs unstable, Home Manager, niri-flake, nixos-hardware
 ├── flake.lock
-├── devshells.nix               # Rust, Java, C dev shells
-├── wallpapers/
+├── devshells.nix                # Rust, Java and C dev shells
+├── README.md
+├── INSTALL.md                   # Dell Inspiron 3501 install guide: btrfs + zram
+├── HX-ref.md                    # Helix cheatsheet
+├── direnv-ref.md                # direnv cheatsheet
+├── .gitignore
+├── wallpapers/                  # Wallpaper assets copied into ~/Pictures/Wallpapers
+│   ├── ALLqk82.png
+│   ├── classroom.jpg
+│   ├── coding-3.png
+│   ├── gruvbox-rainbow-nix.png
+│   ├── nix.png
+│   ├── tux.png
+│   ├── wallpaper.png
+│   └── wallpaper5.png
 ├── lib/
-│   ├── colors.nix              # Gruvbox Dark Hard palette
-│   └── fonts.nix               # JetBrainsMono Nerd Font
+│   ├── colors.nix               # Koppi color palette
+│   └── fonts.nix                # Font names and sizes
 ├── home/
+│   ├── default.nix              # Home Manager root
+│   ├── packages.nix             # User packages
+│   ├── shell.nix                # Zsh, aliases, Starship, zoxide, fzf, direnv/nix-direnv
+│   ├── theme.nix                # GTK theme, cursor theme, dark preference
 │   ├── apps/
+│   │   ├── helix.nix
+│   │   ├── helix-theme.nix      # Koppi theme
 │   │   ├── kitty.nix
 │   │   ├── wofi.nix
-│   │   └── helix.nix
+│   │   └── zed-theme.nix        # Koppi theme
 │   ├── cli/
 │   │   ├── fastfetch.nix
 │   │   └── git.nix
 │   ├── desktop/
 │   │   ├── niri.nix
 │   │   └── waybar.nix
-│   ├── services/
-│   │   └── awww.nix
-│   ├── default.nix
-│   ├── packages.nix
-│   ├── shell.nix               # Zsh + Starship + direnv
-│   └── theme.nix
+│   └── services/
+│       ├── awww.nix             # Wallpaper daemon/service
+│       └── gtklock.nix
 └── system/
-    ├── default.nix
-    ├── desktop.nix             # Niri + GDM + PipeWire + fonts
+    ├── default.nix              # NixOS root
+    ├── desktop.nix              # Niri system enablement, portals, udev rules, fonts, PipeWire, GVFS
+    ├── greeter.nix              # ReGreet/greetd
     ├── core/
-    │   ├── default.nix
-    │   ├── databases.nix       # MySQL
-    │   ├── locale.nix          # pt_BR + en_US + ko_KR
+    │   ├── default.nix          # Core system imports + systemd-oomd
+    │   ├── databases.nix
+    │   ├── locale.nix           # Timezone, locales and BR/US keyboard layouts
     │   ├── networking.nix
-    │   ├── nix-ld.nix
+    │   ├── nix-ld.nix           # nix-ld runtime libraries for foreign binaries
     │   ├── nix.nix
-    │   ├── packages.nix
+    │   ├── packages.nix         # System packages
     │   ├── users.nix
-    │   ├── greeter.nix         # ReGreet (Gruvbox Dark Hard custom)
-    │   └── virtualisation.nix  # Docker
+    │   └── virtualisation.nix   # Docker
     └── hardware/
-        ├── default.nix
-        ├── boot.nix            # systemd-boot + zram sysctl tuning
-        ├── graphics.nix        # Intel iHD + Wayland env vars
-        ├── hardware.nix        # kernel modules + filesystems
-        └── power.nix           # TLP + thermald + upower + Bluetooth
+        ├── default.nix          # Hardware module imports
+        ├── boot.nix             # systemd-boot, Plymouth, latest kernel, boot params, sysctl tuning
+        ├── graphics.nix         # Intel graphics, VA-API, Wayland/Ozone session variables
+        ├── hardware.nix         # Btrfs subvolumes, filesystems, swapfile, autoscrub, Intel microcode
+        └── power.nix            # zram, TLP, thermald, fwupd, upower, Bluetooth/Blueman
 ```
 
 ---
@@ -90,7 +106,7 @@ nixos-config/
 | `Super+D`        | Launcher (Wofi)         |
 | `Super+B`        | Browser (Chrome)        |
 | `Super+V`        | Vesktop                 |
-| `Super+E`        | Editor (Zed)            |
+| `Super+E`        | GUI Editor (Zed)        |
 | `Super+T`        | File manager (Nautilus) |
 
 ### Window management
@@ -171,7 +187,7 @@ nixos-config/
 
 ## Theme
 
-**Gruvbox Dark Hard** — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
+**Koppi** *(my own custom theme/color palette)* — defined in `lib/colors.nix` and propagated via `specialArgs` to all modules.
 
 ---
 
