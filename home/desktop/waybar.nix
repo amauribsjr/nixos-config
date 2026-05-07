@@ -148,9 +148,7 @@ in
       #window,
       #clock,
       #pulseaudio,
-      #backlight,
       #battery,
-      #network,
       #tray,
       #custom-power,
       #taskbar {
@@ -185,7 +183,6 @@ in
       #window        { color: @fg2; font-weight: bold; }
       #clock         { color: @accent; font-weight: bold; }
       #pulseaudio    { color: @fg1; }
-      #backlight     { color: @fg1; }
       #battery       { color: @green; }
       #battery.charging               { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
@@ -193,7 +190,6 @@ in
           color: @red;
           animation: blink 2s steps(1) infinite;
       }
-      #network    { color: @fg1; }
       #tray       { padding: 0 8px; }
       #tray > .passive          { -gtk-icon-effect: dim; }
       #tray > .needs-attention  { -gtk-icon-effect: highlight; background-color: @red; }
@@ -204,8 +200,7 @@ in
       }
       #custom-power:hover { background-color: @bg2; }
 
-      #pulseaudio:hover, #backlight:hover, #battery:hover,
-      #network:hover, #clock:hover {
+      #pulseaudio:hover, #battery:hover, #clock:hover {
           background-color: @bg2;
           color: @fg1;
       }
