@@ -35,6 +35,7 @@
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.jetbrains-mono
+    nerd-fonts.victor-mono
     nerd-fonts.symbols-only
   ];
 
