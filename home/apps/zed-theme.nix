@@ -114,6 +114,7 @@
             "success.border":     "#${colors.bgreen}",
 
             "hint":               "#${colors.fg2}",
+            "hint.background":    "#${colors.bg1}",
             "predictive":         "#${colors.bg4}",
 
             "modified":  "#${colors.accent}",
