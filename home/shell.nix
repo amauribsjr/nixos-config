@@ -50,17 +50,26 @@ in
       }
 
       function update() {
-        echo "🔄 Updating flakes..."
-        cd ~/nixos-config && nix flake update
-        echo "🔄 Rebuilding..."
-        cd ~/nixos-config && git add . && git commit -m "Update flakes"
-        sudo nixos-rebuild switch --flake ~/nixos-config#nixos
+        echo "🔄 Updating flake inputs..."
+        cd ~/nixos-config || return 1
+        nix flake update || return 1
+      
+        echo "🧪 Testing NixOS build..."
+        sudo nixos-rebuild test --flake .#nixos
       }
 
       function flakeup() {
         echo "🔄 Updating flake.lock..."
-        cd ~/nixos-config && nix flake update
-        cd ~/nixos-config && git add . && git commit -m "Update flake.lock"
+        cd ~/nixos-config || return 1
+        nix flake update || return 1
+      
+        git add flake.lock
+      
+        if git diff --cached --quiet; then
+        echo "No flake.lock changes to commit."
+        else
+        git commit -m "chore(flake): update inputs"
+        fi
       }
 
       function rollback() {

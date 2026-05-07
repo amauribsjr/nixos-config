@@ -1,7 +1,7 @@
 { pkgs, config, colors, fonts, theme, ... }:
 
 let
-  wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
+  wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
 in
 {
   home.packages = with pkgs; [
@@ -21,7 +21,7 @@ in
 
   xdg.configFile."gtklock/style.css".text = ''
     * {
-      font-family: "${fonts.mono}";
+      font-family: "${fonts.ui}";
       text-shadow: none;
       box-shadow: none;
     }
@@ -46,20 +46,20 @@ in
 
     #clock-label {
       color: #${colors.byellow};
-      font-size: 32px;
+      font-size: ${toString fonts.lockClockSize}px;
       font-weight: 700;
       margin-bottom: 8px;
     }
 
     #date-label {
       color: #${colors.fg2};
-      font-size: 13px;
+      font-size: ${toString fonts.lockTextSize}px;
       margin-bottom: 24px;
     }
 
     #input-label {
       color: #${colors.bgreen};
-      font-size: 12px;
+      font-size: ${toString fonts.lockTextSize}px;
       font-weight: 600;
       margin-bottom: 6px;
     }

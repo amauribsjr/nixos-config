@@ -20,7 +20,7 @@
       color-scheme        = "prefer-dark";
       font-name           = "${fonts.ui} ${toString fonts.uiSize}";
       document-font-name  = "${fonts.ui} ${toString fonts.uiSize}";
-      monospace-font-name = "${fonts.globalMono} ${toString fonts.uiSize}";
+      monospace-font-name = "${fonts.systemMono} ${toString fonts.uiSize}";
     };
   };
 }

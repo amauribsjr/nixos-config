@@ -1,8 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, config, theme, ... }:
 
 let
-  wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
-  wallpaperState   = "${config.home.homeDirectory}/.local/share/current-wallpaper";
+  wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
+  wallpaperState   = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
 
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
     if [ -f "${wallpaperState}" ]; then

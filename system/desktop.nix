@@ -41,7 +41,7 @@
     ];
 
     fontconfig.defaultFonts = {
-      monospace = [ fonts.globalMono fonts.symbols ];
+      monospace = [ fonts.systemMono fonts.symbols ];
       sansSerif = [ "Noto Sans" ];
       serif     = [ "Noto Serif" ];
     };

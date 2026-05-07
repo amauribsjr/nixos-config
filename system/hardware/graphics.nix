@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, theme, ... }:
 
 {
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -15,7 +14,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     LIBVA_DRIVER_NAME = "iHD";
-    XCURSOR_SIZE = "24";
+    XCURSOR_SIZE = toString theme.cursor.size;
   };
 
   environment.systemPackages = with pkgs; [

@@ -3,7 +3,6 @@
 let
   gtkTheme = theme.gtk;
   cursor = theme.cursor;
-  cursorPkg = theme.cursor.package;
 in
 
 {
@@ -12,8 +11,7 @@ in
 
     font = {
       name    = fonts.ui;
-      size    = 13;
-      package = theme.fontPackages.ui;
+      size    = fonts.greeterSize;      package = theme.fontPackages.ui;
     };
 
     theme = {
@@ -232,8 +230,4 @@ in
   };
 
   security.pam.services.greetd.enableGnomeKeyring = true;
-
-  environment.systemPackages = [
-    cursorPkg
-  ];
 }

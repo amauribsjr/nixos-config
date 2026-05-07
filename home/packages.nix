@@ -19,6 +19,7 @@
     fd
     ripgrep
     chafa
+    fastfetch
 
     # Cláudio
     claude-code
@@ -39,6 +40,7 @@
     dbeaver-bin
     bruno
     redis
+    zed-editor
 
   ];
 }

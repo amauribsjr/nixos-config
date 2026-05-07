@@ -17,7 +17,6 @@
 
     # System & hardware
     btop
-    fastfetch
     powertop
     lm_sensors
     pciutils
@@ -38,7 +37,6 @@
     pavucontrol
     vlc
     mpv
-    zed-editor
 
     # Java
     jdk21

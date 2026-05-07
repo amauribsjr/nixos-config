@@ -6,7 +6,7 @@
 
     font = {
       name = fonts.terminal;
-      size = fonts.size;
+      size = fonts.terminalSize;
     };
 
     settings = {

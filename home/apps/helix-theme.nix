@@ -1,144 +1,144 @@
-{ ... }:
+{ colors, ... }:
 
 {
   xdg.configFile."helix/themes/koppi-theme.toml".text = ''
-    "ui.background"           = { bg = "#2e2e2e" }
-    "ui.background.separator" = { fg = "#535353" }
+    "ui.background"           = { bg = "#${colors.bg}" }
+    "ui.background.separator" = { fg = "#${colors.bg3}" }
 
-    "ui.statusline"           = { fg = "#e8e8e8", bg = "#383838" }
-    "ui.statusline.inactive"  = { fg = "#646464", bg = "#2e2e2e" }
-    "ui.statusline.normal"    = { fg = "#2e2e2e", bg = "#909090", modifiers = ["bold"] }
-    "ui.statusline.insert"    = { fg = "#2e2e2e", bg = "#d4b048", modifiers = ["bold"] }
-    "ui.statusline.select"    = { fg = "#2e2e2e", bg = "#e8c858", modifiers = ["bold"] }
+    "ui.statusline"           = { fg = "#${colors.fg}", bg = "#${colors.bg1}" }
+    "ui.statusline.inactive"  = { fg = "#${colors.bg4}", bg = "#${colors.bg}" }
+    "ui.statusline.normal"    = { fg = "#${colors.bg}", bg = "#${colors.fgMuted}", modifiers = ["bold"] }
+    "ui.statusline.insert"    = { fg = "#${colors.bg}", bg = "#${colors.accent}", modifiers = ["bold"] }
+    "ui.statusline.select"    = { fg = "#${colors.bg}", bg = "#${colors.accbrt}", modifiers = ["bold"] }
 
-    "ui.cursor.normal"        = { fg = "#2e2e2e", bg = "#f5f5f5" }
-    "ui.cursor.insert"        = { fg = "#2e2e2e", bg = "#d4b048" }
-    "ui.cursor.select"        = { fg = "#2e2e2e", bg = "#e8c858" }
-    "ui.cursor.match"         = { fg = "#2e2e2e", bg = "#f0d060" }
+    "ui.cursor.normal"        = { fg = "#${colors.bg}", bg = "#${colors.bwhite}" }
+    "ui.cursor.insert"        = { fg = "#${colors.bg}", bg = "#${colors.accent}" }
+    "ui.cursor.select"        = { fg = "#${colors.bg}", bg = "#${colors.accbrt}" }
+    "ui.cursor.match"         = { fg = "#${colors.bg}", bg = "#${colors.acchigh}" }
 
-    "ui.cursorline.primary"   = { bg = "#383838" }
-    "ui.cursorline.secondary" = { bg = "#353535" }
+    "ui.cursorline.primary"   = { bg = "#${colors.bg1}" }
+    "ui.cursorline.secondary" = { bg = "#${colors.bgLine}" }
 
-    "ui.selection"            = { bg = "#434343" }
-    "ui.selection.primary"    = { bg = "#4e4e4e" }
+    "ui.selection"            = { bg = "#${colors.bg2}" }
+    "ui.selection.primary"    = { bg = "#${colors.bgSelect}" }
 
-    "ui.linenr"               = { fg = "#4e4e4e" }
-    "ui.linenr.selected"      = { fg = "#787878", modifiers = ["bold"] }
+    "ui.linenr"               = { fg = "#${colors.bgSelect}" }
+    "ui.linenr.selected"      = { fg = "#${colors.fg2}", modifiers = ["bold"] }
 
-    "ui.popup"                = { bg = "#383838", fg = "#e8e8e8" }
-    "ui.popup.info"           = { bg = "#383838", fg = "#e8e8e8" }
-    "ui.window"               = { fg = "#535353" }
-    "ui.help"                 = { bg = "#383838", fg = "#e8e8e8" }
+    "ui.popup"                = { bg = "#${colors.bg1}", fg = "#${colors.fg}" }
+    "ui.popup.info"           = { bg = "#${colors.bg1}", fg = "#${colors.fg}" }
+    "ui.window"               = { fg = "#${colors.bg3}" }
+    "ui.help"                 = { bg = "#${colors.bg1}", fg = "#${colors.fg}" }
 
-    "ui.menu"                 = { bg = "#383838", fg = "#e8e8e8" }
-    "ui.menu.selected"        = { bg = "#434343", fg = "#e8c858", modifiers = ["bold"] }
-    "ui.menu.scroll"          = { fg = "#646464", bg = "#383838" }
+    "ui.menu"                 = { bg = "#${colors.bg1}", fg = "#${colors.fg}" }
+    "ui.menu.selected"        = { bg = "#${colors.bg2}", fg = "#${colors.accbrt}", modifiers = ["bold"] }
+    "ui.menu.scroll"          = { fg = "#${colors.bg4}", bg = "#${colors.bg1}" }
 
-    "ui.virtual.indent-guide" = { fg = "#3a3a3a" }
-    "ui.virtual.inlay-hint"   = { fg = "#606060" }
-    "ui.virtual.ruler"        = { bg = "#353535" }
-    "ui.virtual.jump-label"   = { fg = "#f0d060", modifiers = ["bold"] }
+    "ui.virtual.indent-guide" = { fg = "#${colors.bgIndent}" }
+    "ui.virtual.inlay-hint"   = { fg = "#${colors.fgHint}" }
+    "ui.virtual.ruler"        = { bg = "#${colors.bgLine}" }
+    "ui.virtual.jump-label"   = { fg = "#${colors.acchigh}", modifiers = ["bold"] }
 
-    "ui.text"                 = { fg = "#e8e8e8" }
-    "ui.text.focus"           = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "ui.text.info"            = { fg = "#909090" }
+    "ui.text"                 = { fg = "#${colors.fg}" }
+    "ui.text.focus"           = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "ui.text.info"            = { fg = "#${colors.fgMuted}" }
 
-    "ui.highlight"            = { bg = "#434343" }
-    "ui.highlight.frameline"  = { bg = "#383838" }
+    "ui.highlight"            = { bg = "#${colors.bg2}" }
+    "ui.highlight.frameline"  = { bg = "#${colors.bg1}" }
 
-    "warning"            = { fg = "#c4924a" }
-    "error"              = { fg = "#c45a5a" }
-    "info"               = { fg = "#909090" }
-    "hint"               = { fg = "#787878" }
+    "warning"            = { fg = "#${colors.warning}" }
+    "error"              = { fg = "#${colors.bred}" }
+    "info"               = { fg = "#${colors.fgMuted}" }
+    "hint"               = { fg = "#${colors.fg2}" }
 
-    "diagnostic.warning" = { underline = { color = "#c4924a", style = "curl" } }
-    "diagnostic.error"   = { underline = { color = "#c45a5a", style = "curl" } }
-    "diagnostic.info"    = { underline = { color = "#909090", style = "dotted" } }
-    "diagnostic.hint"    = { underline = { color = "#787878", style = "dotted" } }
+    "diagnostic.warning" = { underline = { color = "#${colors.warning}", style = "curl" } }
+    "diagnostic.error"   = { underline = { color = "#${colors.bred}", style = "curl" } }
+    "diagnostic.info"    = { underline = { color = "#${colors.fgMuted}", style = "dotted" } }
+    "diagnostic.hint"    = { underline = { color = "#${colors.fg2}", style = "dotted" } }
 
-    "diff.plus"        = { fg = "#6aa07a" }
-    "diff.minus"       = { fg = "#c45a5a" }
-    "diff.delta"       = { fg = "#c4924a" }
-    "diff.delta.moved" = { fg = "#909090" }
+    "diff.plus"        = { fg = "#${colors.bgreen}" }
+    "diff.minus"       = { fg = "#${colors.bred}" }
+    "diff.delta"       = { fg = "#${colors.warning}" }
+    "diff.delta.moved" = { fg = "#${colors.fgMuted}" }
 
-    "comment"                     = { fg = "#787878" }
-    "comment.line"                = { fg = "#787878" }
-    "comment.block"               = { fg = "#787878" }
-    "comment.block.documentation" = { fg = "#909090" }
+    "comment"                     = { fg = "#${colors.fg2}" }
+    "comment.line"                = { fg = "#${colors.fg2}" }
+    "comment.block"               = { fg = "#${colors.fg2}" }
+    "comment.block.documentation" = { fg = "#${colors.fgMuted}" }
 
-    "keyword"                   = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.control"           = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.control.return"    = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.control.import"    = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.function"          = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.storage"           = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.storage.type"      = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "keyword.storage.modifier"  = { fg = "#e8e8e8" }
-    "keyword.operator"          = { fg = "#e8e8e8" }
-    "keyword.directive"         = { fg = "#d4b048" }
+    "keyword"                   = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.control"           = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.control.return"    = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.control.import"    = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.function"          = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.storage"           = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.storage.type"      = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "keyword.storage.modifier"  = { fg = "#${colors.fg}" }
+    "keyword.operator"          = { fg = "#${colors.fg}" }
+    "keyword.directive"         = { fg = "#${colors.accent}" }
 
-    "operator" = { fg = "#e8e8e8" }
+    "operator" = { fg = "#${colors.fg}" }
 
-    "punctuation"           = { fg = "#707070" }
-    "punctuation.bracket"   = { fg = "#707070" }
-    "punctuation.delimiter" = { fg = "#707070" }
-    "punctuation.special"   = { fg = "#909090" }
+    "punctuation"           = { fg = "#${colors.fgSubtle}" }
+    "punctuation.bracket"   = { fg = "#${colors.fgSubtle}" }
+    "punctuation.delimiter" = { fg = "#${colors.fgSubtle}" }
+    "punctuation.special"   = { fg = "#${colors.fgMuted}" }
 
-    "variable"              = { fg = "#e8e8e8" }
-    "variable.builtin"      = { fg = "#d4b048" }
-    "variable.parameter"    = { fg = "#e8e8e8" }
-    "variable.other"        = { fg = "#e8e8e8" }
-    "variable.other.member" = { fg = "#e8e8e8" }
+    "variable"              = { fg = "#${colors.fg}" }
+    "variable.builtin"      = { fg = "#${colors.accent}" }
+    "variable.parameter"    = { fg = "#${colors.fg}" }
+    "variable.other"        = { fg = "#${colors.fg}" }
+    "variable.other.member" = { fg = "#${colors.fg}" }
 
-    "type"              = { fg = "#d4b048" }
-    "type.builtin"      = { fg = "#d4b048" }
-    "type.enum"         = { fg = "#d4b048" }
-    "type.enum.variant" = { fg = "#e8c858" }
-    "type.parameter"    = { fg = "#d4b048" }
+    "type"              = { fg = "#${colors.accent}" }
+    "type.builtin"      = { fg = "#${colors.accent}" }
+    "type.enum"         = { fg = "#${colors.accent}" }
+    "type.enum.variant" = { fg = "#${colors.accbrt}" }
+    "type.parameter"    = { fg = "#${colors.accent}" }
 
-    "constructor" = { fg = "#e8c858" }
+    "constructor" = { fg = "#${colors.accbrt}" }
 
-    "function"         = { fg = "#f5f5f5" }
-    "function.builtin" = { fg = "#909090" }
-    "function.method"  = { fg = "#f5f5f5" }
-    "function.macro"   = { fg = "#e8c858" }
-    "function.special" = { fg = "#e8c858" }
+    "function"         = { fg = "#${colors.bwhite}" }
+    "function.builtin" = { fg = "#${colors.fgMuted}" }
+    "function.method"  = { fg = "#${colors.bwhite}" }
+    "function.macro"   = { fg = "#${colors.accbrt}" }
+    "function.special" = { fg = "#${colors.accbrt}" }
 
-    "namespace" = { fg = "#e8e8e8" }
-    "module"    = { fg = "#e8e8e8" }
+    "namespace" = { fg = "#${colors.fg}" }
+    "module"    = { fg = "#${colors.fg}" }
 
-    "constant"                  = { fg = "#e8c858" }
-    "constant.builtin"          = { fg = "#e8c858", modifiers = ["bold"] }
-    "constant.character"        = { fg = "#d4b048" }
-    "constant.character.escape" = { fg = "#f0d060" }
-    "constant.numeric"          = { fg = "#f0d060" }
-    "constant.numeric.integer"  = { fg = "#f0d060" }
-    "constant.numeric.float"    = { fg = "#f0d060" }
+    "constant"                  = { fg = "#${colors.accbrt}" }
+    "constant.builtin"          = { fg = "#${colors.accbrt}", modifiers = ["bold"] }
+    "constant.character"        = { fg = "#${colors.accent}" }
+    "constant.character.escape" = { fg = "#${colors.acchigh}" }
+    "constant.numeric"          = { fg = "#${colors.acchigh}" }
+    "constant.numeric.integer"  = { fg = "#${colors.acchigh}" }
+    "constant.numeric.float"    = { fg = "#${colors.acchigh}" }
 
-    "string"             = { fg = "#d4b048" }
-    "string.regexp"      = { fg = "#f0d060" }
-    "string.special"     = { fg = "#f0d060" }
-    "string.special.url" = { fg = "#909090", modifiers = ["underlined"] }
+    "string"             = { fg = "#${colors.accent}" }
+    "string.regexp"      = { fg = "#${colors.acchigh}" }
+    "string.special"     = { fg = "#${colors.acchigh}" }
+    "string.special.url" = { fg = "#${colors.fgMuted}", modifiers = ["underlined"] }
 
-    "attribute"         = { fg = "#707070" }
-    "attribute.builtin" = { fg = "#707070" }
+    "attribute"         = { fg = "#${colors.fgSubtle}" }
+    "attribute.builtin" = { fg = "#${colors.fgSubtle}" }
 
-    "label"   = { fg = "#d4b048" }
-    "special" = { fg = "#e8c858" }
+    "label"   = { fg = "#${colors.accent}" }
+    "special" = { fg = "#${colors.accbrt}" }
 
-    "markup.heading"         = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "markup.heading.1"       = { fg = "#f5f5f5", modifiers = ["bold"] }
-    "markup.heading.2"       = { fg = "#e8e8e8", modifiers = ["bold"] }
-    "markup.heading.3"       = { fg = "#d4b048", modifiers = ["bold"] }
-    "markup.heading.4"       = { fg = "#d4b048" }
-    "markup.heading.5"       = { fg = "#909090" }
+    "markup.heading"         = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "markup.heading.1"       = { fg = "#${colors.bwhite}", modifiers = ["bold"] }
+    "markup.heading.2"       = { fg = "#${colors.fg}", modifiers = ["bold"] }
+    "markup.heading.3"       = { fg = "#${colors.accent}", modifiers = ["bold"] }
+    "markup.heading.4"       = { fg = "#${colors.accent}" }
+    "markup.heading.5"       = { fg = "#${colors.fgMuted}" }
     "markup.bold"            = { modifiers = ["bold"] }
     "markup.italic"          = { modifiers = ["italic"] }
     "markup.strikethrough"   = { modifiers = ["crossed_out"] }
-    "markup.link.url"        = { fg = "#909090", modifiers = ["underlined"] }
-    "markup.link.text"       = { fg = "#d4b048" }
-    "markup.raw"             = { fg = "#e8c858" }
-    "markup.raw.inline"      = { fg = "#e8c858" }
-    "markup.list"            = { fg = "#e8e8e8" }
+    "markup.link.url"        = { fg = "#${colors.fgMuted}", modifiers = ["underlined"] }
+    "markup.link.text"       = { fg = "#${colors.accent}" }
+    "markup.raw"             = { fg = "#${colors.accbrt}" }
+    "markup.raw.inline"      = { fg = "#${colors.accbrt}" }
+    "markup.list"            = { fg = "#${colors.fg}" }
   '';
 }

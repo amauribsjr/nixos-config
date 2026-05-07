@@ -14,7 +14,7 @@
   home.file.".config/wofi/center.css".text = ''
     window {
       background-color: #${colors.bg1};
-      font-family: "${fonts.mono}";
+      font-family: "${fonts.ui}";
       border: 1px solid #${colors.accent};
     }
 
@@ -28,7 +28,7 @@
       margin: 0;
       outline: none;
       box-shadow: none;
-      font-size: 14px;
+      font-size: ${toString fonts.launcherSize}px;
     }
 
     #input:focus {
@@ -50,7 +50,7 @@
 
     #text {
       color: #${colors.fg2};
-      font-size: 14px;
+      font-size: ${toString fonts.launcherSize}px;
     }
 
     #entry:selected #text { color: #${colors.fg}; }

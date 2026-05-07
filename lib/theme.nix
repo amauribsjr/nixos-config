@@ -15,4 +15,9 @@
     mono = pkgs.nerd-fonts.victor-mono;
     syms = pkgs.nerd-fonts.symbols-only;
   };
+
+  wallpaper = {
+    default = "wallpaper.png";
+    stateFile = ".local/share/current-wallpaper";
+  };
 }
