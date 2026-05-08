@@ -30,12 +30,12 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 | Lock screen   | gtklock                                           |
 | Greeter       | greetd + ReGreet                                  |
 | Editors       | Helix, Zed                                        |
-| Dev tooling   | Java, Rust, C, Docker, SQLite, Redis              |
+| Dev tooling   | Java, Rust, C, Docker, SQLite                     |
 | Theme         | Koppi                                             |
 
 ## Koppi theme
 
-**Koppi** is my own dark Gruvbox-inspired theme layer for the system. It centralizes colors, fonts, GTK theme, cursor theme, editor themes, greeter styling, lock screen styling, launcher styling and bar styling.
+**Koppi** is my own dark theme layer for the system. It centralizes colors, fonts, GTK theme, cursor theme, editor themes, greeter styling, lock screen styling, launcher styling and bar styling.
 
 The core theme files are:
 
@@ -100,7 +100,7 @@ nixos-config/
     │   ├── nix.nix           # Nix settings, GC, optimization
     │   ├── nix-ld.nix        # nix-ld runtime support
     │   ├── packages.nix      # system packages
-    │   ├── redis.nix         # local Redis dev server
+    │   ├── redis.nix         # temporary disabled
     │   ├── users.nix         # user, shell, groups
     │   └── virtualisation.nix # Docker
     │
@@ -123,7 +123,7 @@ nixos-config/
 | gtklock        | Home/System   | `home/services/gtklock.nix`, `system/desktop.nix` |
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
-| Redis          | System        | `system/core/redis.nix`                           |
+| Redis          | System        | `system/core/redis.nix` (temporary disabled)      |
 | Docker         | System        | `system/core/virtualisation.nix`                  |
 | TLP/zram       | System        | `system/hardware/power.nix`                       |
 
@@ -243,21 +243,6 @@ Convenience aliases are defined in `home/shell.nix`.
 ```bash
 testbuild
 rebuild
-```
-
-Useful checks:
-
-```bash
-fc-match monospace
-grep "gtk-theme" ~/.config/gtklock/config.ini
-systemctl status redis-dev.service
-redis-cli -h 127.0.0.1 -p 6379 ping
-```
-
-Expected Redis response:
-
-```text
-PONG
 ```
 
 ## Commit style
