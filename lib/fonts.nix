@@ -1,12 +1,13 @@
 rec {
-  ui       = "Inter";
+  ui       = "JetBrainsMono Nerd Font";
   code     = "VictorMono Nerd Font Mono";
-  mono     = "JetBrains Nerd Font Mono";
   symbols  = "Symbols Nerd Font Mono";
 
   terminal   = code;
   gtk        = ui;
-  systemMono = mono;
+  systemMono = ui;
+
+  mono       = code;
   globalMono = systemMono;
 
   terminalSize = 12;

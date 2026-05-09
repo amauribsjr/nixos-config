@@ -3,7 +3,7 @@
 let
 power-menu = pkgs.writeShellScript "power-menu" ''
   chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu \
-    --width=180 --height=240 --location=center \
+    --width=180 --height=220 --location=center \
     --style="$HOME/.config/wofi/center.css")
   if echo "$chosen" | grep -q "Power off"; then
     systemctl poweroff
@@ -117,7 +117,7 @@ in
 
       * {
           border: none;
-          font-family: "${fonts.code}", "${fonts.symbols}";
+          font-family: "${fonts.mono}", "${fonts.symbols}";
           font-size: ${toString fonts.waybarSize}px;
           font-weight: 600;
           min-height: 0;
@@ -157,6 +157,7 @@ in
       #workspaces button.active {
           color: @bg0;
           background-color: @accent;
+          font-weight: bold;
       }
 
       #workspaces button:hover {
@@ -164,8 +165,8 @@ in
           color: @fg1;
       }
 
-      #window        { color: @fg2; }
-      #clock         { color: @accent; }
+      #window        { color: @fg2; font-weight: bold; }
+      #clock         { color: @accent; font-weight: bold; }
       #pulseaudio    { color: @fg1; }
       #battery       { color: @green; }
       #battery.charging               { color: @green; }
