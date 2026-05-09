@@ -50,10 +50,12 @@
     gdb
 
     # Nix
+    nil
     nixd
     nixfmt
     deadnix
     nvd
+    
   ];
 
   services.journald.extraConfig = ''

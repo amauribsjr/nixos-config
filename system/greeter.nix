@@ -215,9 +215,9 @@ in
       }
 
       button.destructive-action:active {
-        background-color: #${colors.redsoft};
+        background-color: #${colors.accdim};
         background-image: none;
-        border-color: #${colors.redsoft};
+        border-color: #${colors.accdim};
         color: #${colors.fg};
       }
 

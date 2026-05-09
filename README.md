@@ -56,7 +56,6 @@ nixos-config/
 ├── devshells.nix              # Rust, Java and C dev shells
 ├── README.md                  # repository overview
 ├── lib/
-│   ├── colors.nix             # Koppi palette
 │   ├── fonts.nix              # shared font names/sizes
 │   └── theme.nix              # GTK, cursor, font packages, wallpaper metadata
 ├── home/
@@ -90,6 +89,8 @@ nixos-config/
     │   ├── nix-ld.nix         # nix-ld runtime support
     │   ├── packages.nix       # system packages
     │   ├── users.nix          # user, shell, groups
+    │   ├── redis.nix          # redis services
+    │   ├── databases.nix      # Mysql and Postgresql
     │   └── virtualisation.nix # Docker
     └── hardware/
         ├── default.nix        # hardware imports
@@ -111,6 +112,9 @@ nixos-config/
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
 | Docker         | System        | `system/core/virtualisation.nix`                  |
+| Redis          | System        | `system/core/databases.nix`                       |
+| MySQL          | System        | `system/core/databases.nix`                       |
+| PostgreSQL     | System        | `system/core/databases.nix`                       |
 | TLP/zram       | System        | `system/hardware/power.nix`                       |
 
 ## Shell commands

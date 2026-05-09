@@ -107,6 +107,36 @@ in
           echo "$chosen" > ~/.local/share/current-wallpaper
         fi
       }
+      
+      # Databases
+      function pgstart() { 
+        sudo systemctl start postgresql;
+        echo "PostgreSQL up → localhost:5432";
+      }
+      function pgstop() {
+        sudo systemctl stop postgresql;
+        echo "PostgreSQL down";
+      }
+      
+      function mystart() {
+        sudo systemctl start mysql;
+        echo "MySQL up → localhost:3306"; 
+      }
+      
+      function mystop() {
+        sudo systemctl stop mysql;
+        echo "MySQL down";
+      }
+      
+      function redstart() {
+        sudo systemctl start redis-dev;
+        echo "Redis up → localhost:6379";
+      }
+      
+      function redstop() {
+        sudo systemctl stop redis-dev;
+        echo "Redis down"; 
+      }
     '';
   };
 
@@ -127,7 +157,7 @@ in
         blue   = "#${colors.blue}";
         aqua   = "#${colors.cyan}";
         green  = "#${colors.green}";
-        orange = "#${colors.orange}";
+        orange = "#${colors.accent}";
         purple = "#${colors.magenta}";
         red    = "#${colors.red}";
         yellow = "#${colors.yellow}";
