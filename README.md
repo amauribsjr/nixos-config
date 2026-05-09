@@ -21,7 +21,7 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 | OS            | NixOS unstable                                                     |
 | Flake inputs  | nixpkgs, Home Manager, nixos-hardware, niri-flake, **koppi-theme** |
 | Compositor    | Niri                                                               |
-| Shell         | Zsh, Starship, zoxide, fzf, direnv, nix-direnv                     |
+| Shell         | Zsh, Starship, zoxide, fzf                                         |
 | Terminal      | Kitty                                                              |
 | Bar           | Waybar                                                             |
 | Launcher      | Wofi                                                               |
@@ -29,9 +29,10 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 | Wallpaper     | awww                                                               |
 | Lock screen   | gtklock                                                            |
 | Greeter       | greetd + ReGreet                                                   |
-| Editors       | Helix, Zed                                                         |
+| Editors       | Zed                                                                |
 | Dev tooling   | Java, Rust, C, Docker, SQLite                                      |
-| Theme         | Koppi                                                              |
+| Databases     | MySQL, PostgreSQL and Redis for caching                            |
+| Theme         | [Koppi](https://github.com/amauribsjr/koppi-theme)                 |
 
 ## Koppi theme
 
