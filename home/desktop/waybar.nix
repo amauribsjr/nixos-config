@@ -126,7 +126,7 @@ in
       window#waybar.top {
           background-color: @bg0;
           color: @fg1;
-          border-bottom: 1px solid @accdim;
+          /* border-bottom: 1px solid @accdim; */
           opacity: 0.96;
       }
 
