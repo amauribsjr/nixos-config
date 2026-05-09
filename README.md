@@ -35,13 +35,12 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 
 ## Koppi theme
 
-**Koppi** is my own dark theme layer for the system. It centralizes colors, fonts, GTK theme, cursor theme, editor themes, greeter styling, lock screen styling, launcher styling and bar styling.
+**Koppi** is my own dark theme layer for the system. Check it here: [Koppi Theme](https://github.com/amauribsjr/koppi-theme)
 
 The core theme files are:
 
 | File             | Purpose                                                        |
 | ---------------- | -------------------------------------------------------------- |
-| `lib/colors.nix` | Koppi color palette.                                           |
 | `lib/fonts.nix`  | Shared font names and sizes.                                   |
 | `lib/theme.nix`  | GTK theme, cursor theme, font packages and wallpaper metadata. |
 
@@ -89,8 +88,8 @@ nixos-config/
     │   ├── nix-ld.nix         # nix-ld runtime support
     │   ├── packages.nix       # system packages
     │   ├── users.nix          # user, shell, groups
-    │   ├── redis.nix          # redis services
-    │   ├── databases.nix      # Mysql and Postgresql
+    │   ├── redis.nix          # Redis services
+    │   ├── databases.nix      # MySQL and PostgreSQL services
     │   └── virtualisation.nix # Docker
     └── hardware/
         ├── default.nix        # hardware imports
@@ -152,6 +151,17 @@ Convenience aliases are defined in `home/shell.nix`.
 | `rzed`   | Open Zed inside the Rust dev shell. |
 | `jzed`   | Open Zed inside the Java dev shell. |
 | `czed`   | Open Zed inside the C dev shell.    |
+
+### Databases
+
+| Alias       | Description                                     |
+| ----------- | ----------------------------------------------- |
+| `pgstart`   | Starts PostgreSQL services (default port: 5432) |
+| `pgstop`    | Stops PostgreSQL services                       |
+| `mystart`   | Starts MySQL services (default port: 3308)      |
+| `mystop`    | Stops MySQL services                            |
+| `redistart` | Starts Redis services (default port: 6379)      |
+| `redistop`  | Stops Redis services                            |
 
 ### Applications
 

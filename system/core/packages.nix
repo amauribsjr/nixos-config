@@ -17,7 +17,6 @@
 
     # System & hardware
     btop
-    lm_sensors
 
     # Desktop
     wl-clipboard

@@ -128,12 +128,12 @@ in
         echo "MySQL down";
       }
       
-      function redstart() {
+      function redistart() {
         sudo systemctl start redis-dev;
         echo "Redis up → localhost:6379";
       }
       
-      function redstop() {
+      function redistop() {
         sudo systemctl stop redis-dev;
         echo "Redis down"; 
       }
