@@ -1,5 +1,5 @@
 rec {
-  ui       = "JetBrainsMono Nerd Font";
+  ui       = "Inter";
   code     = "VictorMono Nerd Font Mono";
   symbols  = "Symbols Nerd Font Mono";
 
