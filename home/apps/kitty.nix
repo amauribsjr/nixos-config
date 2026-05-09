@@ -5,7 +5,7 @@
     enable = true;
 
     font = {
-      name = fonts.terminal;
+      name = fonts.code;
       size = fonts.terminalSize;
     };
 
