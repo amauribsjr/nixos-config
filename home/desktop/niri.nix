@@ -222,10 +222,6 @@
       "Ctrl+Print".action = { screenshot-screen = {}; };
       "Alt+Print".action  = { screenshot-window = {}; };
 
-      "Mod+Shift+S".action = { screenshot = {}; };
-      "Mod+Ctrl+S".action  = { screenshot-screen = {}; };
-      "Mod+Alt+S".action   = { screenshot-window = {}; };
-
       "XF86AudioRaiseVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; allow-when-locked = true; };
       "XF86AudioLowerVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; allow-when-locked = true; };
       "XF86AudioMute"        = { action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; allow-when-locked = true; };

@@ -16,28 +16,29 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 
 ## Stack
 
-| Area          | Tooling                                           |
-| ------------- | ------------------------------------------------- |
-| OS            | NixOS unstable                                    |
-| Flake inputs  | nixpkgs, Home Manager, nixos-hardware, niri-flake |
-| Compositor    | Niri                                              |
-| Shell         | Zsh, Starship, zoxide, fzf, direnv, nix-direnv    |
-| Terminal      | Kitty                                             |
-| Bar           | Waybar                                            |
-| Launcher      | Wofi                                              |
-| Notifications | Mako                                              |
-| Wallpaper     | awww                                              |
-| Lock screen   | gtklock                                           |
-| Greeter       | greetd + ReGreet                                  |
-| Editors       | Helix, Zed                                        |
-| Dev tooling   | Java, Rust, C, Docker, SQLite                     |
-| Theme         | Koppi                                             |
+| Area          | Tooling                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| OS            | NixOS unstable                                                     |
+| Flake inputs  | nixpkgs, Home Manager, nixos-hardware, niri-flake, **koppi-theme** |
+| Compositor    | Niri                                                               |
+| Shell         | Zsh, Starship, zoxide, fzf, direnv, nix-direnv                     |
+| Terminal      | Kitty                                                              |
+| Bar           | Waybar                                                             |
+| Launcher      | Wofi                                                               |
+| Notifications | Mako                                                               |
+| Wallpaper     | awww                                                               |
+| Lock screen   | gtklock                                                            |
+| Greeter       | greetd + ReGreet                                                   |
+| Editors       | Helix, Zed                                                         |
+| Dev tooling   | Java, Rust, C, Docker, SQLite                                      |
+| Theme         | Koppi                                                              |
 
 ## Koppi theme
 
-**Koppi** is my own dark theme layer for the system. Check it here: [Koppi Theme](https://github.com/amauribsjr/koppi-theme)
+- **Koppi** is my own dark theme layer for the system, now with its own repository. 
+- Check it here: [Koppi Theme](https://github.com/amauribsjr/koppi-theme)
 
-The core theme files are:
+The core theme files (besides Koppi Theme) are:
 
 | File             | Purpose                                                        |
 | ---------------- | -------------------------------------------------------------- |
@@ -65,7 +66,7 @@ nixos-config/
 │   ├── apps/
 │   │   ├── kitty.nix          # terminal config
 │   │   ├── wofi.nix           # launcher config/style
-│   │   └── zed-theme.nix      # Koppi theme for Zed
+│   │   └── zed-theme.nix      # Zed consumes Koppi Theme
 │   ├── cli/
 │   │   ├── fastfetch.nix      # system summary
 │   │   └── git.nix            # Git config
