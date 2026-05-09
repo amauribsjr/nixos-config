@@ -11,7 +11,8 @@ in
 
     font = {
       name    = fonts.ui;
-      size    = fonts.greeterSize;      package = theme.fontPackages.ui;
+      size    = fonts.greeterSize;      
+      package = theme.fontPackages.ui;
     };
 
     theme = {

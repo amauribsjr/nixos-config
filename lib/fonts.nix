@@ -3,8 +3,8 @@ rec {
   code     = "VictorMono Nerd Font Mono";
   symbols  = "Symbols Nerd Font Mono";
 
-  terminal  = code;
-  gtk       = ui;
+  terminal   = code;
+  gtk        = ui;
   systemMono = ui;
 
   mono       = code;

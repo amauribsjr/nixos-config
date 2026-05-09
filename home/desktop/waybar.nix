@@ -94,20 +94,6 @@ in
           on-click = "${power-menu}";
           tooltip  = false;
         };
-
-        "custom/kb" = {
-          exec = pkgs.writeShellScript "kb-layout" ''
-            layout=$(${pkgs.niri}/bin/niri msg keyboard-layouts 2>/dev/null \
-              | ${pkgs.gnused}/bin/sed -n 's/^ \* [0-9]* //p' \
-              | ${pkgs.gnused}/bin/sed \
-                  -e 's/Portuguese (Brazil)/br/' \
-                  -e 's/English (US, intl., with dead keys)/us/')
-          [ "$layout" = "us" ] && echo "$layout"
-          '';
-          interval = 5;
-          on-click = "${pkgs.niri}/bin/niri msg action switch-layout next";
-          tooltip = false;
-        };
       }
     ];
 
@@ -140,7 +126,7 @@ in
       window#waybar.top {
           background-color: @bg0;
           color: @fg1;
-          /* border-bottom: 1px solid @accdim; */
+          border-bottom: 1px solid @accdim;
           opacity: 0.96;
       }
 
@@ -204,9 +190,6 @@ in
           background-color: @bg2;
           color: @fg1;
       }
-
-      #custom-kb { color: @fg1; }
-      #custom-kb:hover { background-color: @bg2; color: @fg1; }
 
       @keyframes blink {
           to { background-color: @red; color: @bg0; }

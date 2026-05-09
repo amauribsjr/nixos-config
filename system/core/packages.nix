@@ -17,19 +17,13 @@
 
     # System & hardware
     btop
-    powertop
     lm_sensors
-    pciutils
-    usbutils
-    intel-gpu-tools
-    psmisc
 
     # Desktop
     wl-clipboard
     brightnessctl
     pamixer
     playerctl
-    gnome-disk-utility
 
     # Apps
     nautilus
@@ -57,15 +51,9 @@
 
     # Nix
     nixd
-    nil
     nixfmt
-    statix
     deadnix
-    nh
     nvd
-
-    # Databases
-    sqlite
   ];
 
   services.journald.extraConfig = ''

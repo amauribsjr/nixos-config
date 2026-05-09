@@ -9,15 +9,10 @@
       user.email = "amauribsjunior@proton.me";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
-      core.editor = "vim";
+      core.editor = "nano";
       core.excludesFile = "~/.config/git/ignore";
     };
   };
-
-  home.file.".config/git/ignore".text = ''
-    .envrc
-    .direnv/
-  '';
 
   programs.ssh = {
     enable = true;

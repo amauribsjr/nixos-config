@@ -21,9 +21,6 @@
     chafa
     fastfetch
 
-    # Cláudio
-    claude-code
-
     # File & media
     ffmpegthumbnailer
     unar

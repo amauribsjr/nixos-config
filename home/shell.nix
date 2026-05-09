@@ -35,14 +35,6 @@ in
     };
 
     initContent = ''
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-          builtin cd -- "$cwd"
-        fi
-        rm -f -- "$tmp"
-      }
 
       function rebuild() {
         echo "🔄 Rebuilding NixOS..."
@@ -121,12 +113,6 @@ in
   programs.nix-index = { enable = false; enableZshIntegration = false; };
   programs.zoxide    = { enable = true; enableZshIntegration  = true;  };
   programs.fzf       = { enable = true; enableZshIntegration  = true;  };
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    config.global.hide_env_diff = true;
-    silent = true;
-  };
 
   # Starship
   programs.starship = {

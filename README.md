@@ -51,65 +51,52 @@ These values are imported in `flake.nix` and passed to both NixOS and Home Manag
 
 ```text
 nixos-config/
-├── flake.nix                 # flake entrypoint, inputs, shared args
-├── flake.lock                # pinned flake inputs
-├── devshells.nix             # Rust, Java and C dev shells
-├── README.md                 # repository overview
-├── HX-ref.md                 # Helix reference
-│
+├── flake.nix                  # flake entrypoint, inputs, shared args
+├── flake.lock                 # pinned flake inputs
+├── devshells.nix              # Rust, Java and C dev shells
+├── README.md                  # repository overview
 ├── lib/
-│   ├── colors.nix            # Koppi palette
-│   ├── fonts.nix             # shared font names/sizes
-│   └── theme.nix             # GTK, cursor, font packages, wallpaper metadata
-│
+│   ├── colors.nix             # Koppi palette
+│   ├── fonts.nix              # shared font names/sizes
+│   └── theme.nix              # GTK, cursor, font packages, wallpaper metadata
 ├── home/
-│   ├── default.nix           # Home Manager root
-│   ├── packages.nix          # user packages
-│   ├── shell.nix             # Zsh, aliases, prompt, direnv, helpers
-│   ├── theme.nix             # GTK, cursor and dark preference
-│   │
+│   ├── default.nix            # Home Manager root
+│   ├── packages.nix           # user packages
+│   ├── shell.nix              # Zsh, aliases, prompt, direnv, helpers
+│   ├── theme.nix              # GTK, cursor and dark preference
 │   ├── apps/
-│   │   ├── helix.nix         # Helix config
-│   │   ├── helix-theme.nix   # Koppi theme for Helix
-│   │   ├── kitty.nix         # terminal config
-│   │   ├── wofi.nix          # launcher config/style
-│   │   └── zed-theme.nix     # Koppi theme for Zed
-│   │
+│   │   ├── kitty.nix          # terminal config
+│   │   ├── wofi.nix           # launcher config/style
+│   │   └── zed-theme.nix      # Koppi theme for Zed
 │   ├── cli/
-│   │   ├── fastfetch.nix     # system summary
-│   │   └── git.nix           # Git config
-│   │
+│   │   ├── fastfetch.nix      # system summary
+│   │   └── git.nix            # Git config
 │   ├── desktop/
-│   │   ├── niri.nix          # compositor, binds, rules, startup
-│   │   └── waybar.nix        # bar modules and Koppi styling
-│   │
+│   │   ├── niri.nix           # compositor, binds, rules, startup
+│   │   └── waybar.nix         # bar modules and Koppi styling
 │   └── services/
-│       ├── awww.nix          # wallpaper daemon
-│       ├── gtklock.nix       # lock screen with Koppi styling
-│       └── swayidle.nix      # AC/BAT idle profiles
-│
+│       ├── awww.nix           # wallpaper daemon
+│       ├── gtklock.nix        # lock screen with Koppi styling
+│       └── swayidle.nix       # AC/BAT idle profiles
 └── system/
-    ├── default.nix           # NixOS root module
-    ├── desktop.nix           # Niri, portals, fonts, audio, GVFS
-    ├── greeter.nix           # greetd/ReGreet with Koppi styling
-    │
+    ├── default.nix            # NixOS root module
+    ├── desktop.nix            # Niri, portals, fonts, audio, GVFS
+    ├── greeter.nix            # greetd/ReGreet with Koppi styling
     ├── core/
-    │   ├── default.nix       # core imports and systemd-oomd
-    │   ├── locale.nix        # locale, timezone, keyboard
-    │   ├── networking.nix    # hostname and NetworkManager
-    │   ├── nix.nix           # Nix settings, GC, optimization
-    │   ├── nix-ld.nix        # nix-ld runtime support
-    │   ├── packages.nix      # system packages
-    │   ├── redis.nix         # temporary disabled
-    │   ├── users.nix         # user, shell, groups
+    │   ├── default.nix        # core imports and systemd-oomd
+    │   ├── locale.nix         # locale, timezone, keyboard
+    │   ├── networking.nix     # hostname and NetworkManager
+    │   ├── nix.nix            # Nix settings, GC, optimization
+    │   ├── nix-ld.nix         # nix-ld runtime support
+    │   ├── packages.nix       # system packages
+    │   ├── users.nix          # user, shell, groups
     │   └── virtualisation.nix # Docker
-    │
     └── hardware/
-        ├── default.nix       # hardware imports
-        ├── boot.nix          # bootloader, kernel, Plymouth, sysctl
-        ├── graphics.nix      # Intel graphics, VA-API, Wayland vars
-        ├── hardware.nix      # filesystems, Btrfs, swap, firmware
-        └── power.nix         # zram, TLP, thermald, fwupd, Bluetooth
+        ├── default.nix        # hardware imports
+        ├── boot.nix           # bootloader, kernel, Plymouth, sysctl
+        ├── graphics.nix       # Intel graphics, VA-API, Wayland vars
+        ├── hardware.nix       # filesystems, Btrfs, swap, firmware
+        └── power.nix          # zram, TLP, thermald, fwupd, Bluetooth
 ```
 
 ## Main services
@@ -123,7 +110,6 @@ nixos-config/
 | gtklock        | Home/System   | `home/services/gtklock.nix`, `system/desktop.nix` |
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
-| Redis          | System        | `system/core/redis.nix` (temporary disabled)      |
 | Docker         | System        | `system/core/virtualisation.nix`                  |
 | TLP/zram       | System        | `system/hardware/power.nix`                       |
 
@@ -243,19 +229,6 @@ Convenience aliases are defined in `home/shell.nix`.
 ```bash
 testbuild
 rebuild
-```
-
-## Commit style
-
-This repository follows (at least are trying to, at its best) Conventional Commits.
-
-```text
-refactor(theme): centralize GTK, cursor, and font config
-refactor(colors): reuse shared palette in editor themes
-refactor(services): move swayidle profiles to dedicated module
-feat(redis): add local Redis server
-chore(system): remove inactive database module
-chore(flake): update inputs
 ```
 
 ## References

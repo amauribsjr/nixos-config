@@ -194,15 +194,6 @@ cd ~/nixos-config
 git remote set-url origin git@github.com:amauribsjr/nixos-config.git
 git remote -v
 ```
-(if your ssh key weren't back up, then: `cat ~/.ssh/id_ed25519_github.pub` after rebuild)
+(if your SSH key weren't back up, then: `cat ~/.ssh/id_ed25519_github.pub` after rebuild)
 
 If no backup, the home-manager activation script generates a fresh key on first rebuild — copy the printed public key to GitHub.
-
-### direnv (project shells)
-
-In any project with a `flake.nix` or `shell.nix`:
-
-```sh
-echo "use flake" > .envrc
-direnv allow
-```
