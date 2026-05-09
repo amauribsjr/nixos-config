@@ -113,7 +113,7 @@ nixos-config/
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
 | Docker         | System        | `system/core/virtualisation.nix`                  |
-| Redis          | System        | `system/core/databases.nix`                       |
+| Redis          | System        | `system/core/redis.nix`                           |
 | MySQL          | System        | `system/core/databases.nix`                       |
 | PostgreSQL     | System        | `system/core/databases.nix`                       |
 | TLP/zram       | System        | `system/hardware/power.nix`                       |
