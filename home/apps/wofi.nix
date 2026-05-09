@@ -14,7 +14,7 @@
   home.file.".config/wofi/center.css".text = ''
     window {
       background-color: #${colors.bg1};
-      font-family: "${fonts.ui}";
+      font-family: "${fonts.mono}";
       border: 1px solid #${colors.accent};
     }
 

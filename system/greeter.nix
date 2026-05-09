@@ -10,9 +10,9 @@ in
     enable = true;
 
     font = {
-      name    = fonts.ui;
+      name    = fonts.mono;
       size    = fonts.greeterSize;      
-      package = theme.fontPackages.ui;
+      package = theme.fontPackages.mono;
     };
 
     theme = {
@@ -49,7 +49,7 @@ in
       @define-color destructive_fg_color #${colors.fg};
 
       * {
-        font-family: "${fonts.ui}";
+        font-family: "${fonts.mono}";
         text-shadow: none;
         box-shadow: none;
       }
