@@ -120,7 +120,7 @@ in
       
       function mystart() {
         sudo systemctl start mysql;
-        echo "MySQL up → localhost:3306"; 
+        echo "MySQL up → localhost:3308"; 
       }
       
       function mystop() {
