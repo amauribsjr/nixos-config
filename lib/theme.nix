@@ -12,6 +12,7 @@
 
   fontPackages = {
     ui   = pkgs.inter;
+    code = pkgs.nerd-fonts.victor-mono;
     mono = pkgs.nerd-fonts.jetbrains-mono;
     syms = pkgs.nerd-fonts.symbols-only;
   };
