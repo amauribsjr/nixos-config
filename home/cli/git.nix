@@ -9,7 +9,7 @@
       user.email = "amauribsjunior@proton.me";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
-      core.editor = "nano";
+      core.editor = "zeditor --wait";
       core.excludesFile = "~/.config/git/ignore";
     };
   };
