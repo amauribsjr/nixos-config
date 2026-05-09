@@ -31,7 +31,7 @@
 
   fonts = {
     packages = [
-      pkgs.jetbrains-mono-fonts
+      pkgs.nerd-fonts.jetbrains-mono
       pkgs.noto-fonts
       pkgs.noto-fonts-cjk-sans
       pkgs.noto-fonts-color-emoji
