@@ -36,7 +36,7 @@
       border-bottom: 1px solid #${colors.accent};
     }
 
-    #scroll { margin: 0; padding: 0; }
+    #scroll { margin: 6px; padding: 0; }
     #inner-box { background-color: transparent; }
     #outer-box { background-color: transparent; padding: 0; margin: 0; }
 

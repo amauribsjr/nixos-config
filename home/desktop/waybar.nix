@@ -117,7 +117,7 @@ in
 
       * {
           border: none;
-          font-family: "${fonts.mono}", "${fonts.symbols}";
+          font-family: "${fonts.code}", "${fonts.symbols}";
           font-size: ${toString fonts.waybarSize}px;
           font-weight: 600;
           min-height: 0;
