@@ -157,7 +157,6 @@ in
       #workspaces button.active {
           color: @bg0;
           background-color: @accent;
-          font-weight: bold;
       }
 
       #workspaces button:hover {
@@ -165,8 +164,8 @@ in
           color: @fg1;
       }
 
-      #window        { color: @fg2; font-weight: bold; }
-      #clock         { color: @accent; font-weight: bold; }
+      #window        { color: @fg2; }
+      #clock         { color: @accent; }
       #pulseaudio    { color: @fg1; }
       #battery       { color: @green; }
       #battery.charging               { color: @green; }
