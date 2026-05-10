@@ -10,7 +10,7 @@
 
   gtk = {
     enable = true;
-    font   = { name = fonts.ui; size = fonts.uiSize; };
+    font   = { name = fonts.gtk; size = fonts.uiSize; };
     theme  = { inherit (theme.gtk) name package; };
     gtk4.theme = { inherit (theme.gtk) name package; };
   };
