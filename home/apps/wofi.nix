@@ -38,7 +38,7 @@
 
     #scroll { margin: 0; padding: 0; }
     #inner-box { background-color: transparent; }
-    #outer-box { background-color: transparent; padding: 0; margin: 0; }
+    #outer-box { background-color: transparent; padding: 0; margin: 6px; }
 
     #entry {
       padding: 10px 20px;
