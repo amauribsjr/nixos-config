@@ -5,7 +5,7 @@ rec {
 
   terminal   = code;
   gtk        = ui;
-  systemMono = ui;
+  systemMono = code;
 
   mono       = code;
   globalMono = systemMono;
