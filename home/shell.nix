@@ -45,7 +45,7 @@ in
         echo "🔄 Updating flake inputs..."
         cd ~/nixos-config || return 1
         nix flake update || return 1
-      
+
         echo "🧪 Testing NixOS build..."
         sudo nixos-rebuild test --flake .#nixos
       }
@@ -54,9 +54,9 @@ in
         echo "🔄 Updating flake.lock..."
         cd ~/nixos-config || return 1
         nix flake update || return 1
-      
+
         git add flake.lock
-      
+
         if git diff --cached --quiet; then
         echo "No flake.lock changes to commit."
         else
@@ -107,9 +107,9 @@ in
           echo "$chosen" > ~/.local/share/current-wallpaper
         fi
       }
-      
+
       # Databases
-      function pgstart() { 
+      function pgstart() {
         sudo systemctl start postgresql;
         echo "PostgreSQL up → localhost:5432";
       }
@@ -117,25 +117,25 @@ in
         sudo systemctl stop postgresql;
         echo "PostgreSQL down";
       }
-      
+
       function mystart() {
         sudo systemctl start mysql;
-        echo "MySQL up → localhost:3308"; 
+        echo "MySQL up → localhost:3308";
       }
-      
+
       function mystop() {
         sudo systemctl stop mysql;
         echo "MySQL down";
       }
-      
+
       function redistart() {
         sudo systemctl start redis-dev;
         echo "Redis up → localhost:6379";
       }
-      
+
       function redistop() {
         sudo systemctl stop redis-dev;
-        echo "Redis down"; 
+        echo "Redis down";
       }
     '';
   };
@@ -167,26 +167,26 @@ in
 
 
       format = ''
-        [╭─](bold fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
-        [╰─](bold fg)$character'';
+        [╭─](fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
+        [╰─](fg)$character'';
 
       character = {
-        success_symbol = "[λ](bold green)";
-        error_symbol   = "[λ](bold red)";
+        success_symbol = "[λ](green)";
+        error_symbol   = "[λ](red)";
       };
 
-      username = { style_user = "bold fg"; style_root = "bold red"; format = "[$user]($style) "; disabled = false; show_always = true; };
-      hostname = { ssh_only = false; format = "[@](bold yellow)[$hostname](bold blue) "; disabled = false; };
-      directory = { style = "bold blue"; read_only = " 󰌾"; truncation_length = 3; truncate_to_repo = true; format = "[$path]($style)[$read_only]($read_only_style) "; };
+      username = { style_user = "fg"; style_root = "red"; format = "[$user]($style) "; disabled = false; show_always = true; };
+      hostname = { ssh_only = false; format = "[@](yellow)[$hostname](blue) "; disabled = false; };
+      directory = { style = "blue"; read_only = " 󰌾"; truncation_length = 3; truncate_to_repo = true; format = "[$path]($style)[$read_only]($read_only_style) "; };
 
-      git_branch     = { symbol = "${i.git} "; style = "bold red";    format = "[$symbol$branch]($style) "; };
-      git_status     = { style = "bold red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
-      nix_shell      = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](bold red)"; pure_msg = "[pure](bold green)"; unknown_msg = "[unknown](bold yellow)"; format = "via [$symbol$state( \\($name\\))](bold aqua) "; };
-      rust           = { symbol = "${i.rust} ";   style = "bold orange"; format = "[$symbol($version)]($style) "; };
-      python         = { symbol = "${i.python} "; style = "bold yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
-      nodejs         = { symbol = "${i.nodejs} "; style = "bold green";  format = "[$symbol($version)]($style) "; };
-      java           = { symbol = "${i.java} ";   style = "bold red";    format = "[$symbol($version)]($style) "; };
-      docker_context = { symbol = "${i.docker} "; style = "bold blue";   format = "[$symbol$context]($style) "; };
+      git_branch     = { symbol = "${i.git} "; style = "red";    format = "[$symbol$branch]($style) "; };
+      git_status     = { style = "red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
+      nix_shell      = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](red)"; pure_msg = "[pure](green)"; unknown_msg = "[unknown](yellow)"; format = "via [$symbol$state( \\($name\\))](aqua) "; };
+      rust           = { symbol = "${i.rust} ";   style = "orange"; format = "[$symbol($version)]($style) "; };
+      python         = { symbol = "${i.python} "; style = "yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
+      nodejs         = { symbol = "${i.nodejs} "; style = "green";  format = "[$symbol($version)]($style) "; };
+      java           = { symbol = "${i.java} ";   style = "red";    format = "[$symbol($version)]($style) "; };
+      docker_context = { symbol = "${i.docker} "; style = "blue";   format = "[$symbol$context]($style) "; };
 
       package.disabled      = true;
       cmd_duration.disabled = true;
