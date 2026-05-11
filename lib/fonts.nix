@@ -9,14 +9,14 @@ rec {
   gtk        = ui;
   globalMono = systemMono;
 
-  terminalSize = 10;
-  uiSize       = 10;
-  waybarSize   = 11;
-  launcherSize = 12;
-  greeterSize  = 11;
+  terminalSize = 11;
+  uiSize       = 11;
+  waybarSize   = 12;
+  launcherSize = 11;
+  greeterSize  = 12;
 
   lockClockSize = 32;
-  lockTextSize  = 11;
+  lockTextSize  = 12;
 
   size = terminalSize;
 }
