@@ -28,13 +28,6 @@ in
     JAVA_HOME = pkgs.jdk17.home;
   };
 
-  programs.adb.enable = true;
-  services.udev.packages = [ pkgs.android-udev-rules ];
-
-  users.users.koppi.extraGroups = [
-    "adbusers"
-  ];
-
   nixpkgs.config = {
     allowUnfree = true;
     android_sdk.accept_license = true;
