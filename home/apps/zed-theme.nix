@@ -12,8 +12,8 @@
           "appearance": "dark",
           "style": {
             "background":            "#${colors.bg}",
-            "elevated.surface":      "#${colors.bg1}",
-            "surface":               "#${colors.bg1}",
+            "elevated_surface.background": "#${colors.bg1}",
+            "surface.background":    "#${colors.bg1}",
             "panel.background":      "#${colors.bg}",
             "border":                "#${colors.bg3}",
             "border.variant":        "#${colors.bg2}",
@@ -21,6 +21,8 @@
             "border.selected":       "#${colors.accent}",
             "border.transparent":    "#${colors.transparent}",
             "border.disabled":       "#${colors.bgDim}",
+
+            "accent":                "#${colors.accent}",
 
             "text":                  "#${colors.fg}",
             "text.muted":            "#${colors.fgMuted}",
