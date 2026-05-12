@@ -54,7 +54,16 @@
     nixfmt
     deadnix
     nvd
-    
+
+    # Flutter (ew)
+    pkg-pkg-config
+    flutter
+    android-tools
+    clang
+    cmake
+    ninja
+    gtk3
+
   ];
 
   services.journald.extraConfig = ''
