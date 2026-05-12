@@ -112,6 +112,7 @@
             "warning.background": "#${colors.warning}1a",
             "info":               "#${colors.fgMuted}",
             "info.border":        "#${colors.fgMuted}",
+            "info.background":    "#${colors.accent}22",
             "success":            "#${colors.bgreen}",
             "success.border":     "#${colors.bgreen}",
 
