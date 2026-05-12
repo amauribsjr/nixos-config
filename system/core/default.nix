@@ -10,6 +10,7 @@
     ../development/virtualisation.nix
     ../development/nix-ld.nix
     ../development/flutter.nix
+    ../development/redis.nix
   ];
 
   systemd.oomd = {
