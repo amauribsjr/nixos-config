@@ -4,7 +4,7 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_16;
-    port = 5432;
+    settings.port = 5432;
     enableTCPIP = true;
     authentication = lib.mkOverride 10 ''
       local all all trust
