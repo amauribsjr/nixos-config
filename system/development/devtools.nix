@@ -25,8 +25,6 @@
     nixfmt
     deadnix
     nvd
-
-    # Cláudio
-    claude-code
+    
   ];
 }
