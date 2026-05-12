@@ -6,8 +6,10 @@
     ./networking.nix
     ./users.nix
     ./packages.nix
-    ./virtualisation.nix
-    ./nix-ld.nix
+    ../development/databases.nix
+    ../development/virtualisation.nix
+    ../development/nix-ld.nix
+    ../development/flutter.nix
   ];
 
   systemd.oomd = {
