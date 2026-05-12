@@ -56,7 +56,7 @@
     nvd
 
     # Flutter (ew)
-    pkg-pkg-config
+    pkg-config
     flutter
     android-tools
     clang
