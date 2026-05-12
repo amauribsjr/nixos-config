@@ -6,6 +6,7 @@
     ./networking.nix
     ./users.nix
     ./packages.nix
+    ../development/devtools.nix
     ../development/databases.nix
     ../development/virtualisation.nix
     ../development/nix-ld.nix

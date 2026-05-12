@@ -17,7 +17,6 @@ in
 {
   environment.systemPackages = with pkgs; [
     flutter
-    jdk17
     androidSdk
     android-tools
   ];
@@ -25,7 +24,7 @@ in
   environment.variables = {
     ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
     ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
-    JAVA_HOME = pkgs.jdk17.home;
+    JAVA_HOME = pkgs.jdk21.home;
   };
 
   nixpkgs.config = {

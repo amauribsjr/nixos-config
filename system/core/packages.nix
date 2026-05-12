@@ -30,31 +30,6 @@
     pavucontrol
     vlc
     mpv
-
-    # Java
-    jdk21
-    maven
-
-    # Rust
-    rustc
-    cargo
-    rust-analyzer
-    rustfmt
-    clippy
-    gcc
-    gnumake
-    pkg-config
-
-    # C
-    gdb
-
-    # Nix
-    nil
-    nixd
-    nixfmt
-    deadnix
-    nvd
-
   ];
 
   services.journald.extraConfig = ''
