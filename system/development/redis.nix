@@ -9,6 +9,5 @@
   };
 
   services.redis.vmOverCommit = true;
-
   systemd.services.redis-dev.wantedBy = lib.mkForce [];
 }

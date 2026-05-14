@@ -37,6 +37,6 @@
     dbeaver-bin
     bruno
     zed-editor
-    
+    gnome-calculator
   ];
 }

@@ -21,14 +21,11 @@ in
     android-tools
   ];
 
-  environment.variables = {
+  environment.sessionVariables = {
     ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
     ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
     JAVA_HOME = pkgs.jdk21.home;
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    android_sdk.accept_license = true;
-  };
+  nixpkgs.config.android_sdk.accept_license = true;
 }

@@ -52,7 +52,7 @@
       focus-ring = {
         enable = true;
         width = 2;
-        active.color   = "#${colors.yellow}";
+        active.color = "#${colors.yellow}";
         inactive.color = "#${colors.bg3}";
       };
 
@@ -153,45 +153,45 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action = spawn "kitty";
-      "Mod+D".action      = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
-      "Mod+V".action      = spawn "vesktop";
-      "Mod+B".action      = spawn "google-chrome";
-      "Mod+E".action      = spawn "zeditor";
-      "Mod+T".action      = spawn "nautilus";
+      "Mod+D".action = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--location=center" "--style=${config.home.homeDirectory}/.config/wofi/center.css";
+      "Mod+V".action = spawn "vesktop";
+      "Mod+B".action = spawn "google-chrome";
+      "Mod+E".action = spawn "zeditor";
+      "Mod+T".action = spawn "nautilus";
 
-      "Mod+Q".action       = close-window;
-      "Mod+F".action       = fullscreen-window;
-      "Mod+M".action       = maximize-column;
-      "Mod+Ctrl+F".action  = expand-column-to-available-width;
+      "Mod+Q".action = close-window;
+      "Mod+F".action = fullscreen-window;
+      "Mod+M".action = maximize-column;
+      "Mod+Ctrl+F".action = expand-column-to-available-width;
       "Mod+Shift+F".action = toggle-window-floating;
       "Mod+Shift+C".action = center-column;
-      "Mod+R".action       = switch-preset-column-width;
+      "Mod+R".action = switch-preset-column-width;
       "Mod+Shift+R".action = switch-preset-window-height;
-      "Mod+W".action       = toggle-column-tabbed-display;
+      "Mod+W".action = toggle-column-tabbed-display;
 
-      "Mod+Left".action  = focus-column-left;
+      "Mod+Left".action = focus-column-left;
       "Mod+Right".action = focus-column-right;
-      "Mod+Up".action    = focus-window-or-workspace-up;
-      "Mod+Down".action  = focus-window-or-workspace-down;
-      "Mod+H".action     = focus-column-left;
-      "Mod+L".action     = focus-column-right;
-      "Mod+K".action     = focus-window-or-workspace-up;
-      "Mod+J".action     = focus-window-or-workspace-down;
+      "Mod+Up".action = focus-window-or-workspace-up;
+      "Mod+Down".action = focus-window-or-workspace-down;
+      "Mod+H".action = focus-column-left;
+      "Mod+L".action = focus-column-right;
+      "Mod+K".action = focus-window-or-workspace-up;
+      "Mod+J".action = focus-window-or-workspace-down;
 
-      "Mod+Shift+Left".action  = move-column-left;
+      "Mod+Shift+Left".action = move-column-left;
       "Mod+Shift+Right".action = move-column-right;
-      "Mod+Shift+Up".action    = move-window-up;
-      "Mod+Shift+Down".action  = move-window-down;
-      "Mod+Shift+H".action     = move-column-left;
-      "Mod+Shift+L".action     = move-column-right;
-      "Mod+Shift+K".action     = move-window-up;
-      "Mod+Shift+J".action     = move-window-down;
+      "Mod+Shift+Up".action = move-window-up;
+      "Mod+Shift+Down".action = move-window-down;
+      "Mod+Shift+H".action = move-column-left;
+      "Mod+Shift+L".action = move-column-right;
+      "Mod+Shift+K".action = move-window-up;
+      "Mod+Shift+J".action = move-window-down;
 
-      "Mod+BracketLeft".action  = consume-or-expel-window-left;
+      "Mod+BracketLeft".action = consume-or-expel-window-left;
       "Mod+BracketRight".action = consume-or-expel-window-right;
 
-      "Mod+Minus".action       = set-column-width "-10%";
-      "Mod+Equal".action       = set-column-width "+10%";
+      "Mod+Minus".action = set-column-width "-10%";
+      "Mod+Equal".action = set-column-width "+10%";
       "Mod+Shift+Minus".action = set-window-height "-10%";
       "Mod+Shift+Equal".action = set-window-height "+10%";
 
@@ -215,22 +215,22 @@
       "Mod+Shift+8".action.move-column-to-workspace = [ 8 ];
       "Mod+Shift+9".action.move-column-to-workspace = [ 9 ];
 
-      "Mod+O".action           = toggle-overview;
+      "Mod+O".action = toggle-overview;
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-      "Print".action      = { screenshot = {}; };
+      "Print".action = { screenshot = {}; };
       "Ctrl+Print".action = { screenshot-screen = {}; };
-      "Alt+Print".action  = { screenshot-window = {}; };
+      "Alt+Print".action = { screenshot-window = {}; };
 
       "XF86AudioRaiseVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; allow-when-locked = true; };
       "XF86AudioLowerVolume" = { action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; allow-when-locked = true; };
-      "XF86AudioMute"        = { action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; allow-when-locked = true; };
-      "XF86AudioMicMute"     = { action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; allow-when-locked = true; };
+      "XF86AudioMute" = { action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; allow-when-locked = true; };
+      "XF86AudioMicMute" = { action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; allow-when-locked = true; };
       "XF86AudioPlay".action = spawn "playerctl" "play-pause";
       "XF86AudioNext".action = spawn "playerctl" "next";
       "XF86AudioPrev".action = spawn "playerctl" "previous";
 
-      "XF86MonBrightnessUp"   = { action = spawn "brightnessctl" "set" "5%+"; allow-when-locked = true; };
+      "XF86MonBrightnessUp" = { action = spawn "brightnessctl" "set" "5%+"; allow-when-locked = true; };
       "XF86MonBrightnessDown" = { action = spawn "brightnessctl" "set" "5%-"; allow-when-locked = true; };
 
       "Mod+Alt+L" = { action = spawn "gtklock" "--daemonize"; allow-when-locked = true; };
@@ -238,7 +238,7 @@
       "Mod+Shift+P".action = power-off-monitors;
 
       "Mod+WheelScrollDown" = { action = focus-column-right; cooldown-ms = 150; };
-      "Mod+WheelScrollUp"   = { action = focus-column-left;  cooldown-ms = 150; };
+      "Mod+WheelScrollUp" = { action = focus-column-left; cooldown-ms = 150; };
 
       "Mod+Escape" = { action = toggle-keyboard-shortcuts-inhibit; allow-inhibiting = false; };
     };

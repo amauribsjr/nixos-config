@@ -54,7 +54,6 @@ These values are imported in `flake.nix` and passed to both NixOS and Home Manag
 nixos-config/
 ├── flake.nix                  # flake entrypoint, inputs, shared args
 ├── flake.lock                 # pinned flake inputs
-├── devshells.nix              # Rust, Java and C dev shells
 ├── README.md                  # repository overview
 ├── lib/
 │   ├── fonts.nix              # shared font names/sizes
@@ -95,7 +94,7 @@ nixos-config/
     │   └── virtualisation.nix # Docker
     └── hardware/
         ├── default.nix        # hardware imports
-        ├── boot.nix           # bootloader, kernel, Plymouth, sysctl
+        ├── boot.nix           # bootloader, kernel, sysctl
         ├── graphics.nix       # Intel graphics, VA-API, Wayland vars
         ├── hardware.nix       # filesystems, Btrfs, swap, firmware
         └── power.nix          # zram, TLP, thermald, fwupd, Bluetooth
@@ -132,27 +131,6 @@ Custom shell functions are defined in `home/shell.nix`.
 | `clean`     | Delete old generations.                                                      |
 | `deepclean` | Keep only the latest system generations and run garbage collection.          |
 | `wall`      | Select and apply a wallpaper using `fzf` and `chafa`.                        |
-
-## Development shells
-
-Defined in `devshells.nix`.
-
-| Shell | Command                           |
-| ----- | --------------------------------- |
-| Rust  | `nix develop ~/nixos-config#rust` |
-| Java  | `nix develop ~/nixos-config#java` |
-| C     | `nix develop ~/nixos-config#c`    |
-
-Convenience aliases are defined in `home/shell.nix`.
-
-| Alias    | Description                         |
-| -------- | ----------------------------------- |
-| `rshell` | Open Rust dev shell.                |
-| `jshell` | Open Java dev shell.                |
-| `cshell` | Open C dev shell.                   |
-| `rzed`   | Open Zed inside the Rust dev shell. |
-| `jzed`   | Open Zed inside the Java dev shell. |
-| `czed`   | Open Zed inside the C dev shell.    |
 
 ### Databases
 

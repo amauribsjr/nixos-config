@@ -3,36 +3,23 @@
 let
   icon = cp: builtins.fromJSON "\"\\u${cp}\"";
   i = {
-    git    = icon "E0A0";  #
-    nix    = icon "F313";  #
-    rust   = icon "E7A8";  #
-    python = icon "E73C";  #
-    nodejs = icon "E718";  #
-    java   = icon "E738";  #
-    docker = icon "F308";  #
+    git = icon "E0A0";
+    nix = icon "F313";
+    rust = icon "E7A8";
+    python = icon "E73C";
+    nodejs = icon "E718";
+    java = icon "E738";
+    docker = icon "F308";
   };
 in
 
 {
   # Zsh
   programs.zsh = {
-    enable                    = true;
-    enableCompletion          = true;
-    autosuggestion.enable     = true;
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
-    shellAliases = {
-
-      # DevShells
-      rshell = "nix develop ~/nixos-config#rust";
-      jshell = "nix develop ~/nixos-config#java";
-      cshell = "nix develop ~/nixos-config#c";
-
-      # Open editors inside DevShells
-      rzed = "nix develop ~/nixos-config#rust -c zed .";
-      jzed = "nix develop ~/nixos-config#java -c zed .";
-      czed = "nix develop ~/nixos-config#c -c zed .";
-    };
 
     initContent = ''
 
@@ -141,25 +128,25 @@ in
   };
 
   programs.nix-index = { enable = false; enableZshIntegration = false; };
-  programs.zoxide    = { enable = true; enableZshIntegration  = true;  };
-  programs.fzf       = { enable = true; enableZshIntegration  = true;  };
+  programs.zoxide = { enable = true; enableZshIntegration = true; };
+  programs.fzf = { enable = true; enableZshIntegration = true; };
 
   # Starship
   programs.starship = {
     enable = true;
     settings = {
       command_timeout = 1000;
-      add_newline     = true;
-      palette         = "koppi";
+      add_newline = true;
+      palette = "koppi";
 
       palettes.koppi = {
-        fg     = "#${colors.fg}";
-        blue   = "#${colors.blue}";
-        aqua   = "#${colors.cyan}";
-        green  = "#${colors.green}";
+        fg = "#${colors.fg}";
+        blue = "#${colors.blue}";
+        aqua = "#${colors.cyan}";
+        green = "#${colors.green}";
         orange = "#${colors.accent}";
         purple = "#${colors.magenta}";
-        red    = "#${colors.red}";
+        red = "#${colors.red}";
         yellow = "#${colors.yellow}";
         accent = "#${colors.accent}";
         accdim = "#${colors.accdim}";
@@ -172,23 +159,23 @@ in
 
       character = {
         success_symbol = "[λ](green)";
-        error_symbol   = "[λ](red)";
+        error_symbol = "[λ](red)";
       };
 
       username = { style_user = "fg"; style_root = "red"; format = "[$user]($style) "; disabled = false; show_always = true; };
       hostname = { ssh_only = false; format = "[@](yellow)[$hostname](blue) "; disabled = false; };
       directory = { style = "blue"; read_only = " 󰌾"; truncation_length = 3; truncate_to_repo = true; format = "[$path]($style)[$read_only]($read_only_style) "; };
 
-      git_branch     = { symbol = "${i.git} "; style = "red";    format = "[$symbol$branch]($style) "; };
-      git_status     = { style = "red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
-      nix_shell      = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](red)"; pure_msg = "[pure](green)"; unknown_msg = "[unknown](yellow)"; format = "via [$symbol$state( \\($name\\))](aqua) "; };
-      rust           = { symbol = "${i.rust} ";   style = "orange"; format = "[$symbol($version)]($style) "; };
-      python         = { symbol = "${i.python} "; style = "yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
-      nodejs         = { symbol = "${i.nodejs} "; style = "green";  format = "[$symbol($version)]($style) "; };
-      java           = { symbol = "${i.java} ";   style = "red";    format = "[$symbol($version)]($style) "; };
-      docker_context = { symbol = "${i.docker} "; style = "blue";   format = "[$symbol$context]($style) "; };
+      git_branch = { symbol = "${i.git} "; style = "red"; format = "[$symbol$branch]($style) "; };
+      git_status = { style = "red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
+      nix_shell = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](red)"; pure_msg = "[pure](green)"; unknown_msg = "[unknown](yellow)"; format = "via [$symbol$state( \\($name\\))](aqua) "; };
+      rust = { symbol = "${i.rust} "; style = "orange"; format = "[$symbol($version)]($style) "; };
+      python = { symbol = "${i.python} "; style = "yellow"; format = "[$symbol$pyenv_prefix($version)]($style) "; };
+      nodejs = { symbol = "${i.nodejs} "; style = "green"; format = "[$symbol($version)]($style) "; };
+      java = { symbol = "${i.java} "; style = "red"; format = "[$symbol($version)]($style) "; };
+      docker_context = { symbol = "${i.docker} "; style = "blue"; format = "[$symbol$context]($style) "; };
 
-      package.disabled      = true;
+      package.disabled = true;
       cmd_duration.disabled = true;
 
     };

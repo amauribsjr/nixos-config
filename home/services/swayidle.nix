@@ -10,8 +10,8 @@
     Service = {
       ExecStart = ''
         ${pkgs.swayidle}/bin/swayidle -w \
-          timeout 600  '${pkgs.niri}/bin/niri msg action power-off-monitors' \
-          resume       '${pkgs.niri}/bin/niri msg action power-on-monitors' \
+          timeout 600 '${pkgs.niri}/bin/niri msg action power-off-monitors' \
+          resume '${pkgs.niri}/bin/niri msg action power-on-monitors' \
           timeout 1800 '${pkgs.systemd}/bin/systemctl suspend' \
           before-sleep '${pkgs.gtklock}/bin/gtklock --daemonize' \
           lock         '${pkgs.gtklock}/bin/gtklock --daemonize'
@@ -30,10 +30,10 @@
       ExecStart = ''
         ${pkgs.swayidle}/bin/swayidle -w \
           timeout 300 '${pkgs.niri}/bin/niri msg action power-off-monitors' \
-          resume      '${pkgs.niri}/bin/niri msg action power-on-monitors' \
+          resume '${pkgs.niri}/bin/niri msg action power-on-monitors' \
           timeout 600 '${pkgs.systemd}/bin/systemctl suspend' \
           before-sleep '${pkgs.gtklock}/bin/gtklock --daemonize' \
-          lock         '${pkgs.gtklock}/bin/gtklock --daemonize'
+          lock '${pkgs.gtklock}/bin/gtklock --daemonize'
       '';
       Restart = "on-failure";
     };
@@ -43,7 +43,7 @@
     Unit = {
       Description = "Changes between AC/BAT profiles";
       PartOf = [ "graphical-session.target" ];
-      After  = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
     };
 
     Service = {

@@ -1,17 +1,17 @@
 { pkgs }: {
   gtk = {
-    name    = "Gruvbox-Dark";
+    name = "Gruvbox-Dark";
     package = pkgs.gruvbox-gtk-theme;
   };
 
   cursor = {
-    name    = "Bibata-Modern-Classic";
+    name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
-    size    = 20;
+    size = 20;
   };
 
   fontPackages = {
-    ui   = pkgs.nerd-fonts.jetbrains-mono;
+    ui = pkgs.nerd-fonts.jetbrains-mono;
     mono = pkgs.nerd-fonts.victor-mono;
     syms = pkgs.nerd-fonts.symbols-only;
   };

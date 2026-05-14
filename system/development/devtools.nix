@@ -25,6 +25,5 @@
     nixfmt
     deadnix
     nvd
-    
   ];
 }

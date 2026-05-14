@@ -2,8 +2,8 @@
   description = "koppi nixOS — Dell Inspiron 3501 (Niri)";
 
   inputs = {
-    nixpkgs.url          = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url   = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,16 +20,16 @@
   outputs = { self, nixpkgs, nixos-hardware, home-manager, niri, koppi-theme, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs   = import nixpkgs {
+    pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
 
     colors = koppi-theme.lib.colors;
-    fonts  = import ./lib/fonts.nix;
-    theme  = import ./lib/theme.nix { inherit pkgs; };
+    fonts = import ./lib/fonts.nix;
+    theme = import ./lib/theme.nix { inherit pkgs; };
   in {
-    devShells.${system} = import ./devshells.nix { inherit pkgs; };
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs colors fonts theme; };

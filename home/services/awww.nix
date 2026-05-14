@@ -2,7 +2,7 @@
 
 let
   wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
-  wallpaperState   = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
+  wallpaperState = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
 
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
     if [ -f "${wallpaperState}" ]; then
@@ -21,14 +21,14 @@ in
   systemd.user.services.awww = {
     Unit = {
       Description = "Awww wallpaper daemon";
-      After       = [ "graphical-session.target" ];
-      PartOf      = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+      PartOf = [ "graphical-session.target" ];
     };
 
     Service = {
-      ExecStart     = "${pkgs.awww}/bin/awww-daemon";
+      ExecStart = "${pkgs.awww}/bin/awww-daemon";
       ExecStartPost = "${setWallpaper}";
-      Restart       = "on-failure";
+      Restart = "on-failure";
     };
 
     Install.WantedBy = [ "graphical-session.target" ];

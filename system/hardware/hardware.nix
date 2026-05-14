@@ -25,33 +25,33 @@ in
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device  = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType  = "btrfs";
+    device = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType = "btrfs";
     options = btrfsOpts ++ [ "subvol=@" ];
   };
 
   fileSystems."/home" = {
-    device  = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType  = "btrfs";
+    device = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType = "btrfs";
     options = btrfsOpts ++ [ "subvol=@home" ];
   };
 
   fileSystems."/nix" = {
-    device  = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType  = "btrfs";
+    device = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType = "btrfs";
     options = btrfsOpts ++ [ "subvol=@nix" ];
   };
 
   fileSystems."/var/log" = {
-    device        = "/dev/disk/by-label/NIXOS_ROOT";
-    fsType        = "btrfs";
-    options       = btrfsOpts ++ [ "subvol=@log" ];
+    device = "/dev/disk/by-label/NIXOS_ROOT";
+    fsType = "btrfs";
+    options = btrfsOpts ++ [ "subvol=@log" ];
     neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device  = "/dev/disk/by-label/NIXOS_BOOT";
-    fsType  = "vfat";
+    device = "/dev/disk/by-label/NIXOS_BOOT";
+    fsType = "vfat";
     options = [ "umask=0077" ];
   };
 
@@ -61,8 +61,8 @@ in
   }];
 
   services.btrfs.autoScrub = {
-    enable      = true;
-    interval    = "monthly";
+    enable = true;
+    interval = "monthly";
     fileSystems = [ "/" ];
   };
 
