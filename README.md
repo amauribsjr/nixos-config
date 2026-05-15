@@ -63,7 +63,7 @@ nixos-config/
 ├── home/
 │   ├── default.nix            # Home Manager root
 │   ├── packages.nix           # user packages
-│   ├── shell.nix              # Zsh, aliases, prompt, direnv, helpers
+│   ├── shell.nix              # Zsh, aliases, prompt, helpers
 │   ├── theme.nix              # GTK, cursor and dark preference
 │   ├── apps/
 │   │   ├── kitty.nix          # terminal config
@@ -149,6 +149,7 @@ Custom shell functions are defined in `home/shell.nix`.
 | `redistart` | Starts Redis services (default port: 6379)      |
 | `redistop`  | Stops Redis services                            |
 
+### DevShells
 
 | Command       | Description                                   |
 | ------------- | --------------------------------------------- |

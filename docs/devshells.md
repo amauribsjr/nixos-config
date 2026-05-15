@@ -199,34 +199,3 @@ nix develop ~/nixos-config#rust -c zed .
 nix develop ~/nixos-config#java -c zed .
 nix develop ~/nixos-config#flutter -c zed .
 ```
-
-## Future direnv migration
-*(still planning on, not yet implemented)*
-
-Later, each project can get a `.envrc`.
-
-For Rust:
-
-```bash
-use flake ~/nixos-config#rust
-```
-
-For Java:
-
-```bash
-use flake ~/nixos-config#java
-```
-
-For Flutter:
-
-```bash
-use flake ~/nixos-config#flutter
-```
-
-Then run:
-
-```bash
-direnv allow
-```
-
-After that, entering the project directory automatically loads the correct devShell.
