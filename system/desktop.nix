@@ -34,6 +34,7 @@
       pkgs.noto-fonts
       pkgs.noto-fonts-cjk-sans
       pkgs.noto-fonts-color-emoji
+      pkgs.liberation_ttf
       pkgs.font-awesome
       theme.fontPackages.ui
       theme.fontPackages.mono

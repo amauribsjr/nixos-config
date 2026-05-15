@@ -7,6 +7,7 @@
     ./shell.nix
   
     ./apps/kitty.nix
+    ./apps/office.nix
     ./apps/wofi.nix
     ./apps/zed-theme.nix
   
@@ -74,9 +75,6 @@
       "image/gif" = "org.gnome.eog.desktop";
       "image/webp" = "org.gnome.eog.desktop";
       "image/svg+xml" = "org.gnome.eog.desktop";
-
-      # PDF
-      "application/pdf" = "google-chrome.desktop";
 
       # Text / code
       "text/plain" = "dev.zed.Zed.desktop";
