@@ -134,8 +134,8 @@ Custom shell functions are defined in `home/shell.nix`.
 | `update`    | Update flake inputs and test/rebuild according to the helper implementation. |
 | `flakeup`   | Update `flake.lock` and commit the lockfile update.                          |
 | `rollback`  | Roll back to the previous NixOS generation.                                  |
-| `clean`     | Delete old generations.                                                      |
-| `deepclean` | Keep only the latest system generations and run garbage collection.          |
+| `clean`     | Delete older than 7 days generations.                                        |
+| `deepclean` | Keep only the 3 latest system generations and run garbage collection.        |
 | `wall`      | Select and apply a wallpaper using `fzf` and `chafa`.                        |
 
 ### Databases
