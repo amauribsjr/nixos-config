@@ -21,6 +21,18 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    shellAliases = {
+      # Nix develop
+      nd = "nix develop";
+
+      # Project devShells from nixos-config
+      ndd = "nix develop ~/nixos-config#default";
+      ndj = "nix develop ~/nixos-config#java";
+      ndr = "nix develop ~/nixos-config#rust";
+      ndc = "nix develop ~/nixos-config#c";
+      ndf = "nix develop ~/nixos-config#flutter";
+    };
+    
     initContent = ''
 
       function rebuild() {
@@ -123,6 +135,39 @@ in
       function redistop() {
         sudo systemctl stop redis-dev;
         echo "Redis down";
+      }
+
+      # devShell
+      export NIXOS_CONFIG="$HOME/nixos-config"
+  
+      # Generic: enter a devShell from nixos-config
+      nds() {
+        local shell="''${1:-default}"
+        nix develop "$NIXOS_CONFIG#$shell"
+      }
+  
+      # Generic: open Zed inside a devShell
+      ndz() {
+        local shell="''${1:-default}"
+        local path="''${2:-.}"
+        nix develop "$NIXOS_CONFIG#$shell" -c zed "$path"
+      }
+  
+      # Open Zed inside specific devShells
+      zjava() {
+        nix develop "$NIXOS_CONFIG#java" -c zed "''${1:-.}"
+      }
+  
+      zrust() {
+        nix develop "$NIXOS_CONFIG#rust" -c zed "''${1:-.}"
+      }
+  
+      zc() {
+        nix develop "$NIXOS_CONFIG#c" -c zed "''${1:-.}"
+      }
+  
+      zflutter() {
+        nix develop "$NIXOS_CONFIG#flutter" -c zed "''${1:-.}"
       }
     '';
   };
