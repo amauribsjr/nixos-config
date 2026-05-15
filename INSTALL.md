@@ -36,7 +36,11 @@ NVMe SSDs are usually `nvme0n1`. **Confirm before proceeding.** This guide assum
 
 ## 4. Partitioning
 
-Two partitions only — no swap (zram handles it):
+Two partitions only — no swap partition.
+
+Swap is handled by the NixOS configuration:
+- zram through `system/hardware/power.nix`
+- a 4 GiB swapfile at `/var/lib/swapfile` through `system/hardware/hardware.nix`
 
 ```sh
 parted /dev/nvme0n1 -- mklabel gpt
@@ -85,7 +89,7 @@ umount /mnt
 
 ```sh
 DISK=/dev/disk/by-label/NIXOS_ROOT
-OPT="compress=zstd:1,noatime,discard=async"
+OPT="compress=zstd:1,noatime"
 
 mount -o subvol=@,$OPT $DISK /mnt
 mkdir -p /mnt/{home,nix,var/log,boot}
@@ -171,7 +175,7 @@ Validate the install:
 
 ```sh
 findmnt -t btrfs                       # @, @home, @nix, @log
-swapon --show                          # /dev/zram0 only
+swapon --show                          # /dev/zram0 and /var/lib/swapfile
 mount | grep "on / type btrfs"         # zstd:1
 ```
 

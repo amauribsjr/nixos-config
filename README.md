@@ -117,10 +117,10 @@ nixos-config/
 | gtklock        | Home/System   | `home/services/gtklock.nix`, `system/desktop.nix` |
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
-| Docker         | System        | `system/core/virtualisation.nix`                  |
-| Redis          | System        | `system/core/redis.nix`                           |
-| MySQL          | System        | `system/core/databases.nix`                       |
-| PostgreSQL     | System        | `system/core/databases.nix`                       |
+| Docker         | System        | `system/development/virtualisation.nix`           |
+| Redis          | System        | `system/development/redis.nix`                    |
+| MySQL          | System        | `system/development/databases.nix`                |
+| PostgreSQL     | System        | `system/development/databases.nix`                |
 | TLP/zram       | System        | `system/hardware/power.nix`                       |
 
 ## Shell commands
