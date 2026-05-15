@@ -16,23 +16,23 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, *
 
 ## Stack
 
-| Area          | Tooling                                                            |
-| ------------- | ------------------------------------------------------------------ |
-| OS            | NixOS unstable                                                     |
-| Flake inputs  | nixpkgs, Home Manager, nixos-hardware, niri-flake, **koppi-theme** |
-| Compositor    | Niri                                                               |
-| Shell         | Zsh, Starship, zoxide, fzf                                         |
-| Terminal      | Kitty                                                              |
-| Bar           | Waybar                                                             |
-| Launcher      | Wofi                                                               |
-| Notifications | Mako                                                               |
-| Wallpaper     | awww                                                               |
-| Lock screen   | gtklock                                                            |
-| Greeter       | greetd + ReGreet                                                   |
-| Editors       | Zed                                                                |
-| Dev tooling   | Java, Rust, C, Docker, SQLite                                      |
-| Databases     | MySQL, PostgreSQL and Redis for caching                            |
-| Theme         | [Koppi](https://github.com/amauribsjr/koppi-theme)                 |
+| Area          | Tooling                                                                     |
+| ------------- | --------------------------------------------------------------------------- |
+| OS            | NixOS unstable                                                              |
+| Flake inputs  | nixpkgs, flake-parts, Home Manager, nixos-hardware, niri-flake, koppi-theme |
+| Compositor    | Niri                                                                        |
+| Shell         | Zsh, Starship, zoxide, fzf                                                  |
+| Terminal      | Kitty                                                                       |
+| Bar           | Waybar                                                                      |
+| Launcher      | Wofi                                                                        |
+| Notifications | Mako                                                                        |
+| Wallpaper     | awww                                                                        |
+| Lock screen   | gtklock                                                                     |
+| Greeter       | greetd + ReGreet                                                            |
+| Editors       | Zed                                                                         |
+| Dev tooling   | Java, Rust, C and Flutter through flake devShells; Docker, databases and runtime services through NixOS modules |
+| Databases     | MySQL, PostgreSQL and Redis for caching                                     |
+| Theme         | [Koppi](https://github.com/amauribsjr/koppi-theme)                          |
 
 ## Koppi theme
 
@@ -52,7 +52,9 @@ These values are imported in `flake.nix` and passed to both NixOS and Home Manag
 
 ```text
 nixos-config/
-├── flake.nix                  # flake entrypoint, inputs, shared args
+├── docs/
+│   └── devshells.md           # devShell usage and workflow reference
+├── flake.nix                  # flake-parts entrypoint, NixOS config, devShells and shared args
 ├── flake.lock                 # pinned flake inputs
 ├── README.md                  # repository overview
 ├── lib/
@@ -86,12 +88,16 @@ nixos-config/
     │   ├── locale.nix         # locale, timezone, keyboard
     │   ├── networking.nix     # hostname and NetworkManager
     │   ├── nix.nix            # Nix settings, GC, optimization
-    │   ├── nix-ld.nix         # nix-ld runtime support
     │   ├── packages.nix       # system packages
-    │   ├── users.nix          # user, shell, groups
-    │   ├── redis.nix          # Redis services
+    │   └── users.nix          # user, shell, groups
+    ├── development/
+    │   ├── default.nix        # development imports
+    │   ├── nix-ld.nix         # nix-ld runtime support
+    │   ├── devtools.nix       # development tools
+    │   ├── mobiletools.nix    # mobile development tools (temporary)
     │   ├── databases.nix      # MySQL and PostgreSQL services
-    │   └── virtualisation.nix # Docker
+    │   ├── redis.nix          # Redis services
+    │   └── virtualisation.nix # Docker    
     └── hardware/
         ├── default.nix        # hardware imports
         ├── boot.nix           # bootloader, kernel, sysctl
@@ -142,6 +148,20 @@ Custom shell functions are defined in `home/shell.nix`.
 | `mystop`    | Stops MySQL services                            |
 | `redistart` | Starts Redis services (default port: 6379)      |
 | `redistop`  | Stops Redis services                            |
+
+
+| Command       | Description                                   |
+| ------------- | --------------------------------------------- |
+| `ndd`         | Enter the default devShell.                   |
+| `ndj`         | Enter the Java devShell.                      |
+| `ndr`         | Enter the Rust devShell.                      |
+| `ndc`         | Enter the C devShell.                         |
+| `ndf`         | Enter the Flutter/Android devShell.           |
+| `nds <shell>` | Enter a named devShell from `~/nixos-config`. |
+| `zjava`       | Open Zed inside the Java devShell.            |
+| `zrust`       | Open Zed inside the Rust devShell.            |
+| `zc`          | Open Zed inside the C devShell.               |
+| `zflutter`    | Open Zed inside the Flutter/Android devShell. |
 
 ### Applications
 
@@ -218,11 +238,18 @@ Custom shell functions are defined in `home/shell.nix`.
 | 2 fingers tap        | Right click      |
 | 3 fingers tap        | Middle click     |
 
-## Validation
+### Validation
 
 ```bash
 testbuild
 rebuild
+```
+
+```bash
+nix develop .#java -c java -version
+nix develop .#rust -c rustc --version
+nix develop .#c -c gcc --version
+nix develop .#flutter -c flutter --version
 ```
 
 ## References
