@@ -174,7 +174,6 @@
             niri.nixosModules.niri
 
             home-manager.nixosModules.home-manager
-
             {
               home-manager = {
                 useGlobalPkgs = true;
