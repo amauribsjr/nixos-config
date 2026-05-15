@@ -7,7 +7,7 @@
   cursor = {
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
-    size = 20;
+    size = 18;
   };
 
   fontPackages = {
