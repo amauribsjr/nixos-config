@@ -5,16 +5,34 @@ let
   wallpaperState = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
 
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
+    current=""
+
     if [ -f "${wallpaperState}" ]; then
       name=$(cat "${wallpaperState}")
       target="${config.home.homeDirectory}/Pictures/Wallpapers/$name"
+
       if [ -f "$target" ]; then
-        ${pkgs.awww}/bin/awww img "$target" --transition-type fade
-        exit 0
+        current="$target"
       fi
     fi
-    [ -f "${wallpaperDefault}" ] && \
-      ${pkgs.awww}/bin/awww img "${wallpaperDefault}" --transition-type fade
+
+    if [ -z "$current" ] && [ -f "${wallpaperDefault}" ]; then
+      current="${wallpaperDefault}"
+    fi
+
+    if [ -z "$current" ]; then
+      exit 0
+    fi
+
+    for i in $(seq 1 30); do
+      if ${pkgs.awww}/bin/awww img "$current" --transition-type fade; then
+        exit 0
+      fi
+
+      sleep 0.2
+    done
+
+    exit 0
   '';
 in
 {

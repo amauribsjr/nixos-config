@@ -21,6 +21,7 @@
         natural-scroll = true;
         dwt = true;
         click-method = "clickfinger";
+        accel-speed = 0.5;
         accel-profile = "adaptive";
         scroll-method = "two-finger";
       };
