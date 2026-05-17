@@ -159,6 +159,7 @@
       "Mod+B".action = spawn "google-chrome";
       "Mod+E".action = spawn "zeditor";
       "Mod+T".action = spawn "nautilus";
+      "Mod+S".action = spawn "spotify";
 
       "Mod+Q".action = close-window;
       "Mod+F".action = fullscreen-window;
