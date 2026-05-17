@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-
     # Wayland & desktop
     awww
     networkmanagerapplet
@@ -32,6 +31,7 @@
 
     # Apps
     google-chrome
+    spotify
     vesktop
     obs-studio
     dbeaver-bin
