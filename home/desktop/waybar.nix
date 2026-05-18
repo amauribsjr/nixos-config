@@ -2,9 +2,9 @@
 
 let
 power-menu = pkgs.writeShellScript "power-menu" ''
-  chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu \
-    --width=180 --height=210 --location=center \
-    --style="$HOME/.config/wofi/center.css")
+  chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu --hide-search \
+    --width=180 --height=165 --location=center \
+    --style="$HOME/.config/wofi/power.css")
   if echo "$chosen" | grep -q "Power off"; then
     systemctl poweroff
   elif echo "$chosen" | grep -q "Reboot"; then

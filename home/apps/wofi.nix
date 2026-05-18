@@ -55,4 +55,56 @@
 
     #entry:selected #text { color: #${colors.fg}; }
   '';
+
+  home.file.".config/wofi/power.css".text = ''
+    window {
+      background-color: #${colors.bg1};
+      font-family: "${fonts.ui}";
+      border: 1px solid #${colors.accent};
+    }
+
+    #input {
+      min-height: 0;
+      margin: -1000px;
+      padding: 0;
+      border: none;
+      opacity: 0;
+    }
+
+    #scroll {
+      margin: 0;
+      padding: 0;
+    }
+
+    #inner-box {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
+
+    #outer-box {
+      background-color: transparent;
+      margin: 6px;
+      padding: 0;
+    }
+
+    #entry {
+      padding: 12px 20px;
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    #entry:selected {
+      background-color: #${colors.bg2};
+    }
+
+    #text {
+      color: #${colors.fg2};
+      font-size: ${toString fonts.launcherSize}px;
+    }
+
+    #entry:selected #text {
+      color: #${colors.fg};
+    }
+  '';
 }
