@@ -38,5 +38,6 @@
     bruno
     zed-editor
     gnome-calculator
+    gnome-text-editor
   ];
 }
