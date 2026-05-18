@@ -63,8 +63,8 @@ in
         };
 
         "niri/language" = {
-          format = "{short}";
-          tooltip-format = "{long}";
+          format = "⌨ {short}";
+          tooltip-format = "⌨ {long}";
           on-click = "niri msg action switch-layout next";
         };
 
@@ -176,7 +176,7 @@ in
       #clock { color: @accent; font-weight: bold; }
       #pulseaudio { color: @fg1; }
       #battery { color: @green; }
-      #language { color: @amber; }
+      #language { color: @fg2; }
       #language:hover { background-color: @bg2; color: @fg1; }
       #battery.charging { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
