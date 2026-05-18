@@ -177,7 +177,7 @@ in
       #pulseaudio { color: @fg1; }
       #battery { color: @green; }
       #language { color: @fg2; }
-      #language:hover { background-color: @bg2; color: @fg1; }
+      #language:hover { background-color: @bg2; color: @fg2; }
       #battery.charging { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
       #battery.critical:not(.charging) {
