@@ -63,9 +63,7 @@ in
         };
 
         "niri/language" = {
-          format = "  {short}";
-          format-en = "EN";
-          format-pt = "PT";
+          format = "{short}";
           tooltip-format = "{long}";
           on-click = "niri msg action switch-layout next";
         };
