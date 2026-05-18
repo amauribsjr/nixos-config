@@ -2,11 +2,13 @@
 
 let
   wallpaperFile = ../../wallpapers/${theme.wallpaper.default};
-  _ = assert (builtins.pathExists wallpaperFile)
-    || throw "awww: wallpaper default '${theme.wallpaper.default}' não existe em wallpapers/";
-    null;
 
-  wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
+  wallpaperDefault =
+    if builtins.pathExists wallpaperFile then
+      "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}"
+    else
+      throw "awww: wallpaper default '${theme.wallpaper.default}' não existe em wallpapers/";
+
   wallpaperState = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
 
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
@@ -40,6 +42,7 @@ let
     exit 0
   '';
 in
+
 {
   systemd.user.services.awww = {
     Unit = {
