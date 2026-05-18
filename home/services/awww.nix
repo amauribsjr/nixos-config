@@ -1,6 +1,11 @@
 { pkgs, config, theme, ... }:
 
 let
+  wallpaperFile = ../../wallpapers/${theme.wallpaper.default};
+  _ = assert (builtins.pathExists wallpaperFile)
+    || throw "awww: wallpaper default '${theme.wallpaper.default}' não existe em wallpapers/";
+    null;
+
   wallpaperDefault = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
   wallpaperState = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
 

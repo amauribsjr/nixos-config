@@ -4,13 +4,16 @@
 
   programs.niri.enable = true;
   services.displayManager.defaultSession = "niri";
-  security.pam.services.gtklock = {};
+  security.pam.services.gtklock = {
+    enableGnomeKeyring = true;  # antes era apenas {}
+  };
   services.gvfs.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
+  programs.seahorse.enable = true;
+  
   services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10ec", ATTR{class}=="0x020000", ATTR{power/control}="on"
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="/run/current-system/sw/bin/chgrp video /sys/class/backlight/%k/brightness", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/backlight/%k/brightness"
   '';
 
   xdg.portal = {

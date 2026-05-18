@@ -35,9 +35,9 @@ in
         modules-left = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right = [
+          "niri/language"
           "pulseaudio"
           "battery"
-          "custom/kb"
           "tray"
           "custom/power"
         ];
@@ -60,6 +60,14 @@ in
         "niri/window" = {
           max-length = 40;
           separate-outputs = true;
+        };
+
+        "niri/language" = {
+          format = "  {short}";
+          format-en = "EN";
+          format-pt = "PT";
+          tooltip-format = "{long}";
+          on-click = "niri msg action switch-layout next";
         };
 
         clock = {
@@ -134,6 +142,7 @@ in
       #clock,
       #pulseaudio,
       #battery,
+      #language,
       #tray,
       #custom-power,
       #taskbar {
@@ -169,6 +178,8 @@ in
       #clock { color: @accent; font-weight: bold; }
       #pulseaudio { color: @fg1; }
       #battery { color: @green; }
+      #language { color: @amber; }
+      #language:hover { background-color: @bg2; color: @fg1; }
       #battery.charging { color: @green; }
       #battery.warning:not(.charging) { color: @amber; }
       #battery.critical:not(.charging) {

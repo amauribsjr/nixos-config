@@ -178,7 +178,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                backupFileExtension = "backup";
+                backupFileExtension = "hm-bak";
 
                 extraSpecialArgs = {
                   inherit inputs colors fonts theme;

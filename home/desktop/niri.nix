@@ -6,6 +6,8 @@
     screenshot-path = "~/Pictures/Screenshots/Screenshot-%Y-%m-%d-%H-%M-%S.png";
     hotkey-overlay.skip-at-startup = true;
 
+    xwayland-satellite.path = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+
     input = {
       keyboard = {
         xkb = {
@@ -62,7 +64,6 @@
     };
 
     spawn-at-startup = [
-      { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ":0" ]; }
       { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
       { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }

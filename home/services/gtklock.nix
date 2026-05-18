@@ -1,7 +1,12 @@
 { pkgs, config, colors, fonts, theme, ... }:
 
 let
-  wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
+  wallpaperFile = ../../wallpapers/${theme.wallpaper.default};
+
+  wallpaper =
+    assert (builtins.pathExists wallpaperFile)
+      || throw "gtklock: default wallpaper '${theme.wallpaper.default}' doesn't exist in wallpapers/";
+    "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}";
 in
 {
   home.packages = with pkgs; [

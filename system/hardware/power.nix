@@ -52,7 +52,7 @@
       SOUND_POWER_SAVE_ON_BAT = 1;
       SOUND_POWER_SAVE_CONTROLLER = "N";
       
-      USB_AUTOSUSPEND = 1;
+      USB_AUTOSUSPEND = 0;
       USB_EXCLUDE_BTUSB = 1;
     };
   };
