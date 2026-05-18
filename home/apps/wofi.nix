@@ -9,6 +9,8 @@
     allow_images=false
     allow_markup=false
     layer=top
+    lines=8
+    dynamic_lines=true
   '';
 
   home.file.".config/wofi/center.css".text = ''

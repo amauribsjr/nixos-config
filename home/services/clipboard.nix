@@ -3,11 +3,7 @@
 let
   clipboardMenu = pkgs.writeShellScriptBin "clipmenu" ''
     selected="$(${pkgs.cliphist}/bin/cliphist list |
-      ${pkgs.wofi}/bin/wofi \
-        --dmenu \
-        --conf "$HOME/.config/wofi/config" \
-        --style "$HOME/.config/wofi/center.css" \
-        --prompt "clipboard > ")"
+      ${pkgs.wofi}/bin/wofi --dmenu --location=top --yoffset=180 --conf "$HOME/.config/wofi/config" --style "$HOME/.config/wofi/center.css" --prompt "⟳ Clipboard >")"
 
     if [ -n "$selected" ]; then
       printf '%s' "$selected" |
@@ -34,7 +30,7 @@ in
     allowImages = true;
 
     extraOptions = [
-      "-max-items" "500"
+      "-max-items" "50"
       "-max-dedupe-search" "10"
     ];
   };

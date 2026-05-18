@@ -3,7 +3,7 @@
 let
 power-menu = pkgs.writeShellScript "power-menu" ''
   chosen=$(printf "Power off\nReboot\nSuspend\nLogout" | wofi --dmenu --hide-search \
-    --width=180 --height=165 --location=center \
+    --width=180 --lines=4 --location=center \
     --style="$HOME/.config/wofi/power.css")
   if echo "$chosen" | grep -q "Power off"; then
     systemctl poweroff
