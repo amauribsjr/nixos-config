@@ -1,5 +1,12 @@
 { config, pkgs, colors, ... }:
 
+let
+  wofiLauncher = config.lib.niri.actions.spawn
+    "wofi" "--show=drun" "--allow-images" "--width=500" "--lines=6"
+    "--location=top" "--yoffset=180"
+    "--style=${config.home.homeDirectory}/.config/wofi/center.css"
+    "--prompt" "Search >";
+in
 {
   programs.niri.settings = {
     prefer-no-csd = true;
@@ -155,7 +162,7 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Return".action = spawn "kitty";
-      "Mod+D".action = spawn "wofi" "--show=drun" "--allow-images" "--width=500" "--lines=6" "--location=top" "--yoffset=180" "--style=${config.home.homeDirectory}/.config/wofi/center.css" "--prompt" "Search >";
+      "Mod+D".action = wofiLauncher;
       "Mod+V".action = spawn "vesktop";
       "Mod+B".action = spawn "google-chrome";
       "Mod+E".action = spawn "zeditor";
