@@ -222,7 +222,6 @@ in
 
       package.disabled = true;
       cmd_duration.disabled = true;
-
     };
   };
 }
