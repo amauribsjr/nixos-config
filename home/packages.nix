@@ -19,7 +19,6 @@
     ripgrep
     chafa
     fastfetch
-    claude-code
 
     # File & media
     ffmpegthumbnailer
