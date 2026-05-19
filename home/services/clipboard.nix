@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  clearLabel = "🧹 Clear clipboard history";
+  clearLabel = "⟳ Clear clipboard history";
 
   clipboardMenu = pkgs.writeShellScriptBin "clipmenu" ''
     set -u
@@ -11,7 +11,7 @@ let
         printf '%s\n' "${clearLabel}"
         ${pkgs.cliphist}/bin/cliphist list
       } |
-        ${pkgs.wofi}/bin/wofi --dmenu --location=top --yoffset=180 --conf "$HOME/.config/wofi/config" --style "$HOME/.config/wofi/center.css" --prompt "⟳ Clipboard >")"
+        ${pkgs.wofi}/bin/wofi --dmenu --location=top --yoffset=180 --conf "$HOME/.config/wofi/config" --style "$HOME/.config/wofi/center.css" --prompt "Clipboard >")"
 
     case "$selected" in
       "${clearLabel}"|"clear"|":clear")
