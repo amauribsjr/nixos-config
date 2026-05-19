@@ -103,6 +103,7 @@ in
               --preview-window=right:60%:border)
         if [ -n "$chosen" ]; then
           awww img ~/Pictures/Wallpapers/"$chosen" --transition-type fade
+          mkdir -p ~/.local/share
           echo "$chosen" > ~/.local/share/current-wallpaper
         fi
       }
@@ -172,7 +173,6 @@ in
     '';
   };
 
-  programs.nix-index = { enable = false; enableZshIntegration = false; };
   programs.zoxide = { enable = true; enableZshIntegration = true; };
   programs.fzf = { enable = true; enableZshIntegration = true; };
 

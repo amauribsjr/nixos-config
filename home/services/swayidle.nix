@@ -14,7 +14,7 @@
           resume '${pkgs.niri}/bin/niri msg action power-on-monitors' \
           timeout 1800 '${pkgs.systemd}/bin/systemctl suspend' \
           before-sleep '${pkgs.gtklock}/bin/gtklock --daemonize' \
-          lock         '${pkgs.gtklock}/bin/gtklock --daemonize'
+          lock '${pkgs.gtklock}/bin/gtklock --daemonize'
       '';
       Restart = "on-failure";
     };
@@ -71,6 +71,7 @@
 
         apply
         ${pkgs.upower}/bin/upower --monitor | while read -r _; do apply; done
+        exit 1
       ''}";
       Restart = "on-failure";
     };

@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-
     # CLI
     vim
     wget
@@ -19,7 +18,6 @@
     btop
 
     # Desktop
-    wl-clipboard
     brightnessctl
     pamixer
     playerctl

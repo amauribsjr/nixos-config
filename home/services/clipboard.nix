@@ -16,6 +16,7 @@ let
     case "$selected" in
       "${clearLabel}"|"clear"|":clear")
         ${pkgs.cliphist}/bin/cliphist wipe
+        ${pkgs.wl-clipboard}/bin/wl-copy --clear
         exit 0
         ;;
       "")
@@ -31,6 +32,7 @@ let
 
   clipboardClear = pkgs.writeShellScriptBin "clipclear" ''
     ${pkgs.cliphist}/bin/cliphist wipe
+    ${pkgs.wl-clipboard}/bin/wl-copy --clear
   '';
 in
 {

@@ -67,6 +67,7 @@ nixos-config/
 │   ├── theme.nix              # GTK, cursor and dark preference
 │   ├── apps/
 │   │   ├── kitty.nix          # terminal config
+│   │   ├── office.nix         # office apps
 │   │   ├── wofi.nix           # launcher config/style
 │   │   └── zed-theme.nix      # Zed consumes Koppi Theme
 │   ├── cli/
@@ -77,6 +78,7 @@ nixos-config/
 │   │   └── waybar.nix         # bar modules and Koppi styling
 │   └── services/
 │       ├── awww.nix           # wallpaper daemon
+│       ├── clipboard.nix      # clipboard manager
 │       ├── gtklock.nix        # lock screen with Koppi styling
 │       └── swayidle.nix       # AC/BAT idle profiles
 └── system/
@@ -116,6 +118,8 @@ nixos-config/
 | awww           | Home          | `home/services/awww.nix`                          |
 | gtklock        | Home/System   | `home/services/gtklock.nix`, `system/desktop.nix` |
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
+| Clipboard      | Home          | `home/services/clipboard.nix`                     |
+| Office/PDF     | Home          | `home/apps/office.nix`                            |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
 | Docker         | System        | `system/development/virtualisation.nix`           |
 | Redis          | System        | `system/development/redis.nix`                    |

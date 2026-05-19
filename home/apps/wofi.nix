@@ -24,7 +24,7 @@
       background-color: #${colors.bg};
       color: #${colors.fg2};
       border: none;
-      border-bottom: 1px solid #${colors.accent};;
+      border-bottom: 1px solid #${colors.accent};
       border-radius: 0;
       padding: 12px 20px;
       margin: 0;

@@ -47,7 +47,8 @@
     map (f: {
       name = "Pictures/Wallpapers/${f}";
       value.source = ../wallpapers/${f};
-    }) (builtins.attrNames (builtins.readDir ../wallpapers))
+    }) (builtins.attrNames (lib.filterAttrs (_: type: type == "regular" || type == "symlink")
+      (builtins.readDir ../wallpapers)))
   );
 
   home.activation.createExtraUserDirs =
