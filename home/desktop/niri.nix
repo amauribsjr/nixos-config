@@ -7,6 +7,7 @@ let
     "--style=${config.home.homeDirectory}/.config/wofi/center.css"
     "--prompt" "Search >";
 in
+
 {
   programs.niri.settings = {
     prefer-no-csd = true;
