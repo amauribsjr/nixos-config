@@ -36,15 +36,6 @@ in
       }
 
       function update() {
-        echo "🔄 Updating flake inputs..."
-        cd ~/nixos-config || return 1
-        nix flake update || return 1
-
-        echo "🧪 Testing NixOS build..."
-        sudo nixos-rebuild test --flake .#nixos
-      }
-
-      function flakeup() {
         echo "🔄 Updating flake.lock..."
         cd ~/nixos-config || return 1
         nix flake update || return 1
@@ -56,6 +47,9 @@ in
         else
         git commit -m "chore(flake): update inputs"
         fi
+
+        echo "🧪 Testing NixOS build..."
+        sudo nixos-rebuild test --flake .#nixos
       }
 
       function rollback() {
