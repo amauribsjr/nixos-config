@@ -17,7 +17,7 @@
   };
 
   systemd.services.postgresql.wantedBy = lib.mkForce [];
-
+  
   services.mysql = {
     enable = true;
     package = pkgs.mysql84;
@@ -25,6 +25,5 @@
   };
 
   systemd.services.mysql.wantedBy = lib.mkForce [];
-
   environment.systemPackages = [ pkgs.sqlite ];
 }

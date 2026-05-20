@@ -31,7 +31,6 @@ in
         margin-left = 0;
         margin-right = 0;
         spacing = 0;
-
         modules-left = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right = [

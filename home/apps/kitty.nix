@@ -13,13 +13,10 @@
       background_opacity = "1.0";
       window_padding_width = 12;
       hide_window_decorations = true;
-
       cursor_shape = "block";
       cursor_blink_interval = "0.5";
-
       scrollback_lines = 10000;
       wheel_scroll_multiplier = "3.0";
-
       copy_on_select = true;
       strip_trailing_spaces = "smart";
 
@@ -38,7 +35,6 @@
       color5 = "#${colors.magenta}";
       color6 = "#${colors.cyan}";
       color7 = "#${colors.white}";
-
       color8  = "#${colors.bblack}";
       color9  = "#${colors.bred}";
       color10 = "#${colors.bgreen}";

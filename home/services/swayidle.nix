@@ -49,7 +49,6 @@
     Service = {
       ExecStart = "${pkgs.writeShellScript "swayidle-dispatcher" ''
         set -u
-
         is_on_ac() {
           for d in /sys/class/power_supply/*/; do
             [ -r "$d/type" ] || continue

@@ -35,6 +35,7 @@ let
     ${pkgs.wl-clipboard}/bin/wl-copy --clear
   '';
 in
+
 {
   home.packages = [
     pkgs.wl-clipboard

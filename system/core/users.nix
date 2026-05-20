@@ -3,7 +3,6 @@
 {
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-
   users.users.koppi = {
     isNormalUser = true;
     description = "koppi";

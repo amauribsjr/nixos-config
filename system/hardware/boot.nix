@@ -22,9 +22,7 @@
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
-
     tmp.cleanOnBoot = true;
-
     kernel.sysctl = {
       "vm.swappiness" = 180;
       "vm.vfs_cache_pressure" = 50;

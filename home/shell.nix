@@ -14,7 +14,6 @@ let
 in
 
 {
-  # Zsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -22,10 +21,7 @@ in
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      # Nix develop
       nd = "nix develop";
-
-      # Project devShells from nixos-config
       ndd = "nix develop ~/nixos-config#default";
       ndj = "nix develop ~/nixos-config#java";
       ndr = "nix develop ~/nixos-config#rust";
@@ -34,7 +30,6 @@ in
     };
 
     initContent = ''
-
       function rebuild() {
         echo "🔄 Rebuilding NixOS..."
         sudo nixos-rebuild switch --flake ~/nixos-config#nixos
@@ -141,20 +136,20 @@ in
       # devShell helpers
       export NIXOS_CONFIG="$HOME/nixos-config"
 
-      # Generic: enter a devShell from nixos-config
+      # devShell from nixos-config
       nds() {
         local shell="''${1:-default}"
         nix develop "$NIXOS_CONFIG#$shell"
       }
 
-      # Generic: open Zed inside a devShell
+      # Zed inside a devShell
       ndz() {
         local shell="''${1:-default}"
         local path="''${2:-.}"
         nix develop "$NIXOS_CONFIG#$shell" -c zed "$path"
       }
 
-      # Open Zed inside specific devShells
+      # Zed inside specific devShells
       zjava() {
         nix develop "$NIXOS_CONFIG#java" -c zed "''${1:-.}"
       }
@@ -176,14 +171,12 @@ in
   programs.zoxide = { enable = true; enableZshIntegration = true; };
   programs.fzf = { enable = true; enableZshIntegration = true; };
 
-  # Starship
   programs.starship = {
     enable = true;
     settings = {
       command_timeout = 1000;
       add_newline = true;
       palette = "koppi";
-
       palettes.koppi = {
         fg = "#${colors.fg}";
         blue = "#${colors.blue}";
@@ -197,7 +190,6 @@ in
         accdim = "#${colors.accdim}";
       };
 
-
       format = ''
         [╭─](fg)$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$java$docker_context
         [╰─](fg)$character'';
@@ -210,7 +202,6 @@ in
       username = { style_user = "fg"; style_root = "red"; format = "[$user]($style) "; disabled = false; show_always = true; };
       hostname = { ssh_only = false; format = "[@](yellow)[$hostname](blue) "; disabled = false; };
       directory = { style = "blue"; read_only = " 󰌾"; truncation_length = 3; truncate_to_repo = true; format = "[$path]($style)[$read_only]($read_only_style) "; };
-
       git_branch = { symbol = "${i.git} "; style = "red"; format = "[$symbol$branch]($style) "; };
       git_status = { style = "red"; conflicted = "🏳"; ahead = "⇡\${count}"; behind = "⇣\${count}"; diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"; up_to_date = ""; untracked = "?\${count}"; stashed = "📦"; modified = "!\${count}"; staged = "+\${count}"; renamed = "»\${count}"; deleted = "✘\${count}"; format = ''([\[$all_status$ahead_behind\]]($style) )''; };
       nix_shell = { disabled = false; symbol = "${i.nix} "; impure_msg = "[impure](red)"; pure_msg = "[pure](green)"; unknown_msg = "[unknown](yellow)"; format = "via [$symbol$state( \\($name\\))](aqua) "; };

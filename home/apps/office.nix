@@ -6,15 +6,13 @@ let
   impress = "office-impress.desktop";
   pdfViewer = "pdf-viewer.desktop";
 in
+
 {
   home.packages = with pkgs; [
-    # Office
     libreoffice-qt
     hunspell
     hunspellDicts.pt_BR
     hunspellDicts.en_US
-
-    # PDF
     evince
     pdfarranger
     xournalpp
@@ -80,7 +78,6 @@ in
 
   xdg.mimeApps = {
     enable = true;
-
     defaultApplications = {
       "application/pdf" = lib.mkForce pdfViewer;
       "application/msword" = writer;

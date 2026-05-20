@@ -2,22 +2,17 @@
 
 let
   wallpaperFile = ../../wallpapers/${theme.wallpaper.default};
-
   wallpaperDefault =
     if builtins.pathExists wallpaperFile then
       "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}"
     else
-      throw "awww: wallpaper default '${theme.wallpaper.default}' não existe em wallpapers/";
-
+      throw "awww: default wallpaper '${theme.wallpaper.default}' doesn't exist in wallpapers/";
   wallpaperState = "${config.home.homeDirectory}/${theme.wallpaper.stateFile}";
-
   setWallpaper = pkgs.writeShellScript "set-wallpaper" ''
     current=""
-
     if [ -f "${wallpaperState}" ]; then
       name=$(cat "${wallpaperState}")
       target="${config.home.homeDirectory}/Pictures/Wallpapers/$name"
-
       if [ -f "$target" ]; then
         current="$target"
       fi
@@ -35,10 +30,8 @@ let
       if ${pkgs.awww}/bin/awww img "$current" --transition-type fade; then
         exit 0
       fi
-
       sleep 0.2
     done
-
     exit 0
   '';
 in

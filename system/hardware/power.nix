@@ -9,9 +9,7 @@
   };
 
   services.fstrim.enable = true;
-
   services.power-profiles-daemon.enable = false;
-
   services.tlp = {
     enable = true;
     settings = {
@@ -22,7 +20,6 @@
       CPU_BOOST_ON_AC = 1;
       CPU_HWP_DYN_BOOST_ON_AC = 1;
 
-      # CPU - BAT balanced
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
       CPU_MIN_PERF_ON_BAT = 0;
@@ -30,11 +27,9 @@
       CPU_BOOST_ON_BAT = 1;
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
 
-      # Thermal prof
       PLATFORM_PROFILE_ON_AC = "balanced";
       PLATFORM_PROFILE_ON_BAT = "balanced";
 
-      # PCIe / runtime power
       RUNTIME_PM_ON_AC = "on";
       RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_DRIVER_DENYLIST = "r8169";
@@ -47,7 +42,6 @@
 
       WOL_DISABLE = "Y";
 
-      # Audio
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_ON_BAT = 1;
       SOUND_POWER_SAVE_CONTROLLER = "N";
@@ -60,7 +54,6 @@
   services.thermald.enable = true;
   services.fwupd.enable = true;
   systemd.timers.fwupd-refresh.enable = false;
-
   services.upower = {
     enable = true;
     criticalPowerAction = "PowerOff";
@@ -83,5 +76,6 @@
       };
     };
   };
+
   services.blueman.enable = true;
 }

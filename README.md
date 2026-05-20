@@ -1,6 +1,6 @@
-# ❄️ Amauri/koppi NixOS system
+# ❄️ Amauri - koppi NixOS system
 
-Personal NixOS flake for my **Dell Inspiron 3501**, built around Home Manager, **Niri** and **Koppi**, my own custom theme.
+Personal NixOS flake for my **Dell Inspiron 3501**, built around Flake-parts, Home Manager, **Niri** and **Koppi**, my own custom theme.
 
 ## Hardware
 
@@ -71,8 +71,8 @@ nixos-config/
 │   │   ├── wofi.nix           # launcher config/style
 │   │   └── zed-theme.nix      # Zed consumes Koppi Theme
 │   ├── cli/
-│   │   ├── fastfetch.nix      # system summary
-│   │   └── git.nix            # Git config
+│   │   ├── fastfetch.nix      # system summary (minimal fastfetch)
+│   │   └── git.nix            # git config
 │   ├── desktop/
 │   │   ├── niri.nix           # compositor, binds, rules, startup
 │   │   └── waybar.nix         # bar modules and Koppi styling
@@ -170,14 +170,16 @@ Custom shell functions are defined in `home/shell.nix`.
 
 ### Applications
 
-| Shortcut      | Action             |
-| ------------- | ------------------ |
-| `Super+Enter` | Open Kitty         |
-| `Super+D`     | Open Wofi          |
-| `Super+B`     | Open Google Chrome |
-| `Super+V`     | Open Vesktop       |
-| `Super+E`     | Open Zed           |
-| `Super+T`     | Open Nautilus      |
+| Shortcut      | Action              |
+| ------------- | ------------------- |
+| `Super+Enter` | Open Kitty          |
+| `Super+D`     | Open Wofi Launcher  |
+| `Super+C`     | Open Wofi Clipboard |
+| `Super+B`     | Open Google Chrome  |
+| `Super+S`     | Open Spotify        |
+| `Super+V`     | Open Vesktop        |
+| `Super+E`     | Open Zed            |
+| `Super+T`     | Open Nautilus       |
 
 ### Window management
 

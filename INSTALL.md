@@ -1,6 +1,6 @@
 # NixOS Installation — Dell Inspiron 3501 (btrfs + zram)
 
-> Hardware-specific guide. **Verify disk path** with `lsblk` before destructive steps.
+> Hardware-specific guide. **Verify disk path** with `lsblk` before *destructive* steps.
 
 ---
 

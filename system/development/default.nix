@@ -3,7 +3,7 @@
 {
   imports = [
     ./devtools.nix
-    ./mobiletools.nix # temporary
+    ./mobiletools.nix
     ./databases.nix
     ./virtualisation.nix
     ./nix-ld.nix

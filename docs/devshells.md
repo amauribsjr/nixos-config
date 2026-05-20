@@ -1,12 +1,10 @@
 # DevShells quick reference
 
-This note is a practical reminder for using the project devShells before adopting `direnv`.
+This note is a practical reminder for using the project devShells, before adopting `direnv`.
 
 ## Mental model
 
 `devShells` are temporary development environments declared in the flake.
-
-They do not install tools globally in the system profile. They make tools available only inside the shell started by `nix develop`, and only to programs launched from that shell.
 
 ```text
 NixOS modules
@@ -55,8 +53,6 @@ These commands assume the system flake lives at:
 
 ## Terminal workflow
 
-To run commands directly in the terminal.
-
 ```bash
 cd ~/Projects/my-rust-project
 ndr
@@ -84,7 +80,7 @@ exit
 
 Zed only inherits the devShell if it is launched from inside that environment.
 
-Option A: enter the shell first, then open Zed.
+### Enter the shell first, then open Zed:
 
 ```bash
 cd ~/Projects/my-rust-project
@@ -92,7 +88,7 @@ ndr
 zed .
 ```
 
-Option B: use the Zed helper directly.
+### Use the Zed helper directly:
 
 ```bash
 cd ~/Projects/my-rust-project
@@ -118,19 +114,7 @@ zflutter
   opens Zed inside the Flutter devShell
 ```
 
-Do not run both unless you specifically want to. If you already ran `ndf`, just use:
-
-```bash
-zed .
-```
-
-If you did not enter the shell yet, use:
-
-```bash
-zflutter
-```
-
-The same logic applies to the other shells:
+### The same logic applies to the other shells:
 
 ```text
 ndr    -> terminal Rust environment

@@ -113,11 +113,9 @@
             "hidden": "#${colors.fg2}",
             "ignored": "#${colors.bg4}",
             "renamed": "#${colors.accbrt}",
-
             "players": [
               { "cursor": "#${colors.accent}", "background": "#${colors.accent}30", "selection": "#${colors.accent}30" }
             ],
-
             "syntax": {
               "attribute": { "color": "#${colors.fgSubtle}" },
               "boolean": { "color": "#${colors.accbrt}", "font_weight": 700 },

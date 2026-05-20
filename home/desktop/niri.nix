@@ -13,9 +13,7 @@ in
     prefer-no-csd = true;
     screenshot-path = "~/Pictures/Screenshots/Screenshot-%Y-%m-%d-%H-%M-%S.png";
     hotkey-overlay.skip-at-startup = true;
-
     xwayland-satellite.path = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
-
     input = {
       keyboard = {
         xkb = {
@@ -26,6 +24,7 @@ in
         repeat-delay = 300;
         repeat-rate = 35;
       };
+      
       touchpad = {
         tap = true;
         natural-scroll = true;
@@ -53,6 +52,7 @@ in
         { proportion = 1.0 / 2.0; }
         { proportion = 2.0 / 3.0; }
       ];
+
       default-column-width = { proportion = 0.5; };
       preset-window-heights = [
         { proportion = 1.0 / 3.0; }
@@ -90,7 +90,6 @@ in
 
     animations = {
       enable = true;
-
       workspace-switch = {
         enable = true;
         kind.spring = {

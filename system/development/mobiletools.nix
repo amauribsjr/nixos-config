@@ -11,9 +11,9 @@ let
     includeSources = false;
     includeNDK = false;
   };
-
   androidSdk = androidComposition.androidsdk;
 in
+
 {
   environment.systemPackages = with pkgs; [
     flutter

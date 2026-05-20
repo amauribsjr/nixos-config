@@ -2,12 +2,11 @@
 
 let
   wallpaperFile = ../../wallpapers/${theme.wallpaper.default};
-
   wallpaper =
     if builtins.pathExists wallpaperFile then
       "${config.home.homeDirectory}/Pictures/Wallpapers/${theme.wallpaper.default}"
     else
-      throw "gtklock: wallpaper default '${theme.wallpaper.default}' não existe em wallpapers/";
+      throw "gtklock: default wallpaper '${theme.wallpaper.default}' doesn't exist in wallpapers/";
 in
 
 {

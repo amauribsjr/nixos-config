@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # CLI
     vim
     wget
     curl
@@ -13,16 +12,10 @@
     zip
     unzip
     p7zip
-
-    # System & hardware
     btop
-
-    # Desktop
     brightnessctl
     pamixer
     playerctl
-
-    # Apps
     nautilus
     eog
     pavucontrol

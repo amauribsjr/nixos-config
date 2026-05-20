@@ -8,7 +8,6 @@ in
 {
   programs.regreet = {
     enable = true;
-
     font = {
       name = fonts.ui;
       size = fonts.greeterSize;
@@ -24,30 +23,22 @@ in
     };
 
     extraCss = ''
-
       @define-color accent_color #${colors.accent};
       @define-color accent_bg_color #${colors.accent};
       @define-color accent_fg_color #${colors.bg};
-
       @define-color window_bg_color #${colors.bg};
       @define-color window_fg_color #${colors.fg};
-
       @define-color view_bg_color #${colors.bg};
       @define-color view_fg_color #${colors.fg};
-
       @define-color card_bg_color #${colors.bg1};
       @define-color card_fg_color #${colors.fg};
-
       @define-color popover_bg_color #${colors.bg1};
       @define-color popover_fg_color #${colors.fg};
-
       @define-color dialog_bg_color #${colors.bg1};
       @define-color dialog_fg_color #${colors.fg};
-
       @define-color destructive_color #${colors.bred};
       @define-color destructive_bg_color #${colors.red};
       @define-color destructive_fg_color #${colors.fg};
-
       * {
         font-family: "${fonts.ui}";
         text-shadow: none;

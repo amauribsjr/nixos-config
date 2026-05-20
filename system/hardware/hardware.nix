@@ -6,11 +6,10 @@ let
     "compress=zstd:1"
   ];
 in
+
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
   boot.supportedFilesystems = [ "btrfs" ];
-
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"
@@ -20,7 +19,6 @@ in
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
-
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
