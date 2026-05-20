@@ -28,5 +28,6 @@
     zed-editor
     gnome-calculator
     gnome-text-editor
+    prismlauncher
   ];
 }
