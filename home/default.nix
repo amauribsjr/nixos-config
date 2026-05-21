@@ -14,7 +14,6 @@
     ./desktop/niri.nix
     ./desktop/waybar.nix
     ./services/awww.nix
-    ./services/clipboard.nix
     ./services/gtklock.nix
     ./services/swayidle.nix
   ];

@@ -78,7 +78,6 @@ nixos-config/
 │   │   └── waybar.nix         # bar modules and Koppi styling
 │   └── services/
 │       ├── awww.nix           # wallpaper daemon
-│       ├── clipboard.nix      # clipboard manager
 │       ├── gtklock.nix        # lock screen with Koppi styling
 │       └── swayidle.nix       # AC/BAT idle profiles
 └── system/
@@ -118,7 +117,6 @@ nixos-config/
 | awww           | Home          | `home/services/awww.nix`                          |
 | gtklock        | Home/System   | `home/services/gtklock.nix`, `system/desktop.nix` |
 | swayidle       | Home          | `home/services/swayidle.nix`                      |
-| Clipboard      | Home          | `home/services/clipboard.nix`                     |
 | Office/PDF     | Home          | `home/apps/office.nix`                            |
 | greetd/ReGreet | System        | `system/greeter.nix`                              |
 | Docker         | System        | `system/development/virtualisation.nix`           |
@@ -174,7 +172,6 @@ Custom shell functions are defined in `home/shell.nix`.
 | ------------- | ------------------- |
 | `Super+Enter` | Open Kitty          |
 | `Super+D`     | Open Wofi Launcher  |
-| `Super+C`     | Open Wofi Clipboard |
 | `Super+B`     | Open Google Chrome  |
 | `Super+S`     | Open Spotify        |
 | `Super+V`     | Open Vesktop        |
