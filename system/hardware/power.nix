@@ -45,7 +45,7 @@
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_ON_BAT = 1;
       SOUND_POWER_SAVE_CONTROLLER = "N";
-      
+
       USB_AUTOSUSPEND = 0;
       USB_EXCLUDE_BTUSB = 1;
     };
@@ -64,7 +64,7 @@
 
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = true;
+    powerOnBoot = false;
     settings = {
       General = {
         FastConnectable = true;
@@ -76,6 +76,5 @@
       };
     };
   };
-
   services.blueman.enable = true;
 }
