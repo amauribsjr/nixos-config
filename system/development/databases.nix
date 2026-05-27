@@ -4,10 +4,8 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_16;
-    settings = {
-      port = 5432;
-      listen_addresses = "127.0.0.1";
-    };
+    settings.port = 5432;
+
     initialScript = pkgs.writeText "pg-init.sql" ''
       CREATE USER dev WITH PASSWORD 'dev';
       CREATE DATABASE dev OWNER dev;
@@ -15,7 +13,7 @@
   };
 
   systemd.services.postgresql.wantedBy = lib.mkForce [];
-  
+
   services.mysql = {
     enable = true;
     package = pkgs.mysql84;
