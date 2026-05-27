@@ -4,12 +4,10 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_16;
-    settings.port = 5432;
-    enableTCPIP = true;
-    authentication = lib.mkOverride 10 ''
-      local all all trust
-      host  all all 127.0.0.1/32 trust
-    '';
+    settings = {
+      port = 5432;
+      listen_addresses = "127.0.0.1";
+    };
     initialScript = pkgs.writeText "pg-init.sql" ''
       CREATE USER dev WITH PASSWORD 'dev';
       CREATE DATABASE dev OWNER dev;

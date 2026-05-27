@@ -31,16 +31,16 @@ in
         cd ~/nixos-config || return 1
         nix flake update || return 1
 
+        echo "🔄 Testing NixOS build..."
+        sudo nixos-rebuild test --flake .#nixos || return 1
+
         git add flake.lock
 
         if git diff --cached --quiet; then
-        echo "No flake.lock changes to commit."
+          echo "No flake.lock changes to commit."
         else
-        git commit -m "chore(flake): update inputs"
+          git commit -m "chore(flake): update inputs"
         fi
-
-        echo "🔄 Testing NixOS build..."
-        sudo nixos-rebuild test --flake .#nixos
       }
 
       function rollback() {
