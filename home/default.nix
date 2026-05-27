@@ -7,6 +7,7 @@
     ./shell.nix
     ./apps/kitty.nix
     ./apps/office.nix
+    ./apps/steam.nix
     ./apps/wofi.nix
     ./apps/zed-theme.nix
     ./cli/fastfetch.nix

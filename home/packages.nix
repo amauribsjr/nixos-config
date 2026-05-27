@@ -35,5 +35,6 @@
     prismlauncher
     protonup-qt
     steamtinkerlaunch
+    gamescope
   ];
 }

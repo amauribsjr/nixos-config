@@ -66,6 +66,7 @@ nixos-config/
 │   ├── apps/
 │   │   ├── kitty.nix          # terminal config
 │   │   ├── office.nix         # office apps
+│   │   ├── steam.nix          # steam launcher config
 │   │   ├── wofi.nix           # launcher config/style
 │   │   └── zed-theme.nix      # Zed consumes Koppi Theme
 │   ├── cli/

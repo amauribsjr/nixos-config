@@ -51,10 +51,24 @@
     };
   };
 
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+  
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
+    package = pkgs.steam.override {
+      extraLibraries = pkgs: with pkgs; [
+        mesa
+        libGL
+        libva
+        intel-media-driver
+        libvdpau
+      ];
+    };
   };
 
   programs.gamemode.enable = true;
