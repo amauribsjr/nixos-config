@@ -32,112 +32,6 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
-      perSystem =
-        { system, ... }:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            config = {
-              allowUnfree = true;
-              android_sdk.accept_license = true;
-            };
-          };
-          androidComposition = pkgs.androidenv.composeAndroidPackages {
-            cmdLineToolsVersion = "13.0";
-            platformToolsVersion = "35.0.2";
-            buildToolsVersions = [ "35.0.0" ];
-            platformVersions = [ "35" ];
-            includeEmulator = false;
-            includeSystemImages = false;
-            includeSources = false;
-            includeNDK = false;
-          };
-          androidSdk = androidComposition.androidsdk;
-        in
-        
-        {
-          devShells = {
-            default = pkgs.mkShell {
-              packages = with pkgs; [
-                git
-                nil
-                nixd
-                nixfmt
-                deadnix
-                nvd
-              ];
-              
-              shellHook = ''
-                echo "koppi devShell: default"
-              '';
-            };
-            
-            java = pkgs.mkShell {
-              packages = with pkgs; [
-                jdk21
-                maven
-              ];
-
-              JAVA_HOME = pkgs.jdk21.home;
-
-              shellHook = ''
-                echo "koppi devShell: Java"
-                java -version
-              '';
-            };
-
-            rust = pkgs.mkShell {
-              packages = with pkgs; [
-                rustc
-                cargo
-                rust-analyzer
-                rustfmt
-                clippy
-                gcc
-                pkg-config
-              ];
-
-              RUST_BACKTRACE = "1";
-
-              shellHook = ''
-                echo "koppi devShell: Rust"
-                rustc --version
-              '';
-            };
-
-            c = pkgs.mkShell {
-              packages = with pkgs; [
-                gcc
-                gnumake
-                pkg-config
-                gdb
-              ];
-
-              shellHook = ''
-                echo "koppi devShell: C"
-                gcc --version | head -n 1
-              '';
-            };
-
-            flutter = pkgs.mkShell {
-              packages = [
-                pkgs.flutter
-                androidSdk
-                pkgs.android-tools
-                pkgs.jdk21
-              ];
-
-              ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
-              ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
-              JAVA_HOME = pkgs.jdk21.home;
-
-              shellHook = ''
-                echo "koppi devShell: Flutter/Android"
-                flutter --version
-              '';
-            };
-          };
-        };
 
       flake.nixosConfigurations.nixos =
         let
@@ -150,7 +44,7 @@
           fonts = import ./lib/fonts.nix;
           theme = import ./lib/theme.nix { inherit pkgs; };
         in
-        
+
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {

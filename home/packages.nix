@@ -19,15 +19,21 @@
     poppler-utils
     imagemagick
     wofi
+
     google-chrome
     spotify
     vesktop
     obs-studio
+
     dbeaver-bin
     bruno
     zed-editor
+
     gnome-calculator
     gnome-text-editor
+
     prismlauncher
+    protonup-qt
+    steamtinkerlaunch
   ];
 }

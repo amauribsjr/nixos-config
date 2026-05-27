@@ -20,15 +20,6 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      nd = "nix develop";
-      ndd = "nix develop ~/nixos-config#default";
-      ndj = "nix develop ~/nixos-config#java";
-      ndr = "nix develop ~/nixos-config#rust";
-      ndc = "nix develop ~/nixos-config#c";
-      ndf = "nix develop ~/nixos-config#flutter";
-    };
-
     initContent = ''
       function rebuild() {
         echo "🔄 Rebuilding NixOS..."
@@ -48,7 +39,7 @@ in
         git commit -m "chore(flake): update inputs"
         fi
 
-        echo "🧪 Testing NixOS build..."
+        echo "🔄 Testing NixOS build..."
         sudo nixos-rebuild test --flake .#nixos
       }
 
@@ -58,18 +49,18 @@ in
       }
 
       function clean() {
-        echo "🧹 Cleaning system generations older than 7 days..."
+        echo "🔄 Cleaning system generations older than 7 days..."
         sudo nix-collect-garbage --delete-older-than 7d
       }
 
       function deepclean() {
-        echo "🧹 Keeping only last 3 generations..."
+        echo "🔄 Keeping only last 3 generations..."
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system +3
         sudo nix-collect-garbage
       }
 
       function testbuild() {
-        echo "🧪 Testing NixOS build..."
+        echo "🔄 Testing NixOS build..."
         cd ~/nixos-config || exit 1
         if [ -n "$(git status --porcelain)" ]; then
           echo "⚠️ There are uncommitted changes:"
@@ -125,39 +116,6 @@ in
       function redistop() {
         sudo systemctl stop redis-dev;
         echo "Redis down";
-      }
-
-      # devShell helpers
-      export NIXOS_CONFIG="$HOME/nixos-config"
-
-      # devShell from nixos-config
-      nds() {
-        local shell="''${1:-default}"
-        nix develop "$NIXOS_CONFIG#$shell"
-      }
-
-      # Zed inside a devShell
-      ndz() {
-        local shell="''${1:-default}"
-        local path="''${2:-.}"
-        nix develop "$NIXOS_CONFIG#$shell" -c zed "$path"
-      }
-
-      # Zed inside specific devShells
-      zjava() {
-        nix develop "$NIXOS_CONFIG#java" -c zed "''${1:-.}"
-      }
-
-      zrust() {
-        nix develop "$NIXOS_CONFIG#rust" -c zed "''${1:-.}"
-      }
-
-      zc() {
-        nix develop "$NIXOS_CONFIG#c" -c zed "''${1:-.}"
-      }
-
-      zflutter() {
-        nix develop "$NIXOS_CONFIG#flutter" -c zed "''${1:-.}"
       }
     '';
   };

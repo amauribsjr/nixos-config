@@ -6,7 +6,7 @@
   security.pam.services.gtklock = {
     enableGnomeKeyring = true;
   };
-  
+
   services.gvfs.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
@@ -51,11 +51,18 @@
     };
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  programs.gamemode.enable = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = false;
     pulse.enable = true;
     jack.enable = true;
   };

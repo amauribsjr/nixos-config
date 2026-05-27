@@ -30,7 +30,7 @@ Personal NixOS flake for my **Dell Inspiron 3501**, built around Flake-parts, Ho
 | Lock screen   | gtklock                                                                     |
 | Greeter       | greetd + ReGreet                                                            |
 | Editors       | Zed                                                                         |
-| Dev tooling   | Java, Rust, C and Flutter through flake devShells; Docker, databases and runtime services through NixOS modules |
+| Dev tooling   | Java, Rust, C and Flutter, Bruno                                            |
 | Databases     | MySQL, PostgreSQL and Redis for caching                                     |
 | Theme         | [Koppi](https://github.com/amauribsjr/koppi-theme)                          |
 
@@ -54,7 +54,7 @@ These values are imported in `flake.nix` and passed to both NixOS and Home Manag
 nixos-config/
 ├── docs/
 │   └── devshells.md           # devShell usage and workflow reference
-├── flake.nix                  # flake-parts entrypoint, NixOS config, devShells and shared args
+├── flake.nix                  # flake-parts entrypoint, NixOS config and shared args
 ├── flake.lock                 # pinned flake inputs
 ├── README.md                  # repository overview
 ├── lib/
@@ -151,21 +151,6 @@ Custom shell functions are defined in `home/shell.nix`.
 | `redistart` | Starts Redis services (default port: 6379)      |
 | `redistop`  | Stops Redis services                            |
 
-### DevShells
-
-| Command       | Description                                   |
-| ------------- | --------------------------------------------- |
-| `ndd`         | Enter the default devShell.                   |
-| `ndj`         | Enter the Java devShell.                      |
-| `ndr`         | Enter the Rust devShell.                      |
-| `ndc`         | Enter the C devShell.                         |
-| `ndf`         | Enter the Flutter/Android devShell.           |
-| `nds <shell>` | Enter a named devShell from `~/nixos-config`. |
-| `zjava`       | Open Zed inside the Java devShell.            |
-| `zrust`       | Open Zed inside the Rust devShell.            |
-| `zc`          | Open Zed inside the C devShell.               |
-| `zflutter`    | Open Zed inside the Flutter/Android devShell. |
-
 ### Applications
 
 | Shortcut      | Action              |
@@ -241,20 +226,6 @@ Custom shell functions are defined in `home/shell.nix`.
 | 1 finger tap         | Left click       |
 | 2 fingers tap        | Right click      |
 | 3 fingers tap        | Middle click     |
-
-### Validation
-
-```bash
-testbuild
-rebuild
-```
-
-```bash
-nix develop .#java -c java -version
-nix develop .#rust -c rustc --version
-nix develop .#c -c gcc --version
-nix develop .#flutter -c flutter --version
-```
 
 ## References
 
