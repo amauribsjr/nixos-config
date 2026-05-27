@@ -52,8 +52,6 @@ These values are imported in `flake.nix` and passed to both NixOS and Home Manag
 
 ```text
 nixos-config/
-├── docs/
-│   └── devshells.md           # devShell usage and workflow reference
 ├── flake.nix                  # flake-parts entrypoint, NixOS config and shared args
 ├── flake.lock                 # pinned flake inputs
 ├── README.md                  # repository overview
@@ -134,7 +132,6 @@ Custom shell functions are defined in `home/shell.nix`.
 | `rebuild`   | Rebuild and switch to the current flake configuration.                       |
 | `testbuild` | Test the current flake configuration.                                        |
 | `update`    | Update flake inputs and test/rebuild according to the helper implementation. |
-| `flakeup`   | Update `flake.lock` and commit the lockfile update.                          |
 | `rollback`  | Roll back to the previous NixOS generation.                                  |
 | `clean`     | Delete older than 7 days generations.                                        |
 | `deepclean` | Keep only the 3 latest system generations and run garbage collection.        |
