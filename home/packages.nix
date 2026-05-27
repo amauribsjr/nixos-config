@@ -33,8 +33,5 @@
     gnome-text-editor
 
     prismlauncher
-    protonup-qt
-    steamtinkerlaunch
-    gamescope
   ];
 }
