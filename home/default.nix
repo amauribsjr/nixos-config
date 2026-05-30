@@ -1,7 +1,9 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, inputs, ... }:
 
 {
   imports = [
+    inputs.noctalia.homeModules.default
+
     ./packages.nix
     ./theme.nix
     ./shell.nix
@@ -12,7 +14,8 @@
     ./cli/fastfetch.nix
     ./cli/git.nix
     ./desktop/niri.nix
-    ./desktop/waybar.nix
+    ./desktop/noctalia.nix
+    #./desktop/waybar.nix
     ./services/awww.nix
     ./services/gtklock.nix
     ./services/swayidle.nix
@@ -24,13 +27,13 @@
 
   programs.home-manager.enable = true;
 
-  services.mako = {
+  /*services.mako = {
     enable = true;
     settings = {
       default-timeout = 3000;
       ignore-timeout = false;
     };
-  };
+  };*/
 
   xdg.userDirs = {
     enable = true;

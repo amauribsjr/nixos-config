@@ -18,6 +18,11 @@
     koppi-theme = {
       url = "github:amauribsjr/koppi-theme";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,6 +48,7 @@
           colors = koppi-theme.lib.colors;
           fonts = import ./lib/fonts.nix;
           theme = import ./lib/theme.nix { inherit pkgs; };
+          noctalia = inputs.noctalia;
         in
 
         nixpkgs.lib.nixosSystem {
