@@ -72,8 +72,7 @@ in
     };
 
     spawn-at-startup = [
-      #{ command = [ "${pkgs.waybar}/bin/waybar" ]; }
-      { command = [ "noctalia-shell" ]; }
+      { command = [ "${pkgs.waybar}/bin/waybar" ]; }
       { command = [ "${pkgs.networkmanagerapplet}/bin/nm-applet" "--indicator" ]; }
       { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }
     ];

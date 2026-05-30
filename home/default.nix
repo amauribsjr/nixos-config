@@ -2,8 +2,6 @@
 
 {
   imports = [
-    inputs.noctalia.homeModules.default
-
     ./packages.nix
     ./theme.nix
     ./shell.nix
@@ -14,8 +12,7 @@
     ./cli/fastfetch.nix
     ./cli/git.nix
     ./desktop/niri.nix
-    ./desktop/noctalia.nix
-    #./desktop/waybar.nix
+    ./desktop/waybar.nix
     ./services/awww.nix
     ./services/gtklock.nix
     ./services/swayidle.nix
