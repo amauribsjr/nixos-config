@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.koppi-theme.homeManagerModules.default
     ./packages.nix
     ./theme.nix
     ./shell.nix
@@ -24,13 +25,20 @@
 
   programs.home-manager.enable = true;
 
-  /*services.mako = {
+  koppi = {
+    enable = true;
+    kitty.enable = true;
+    fzf.enable = true;
+    bat.enable = true;
+  };
+
+  services.mako = {
     enable = true;
     settings = {
       default-timeout = 3000;
       ignore-timeout = false;
     };
-  };*/
+  };
 
   xdg.userDirs = {
     enable = true;
